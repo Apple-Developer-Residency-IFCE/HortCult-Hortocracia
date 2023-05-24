@@ -17,6 +17,7 @@
 		642EEC362A1D8648009206D2 /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2C2A1D8648009206D2 /* Satoshi-BlackItalic.otf */; };
 		642EEC372A1D8648009206D2 /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2D2A1D8648009206D2 /* Satoshi-MediumItalic.otf */; };
 		642EEC382A1D8648009206D2 /* Satoshi-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2E2A1D8648009206D2 /* Satoshi-BoldItalic.otf */; };
+		642EEC3A2A1D8FBB009206D2 /* MinhaHortaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642EEC392A1D8FBB009206D2 /* MinhaHortaView.swift */; };
 		6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438A91F2A1D7730006021DA /* HortCultApp.swift */; };
 		6438A9222A1D7730006021DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438A9212A1D7730006021DA /* ContentView.swift */; };
 		6438A9242A1D7731006021DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6438A9232A1D7731006021DA /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		642EEC2C2A1D8648009206D2 /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BlackItalic.otf"; sourceTree = "<group>"; };
 		642EEC2D2A1D8648009206D2 /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
 		642EEC2E2A1D8648009206D2 /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
+		642EEC392A1D8FBB009206D2 /* MinhaHortaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaHortaView.swift; sourceTree = "<group>"; };
 		6438A91C2A1D7730006021DA /* HortCult.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HortCult.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6438A91F2A1D7730006021DA /* HortCultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCultApp.swift; sourceTree = "<group>"; };
 		6438A9212A1D7730006021DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,11 +94,11 @@
 		6438A91E2A1D7730006021DA /* HortCult */ = {
 			isa = PBXGroup;
 			children = (
-				642EEC242A1D8607009206D2 /* Tipografia */,
 				6438A91F2A1D7730006021DA /* HortCultApp.swift */,
 				6438A9212A1D7730006021DA /* ContentView.swift */,
 				6438A9232A1D7731006021DA /* Assets.xcassets */,
 				6438A9282A1D7731006021DA /* Persistence.swift */,
+				642EEC392A1D8FBB009206D2 /* MinhaHortaView.swift */,
 				6438A92A2A1D7731006021DA /* HortCult.xcdatamodeld */,
 				6438A9252A1D7731006021DA /* Preview Content */,
 			);
@@ -106,6 +108,7 @@
 		6438A9252A1D7731006021DA /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				642EEC242A1D8607009206D2 /* Tipografia */,
 				6438A9262A1D7731006021DA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642EEC3A2A1D8FBB009206D2 /* MinhaHortaView.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
 				6438A9222A1D7730006021DA /* ContentView.swift in Sources */,
 				6438A92C2A1D7731006021DA /* HortCult.xcdatamodeld in Sources */,
