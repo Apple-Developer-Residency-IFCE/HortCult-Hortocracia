@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		640AFB672A200EAA00A31EAF /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB662A200EAA00A31EAF /* Onboarding.swift */; };
-		640AFB702A200F1100A31EAF /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB682A200F1000A31EAF /* Description.swift */; };
-		640AFB712A200F1100A31EAF /* ButtonSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB692A200F1000A31EAF /* ButtonSelector.swift */; };
-		640AFB722A200F1100A31EAF /* ImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB6A2A200F1000A31EAF /* ImageSelector.swift */; };
-		640AFB732A200F1100A31EAF /* SecondButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB6B2A200F1100A31EAF /* SecondButton.swift */; };
-		640AFB742A200F1100A31EAF /* TesteScrowview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB6C2A200F1100A31EAF /* TesteScrowview.swift */; };
-		640AFB752A200F1100A31EAF /* TestesTelasHortcult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB6D2A200F1100A31EAF /* TestesTelasHortcult.swift */; };
-		640AFB762A200F1100A31EAF /* HortCultLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB6E2A200F1100A31EAF /* HortCultLogo.swift */; };
-		640AFB772A200F1100A31EAF /* TittleSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB6F2A200F1100A31EAF /* TittleSelector.swift */; };
 		640AFB792A20113900A31EAF /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB782A20113900A31EAF /* Splash.swift */; };
+		640AFB822A20263B00A31EAF /* SecondButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB7A2A20263B00A31EAF /* SecondButton.swift */; };
+		640AFB832A20263B00A31EAF /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB7B2A20263B00A31EAF /* Description.swift */; };
+		640AFB842A20263B00A31EAF /* HortCultLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB7C2A20263B00A31EAF /* HortCultLogo.swift */; };
+		640AFB852A20263B00A31EAF /* TesteScrowview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB7D2A20263B00A31EAF /* TesteScrowview.swift */; };
+		640AFB862A20263B00A31EAF /* TestesTelasHortcult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB7E2A20263B00A31EAF /* TestesTelasHortcult.swift */; };
+		640AFB872A20263B00A31EAF /* ButtonSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB7F2A20263B00A31EAF /* ButtonSelector.swift */; };
+		640AFB882A20263B00A31EAF /* TittleSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB802A20263B00A31EAF /* TittleSelector.swift */; };
+		640AFB892A20263B00A31EAF /* ImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB812A20263B00A31EAF /* ImageSelector.swift */; };
 		642EEC2F2A1D8648009206D2 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC252A1D8647009206D2 /* Satoshi-Black.otf */; };
 		642EEC302A1D8648009206D2 /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */; };
 		642EEC312A1D8648009206D2 /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */; };
@@ -37,15 +37,15 @@
 
 /* Begin PBXFileReference section */
 		640AFB662A200EAA00A31EAF /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
-		640AFB682A200F1000A31EAF /* Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Description.swift; path = ../../../../../../Downloads/HortcultFiles/Description.swift; sourceTree = "<group>"; };
-		640AFB692A200F1000A31EAF /* ButtonSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonSelector.swift; path = ../../../../../../Downloads/HortcultFiles/ButtonSelector.swift; sourceTree = "<group>"; };
-		640AFB6A2A200F1000A31EAF /* ImageSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSelector.swift; path = ../../../../../../Downloads/HortcultFiles/ImageSelector.swift; sourceTree = "<group>"; };
-		640AFB6B2A200F1100A31EAF /* SecondButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondButton.swift; path = ../../../../../../Downloads/HortcultFiles/SecondButton.swift; sourceTree = "<group>"; };
-		640AFB6C2A200F1100A31EAF /* TesteScrowview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TesteScrowview.swift; path = ../../../../../../Downloads/HortcultFiles/TesteScrowview.swift; sourceTree = "<group>"; };
-		640AFB6D2A200F1100A31EAF /* TestesTelasHortcult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestesTelasHortcult.swift; path = ../../../../../../Downloads/HortcultFiles/TestesTelasHortcult.swift; sourceTree = "<group>"; };
-		640AFB6E2A200F1100A31EAF /* HortCultLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HortCultLogo.swift; path = ../../../../../../Downloads/HortcultFiles/HortCultLogo.swift; sourceTree = "<group>"; };
-		640AFB6F2A200F1100A31EAF /* TittleSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TittleSelector.swift; path = ../../../../../../Downloads/HortcultFiles/TittleSelector.swift; sourceTree = "<group>"; };
 		640AFB782A20113900A31EAF /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		640AFB7A2A20263B00A31EAF /* SecondButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondButton.swift; path = ../../../../../../Downloads/HortcultFiles/SecondButton.swift; sourceTree = "<group>"; };
+		640AFB7B2A20263B00A31EAF /* Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Description.swift; path = ../../../../../../Downloads/HortcultFiles/Description.swift; sourceTree = "<group>"; };
+		640AFB7C2A20263B00A31EAF /* HortCultLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HortCultLogo.swift; path = ../../../../../../Downloads/HortcultFiles/HortCultLogo.swift; sourceTree = "<group>"; };
+		640AFB7D2A20263B00A31EAF /* TesteScrowview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TesteScrowview.swift; path = ../../../../../../Downloads/HortcultFiles/TesteScrowview.swift; sourceTree = "<group>"; };
+		640AFB7E2A20263B00A31EAF /* TestesTelasHortcult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestesTelasHortcult.swift; path = ../../../../../../Downloads/HortcultFiles/TestesTelasHortcult.swift; sourceTree = "<group>"; };
+		640AFB7F2A20263B00A31EAF /* ButtonSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonSelector.swift; path = ../../../../../../Downloads/HortcultFiles/ButtonSelector.swift; sourceTree = "<group>"; };
+		640AFB802A20263B00A31EAF /* TittleSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TittleSelector.swift; path = ../../../../../../Downloads/HortcultFiles/TittleSelector.swift; sourceTree = "<group>"; };
+		640AFB812A20263B00A31EAF /* ImageSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSelector.swift; path = ../../../../../../Downloads/HortcultFiles/ImageSelector.swift; sourceTree = "<group>"; };
 		642EEC252A1D8647009206D2 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
 		642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.otf"; sourceTree = "<group>"; };
 		642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
@@ -87,14 +87,14 @@
 		640AFB652A200E6500A31EAF /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				640AFB692A200F1000A31EAF /* ButtonSelector.swift */,
-				640AFB682A200F1000A31EAF /* Description.swift */,
-				640AFB6E2A200F1100A31EAF /* HortCultLogo.swift */,
-				640AFB6A2A200F1000A31EAF /* ImageSelector.swift */,
-				640AFB6B2A200F1100A31EAF /* SecondButton.swift */,
-				640AFB6C2A200F1100A31EAF /* TesteScrowview.swift */,
-				640AFB6D2A200F1100A31EAF /* TestesTelasHortcult.swift */,
-				640AFB6F2A200F1100A31EAF /* TittleSelector.swift */,
+				640AFB7F2A20263B00A31EAF /* ButtonSelector.swift */,
+				640AFB7B2A20263B00A31EAF /* Description.swift */,
+				640AFB7C2A20263B00A31EAF /* HortCultLogo.swift */,
+				640AFB812A20263B00A31EAF /* ImageSelector.swift */,
+				640AFB7A2A20263B00A31EAF /* SecondButton.swift */,
+				640AFB7D2A20263B00A31EAF /* TesteScrowview.swift */,
+				640AFB7E2A20263B00A31EAF /* TestesTelasHortcult.swift */,
+				640AFB802A20263B00A31EAF /* TittleSelector.swift */,
 				640AFB662A200EAA00A31EAF /* Onboarding.swift */,
 				640AFB782A20113900A31EAF /* Splash.swift */,
 			);
@@ -237,20 +237,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640AFB892A20263B00A31EAF /* ImageSelector.swift in Sources */,
+				640AFB872A20263B00A31EAF /* ButtonSelector.swift in Sources */,
+				640AFB832A20263B00A31EAF /* Description.swift in Sources */,
 				640AFB792A20113900A31EAF /* Splash.swift in Sources */,
-				640AFB702A200F1100A31EAF /* Description.swift in Sources */,
-				640AFB712A200F1100A31EAF /* ButtonSelector.swift in Sources */,
-				640AFB752A200F1100A31EAF /* TestesTelasHortcult.swift in Sources */,
-				640AFB722A200F1100A31EAF /* ImageSelector.swift in Sources */,
+				640AFB862A20263B00A31EAF /* TestesTelasHortcult.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
 				6438A9222A1D7730006021DA /* ContentView.swift in Sources */,
-				640AFB732A200F1100A31EAF /* SecondButton.swift in Sources */,
 				640AFB672A200EAA00A31EAF /* Onboarding.swift in Sources */,
+				640AFB842A20263B00A31EAF /* HortCultLogo.swift in Sources */,
 				6438A92C2A1D7731006021DA /* HortCult.xcdatamodeld in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
-				640AFB742A200F1100A31EAF /* TesteScrowview.swift in Sources */,
-				640AFB762A200F1100A31EAF /* HortCultLogo.swift in Sources */,
-				640AFB772A200F1100A31EAF /* TittleSelector.swift in Sources */,
+				640AFB822A20263B00A31EAF /* SecondButton.swift in Sources */,
+				640AFB852A20263B00A31EAF /* TesteScrowview.swift in Sources */,
+				640AFB882A20263B00A31EAF /* TittleSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
