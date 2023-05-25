@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642EEC2F2A1D8648009206D2 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC252A1D8647009206D2 /* Satoshi-Black.otf */; };
+		642EEC302A1D8648009206D2 /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */; };
+		642EEC312A1D8648009206D2 /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */; };
+		642EEC322A1D8648009206D2 /* Satoshi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC282A1D8647009206D2 /* Satoshi-Medium.otf */; };
+		642EEC332A1D8648009206D2 /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC292A1D8647009206D2 /* Satoshi-Regular.otf */; };
+		642EEC342A1D8648009206D2 /* Satoshi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2A2A1D8648009206D2 /* Satoshi-Bold.otf */; };
+		642EEC352A1D8648009206D2 /* Satoshi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2B2A1D8648009206D2 /* Satoshi-Light.otf */; };
+		642EEC362A1D8648009206D2 /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2C2A1D8648009206D2 /* Satoshi-BlackItalic.otf */; };
+		642EEC372A1D8648009206D2 /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2D2A1D8648009206D2 /* Satoshi-MediumItalic.otf */; };
+		642EEC382A1D8648009206D2 /* Satoshi-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2E2A1D8648009206D2 /* Satoshi-BoldItalic.otf */; };
 		6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438A91F2A1D7730006021DA /* HortCultApp.swift */; };
 		6438A9222A1D7730006021DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438A9212A1D7730006021DA /* ContentView.swift */; };
 		6438A9242A1D7731006021DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6438A9232A1D7731006021DA /* Assets.xcassets */; };
@@ -16,6 +26,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		642EEC252A1D8647009206D2 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
+		642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.otf"; sourceTree = "<group>"; };
+		642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
+		642EEC282A1D8647009206D2 /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
+		642EEC292A1D8647009206D2 /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
+		642EEC2A2A1D8648009206D2 /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.otf"; sourceTree = "<group>"; };
+		642EEC2B2A1D8648009206D2 /* Satoshi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Light.otf"; sourceTree = "<group>"; };
+		642EEC2C2A1D8648009206D2 /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BlackItalic.otf"; sourceTree = "<group>"; };
+		642EEC2D2A1D8648009206D2 /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
+		642EEC2E2A1D8648009206D2 /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
 		6438A91C2A1D7730006021DA /* HortCult.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HortCult.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6438A91F2A1D7730006021DA /* HortCultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCultApp.swift; sourceTree = "<group>"; };
 		6438A9212A1D7730006021DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +56,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		642EEC242A1D8607009206D2 /* Tipografia */ = {
+			isa = PBXGroup;
+			children = (
+				642EEC252A1D8647009206D2 /* Satoshi-Black.otf */,
+				642EEC2C2A1D8648009206D2 /* Satoshi-BlackItalic.otf */,
+				642EEC2A2A1D8648009206D2 /* Satoshi-Bold.otf */,
+				642EEC2E2A1D8648009206D2 /* Satoshi-BoldItalic.otf */,
+				642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */,
+				642EEC2B2A1D8648009206D2 /* Satoshi-Light.otf */,
+				642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */,
+				642EEC282A1D8647009206D2 /* Satoshi-Medium.otf */,
+				642EEC2D2A1D8648009206D2 /* Satoshi-MediumItalic.otf */,
+				642EEC292A1D8647009206D2 /* Satoshi-Regular.otf */,
+			);
+			path = Tipografia;
+			sourceTree = "<group>";
+		};
 		6438A9132A1D7730006021DA = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +92,7 @@
 		6438A91E2A1D7730006021DA /* HortCult */ = {
 			isa = PBXGroup;
 			children = (
+				642EEC242A1D8607009206D2 /* Tipografia */,
 				6438A91F2A1D7730006021DA /* HortCultApp.swift */,
 				6438A9212A1D7730006021DA /* ContentView.swift */,
 				6438A9232A1D7731006021DA /* Assets.xcassets */,
@@ -131,8 +169,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642EEC342A1D8648009206D2 /* Satoshi-Bold.otf in Resources */,
 				6438A9272A1D7731006021DA /* Preview Assets.xcassets in Resources */,
+				642EEC2F2A1D8648009206D2 /* Satoshi-Black.otf in Resources */,
+				642EEC322A1D8648009206D2 /* Satoshi-Medium.otf in Resources */,
+				642EEC372A1D8648009206D2 /* Satoshi-MediumItalic.otf in Resources */,
 				6438A9242A1D7731006021DA /* Assets.xcassets in Resources */,
+				642EEC362A1D8648009206D2 /* Satoshi-BlackItalic.otf in Resources */,
+				642EEC352A1D8648009206D2 /* Satoshi-Light.otf in Resources */,
+				642EEC382A1D8648009206D2 /* Satoshi-BoldItalic.otf in Resources */,
+				642EEC302A1D8648009206D2 /* Satoshi-Italic.otf in Resources */,
+				642EEC332A1D8648009206D2 /* Satoshi-Regular.otf in Resources */,
+				642EEC312A1D8648009206D2 /* Satoshi-LightItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
