@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6413083C2A201075001FD624 /* ListaPlantasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413083B2A201075001FD624 /* ListaPlantasView.swift */; };
+		6413083E2A201130001FD624 /* TestarListaPlantasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413083D2A201130001FD624 /* TestarListaPlantasView.swift */; };
 		642EEC2F2A1D8648009206D2 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC252A1D8647009206D2 /* Satoshi-Black.otf */; };
 		642EEC302A1D8648009206D2 /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */; };
 		642EEC312A1D8648009206D2 /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6413083B2A201075001FD624 /* ListaPlantasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaPlantasView.swift; sourceTree = "<group>"; };
+		6413083D2A201130001FD624 /* TestarListaPlantasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestarListaPlantasView.swift; sourceTree = "<group>"; };
 		642EEC252A1D8647009206D2 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
 		642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.otf"; sourceTree = "<group>"; };
 		642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
@@ -56,6 +60,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		641308392A201039001FD624 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6413083A2A201058001FD624 /* ListaPlantasView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6413083A2A201058001FD624 /* ListaPlantasView */ = {
+			isa = PBXGroup;
+			children = (
+				6413083B2A201075001FD624 /* ListaPlantasView.swift */,
+				6413083D2A201130001FD624 /* TestarListaPlantasView.swift */,
+			);
+			path = ListaPlantasView;
+			sourceTree = "<group>";
+		};
 		642EEC242A1D8607009206D2 /* Tipografia */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +113,7 @@
 		6438A91E2A1D7730006021DA /* HortCult */ = {
 			isa = PBXGroup;
 			children = (
+				641308392A201039001FD624 /* Views */,
 				642EEC242A1D8607009206D2 /* Tipografia */,
 				6438A91F2A1D7730006021DA /* HortCultApp.swift */,
 				6438A9212A1D7730006021DA /* ContentView.swift */,
@@ -191,8 +213,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6413083C2A201075001FD624 /* ListaPlantasView.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
 				6438A9222A1D7730006021DA /* ContentView.swift in Sources */,
+				6413083E2A201130001FD624 /* TestarListaPlantasView.swift in Sources */,
 				6438A92C2A1D7731006021DA /* HortCult.xcdatamodeld in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 			);
