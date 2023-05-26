@@ -9,9 +9,13 @@ import SwiftUI
 
 struct TestarListaPlantasView: View {
     
-    @State var images: [String] = ["Logo_Clara","Logo_Escura","Home","Remover","Arrow-Left"]
+    @State var images: [String] = ["Tomatinho","Abobrinha","Tomatinho2","Abobrinha2"]
     var body: some View {
-        ListaPlantasView(images: $images)
+        VStack{
+
+            ListaPlantasView(images: $images)
+        }
+        
     }
 }
 
