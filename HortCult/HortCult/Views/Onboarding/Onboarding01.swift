@@ -1,26 +1,28 @@
 //
-//  TestesTelasHortcult.swift
-//  EstudandoSwift
+//  Onboarding01.swift
+//  HortCult
 //
-//  Created by userext on 24/05/23.
+//  Created by userext on 25/05/23.
 //
 
 import SwiftUI
-struct TestesTelasHortcult: View {
+
+struct Onboarding01: View {
     var body: some View {
         VStack{
             HortCultLogo()
-            ImageSelectorView(ImageTrue: true, MainImage: "ImagensHort")
+            Spacer()
+            ImageSelectorView(ImageTrue: false, MainImage: "ImagensHort")
             TittleSelector(sizeSelector: true, textSelector: "Boas vindas!")
             Description(descriptionText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil.")
             ButtonSelector(buttonColor: true, symbolTrue: false, buttonText: "Iniciar")
-            SecondButton(appearButton: true)
+            SecondButton(appearButton: false)
         }
     }
 }
 
-struct TestesTelasHortcult_Previews: PreviewProvider {
+struct Onboarding01_Previews: PreviewProvider {
     static var previews: some View {
-        TestesTelasHortcult()
+        Onboarding01()
     }
 }

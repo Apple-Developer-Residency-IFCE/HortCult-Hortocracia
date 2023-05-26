@@ -14,6 +14,8 @@ struct HortCultLogo: View {
             .frame(width: 174, height: 32)
             .padding(.bottom, 98)
             Spacer()
+        
+        //scale fill, cover, fit,
     }
 }
 
