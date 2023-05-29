@@ -15,10 +15,13 @@ struct ImageSelectorView: View {
         if ImageTrue{
             Image(colorScheme == .dark ? "\(MainImage)Dark" : MainImage)
                 .resizable()
-                .frame(width: 276, height: 249.38)
-                .padding(.bottom, 39.62)
+                .aspectRatio(contentMode: .fit)
+                .padding(.horizontal, 57)
+                .padding(.top, 39)
+                .padding(.bottom, 40)
         }else{
             EmptyView()
+            Spacer()
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Splash: View {
+struct HomeSplash: View {
     
     
     
@@ -16,7 +16,7 @@ struct Splash: View {
     @State var opacity = 0.5
     var body: some View {
         if isActive {
-            Onboarding01()
+            TestePseudoHome()
         }else {
             VStack {
                 VStack {
@@ -46,9 +46,10 @@ struct Splash: View {
     }
     
     
-    struct Splash_Previews: PreviewProvider {
+    struct HomeSplash_Previews: PreviewProvider {
         static var previews: some View {
-            Splash()
+            HomeSplash()
         }
     }
 }
+

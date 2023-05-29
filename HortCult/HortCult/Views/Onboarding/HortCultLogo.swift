@@ -12,10 +12,8 @@ struct HortCultLogo: View {
         Image("Logo_Clara")
             .resizable()
             .frame(width: 174, height: 32)
-            .padding(.bottom, 98)
+            .padding(.top, 20)
             Spacer()
-        
-        //scale fill, cover, fit,
     }
 }
 

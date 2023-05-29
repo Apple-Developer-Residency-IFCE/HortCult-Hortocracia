@@ -18,7 +18,9 @@ struct SecondButton: View {
                     .foregroundColor(Color("H4Color"))
             }
             .background(.white)
-            .padding(.top, 28)
+            //.padding(.top, 15)
+            //.padding(.bottom, 30)
+            Spacer()
         }else{
             Spacer()
             EmptyView()

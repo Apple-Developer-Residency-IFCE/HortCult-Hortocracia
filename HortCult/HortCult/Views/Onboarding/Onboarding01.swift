@@ -8,18 +8,39 @@
 import SwiftUI
 
 struct Onboarding01: View {
+    @State private var showOnboarding = false
     var body: some View {
+        NavigationView{
+
         VStack{
             HortCultLogo()
-            Spacer()
             ImageSelectorView(ImageTrue: false, MainImage: "ImagensHort")
             TittleSelector(sizeSelector: true, textSelector: "Boas vindas!")
             Description(descriptionText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil.")
-            ButtonSelector(buttonColor: true, symbolTrue: false, buttonText: "Iniciar")
-            SecondButton(appearButton: false)
+            Spacer()
+                VStack{
+                    NavigationLink(destination: Onboarding02(), isActive: $showOnboarding) {
+                        EmptyView()
+                    }
+                    Button(action: {
+                        showOnboarding = true
+                    }) {
+                        HStack {
+                            Text("Iniciar")
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 277, height: 42)
+                        .background(Color("H1Color"))
+                        .cornerRadius(40)
+                    }
+                }.padding(.bottom, 45)
+            }
         }
+        
     }
 }
+
 
 struct Onboarding01_Previews: PreviewProvider {
     static var previews: some View {

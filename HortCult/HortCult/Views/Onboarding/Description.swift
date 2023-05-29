@@ -15,7 +15,6 @@ struct Description: View {
             .foregroundColor(Color("H4Color"))
             .multilineTextAlignment(.center)
             .frame(width: 277, height: 66)
-            .padding(.bottom, 90.0)
         Spacer()
     }
 }

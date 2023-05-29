@@ -8,20 +8,59 @@
 import SwiftUI
 
 struct Onboarding03: View {
+    @State private var showOnboarding = false
+    @State private var moveToHome = false
     var body: some View {
-        VStack{
-            HortCultLogo()
-            ImageSelectorView(ImageTrue: true, MainImage: "onboarding2")
-            TittleSelector(sizeSelector: true, textSelector: "Amplie sua horta com diferen")
-            Description(descriptionText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil.")
-            ButtonSelector(buttonColor: true, symbolTrue: false, buttonText: "Iniciar")
-            SecondButton(appearButton: false)
-        }
+        NavigationView {
+            VStack{
+                HortCultLogo()
+                ImageSelectorView(ImageTrue: true, MainImage: "onboarding03")
+                TittleSelector(sizeSelector: false, textSelector: "Amplie sua horta com diferentes vegetais")
+                Description(descriptionText: "Adicione fotos e informações como luminosidade, umidade e muito mais.")
+                VStack{
+                    NavigationLink(destination: Onboarding04(), isActive: $showOnboarding) {
+                        EmptyView()
+                    }
+                    Button(action: {
+                        showOnboarding = true
+                    }) {
+                        HStack {
+                            Text("Continuar")
+                            Image("Arrow-Right")
+                                .foregroundColor(.white)
+                        }
+                        .foregroundColor(Color("H1Color"))
+                        .padding()
+                        .frame(width: 277, height: 42)
+                        .background(.white)
+                        .cornerRadius(40)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color("H1Color"), lineWidth: 2)
+                        )
+                    }
+                    VStack {
+                        NavigationLink(destination: TestePseudoHome(), isActive: $moveToHome) {
+                            EmptyView()
+                        }
+                        Button(action: {
+                            moveToHome = true
+                        }) {
+                            Text("Pular para a Tela inicial")
+                                .foregroundColor(Color("H4Color"))
+                        }
+                        .background(.white)
+                        .padding(.top, 28)
+                    }
+                    .padding(.bottom, 20)
+                }.navigationBarBackButtonHidden(true)
+            }.navigationBarBackButtonHidden(true)
+        }.navigationBarBackButtonHidden(true)
     }
 }
-
 struct Onboarding03_Previews: PreviewProvider {
     static var previews: some View {
         Onboarding03()
     }
 }
+

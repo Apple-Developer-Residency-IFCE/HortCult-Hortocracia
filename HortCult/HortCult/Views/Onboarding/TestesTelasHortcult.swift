@@ -13,7 +13,9 @@ struct TestesTelasHortcult: View {
             ImageSelectorView(ImageTrue: true, MainImage: "ImagensHort")
             TittleSelector(sizeSelector: true, textSelector: "Boas vindas!")
             Description(descriptionText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil.")
-            ButtonSelector(buttonColor: true, symbolTrue: false, buttonText: "Iniciar")
+            ButtonSelector(buttonColor: true, symbolTrue: true, buttonText: "Iniciar") {
+                TestePseudoHome()
+            }
             SecondButton(appearButton: true)
         }
     }

@@ -7,15 +7,21 @@
 
 import SwiftUI
 
-struct ButtonSelector: View {
+struct ButtonSelector<Destination: View>: View {
+    @State private var isActive: Bool = false
+    @State private var destinationView: AnyView?
     var buttonColor: Bool
     var symbolTrue: Bool
     var buttonText: String
+
+    @ViewBuilder var nextView: () -> Destination
+    
+    
     var body: some View {
         if buttonColor{
             if symbolTrue{
                 Button(action: {
-                    print(buttonText)
+//                    nextView()
                 }) {
                     HStack{
                         Text(buttonText)
@@ -28,9 +34,14 @@ struct ButtonSelector: View {
                 .frame(width: 277, height: 42)
                 .background(Color("H1Color"))
                 .cornerRadius(40)
+                NavigationLink(destination: nextView(), isActive: $isActive){
+                    EmptyView()
+                }
             } else{
                 Button(action: {
-                    print(buttonText)
+                    NavigationLink(destination: nextView) {
+                        //EmptyView()
+                    }
                 }) {
                     HStack{
                         Text(buttonText)
@@ -45,7 +56,9 @@ struct ButtonSelector: View {
         } else{
             if symbolTrue{
                 Button(action: {
-                    print(buttonText)
+                    NavigationLink(destination: nextView) {
+                        //EmptyView()
+                    }
                 }) {
                     HStack{
                         Text(buttonText)
@@ -65,7 +78,9 @@ struct ButtonSelector: View {
                 
             } else{
                 Button(action: {
-                    print(buttonText)
+                    NavigationLink(destination: nextView) {
+                        //EmptyView()
+                    }
                 }) {
                     HStack{
                         Text(buttonText)
