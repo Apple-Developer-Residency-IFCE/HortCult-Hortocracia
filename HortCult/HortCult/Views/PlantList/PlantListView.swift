@@ -16,7 +16,7 @@ struct ListaPlantasView: View {
             HStack(spacing: 170.0){
                 Text("Minha Horta")
                     .font(Font.custom("Satoshi-Black", size: 28))
-                    .foregroundColor(Color("Verde_Escuro"))
+                    .foregroundColor(Color("VerdeEscuro"))
 
                 Button {
                     //Action do botão
@@ -24,7 +24,7 @@ struct ListaPlantasView: View {
                     Image("Add")
                 }
                 .frame(width: 32, height: 32)
-                .background(Color("Verde_Escuro"))
+                .background(Color("VerdeEscuro"))
                 .cornerRadius(40)
             }
 
@@ -39,8 +39,8 @@ struct ListaPlantasView: View {
                                 .frame(width: 140,height: 110)
                             Text(imageName)
                                 .font(Font.custom("Satoshi-Regular", size: 16))
-                                .foregroundColor(Color("Cinza_Escuro"))
-                        }.background(Color("Branco_Minha_Horta"))
+                                .foregroundColor(Color("CinzaEscuro"))
+                        }.background(Color("BrancoMinhaHorta"))
                         .cornerRadius(12)
 
                     }
