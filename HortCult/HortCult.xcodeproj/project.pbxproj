@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		6413083C2A201075001FD624 /* ListaPlantasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413083B2A201075001FD624 /* ListaPlantasView.swift */; };
 		6413083E2A201130001FD624 /* TestarListaPlantasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413083D2A201130001FD624 /* TestarListaPlantasView.swift */; };
+		640AFB792A20113900A31EAF /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB782A20113900A31EAF /* Splash.swift */; };
+		640AFB8B2A20293100A31EAF /* ButtonSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8A2A20293100A31EAF /* ButtonSelector.swift */; };
+		640AFB932A20295200A31EAF /* TestesTelasHortcult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */; };
+		640AFB942A20295200A31EAF /* SecondButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8D2A20295200A31EAF /* SecondButton.swift */; };
+		640AFB952A20295200A31EAF /* TittleSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8E2A20295200A31EAF /* TittleSelector.swift */; };
+		640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8F2A20295200A31EAF /* ImageSelector.swift */; };
+		640AFB972A20295200A31EAF /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB902A20295200A31EAF /* Description.swift */; };
+		640AFB982A20295200A31EAF /* HortCultLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB912A20295200A31EAF /* HortCultLogo.swift */; };
+		640AFB992A20295200A31EAF /* TesteScrowview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB922A20295200A31EAF /* TesteScrowview.swift */; };
+		640AFB9B2A2029FC00A31EAF /* Onboarding01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB9A2A2029FC00A31EAF /* Onboarding01.swift */; };
+		640AFB9D2A2032F100A31EAF /* Onboarding02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB9C2A2032F100A31EAF /* Onboarding02.swift */; };
+		640AFB9F2A20349800A31EAF /* Onboarding03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB9E2A20349800A31EAF /* Onboarding03.swift */; };
+		640B03FC2A215ADE00C66A2A /* Onboarding04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B03FB2A215ADE00C66A2A /* Onboarding04.swift */; };
+		640B04022A217C0100C66A2A /* TestePseudoHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B04012A217C0100C66A2A /* TestePseudoHome.swift */; };
+		641629462A2569D20081493F /* HomeSplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641629452A2569D20081493F /* HomeSplash.swift */; };
 		642EEC2F2A1D8648009206D2 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC252A1D8647009206D2 /* Satoshi-Black.otf */; };
 		642EEC302A1D8648009206D2 /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */; };
 		642EEC312A1D8648009206D2 /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */; };
@@ -19,6 +34,8 @@
 		642EEC362A1D8648009206D2 /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2C2A1D8648009206D2 /* Satoshi-BlackItalic.otf */; };
 		642EEC372A1D8648009206D2 /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2D2A1D8648009206D2 /* Satoshi-MediumItalic.otf */; };
 		642EEC382A1D8648009206D2 /* Satoshi-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC2E2A1D8648009206D2 /* Satoshi-BoldItalic.otf */; };
+		6436FF692A2033AB00F26119 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6436FF682A2033AB00F26119 /* CustomNavigationBarView.swift */; };
+		6438721D2A215EF2003BA48E /* TesteNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438721C2A215EF2003BA48E /* TesteNavigationBarView.swift */; };
 		6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438A91F2A1D7730006021DA /* HortCultApp.swift */; };
 		6438A9222A1D7730006021DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438A9212A1D7730006021DA /* ContentView.swift */; };
 		6438A9242A1D7731006021DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6438A9232A1D7731006021DA /* Assets.xcassets */; };
@@ -29,7 +46,23 @@
 
 /* Begin PBXFileReference section */
 		6413083B2A201075001FD624 /* ListaPlantasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaPlantasView.swift; sourceTree = "<group>"; };
-		6413083D2A201130001FD624 /* TestarListaPlantasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestarListaPlantasView.swift; sourceTree = "<group>"; };
+		6413083D2A201130001FD624 /* 
+    */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestarListaPlantasView.swift; sourceTree = "<group>"; };
+		640AFB782A20113900A31EAF /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		640AFB8A2A20293100A31EAF /* ButtonSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSelector.swift; sourceTree = "<group>"; };
+		640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestesTelasHortcult.swift; sourceTree = "<group>"; };
+		640AFB8D2A20295200A31EAF /* SecondButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondButton.swift; sourceTree = "<group>"; };
+		640AFB8E2A20295200A31EAF /* TittleSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TittleSelector.swift; sourceTree = "<group>"; };
+		640AFB8F2A20295200A31EAF /* ImageSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelector.swift; sourceTree = "<group>"; };
+		640AFB902A20295200A31EAF /* Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
+		640AFB912A20295200A31EAF /* HortCultLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HortCultLogo.swift; sourceTree = "<group>"; };
+		640AFB922A20295200A31EAF /* TesteScrowview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TesteScrowview.swift; sourceTree = "<group>"; };
+		640AFB9A2A2029FC00A31EAF /* Onboarding01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding01.swift; sourceTree = "<group>"; };
+		640AFB9C2A2032F100A31EAF /* Onboarding02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding02.swift; sourceTree = "<group>"; };
+		640AFB9E2A20349800A31EAF /* Onboarding03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding03.swift; sourceTree = "<group>"; };
+		640B03FB2A215ADE00C66A2A /* Onboarding04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding04.swift; sourceTree = "<group>"; };
+		640B04012A217C0100C66A2A /* TestePseudoHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestePseudoHome.swift; sourceTree = "<group>"; };
+		641629452A2569D20081493F /* HomeSplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSplash.swift; sourceTree = "<group>"; };
 		642EEC252A1D8647009206D2 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
 		642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.otf"; sourceTree = "<group>"; };
 		642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
@@ -40,6 +73,8 @@
 		642EEC2C2A1D8648009206D2 /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BlackItalic.otf"; sourceTree = "<group>"; };
 		642EEC2D2A1D8648009206D2 /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
 		642EEC2E2A1D8648009206D2 /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
+		6436FF682A2033AB00F26119 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
+		6438721C2A215EF2003BA48E /* TesteNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteNavigationBarView.swift; sourceTree = "<group>"; };
 		6438A91C2A1D7730006021DA /* HortCult.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HortCult.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6438A91F2A1D7730006021DA /* HortCultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCultApp.swift; sourceTree = "<group>"; };
 		6438A9212A1D7730006021DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				6413083A2A201058001FD624 /* ListaPlantasView */,
+		640AFB642A200E3B00A31EAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				640AFB652A200E6500A31EAF /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -75,6 +114,26 @@
 				6413083D2A201130001FD624 /* TestarListaPlantasView.swift */,
 			);
 			path = ListaPlantasView;
+		640AFB652A200E6500A31EAF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				640AFB902A20295200A31EAF /* Description.swift */,
+				640AFB912A20295200A31EAF /* HortCultLogo.swift */,
+				640AFB8F2A20295200A31EAF /* ImageSelector.swift */,
+				640AFB8D2A20295200A31EAF /* SecondButton.swift */,
+				640AFB922A20295200A31EAF /* TesteScrowview.swift */,
+				640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */,
+				640AFB8E2A20295200A31EAF /* TittleSelector.swift */,
+				640AFB8A2A20293100A31EAF /* ButtonSelector.swift */,
+				640AFB782A20113900A31EAF /* Splash.swift */,
+				641629452A2569D20081493F /* HomeSplash.swift */,
+				640AFB9A2A2029FC00A31EAF /* Onboarding01.swift */,
+				640AFB9C2A2032F100A31EAF /* Onboarding02.swift */,
+				640AFB9E2A20349800A31EAF /* Onboarding03.swift */,
+				640B03FB2A215ADE00C66A2A /* Onboarding04.swift */,
+				640B04012A217C0100C66A2A /* TestePseudoHome.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		642EEC242A1D8607009206D2 /* Tipografia */ = {
@@ -92,6 +151,23 @@
 				642EEC292A1D8647009206D2 /* Satoshi-Regular.otf */,
 			);
 			path = Tipografia;
+			sourceTree = "<group>";
+		};
+		6438721A2A215D44003BA48E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6438721B2A215D63003BA48E /* NavigationBar */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6438721B2A215D63003BA48E /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				6436FF682A2033AB00F26119 /* CustomNavigationBarView.swift */,
+				6438721C2A215EF2003BA48E /* TesteNavigationBarView.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		6438A9132A1D7730006021DA = {
@@ -113,7 +189,7 @@
 		6438A91E2A1D7730006021DA /* HortCult */ = {
 			isa = PBXGroup;
 			children = (
-				641308392A201039001FD624 /* Views */,
+				640AFB642A200E3B00A31EAF /* Views */,
 				642EEC242A1D8607009206D2 /* Tipografia */,
 				6438A91F2A1D7730006021DA /* HortCultApp.swift */,
 				6438A9212A1D7730006021DA /* ContentView.swift */,
@@ -214,11 +290,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				6413083C2A201075001FD624 /* ListaPlantasView.swift in Sources */,
+				640AFB972A20295200A31EAF /* Description.swift in Sources */,
+				640AFB792A20113900A31EAF /* Splash.swift in Sources */,
+				641629462A2569D20081493F /* HomeSplash.swift in Sources */,
+				640B04022A217C0100C66A2A /* TestePseudoHome.swift in Sources */,
+				640AFB8B2A20293100A31EAF /* ButtonSelector.swift in Sources */,
+				640AFB9F2A20349800A31EAF /* Onboarding03.swift in Sources */,
+				640AFB9B2A2029FC00A31EAF /* Onboarding01.swift in Sources */,
+				640AFB992A20295200A31EAF /* TesteScrowview.swift in Sources */,
+				640AFB932A20295200A31EAF /* TestesTelasHortcult.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
-				6438A9222A1D7730006021DA /* ContentView.swift in Sources */,
+				640AFB982A20295200A31EAF /* HortCultLogo.swift in Sources */,
+				6438A9222A1D7730006021DA /* ContentView.swift in Sources */
 				6413083E2A201130001FD624 /* TestarListaPlantasView.swift in Sources */,
+				6438721D2A215EF2003BA48E /* TesteNavigationBarView.swift in Sources */,
 				6438A92C2A1D7731006021DA /* HortCult.xcdatamodeld in Sources */,
+				6436FF692A2033AB00F26119 /* CustomNavigationBarView.swift in Sources */,
+				640AFB942A20295200A31EAF /* SecondButton.swift in Sources */,
+				640AFB952A20295200A31EAF /* TittleSelector.swift in Sources */,
+				6438A92C2A1D7731006021DA /* HortCult.xcdatamodeld in Sources */,
+				640AFB9D2A2032F100A31EAF /* Onboarding02.swift in Sources */,
+				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
+				640B03FC2A215ADE00C66A2A /* Onboarding04.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +448,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,6 +456,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = swiftui.HortCult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -382,6 +480,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,6 +488,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = swiftui.HortCult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
