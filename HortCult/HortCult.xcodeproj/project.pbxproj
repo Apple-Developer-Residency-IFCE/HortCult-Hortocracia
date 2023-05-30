@@ -22,6 +22,8 @@
 		640B03FC2A215ADE00C66A2A /* Onboarding04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B03FB2A215ADE00C66A2A /* Onboarding04.swift */; };
 		640B04022A217C0100C66A2A /* TestePseudoHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B04012A217C0100C66A2A /* TestePseudoHome.swift */; };
 		641629462A2569D20081493F /* HomeSplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641629452A2569D20081493F /* HomeSplash.swift */; };
+		6417D96E2A26AD5900479BE2 /* TesteNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6417D96D2A26AD5900479BE2 /* TesteNavigationBarView.swift */; };
+		6417D9712A26AD6A00479BE2 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6417D9702A26AD6A00479BE2 /* CustomNavigationBarView.swift */; };
 		642EEC2F2A1D8648009206D2 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC252A1D8647009206D2 /* Satoshi-Black.otf */; };
 		642EEC302A1D8648009206D2 /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */; };
 		642EEC312A1D8648009206D2 /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */; };
@@ -56,6 +58,8 @@
 		640B03FB2A215ADE00C66A2A /* Onboarding04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding04.swift; sourceTree = "<group>"; };
 		640B04012A217C0100C66A2A /* TestePseudoHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestePseudoHome.swift; sourceTree = "<group>"; };
 		641629452A2569D20081493F /* HomeSplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSplash.swift; sourceTree = "<group>"; };
+		6417D96D2A26AD5900479BE2 /* TesteNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TesteNavigationBarView.swift; sourceTree = "<group>"; };
+		6417D9702A26AD6A00479BE2 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		642EEC252A1D8647009206D2 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
 		642EEC262A1D8647009206D2 /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.otf"; sourceTree = "<group>"; };
 		642EEC272A1D8647009206D2 /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		640AFB642A200E3B00A31EAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6417D96C2A26AD4600479BE2 /* NavBar */,
 				640AFB652A200E6500A31EAF /* Onboarding */,
 			);
 			path = Views;
@@ -114,6 +119,15 @@
 				640B04012A217C0100C66A2A /* TestePseudoHome.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		6417D96C2A26AD4600479BE2 /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				6417D9702A26AD6A00479BE2 /* CustomNavigationBarView.swift */,
+				6417D96D2A26AD5900479BE2 /* TesteNavigationBarView.swift */,
+			);
+			path = NavBar;
 			sourceTree = "<group>";
 		};
 		642EEC242A1D8607009206D2 /* Tipografia */ = {
@@ -260,6 +274,7 @@
 				640AFB9F2A20349800A31EAF /* Onboarding03.swift in Sources */,
 				640AFB9B2A2029FC00A31EAF /* Onboarding01.swift in Sources */,
 				640AFB992A20295200A31EAF /* TesteScrowview.swift in Sources */,
+				6417D9712A26AD6A00479BE2 /* CustomNavigationBarView.swift in Sources */,
 				640AFB932A20295200A31EAF /* TestesTelasHortcult.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
 				640AFB982A20295200A31EAF /* HortCultLogo.swift in Sources */,
@@ -268,6 +283,7 @@
 				640AFB952A20295200A31EAF /* TittleSelector.swift in Sources */,
 				6438A92C2A1D7731006021DA /* HortCult.xcdatamodeld in Sources */,
 				640AFB9D2A2032F100A31EAF /* Onboarding02.swift in Sources */,
+				6417D96E2A26AD5900479BE2 /* TesteNavigationBarView.swift in Sources */,
 				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 				640B03FC2A215ADE00C66A2A /* Onboarding04.swift in Sources */,
@@ -414,6 +430,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = swiftui.HortCult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -443,6 +462,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = swiftui.HortCult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
