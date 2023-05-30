@@ -15,17 +15,12 @@ struct HortCultApp: App {
 
     var body: some Scene {
         WindowGroup {
-            
             if HortCultApp.isFirstLogin == true {
                 Splash()
             } else {
                 HomeSplash()
             }
-            
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            //Splash()
-            //TestePseudoNav()
         }
+      
     }
 }

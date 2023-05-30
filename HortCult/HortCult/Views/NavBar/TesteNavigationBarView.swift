@@ -14,6 +14,7 @@ struct TesteNavigationBarView: View {
             NavigationLink(destination: CustomNavigationBarView()){
                 Image("Add")
                 
+                
             }
             .toolbar(){
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -22,7 +23,9 @@ struct TesteNavigationBarView: View {
             }
             
         }
+        
     }
+
 }
 
 struct TesteNavigationBarView_Previews: PreviewProvider {

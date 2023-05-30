@@ -11,7 +11,7 @@ struct CustomNavigationBarView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var NavBar : some View {
-        ZStack{
+        ZStack {
             Image("Topbar")
             HStack {
                 Button(action:{
