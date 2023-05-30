@@ -9,12 +9,23 @@ import SwiftUI
 
 @main
 struct HortCultApp: App {
-    let persistenceController = PersistenceController.shared
+    //let persistenceController = PersistenceController.shared
+    
+    @AppStorage ("isFirstLogin") static var isFirstLogin = true
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            
+            if HortCultApp.isFirstLogin == true {
+                Splash()
+            } else {
+                HomeSplash()
+            }
+            
+//            ContentView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            //Splash()
+            //TestePseudoNav()
         }
     }
 }
