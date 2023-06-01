@@ -123,6 +123,7 @@
 				640AFB8F2A20295200A31EAF /* ImageSelector.swift */,
 				640AFB8D2A20295200A31EAF /* SecondButton.swift */,
 				640AFB922A20295200A31EAF /* TesteScrowview.swift */,
+				640AFB9E2A20349800A31EAF /* Onboarding03.swift */,
 				640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */,
 				640AFB8E2A20295200A31EAF /* TittleSelector.swift */,
 				640AFB8A2A20293100A31EAF /* ButtonSelector.swift */,
@@ -130,7 +131,6 @@
 				641629452A2569D20081493F /* HomeSplash.swift */,
 				640AFB9A2A2029FC00A31EAF /* Onboarding01.swift */,
 				640AFB9C2A2032F100A31EAF /* Onboarding02.swift */,
-				640AFB9E2A20349800A31EAF /* Onboarding03.swift */,
 				640B03FB2A215ADE00C66A2A /* Onboarding04.swift */,
 				640B04012A217C0100C66A2A /* TestePseudoHome.swift */,
 			);

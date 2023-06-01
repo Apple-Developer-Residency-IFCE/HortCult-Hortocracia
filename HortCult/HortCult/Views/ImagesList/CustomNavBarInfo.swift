@@ -7,14 +7,11 @@
 
 import SwiftUI
 
-struct CustomNavBarInfoView<Content: View>: View {
+struct CustomNavBarInfo: View {
 @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
         
-    @ViewBuilder var content: () -> Content
-    
     var NavBarInfo : some View {
-        
-            
+            ZStack {
                 HStack{
                     Button(action:{
                         self.presentationMode.wrappedValue.dismiss()
@@ -25,39 +22,34 @@ struct CustomNavBarInfoView<Content: View>: View {
                     Spacer()
                     Text("Voltar").foregroundColor(.white)
                 }
-            
-
+            }
+        
     }
     
         var body: some View {
             NavigationView {
-                ZStack {
-                    self.content()
-                    LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center)
+                ZStack{
+                    LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.clear]), startPoint: .top, endPoint: .center)
                                 .edgesIgnoringSafeArea(.all)
-//                    HStack{
-//                        Button(action:{
-//                            self.presentationMode.wrappedValue.dismiss()
-//                        } ) {
-//                            Image("Arrow-Left-Light")
-//                        }
-//                        .padding(.leading, 18)
-//                        Spacer()
-//                        Text("Voltar").foregroundColor(.white)
+//                    HStack(alignment: .top){
+//                        ScrollView(.horizontal) { // <1>
+//                            HStack { // <2>
+//                                        ForEach(0..<10) { index in
+//                                            Image("Tomatinho")
+//                                                .frame(alignment: .center)
+//                                        }
+//                                    }.frame(maxHeight: .infinity)
+//                                }.font(.largeTitle)
 //                    }
                 }
-
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: NavBarInfo)
-            
         }
 }
 
-struct CustomNavBarInfoView_Previews: PreviewProvider {
+struct CustomNavBarInfo_Previews: PreviewProvider {
     static var previews: some View {
-        CustomNavBarInfoView() {
-            Text("TESTE")
-        }
+        CustomNavBarInfo()
     }
 }

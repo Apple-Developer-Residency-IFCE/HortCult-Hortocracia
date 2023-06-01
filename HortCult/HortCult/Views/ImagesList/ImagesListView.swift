@@ -10,8 +10,6 @@ import SwiftUI
 struct ImagesListView: View {
     var body: some View {
         NavigationView {
-            ZStack{
-                HStack(alignment: .top){
                     ScrollView(.horizontal) { // <1>
                         HStack(spacing: 0) { // <2>
                             ForEach(0..<3) { index in
@@ -22,9 +20,9 @@ struct ImagesListView: View {
                             }
                         }
                     }
-                }
-            }
+                    .edgesIgnoringSafeArea(.all)
         }
+       
     }
 }
 
