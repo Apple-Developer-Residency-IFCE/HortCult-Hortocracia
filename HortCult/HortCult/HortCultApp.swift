@@ -21,6 +21,5 @@ struct HortCultApp: App {
                 HomeSplash()
             }
         }
-      
     }
 }
