@@ -14,7 +14,7 @@ struct InformationView: View {
                 
                     CustomNavBarInfoView {
                         
-                          ImagesListView()
+                        ImagesListView()
                     }
                     // CustomNavBarInfoView()
                     

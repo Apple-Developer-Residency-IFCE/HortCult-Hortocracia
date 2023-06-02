@@ -21,6 +21,7 @@ struct ImagesListView: View {
                         }
                     }
                     .edgesIgnoringSafeArea(.all)
+                    
         }
        
     }

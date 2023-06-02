@@ -13,8 +13,6 @@ struct CustomNavBarInfoView<Content: View>: View {
     @ViewBuilder var content: () -> Content
     
     var NavBarInfo : some View {
-        
-            
                 HStack{
                     Button(action:{
                         self.presentationMode.wrappedValue.dismiss()
@@ -24,7 +22,8 @@ struct CustomNavBarInfoView<Content: View>: View {
                     .padding(.leading, 18)
                     Spacer()
                     Text("Voltar").foregroundColor(.white)
-                }
+                }.allowsHitTesting(false)
+            
             
 
     }
@@ -34,7 +33,7 @@ struct CustomNavBarInfoView<Content: View>: View {
                 ZStack {
                     self.content()
                     LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center)
-                                .edgesIgnoringSafeArea(.all)
+                        .edgesIgnoringSafeArea(.all).allowsHitTesting(false)
 //                    HStack{
 //                        Button(action:{
 //                            self.presentationMode.wrappedValue.dismiss()
