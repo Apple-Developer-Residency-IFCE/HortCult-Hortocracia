@@ -9,12 +9,11 @@ import SwiftUI
 
 struct TestScrowView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        @State var cards : [AnyView] = [
+            AnyView(ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor:"LembreteRega", circleColor: "LembreteCircleRega")),
+            AnyView(ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor:"LembreteRega", circleColor: "LembreteCircleRega")),
+            
+        ]
     }
 }
 
-struct TestScrowView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestScrowView()
-    }
-}
