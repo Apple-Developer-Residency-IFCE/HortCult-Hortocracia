@@ -17,7 +17,7 @@ struct Onboarding04: View {
                 TittleSelector(sizeSelector: true, textSelector: "Hora de Cuidar")
                 Description(descriptionText: "Receba lembretes para regar e adubar suas lantas na frequência certa.")
                 VStack{
-                    NavigationLink(destination: TestePseudoHome(), isActive: $showOnboarding) {
+                    NavigationLink(destination: TabBar(), isActive: $showOnboarding) {
                         EmptyView()
                     }
                     Button(action: {
