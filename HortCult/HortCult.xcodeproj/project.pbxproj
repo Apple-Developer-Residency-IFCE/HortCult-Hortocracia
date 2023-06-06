@@ -10,6 +10,8 @@
 		1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2970D2A2E9CBA00C7E64E /* ReminderCard.swift */; };
 		1EE297102A2E9DA900C7E64E /* ScrowViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2970F2A2E9DA900C7E64E /* ScrowViewTest.swift */; };
 		1EE297122A2EB32200C7E64E /* TestScrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE297112A2EB32200C7E64E /* TestScrowView.swift */; };
+		4E12005D2A2FED6400DF78D6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12005C2A2FED6400DF78D6 /* Home.swift */; };
+		4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */; };
 		640AFB792A20113900A31EAF /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB782A20113900A31EAF /* Splash.swift */; };
 		640AFB8B2A20293100A31EAF /* ButtonSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8A2A20293100A31EAF /* ButtonSelector.swift */; };
 		640AFB932A20295200A31EAF /* TestesTelasHortcult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */; };
@@ -59,6 +61,8 @@
 		1EE2970D2A2E9CBA00C7E64E /* ReminderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCard.swift; sourceTree = "<group>"; };
 		1EE2970F2A2E9DA900C7E64E /* ScrowViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrowViewTest.swift; sourceTree = "<group>"; };
 		1EE297112A2EB32200C7E64E /* TestScrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrowView.swift; sourceTree = "<group>"; };
+		4E12005C2A2FED6400DF78D6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVegetable.swift; sourceTree = "<group>"; };
 		640AFB782A20113900A31EAF /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		640AFB8A2A20293100A31EAF /* ButtonSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSelector.swift; sourceTree = "<group>"; };
 		640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestesTelasHortcult.swift; sourceTree = "<group>"; };
@@ -126,9 +130,27 @@
 			path = ReminderScrowView;
 			sourceTree = "<group>";
 		};
+		4E1200592A2FED1000DF78D6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4E12005C2A2FED6400DF78D6 /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4E12005E2A2FEF8E00DF78D6 /* AddVegetable */ = {
+			isa = PBXGroup;
+			children = (
+				4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */,
+			);
+			path = AddVegetable;
+			sourceTree = "<group>";
+		};
 		640AFB642A200E3B00A31EAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E12005E2A2FEF8E00DF78D6 /* AddVegetable */,
+				4E1200592A2FED1000DF78D6 /* Home */,
 				1EE2970C2A2E9CA000C7E64E /* ReminderScrowView */,
 				646726712A2A9E22003A981F /* TabBar */,
 				646726652A2A9E01003A981F /* CardProxRega */,
@@ -382,6 +404,7 @@
 				6467266C2A2A9E01003A981F /* TestCustomNavBarInfoView.swift in Sources */,
 				640AFB792A20113900A31EAF /* Splash.swift in Sources */,
 				641629462A2569D20081493F /* HomeSplash.swift in Sources */,
+				4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */,
 				640B04022A217C0100C66A2A /* TestePseudoHome.swift in Sources */,
 				6467266D2A2A9E01003A981F /* CustomNavBarInfoView.swift in Sources */,
 				6467266E2A2A9E01003A981F /* TestCardProxRegaView.swift in Sources */,
@@ -404,6 +427,7 @@
 				6467266B2A2A9E01003A981F /* ImagesListView.swift in Sources */,
 				1EE297122A2EB32200C7E64E /* TestScrowView.swift in Sources */,
 				646726702A2A9E01003A981F /* DescriptionPlant.swift in Sources */,
+				4E12005D2A2FED6400DF78D6 /* Home.swift in Sources */,
 				6417D96E2A26AD5900479BE2 /* TesteNavigationBarView.swift in Sources */,
 				64FC8EC22A26ADE7002AAA33 /* TestPlantListView.swift in Sources */,
 				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,
