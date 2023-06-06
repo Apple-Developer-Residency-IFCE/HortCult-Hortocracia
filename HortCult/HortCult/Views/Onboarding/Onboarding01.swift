@@ -36,7 +36,7 @@ struct Onboarding01: View {
                     }
                 }.padding(.bottom, 45)
             }
-        }
+        }.navigationBarBackButtonHidden(true)
         
     }
 }

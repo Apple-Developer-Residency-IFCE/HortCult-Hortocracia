@@ -41,7 +41,7 @@ struct Onboarding02: View {
                     }
                 }
                 VStack {
-                    NavigationLink(destination: TestePseudoHome(), isActive: $moveToHome) {
+                    NavigationLink(destination: TabBar(), isActive: $moveToHome) {
                         EmptyView()
                     }
                     Button(action: {
