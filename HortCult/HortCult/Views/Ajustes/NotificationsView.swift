@@ -10,25 +10,39 @@ import SwiftUI
 struct NotificationsView: View {
     
     @State private var selectedOption = 0
-    let options = [ "8:00", "12:00", "14:00"]
+    let options = ["00:00", "8:00", "12:00", "14:00"]
 
     var body: some View {
         VStack(alignment: .leading){
             Text("Notificações")
                 .font(Font.custom("Satoshi-Regular", size: 16))
+            
+            Text("Horário")
+                .font(Font.custom("Satoshi-Regular", size: 12))
+                .padding(.top, 24)
             HStack{
-                
-                Text("Horário")
-                    .font(Font.custom("Satoshi-Regular", size: 12))
-                    .padding(.top, 24)
-                Picker("Selecione uma opção", selection: $selectedOption) {
-                    ForEach(0..<options.count) { index in
-                        Text(options[index])
+                Button{
+                    
+                } label:{
+                    Picker("Selecione uma opção", selection: $selectedOption) {
+                        ForEach(0..<options.count) { index in
+                            Text(options[index])
+                        }
                     }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .padding()
+                    .pickerStyle(MenuPickerStyle())
+                    .padding(.leading, 16)
+                    Spacer()
+                    Image("Relogio")
+                        .padding(.trailing, 11)
+                    
+                }.frame(width: 350, height: 38)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke(Color("Cinza"), lineWidth: 1)
+                        
+                    )
             }
+                
         }.padding(.leading, 20)
     
         
