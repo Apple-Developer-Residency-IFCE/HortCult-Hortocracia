@@ -17,12 +17,12 @@ struct ScrollViewWithHeader: View{
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Lembrete")
+            Text("Lembretes")
                 .font(.title)
                 .fontWeight(.bold)
                 .padding()
                 .foregroundColor(Color("H1Color"))
-                .padding(.leading, 5)
+                .padding(.leading, -3)
             
             ScrollView(.vertical) {
                 LazyVStack(spacing: 12) {
