@@ -12,7 +12,6 @@ struct TestarListaPlantasView: View {
     @State var images: [String] = ["Tomatinho","Abobrinha","Tomatinho2","Abobrinha2"]
     var body: some View {
         VStack{
-
             ListaPlantasView(images: $images)
         }
 

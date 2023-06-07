@@ -17,7 +17,7 @@ struct ListaPlantasView: View {
                 Text("Minha Horta")
                     .font(Font.custom("Satoshi-Black", size: 28))
                     .foregroundColor(Color("VerdeEscuro"))
-
+                
                 Button {
                     //Action do botão
                 } label: {
@@ -27,29 +27,26 @@ struct ListaPlantasView: View {
                 .background(Color("VerdeEscuro"))
                 .cornerRadius(40)
             }
-
+            
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {
                     ForEach(images, id: \.self) { imageName in
                         VStack(spacing: 0){
-
+                            
                             Image(imageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 140,height: 110)
                             Text(imageName)
                                 .font(Font.custom("Satoshi-Regular", size: 16))
                                 .foregroundColor(Color("CinzaEscuro"))
+                                .padding(.vertical, 9)
                         }.background(Color("BrancoMinhaHorta"))
-                        .cornerRadius(12)
-
+                            .cornerRadius(12)
+                        
                     }
                 }
             }.padding(.leading, 20.0).frame(maxHeight: 150)
-
-
-
-
+            
         }
 
     }

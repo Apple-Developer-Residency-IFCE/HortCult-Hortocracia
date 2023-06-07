@@ -13,32 +13,47 @@ struct AjustesView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading){
-            
-            HStack{
-                Text("Ajustes")
-                    .font(Font.custom("Satoshi-Regular", size: 28))
-                    .foregroundColor(Color("VerdeEscuro"))
-            }.padding(.leading, 24)
-                .padding(.bottom, 20)
-            HStack{
-                Text("Tema")
-                    .font(Font.custom("Satoshi-Regular", size: 18))
-                    .foregroundColor(Color("VerdeEscuro"))
-                Spacer()
+        NavigationView {
+            VStack(alignment: .leading){
                 
-            }.padding(.leading, 20)
-            HStack{
-                Text("Notificações Push")
-                    .font(Font.custom("Satoshi-Regular", size: 18))
-                    .foregroundColor(Color("VerdeEscuro"))
-                Spacer()
-                Toggle("", isOn: $isToggleOn)
-            }.padding(.leading, 20)
-                .padding(.bottom, 16)
-            
-            if(isToggleOn){
-                NotificationsView()
+                HStack{
+                    Text("Ajustes")
+                        .font(Font.custom("Satoshi-Regular", size: 28))
+                        .foregroundColor(Color("VerdeEscuro"))
+                }.padding(.leading, 24)
+                    .padding(.bottom, 20)
+                HStack{
+                    Text("Tema")
+                        .font(Font.custom("Satoshi-Regular", size: 18))
+                        .foregroundColor(Color("VerdeEscuro"))
+                    Spacer()
+                    NavigationLink {
+                        Onboarding01()
+                    } label: {
+                        HStack {
+                            Text("Claro")
+                                .font(Font.custom("Satoshi-Regular", size: 16))
+                                .foregroundColor(Color("Preto"))
+                                .padding(.trailing, 6)
+                            Image("Arrow-Right")
+                                .padding(.trailing, 20)
+                        }
+                    }
+                }
+                .padding(.leading, 20)
+                HStack{
+                    Text("Notificações Push")
+                        .font(Font.custom("Satoshi-Regular", size: 18))
+                        .foregroundColor(Color("VerdeEscuro"))
+                    Spacer()
+                    Toggle("", isOn: $isToggleOn)
+                        .padding(.trailing, 20)
+                }.padding(.leading, 20)
+                    .padding(.bottom, 16)
+                
+                if(isToggleOn){
+                    NotificationsView()
+                }
             }
         }
     }
