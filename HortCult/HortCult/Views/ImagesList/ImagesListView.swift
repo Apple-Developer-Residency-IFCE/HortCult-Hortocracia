@@ -14,9 +14,8 @@ struct ImagesListView: View {
                         HStack(spacing: 0) { // <2>
                             ForEach(0..<3) { index in
                                 Image("Tomatinho")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: UIScreen.main.bounds.width, alignment: .center)
+                                    .frame(maxWidth: .infinity)
+                                    
                             }
                         }
                     }

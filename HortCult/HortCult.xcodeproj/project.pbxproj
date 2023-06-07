@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47E37B3B2A2FFE2D00D9A2A4 /* DescriptionPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E37B3A2A2FFE2D00D9A2A4 /* DescriptionPlant.swift */; };
+		47E37B3F2A2FFE5A00D9A2A4 /* TestCardProxRegaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E37B3D2A2FFE5A00D9A2A4 /* TestCardProxRegaView.swift */; };
+		47E37B402A2FFE5A00D9A2A4 /* CardProxRegaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E37B3E2A2FFE5A00D9A2A4 /* CardProxRegaView.swift */; };
 		640AFB792A20113900A31EAF /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB782A20113900A31EAF /* Splash.swift */; };
 		640AFB8B2A20293100A31EAF /* ButtonSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8A2A20293100A31EAF /* ButtonSelector.swift */; };
 		640AFB932A20295200A31EAF /* TestesTelasHortcult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */; };
@@ -49,6 +52,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47E37B3A2A2FFE2D00D9A2A4 /* DescriptionPlant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionPlant.swift; sourceTree = "<group>"; };
+		47E37B3D2A2FFE5A00D9A2A4 /* TestCardProxRegaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCardProxRegaView.swift; sourceTree = "<group>"; };
+		47E37B3E2A2FFE5A00D9A2A4 /* CardProxRegaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardProxRegaView.swift; sourceTree = "<group>"; };
 		640AFB782A20113900A31EAF /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		640AFB8A2A20293100A31EAF /* ButtonSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSelector.swift; sourceTree = "<group>"; };
 		640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestesTelasHortcult.swift; sourceTree = "<group>"; };
@@ -102,9 +108,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47E37B392A2FFE2D00D9A2A4 /* InfoPlant */ = {
+			isa = PBXGroup;
+			children = (
+				47E37B3A2A2FFE2D00D9A2A4 /* DescriptionPlant.swift */,
+			);
+			path = InfoPlant;
+			sourceTree = "<group>";
+		};
+		47E37B3C2A2FFE5A00D9A2A4 /* CardProxRega */ = {
+			isa = PBXGroup;
+			children = (
+				47E37B3D2A2FFE5A00D9A2A4 /* TestCardProxRegaView.swift */,
+				47E37B3E2A2FFE5A00D9A2A4 /* CardProxRegaView.swift */,
+			);
+			path = CardProxRega;
+			sourceTree = "<group>";
+		};
 		640AFB642A200E3B00A31EAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47E37B3C2A2FFE5A00D9A2A4 /* CardProxRega */,
+				47E37B392A2FFE2D00D9A2A4 /* InfoPlant */,
 				6423C5A62A281848000AFBD2 /* InformationScreen */,
 				6423C5A32A280F46000AFBD2 /* ImagesList */,
 				6484073C2A26C2A6007E8D35 /* CustomNavBarInfo */,
@@ -318,6 +343,7 @@
 			files = (
 				640AFB972A20295200A31EAF /* Description.swift in Sources */,
 				640AFB792A20113900A31EAF /* Splash.swift in Sources */,
+				47E37B402A2FFE5A00D9A2A4 /* CardProxRegaView.swift in Sources */,
 				6423C5A52A280F74000AFBD2 /* ImagesListView.swift in Sources */,
 				641629462A2569D20081493F /* HomeSplash.swift in Sources */,
 				640B04022A217C0100C66A2A /* TestePseudoHome.swift in Sources */,
@@ -332,6 +358,7 @@
 				640AFB982A20295200A31EAF /* HortCultLogo.swift in Sources */,
 				6484073E2A26C2CF007E8D35 /* CustomNavBarInfoView.swift in Sources */,
 				6438A9222A1D7730006021DA /* ContentView.swift in Sources */,
+				47E37B3F2A2FFE5A00D9A2A4 /* TestCardProxRegaView.swift in Sources */,
 				64FC8EC02A26ACAB002AAA33 /* PlantListView.swift in Sources */,
 				640AFB942A20295200A31EAF /* SecondButton.swift in Sources */,
 				640AFB952A20295200A31EAF /* TittleSelector.swift in Sources */,
@@ -340,6 +367,7 @@
 				6417D96E2A26AD5900479BE2 /* TesteNavigationBarView.swift in Sources */,
 				64FC8EC22A26ADE7002AAA33 /* TestPlantListView.swift in Sources */,
 				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,
+				47E37B3B2A2FFE2D00D9A2A4 /* DescriptionPlant.swift in Sources */,
 				6423C5A82A28188D000AFBD2 /* InformationView.swift in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 				640B03FC2A215ADE00C66A2A /* Onboarding04.swift in Sources */,
