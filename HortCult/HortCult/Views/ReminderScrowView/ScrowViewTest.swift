@@ -16,7 +16,7 @@ struct ScrollViewWithHeader: View {
     
     var body: some View {
             VStack(alignment: .leading) {
-                Text("Lembrete")
+                Text("Lembretes")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
@@ -25,7 +25,7 @@ struct ScrollViewWithHeader: View {
                 
                 ScrollView(.vertical) {
                     LazyVStack(spacing: 12) {
-                        ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")
+                        ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")
                         
 //                        ForEach(cards, id: \.self) { card in
 //                            card.listRowInsets(EdgeInsets())
