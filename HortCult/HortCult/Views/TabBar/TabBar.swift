@@ -48,6 +48,8 @@ struct TabBar: View {
                 }
             }
         }.ignoresSafeArea(edges: .bottom)
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 
