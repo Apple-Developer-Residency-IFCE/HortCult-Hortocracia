@@ -115,6 +115,7 @@
 		640AFB642A200E3B00A31EAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				640AFB652A200E6500A31EAF /* Onboarding */,
 				6ABFB64F2A2EAF1E009FF0FD /* InfoPlant */,
 				646F160F2A2965330091EE21 /* Ajustes */,
 				646F160A2A2958F50091EE21 /* CardProxRega */,
@@ -123,7 +124,6 @@
 				6484073C2A26C2A6007E8D35 /* CustomNavBarInfo */,
 				6417D96C2A26AD4600479BE2 /* NavBar */,
 				64FC8EBE2A26AC77002AAA33 /* PlantList */,
-				640AFB652A200E6500A31EAF /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";

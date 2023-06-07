@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TestarListaPlantasView: View {
 
-    @State var images: [String] = ["Tomatinho","Abobrinha","Tomatinho2","Abobrinha2"]
+    @State var images: [String] = ["Tomatinho","amico(1)","amico-1(1)","Tomatinho3"]
     var body: some View {
         VStack{
             ListaPlantasView(images: $images)

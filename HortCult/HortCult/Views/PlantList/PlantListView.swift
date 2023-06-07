@@ -31,16 +31,20 @@ struct ListaPlantasView: View {
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {
                     ForEach(images, id: \.self) { imageName in
-                        VStack(spacing: 0){
+                        VStack{
                             
                             Image(imageName)
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(maxHeight: 110)
+                                .clipped()
+                            Spacer()
                             Text(imageName)
                                 .font(Font.custom("Satoshi-Regular", size: 16))
                                 .foregroundColor(Color("CinzaEscuro"))
-                                .padding(.vertical, 9)
-                        }.background(Color("BrancoMinhaHorta"))
+                                .padding(.bottom, 9)
+                        }.frame(width: 140, height: 150)
+                            .background(Color("BrancoMinhaHorta"))
                             .cornerRadius(12)
                         
                     }
