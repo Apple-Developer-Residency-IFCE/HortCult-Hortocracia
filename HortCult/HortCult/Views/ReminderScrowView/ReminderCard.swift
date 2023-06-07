@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ReminderCardView: View {
+    //var id = UUID()
     var imagem: String
     var titulo : String
     var descricao: String
@@ -27,12 +28,14 @@ struct ReminderCardView: View {
             VStack(alignment: .leading){
 
                 Text(titulo)
-                    .font(Font.custom("Satoshi-Regular", size: 18))
+                    .font(.headline)
+                    .font(.system(size: 18))
                     .foregroundColor(.black)
                     .bold()
 
                 Text(descricao)
-                    .font(Font.custom("Satoshi-Regular", size: 16))
+                    .font(.subheadline)
+                    .font(.system(size: 16))
                     .foregroundColor(Color("CinzaEscuro"))
 
                 Button{
