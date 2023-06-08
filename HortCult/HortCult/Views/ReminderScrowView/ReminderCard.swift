@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReminderCardView: View {
-    //var id = UUID()
+    var id = UUID()
     var imagem: String
     var titulo : String
     var descricao: String
@@ -24,7 +24,6 @@ struct ReminderCardView: View {
                 .cornerRadius(60)
                 .padding(.leading, 20)
                 .foregroundColor(.yellow)
-
             VStack(alignment: .leading){
 
                 Text(titulo)
@@ -55,12 +54,11 @@ struct ReminderCardView: View {
         }.frame(width: 350, height: 118)
             .background(Color(cardColor))
             .cornerRadius(12)
-
     }
 }
 
 struct ReminderCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderCardView(imagem: "", titulo: "", descricao: "", cardColor: "", circleColor: "")
+        ReminderCardView(id: UUID(), imagem: "", titulo: "", descricao: "", cardColor: "", circleColor: "")
     }
 }
