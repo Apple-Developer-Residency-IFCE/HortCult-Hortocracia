@@ -16,7 +16,7 @@ struct NotificationsView: View {
         VStack(alignment: .leading){
             Text("Notificações")
                 .font(Font.custom("Satoshi-Regular", size: 16))
-            
+                .bold()
             Text("Horário")
                 .font(Font.custom("Satoshi-Regular", size: 12))
                 .padding(.top, 24)
