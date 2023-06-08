@@ -23,7 +23,7 @@ struct TabBar: View {
         VStack(spacing: 0) {
             switch selectedTab {
             case 0:
-                Onboarding01()
+                Home()
             case 1:
                 Onboarding02()
             default:
@@ -48,6 +48,8 @@ struct TabBar: View {
                 }
             }
         }.ignoresSafeArea(edges: .bottom)
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 

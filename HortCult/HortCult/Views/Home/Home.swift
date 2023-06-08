@@ -12,8 +12,9 @@ struct Home: View {
     
     var body: some View {
         NavigationView {
-            VStack{
+            ScrollView(.vertical){
                 ListaPlantasView(images: $images)
+                    .padding(.top, 20)
                 ScrollViewWithHeader()
             }.toolbar(){
                 ToolbarItem(placement: .navigationBarLeading) {
