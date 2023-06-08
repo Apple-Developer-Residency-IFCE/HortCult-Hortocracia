@@ -10,21 +10,19 @@ import SwiftUI
 struct ImagesListView: View {
     var body: some View {
         NavigationView {
-            ZStack{
-                HStack(alignment: .top){
                     ScrollView(.horizontal) { // <1>
                         HStack(spacing: 0) { // <2>
                             ForEach(0..<3) { index in
                                 Image("Tomatinho")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: UIScreen.main.bounds.width, alignment: .center)
+                                    .frame(maxWidth: .infinity)
+                                    
                             }
                         }
                     }
-                }
-            }
+                    .edgesIgnoringSafeArea(.all)
+                    
         }
+       
     }
 }
 

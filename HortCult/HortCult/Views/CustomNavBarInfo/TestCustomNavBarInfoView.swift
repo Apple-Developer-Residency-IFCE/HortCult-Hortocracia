@@ -6,26 +6,26 @@
 //
 
 import SwiftUI
-
-struct TesteImageListView: View {
-    var body: some View {
-        NavigationView{
-            NavigationLink(destination: CustomNavBarInfoView()){
-                Image("Add")
-                
-                
-            }
-            .toolbar(){
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image("Topbar")
-                }
-            }
-            
-        }    }
-}
-
-struct TesteImageListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TesteImageListView()
-    }
-}
+//
+//struct TesteImageListView: View {
+//    var body: some View {
+//        NavigationView{
+//            NavigationLink(destination: CustomNavBarInfoView()){
+//                Image("Add")
+//                
+//                
+//            }
+//            .toolbar(){
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    Image("Topbar")
+//                }
+//            }
+//            
+//        }    }
+//}
+//
+//struct TesteImageListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TesteImageListView()
+//    }
+//}
