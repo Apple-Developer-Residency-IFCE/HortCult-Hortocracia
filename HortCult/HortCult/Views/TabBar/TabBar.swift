@@ -25,7 +25,7 @@ struct TabBar: View {
             case 0:
                 Home()
             case 1:
-                Onboarding02()
+                AjustesView()
             default:
                 EmptyView()
             }
