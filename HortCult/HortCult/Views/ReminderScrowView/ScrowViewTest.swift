@@ -24,7 +24,7 @@ struct ScrollViewWithHeader: View{
                 .fontWeight(.bold)
                 .padding()
                 .foregroundColor(Color("H1Color"))
-                .padding(.leading, -3)
+                .padding(.leading, 5)
             
             ScrollView(.vertical) {
                 LazyVStack(spacing: 12) {
