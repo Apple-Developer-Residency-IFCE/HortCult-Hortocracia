@@ -15,9 +15,12 @@ struct ListaPlantasView: View {
         VStack(spacing: 20){
             HStack(spacing: 170.0){
                 Text("Minha Horta")
-                    .font(Font.custom("Satoshi-Black", size: 28))
-                    .foregroundColor(Color("VerdeEscuro"))
-                
+                    //.font(Font.custom("Satoshi-Black", size: 28))
+                    //.foregroundColor(Color("VerdeEscuro"))
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("H1Color"))
+                    .padding(.leading, 5)
                 Button {
                     //Action do botão
                 } label: {
@@ -25,7 +28,7 @@ struct ListaPlantasView: View {
                 }
                 .frame(width: 32, height: 32)
                 .background(Color("VerdeEscuro"))
-                .cornerRadius(40)
+                .cornerRadius(50)
             }
             
             ScrollView(.horizontal) {
