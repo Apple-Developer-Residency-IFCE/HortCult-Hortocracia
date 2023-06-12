@@ -39,7 +39,7 @@ struct AjustesView: View {
                                     .font(Font.custom("Satoshi-Regular", size: 16))
                                     .foregroundColor(Color("Preto"))
                                     .padding(.trailing, 6)
-                                Image("Arrow-Right")
+                                Image("ArrowRight")
                                     .padding(.trailing, 20)
                             }
                         }
