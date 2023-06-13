@@ -56,7 +56,9 @@
 		646F16132A29654D0091EE21 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646F16122A29654D0091EE21 /* NotificationsView.swift */; };
 		64FC8EC02A26ACAB002AAA33 /* PlantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FC8EBF2A26ACAB002AAA33 /* PlantListView.swift */; };
 		64FC8EC22A26ADE7002AAA33 /* TestPlantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FC8EC12A26ADE7002AAA33 /* TestPlantListView.swift */; };
-		6A6D5FC92A31491F007FB384 /* ImagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D5FC82A31491F007FB384 /* ImagesListView.swift */; };
+		6A0D531A2A39160700AA5554 /* ImagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D53182A39160700AA5554 /* ImagesListView.swift */; };
+		6A0D531B2A39160700AA5554 /* CustomNavBarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */; };
+		6A6D5FC92A31491F007FB384 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		6A6D5FCC2A3149BE007FB384 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D5FCB2A3149BE007FB384 /* InformationView.swift */; };
 		6ABFB6512A2EAF1E009FF0FD /* DescriptionPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABFB6502A2EAF1E009FF0FD /* DescriptionPlant.swift */; };
 		6AF2ECDE2A37C8840035FF28 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2ECDD2A37C8840035FF28 /* ThemeView.swift */; };
@@ -114,6 +116,8 @@
 		646F16122A29654D0091EE21 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		64FC8EBF2A26ACAB002AAA33 /* PlantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListView.swift; sourceTree = "<group>"; };
 		64FC8EC12A26ADE7002AAA33 /* TestPlantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlantListView.swift; sourceTree = "<group>"; };
+		6A0D53182A39160700AA5554 /* ImagesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesListView.swift; sourceTree = "<group>"; };
+		6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBarInfo.swift; sourceTree = "<group>"; };
 		6A6D5FCB2A3149BE007FB384 /* InformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		6ABFB6502A2EAF1E009FF0FD /* DescriptionPlant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionPlant.swift; sourceTree = "<group>"; };
 		6AF2ECDD2A37C8840035FF28 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
@@ -176,10 +180,10 @@
 		640AFB642A200E3B00A31EAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6A0D53172A39160700AA5554 /* ImagesList */,
 				6AF2ECDC2A37C84E0035FF28 /* Theme */,
 				47371CA52A31558D00FF3114 /* CustomNavBarInfo */,
 				6A6D5FCA2A3149BE007FB384 /* InformationScreen */,
-				6A6D5FC72A31491F007FB384 /* ImagesList */,
 				4E12005E2A2FEF8E00DF78D6 /* AddVegetable */,
 				4E1200592A2FED1000DF78D6 /* Home */,
 				1EE2970C2A2E9CA000C7E64E /* ReminderScrowView */,
@@ -279,7 +283,6 @@
 		6438A9252A1D7731006021DA /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				642EEC242A1D8607009206D2 /* Tipografia */,
 				6438A9262A1D7731006021DA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -329,10 +332,11 @@
 			path = PlantList;
 			sourceTree = "<group>";
 		};
-		6A6D5FC72A31491F007FB384 /* ImagesList */ = {
+		6A0D53172A39160700AA5554 /* ImagesList */ = {
 			isa = PBXGroup;
 			children = (
-				6A6D5FC82A31491F007FB384 /* ImagesListView.swift */,
+				6A0D53182A39160700AA5554 /* ImagesListView.swift */,
+				6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */,
 			);
 			path = ImagesList;
 			sourceTree = "<group>";
@@ -456,12 +460,13 @@
 				640AFB9B2A2029FC00A31EAF /* Onboarding01.swift in Sources */,
 				646F16132A29654D0091EE21 /* NotificationsView.swift in Sources */,
 				640AFB992A20295200A31EAF /* TesteScrowview.swift in Sources */,
-				6A6D5FC92A31491F007FB384 /* ImagesListView.swift in Sources */,
+				6A6D5FC92A31491F007FB384 /* (null) in Sources */,
 				6417D9712A26AD6A00479BE2 /* CustomNavigationBarView.swift in Sources */,
 				640AFB932A20295200A31EAF /* TestesTelasHortcult.swift in Sources */,
 				646F16112A2965420091EE21 /* AjustesView.swift in Sources */,
 				642EEC3A2A1D8FBB009206D2 /* MinhaHortaView.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
+				6A0D531B2A39160700AA5554 /* CustomNavBarInfo.swift in Sources */,
 				640AFB982A20295200A31EAF /* HortCultLogo.swift in Sources */,
 				6438A9222A1D7730006021DA /* ContentView.swift in Sources */,
 				6ABFB6512A2EAF1E009FF0FD /* DescriptionPlant.swift in Sources */,
@@ -477,6 +482,7 @@
 				4E12005D2A2FED6400DF78D6 /* Home.swift in Sources */,
 				6417D96E2A26AD5900479BE2 /* TesteNavigationBarView.swift in Sources */,
 				64FC8EC22A26ADE7002AAA33 /* TestPlantListView.swift in Sources */,
+				6A0D531A2A39160700AA5554 /* ImagesListView.swift in Sources */,
 				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 				1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */,
