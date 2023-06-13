@@ -12,25 +12,6 @@ struct AjustesView: View {
     @State private var isToggleOn = false
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    var NavBar : some View {
-        ZStack {
-            Image("Topbar")
-            HStack {
-                Button(action:{
-                    self.presentationMode.wrappedValue.dismiss()
-                } ) {
-                    Image("Arrow-Left")
-                }
-                .padding(.leading, 18)
-                Spacer()
-                    
-            }
-        }
-        
-    }
-    
     var body: some View {
         
         NavigationView {
