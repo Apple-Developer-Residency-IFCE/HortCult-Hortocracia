@@ -10,12 +10,19 @@ import SwiftUI
 struct ImagesListView: View {
     var body: some View {
         NavigationView {
+            
                     ScrollView(.horizontal) { // <1>
+                        
                         HStack(spacing: 0) { // <2>
+                            
                             ForEach(0..<3) { index in
-                                Image("Tomatinho")
-                                    .frame(maxWidth: .infinity)
-                                    
+                                ZStack{
+                                   
+                                    Image("Tomatinho")
+                                        .frame(maxWidth: .infinity)
+                                    LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center)
+                                        .edgesIgnoringSafeArea(.all).allowsHitTesting(false)
+                                }
                             }
                         }
                     }
