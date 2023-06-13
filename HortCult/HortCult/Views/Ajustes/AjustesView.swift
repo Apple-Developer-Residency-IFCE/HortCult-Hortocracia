@@ -10,6 +10,26 @@ import SwiftUI
 struct AjustesView: View {
     
     @State private var isToggleOn = false
+    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var NavBar : some View {
+        ZStack {
+            Image("Topbar")
+            HStack {
+                Button(action:{
+                    self.presentationMode.wrappedValue.dismiss()
+                } ) {
+                    Image("Arrow-Left")
+                }
+                .padding(.leading, 18)
+                Spacer()
+                    
+            }
+        }
+        
+    }
     
     var body: some View {
         
@@ -32,13 +52,32 @@ struct AjustesView: View {
                             .bold()
                         Spacer()
                         NavigationLink {
-                            Onboarding01()
+                            ThemeView()
                         } label: {
                             HStack {
-                                Text("Claro")
-                                    .font(Font.custom("Satoshi-Regular", size: 16))
-                                    .foregroundColor(Color("Preto"))
-                                    .padding(.trailing, 6)
+                                switch selectedTheme {
+                                        case .Claro:
+                                            Text("Claro")
+                                                .font(Font.custom("Satoshi-Regular", size: 16))
+                                                .foregroundColor(Color("Preto"))
+                                                .padding(.trailing, 6)
+                                        case .Escuro:
+                                            Text("Escuro")
+                                                .font(Font.custom("Satoshi-Regular", size: 16))
+                                                .foregroundColor(Color("Preto"))
+                                                .padding(.trailing, 6)
+                                        case .Padrao:
+                                            Text("Padrão")
+                                                .font(Font.custom("Satoshi-Regular", size: 16))
+                                                .foregroundColor(Color("Preto"))
+                                                .padding(.trailing, 6)
+                                        case .none:
+                                            Text("Claro")
+                                                .font(Font.custom("Satoshi-Regular", size: 16))
+                                                .foregroundColor(Color("Preto"))
+                                                .padding(.trailing, 6)
+                                }
+                                    
                                 Image("ArrowRight")
                                     .padding(.trailing, 20)
                             }
@@ -75,7 +114,11 @@ struct AjustesView: View {
         }
         .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
+        
+        
+        
     }
+    
 }
 
 struct AjustesView_Previews: PreviewProvider {
