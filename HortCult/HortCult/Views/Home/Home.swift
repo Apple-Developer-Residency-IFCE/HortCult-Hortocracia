@@ -21,7 +21,7 @@ struct Home: View {
                     Image("Topbar")
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
@@ -30,13 +30,3 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
-
-
-//@State var images: [String] = ["Tomatinho","Abobrinha","Tomatinho2","Abobrinha2"]
-//var body: some View {
-//    VStack{
-//
-//        ListaPlantasView(images: $images)
-//    }
-//
-//}

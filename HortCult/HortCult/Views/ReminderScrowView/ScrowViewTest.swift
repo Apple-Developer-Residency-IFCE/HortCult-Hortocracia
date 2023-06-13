@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ScrollViewWithHeader: View{
     
     @State var cards: [ReminderCardView] = [

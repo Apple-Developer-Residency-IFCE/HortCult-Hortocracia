@@ -13,19 +13,18 @@ struct CustomNavBarInfoView<Content: View>: View {
     @ViewBuilder var content: () -> Content
     
     var NavBarInfo : some View {
+        
                 HStack{
                     Button(action:{
                         self.presentationMode.wrappedValue.dismiss()
                     } ) {
                         Image("Arrow-Left-Light")
+                        Text("Voltar").foregroundColor(.white)
                     }
                     .padding(.leading, 18)
                     Spacer()
-                    Text("Voltar").foregroundColor(.white)
-                }.allowsHitTesting(false)
-            
-            
-
+                    
+                }.allowsHitTesting(true)
     }
     
         var body: some View {

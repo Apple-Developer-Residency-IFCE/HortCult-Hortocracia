@@ -80,12 +80,12 @@ struct InformationView: View {
                             RoundedRectangle(cornerRadius: 40)
                                 .stroke(Color("Vermelho"), lineWidth: 2)
                         )
-                    }
+                    }.padding(.bottom, 50)
                     
                 }
                 
             }.ignoresSafeArea(.all)
-                
+            
         }
         .navigationBarHidden(true)
         
