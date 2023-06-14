@@ -16,7 +16,7 @@ struct AjustesView: View {
         
         NavigationView {
                 VStack(alignment: .leading){
-                    Image("Topbar")
+                    Image(selectedTheme == .Escuro ? "Topbardark" : "Topbar")
                     
                     HStack{
                         Text("Ajustes")
