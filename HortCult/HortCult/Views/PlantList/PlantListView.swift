@@ -20,7 +20,7 @@ struct ListaPlantasView: View {
                 //.foregroundColor(Color("VerdeEscuro"))
                     .font(.title)
                     .fontWeight(.bold)
-                    .foregroundColor(Color("H1Color"))
+                    .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
                 NavigationLink {
                     Onboarding01()
@@ -43,7 +43,7 @@ struct ListaPlantasView: View {
                                 Image(imageName)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(maxHeight: 110)
+                                    .frame(maxHeight: 115)
                                     .clipped()
                                 //Spacer()
                                 Text(imageName)

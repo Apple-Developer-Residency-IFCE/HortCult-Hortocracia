@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TabBar: View {
     @State private var selectedTab: Int = 0
+    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     
     struct TabBarButton: View {
         let tabIcon: String
@@ -31,9 +32,9 @@ struct TabBar: View {
             }
             Spacer()
             ZStack(alignment: .center) {
-                Color.white
+                Color("BrancoTabBar")
                     .frame(height: 80)
-                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                    .shadow(color: Color("Preto").opacity(0.2), radius: 5, x: 0, y: 2)
                 
                 HStack(spacing: 0) {
                     Spacer()
@@ -49,6 +50,7 @@ struct TabBar: View {
             }
         }.ignoresSafeArea(edges: .bottom)
         .navigationBarBackButtonHidden(true)
+        .preferredColorScheme(selectedTheme == .Claro ? .light : (selectedTheme == .Escuro ? .dark : .none))
 
     }
 }

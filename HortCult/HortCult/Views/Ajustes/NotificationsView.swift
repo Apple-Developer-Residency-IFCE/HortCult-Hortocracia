@@ -54,11 +54,6 @@ struct NotificationsView: View {
                     .labelsHidden()
                     .padding(.leading, 16)
                     .environment(\.locale, Locale(identifier: "pt_BR"))
-                    Button{
-                        isHourSelectVisible.toggle()
-                    } label: {
-                        Text("Confirmar")
-                    }
                 }
             }
             
