@@ -15,6 +15,7 @@
 		47371CA92A31558D00FF3114 /* CustomNavBarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47371CA72A31558D00FF3114 /* CustomNavBarInfoView.swift */; };
 		4E12005D2A2FED6400DF78D6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12005C2A2FED6400DF78D6 /* Home.swift */; };
 		4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */; };
+		4E9343462A393CBF0000DA28 /* NameDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9343452A393CBF0000DA28 /* NameDescription.swift */; };
 		640AFB792A20113900A31EAF /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB782A20113900A31EAF /* Splash.swift */; };
 		640AFB8B2A20293100A31EAF /* ButtonSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8A2A20293100A31EAF /* ButtonSelector.swift */; };
 		640AFB932A20295200A31EAF /* TestesTelasHortcult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */; };
@@ -73,6 +74,7 @@
 		47371CA72A31558D00FF3114 /* CustomNavBarInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBarInfoView.swift; sourceTree = "<group>"; };
 		4E12005C2A2FED6400DF78D6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVegetable.swift; sourceTree = "<group>"; };
+		4E9343452A393CBF0000DA28 /* NameDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDescription.swift; sourceTree = "<group>"; };
 		640AFB782A20113900A31EAF /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		640AFB8A2A20293100A31EAF /* ButtonSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSelector.swift; sourceTree = "<group>"; };
 		640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestesTelasHortcult.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */,
+				4E9343452A393CBF0000DA28 /* NameDescription.swift */,
 			);
 			path = AddVegetable;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 				1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */,
+				4E9343462A393CBF0000DA28 /* NameDescription.swift in Sources */,
 				640B03FC2A215ADE00C66A2A /* Onboarding04.swift in Sources */,
 				646726732A2A9E43003A981F /* TabBar.swift in Sources */,
 			);
