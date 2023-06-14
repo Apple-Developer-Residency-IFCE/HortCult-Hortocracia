@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct NameDescription: View {
+    
+    @State private var text: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("Adicionar Vegetal")
+                .font(.title)
+                .font(.system(size: 28))
+                .fontWeight(.bold)
+                .padding()
+                .foregroundColor(Color("H1Color"))
+            Text("Nome")
+                .foregroundColor(Color("Cinza"))
+                .fontWeight(.light)
+                .font(.system(size: 12))
+            TextField("Insira um nome", text: $text)
+                //.textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 50)
+                        .stroke(Color("Cinza"), lineWidth: 1)
+                )               // .border(.blue)
+
+
+        }
+        .padding()
+        .border(.red)
     }
 }
 

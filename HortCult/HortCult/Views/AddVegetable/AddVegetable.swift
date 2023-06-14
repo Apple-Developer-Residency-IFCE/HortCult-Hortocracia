@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct AddVegetable: View {
+    
     var body: some View {
-        Text("Adicionar Vegetal")
+        Text("oi")
     }
 }
 
