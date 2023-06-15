@@ -60,7 +60,8 @@ struct AjustesView: View {
                                     .padding(.trailing, 6)
                             }
                             
-                            Image("ArrowRight")
+                            Image(selectedTheme == .Escuro ? "DropdownLight" : "Dropdown")
+                                .rotationEffect(Angle(degrees: -90))
                                 .padding(.trailing, 20)
                         }
                     }
