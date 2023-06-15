@@ -10,18 +10,18 @@ import SwiftUI
 struct AddVegetable: View {
     
     var body: some View {
+        
         NavigationView {
-            ScrollView(.vertical){
+            ScrollView(.vertical){                
                 AddEditTitle(addEdit: true)
                 NameDescription()
-            }.toolbar(){
+            }
+            .toolbar(){
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image("Topbar")
                 }
             }
         }
-
-
     }
 }
 
