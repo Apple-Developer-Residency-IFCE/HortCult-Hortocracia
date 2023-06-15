@@ -59,7 +59,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         }
     }
     
-    private func cancelScheduledNotification() {
+    func cancelScheduledNotification() {
         guard let identifier = notificationRequest?.identifier else {
             return
         }
