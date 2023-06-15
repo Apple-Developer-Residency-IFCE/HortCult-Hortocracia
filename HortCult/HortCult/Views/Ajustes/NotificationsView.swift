@@ -49,13 +49,15 @@ struct NotificationsView: View {
                                 set: { selectedHour = stringFromDate($0) }
                                ),
                                displayedComponents: .hourAndMinute
-                    )
+                    ).frame(height: 175)
                     .datePickerStyle(.wheel)
                     .labelsHidden()
                     .padding(.leading, 16)
                     .environment(\.locale, Locale(identifier: "pt_BR"))
                     Button{
                         isHourSelectVisible.toggle()
+                        NotificationManager.shared.scheduleNotificationConverter(timeString: selectedHour)
+                        
                     } label: {
                         Text("Confirmar")
                     }
@@ -63,7 +65,10 @@ struct NotificationsView: View {
             }
             
         }.padding(.leading, 20)
-    
+//            .onChange(of: selectedHour) { newValue in
+//                NotificationManager.shared.scheduleNotificationConverter(timeString: newValue)
+//            }
+
         
     }
     

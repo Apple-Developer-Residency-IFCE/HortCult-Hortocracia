@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct AddVegetable: View {
+    
     var body: some View {
-        Text("Adicionar Vegetal")
+        NavigationView {
+            ScrollView(.vertical){
+                AddEditTitle(addEdit: true)
+                NameDescription()
+            }.toolbar(){
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("Topbar")
+                }
+            }
+        }
+
+
     }
 }
 
@@ -18,3 +30,6 @@ struct AddVegetable_Previews: PreviewProvider {
         AddVegetable()
     }
 }
+
+
+
