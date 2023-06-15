@@ -18,7 +18,7 @@ struct HortCultApp: App {
             if HortCultApp.isFirstLogin == true {
                 Splash()
             } else {
-                Home()
+                TabBar()
             }
         }
     }
