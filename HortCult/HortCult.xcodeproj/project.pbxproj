@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E852A5F2A3BCFF6009F8CDC /* Plant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E852A5D2A3BCFF6009F8CDC /* Plant+CoreDataClass.swift */; };
+		1E852A602A3BCFF6009F8CDC /* Plant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E852A5E2A3BCFF6009F8CDC /* Plant+CoreDataProperties.swift */; };
 		1EA01C9B2A3A6A3A00962D91 /* PlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA01C9A2A3A6A3A00962D91 /* PlantViewModel.swift */; };
-		1EA01C9E2A3A721200962D91 /* Plant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA01C9C2A3A721200962D91 /* Plant+CoreDataClass.swift */; };
-		1EA01C9F2A3A721200962D91 /* Plant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA01C9D2A3A721200962D91 /* Plant+CoreDataProperties.swift */; };
 		1EE067DB2A314F07002D7A81 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE067DA2A314F07002D7A81 /* NotificationController.swift */; };
 		1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2970D2A2E9CBA00C7E64E /* ReminderCard.swift */; };
 		1EE297102A2E9DA900C7E64E /* ScrowViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2970F2A2E9DA900C7E64E /* ScrowViewTest.swift */; };
@@ -77,9 +77,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E852A5D2A3BCFF6009F8CDC /* Plant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E852A5E2A3BCFF6009F8CDC /* Plant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1EA01C9A2A3A6A3A00962D91 /* PlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantViewModel.swift; sourceTree = "<group>"; };
-		1EA01C9C2A3A721200962D91 /* Plant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1EA01C9D2A3A721200962D91 /* Plant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1EE067DA2A314F07002D7A81 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		1EE2970D2A2E9CBA00C7E64E /* ReminderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCard.swift; sourceTree = "<group>"; };
 		1EE2970F2A2E9DA900C7E64E /* ScrowViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrowViewTest.swift; sourceTree = "<group>"; };
@@ -161,8 +161,8 @@
 		1EA01C982A3A67E400962D91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1EA01C9C2A3A721200962D91 /* Plant+CoreDataClass.swift */,
-				1EA01C9D2A3A721200962D91 /* Plant+CoreDataProperties.swift */,
+				1E852A5D2A3BCFF6009F8CDC /* Plant+CoreDataClass.swift */,
+				1E852A5E2A3BCFF6009F8CDC /* Plant+CoreDataProperties.swift */,
 				6438A9282A1D7731006021DA /* Persistence.swift */,
 			);
 			path = Model;
@@ -520,7 +520,9 @@
 				1EE297102A2E9DA900C7E64E /* ScrowViewTest.swift in Sources */,
 				640AFB792A20113900A31EAF /* Splash.swift in Sources */,
 				641629462A2569D20081493F /* HomeSplash.swift in Sources */,
+				1E852A602A3BCFF6009F8CDC /* Plant+CoreDataProperties.swift in Sources */,
 				4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */,
+				1E852A5F2A3BCFF6009F8CDC /* Plant+CoreDataClass.swift in Sources */,
 				640B04022A217C0100C66A2A /* TestePseudoHome.swift in Sources */,
 				640AFB8B2A20293100A31EAF /* ButtonSelector.swift in Sources */,
 				6AF2ECDE2A37C8840035FF28 /* ThemeView.swift in Sources */,
@@ -535,7 +537,6 @@
 				6A6D5FC92A31491F007FB384 /* (null) in Sources */,
 				6417D9712A26AD6A00479BE2 /* CustomNavigationBarView.swift in Sources */,
 				640AFB932A20295200A31EAF /* TestesTelasHortcult.swift in Sources */,
-				1EA01C9E2A3A721200962D91 /* Plant+CoreDataClass.swift in Sources */,
 				646F16112A2965420091EE21 /* AjustesView.swift in Sources */,
 				642EEC3A2A1D8FBB009206D2 /* MinhaHortaView.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
