@@ -29,7 +29,7 @@ struct ReminderCardView: View {
                 Text(titulo)
                     .font(.headline)
                     .font(.system(size: 18))
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("Preto"))
                     .bold()
 
                 Text(descricao)

@@ -2,6 +2,8 @@ import SwiftUI
 
 struct TabBar: View {
     @State private var selectedTab: Int = 0
+    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
+    @Environment(\.colorScheme) var colorScheme
     
     struct TabBarButton: View {
         let tabIcon: String
@@ -31,17 +33,17 @@ struct TabBar: View {
             }
             Spacer()
             ZStack(alignment: .center) {
-                Color.white
+                Color("BrancoTabBar")
                     .frame(height: 80)
-                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                    .shadow(color: Color("Preto").opacity(0.2), radius: 5, x: 0, y: 2)
                 
                 HStack(spacing: 0) {
                     Spacer()
-                    TabBarButton(tabIcon: "Home", isSelected: selectedTab == 0) {
+                    TabBarButton(tabIcon: selectedTab == 0 ? (colorScheme == .dark ? "HomeGreenLight" : "HomeGreen") : (colorScheme == .dark ? "HomeGrey" : "Home"), isSelected: selectedTab == 0) {
                         selectedTab = 0
                     }
                     Spacer()
-                    TabBarButton(tabIcon: "Settings", isSelected: selectedTab == 1) {
+                    TabBarButton(tabIcon: selectedTab == 1 ? (colorScheme == .dark ? "SettingsGreenLight" : "SettingsGreen") : (colorScheme == .dark ? "SettingsGrey" : "Settings"), isSelected: selectedTab == 1) {
                         selectedTab = 1
                     }
                     Spacer()
@@ -49,6 +51,7 @@ struct TabBar: View {
             }
         }.ignoresSafeArea(edges: .bottom)
         .navigationBarBackButtonHidden(true)
+        .preferredColorScheme(selectedTheme == .Claro ? .light : (selectedTheme == .Escuro ? .dark : .none))
 
     }
 }

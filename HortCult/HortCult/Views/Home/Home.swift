@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     @State var images: [String] = ["Tomatinho","Abobrinha","Tomatinho2","Abobrinha2"]
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationView {
@@ -18,7 +19,7 @@ struct Home: View {
                 ScrollViewWithHeader(plantViewModel: PlantViewModel())
             }.toolbar(){
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Image("Topbar")
+                    Image(colorScheme == .dark ? "Topbardark" : "Topbar")
                 }
             }
         }.navigationBarBackButtonHidden(true)

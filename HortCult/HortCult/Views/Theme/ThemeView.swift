@@ -23,7 +23,7 @@ struct ThemeView: View {
             Button(action:{
                 presentationMode.wrappedValue.dismiss()
             } ) {
-                Image("Arrow-Left")
+                Image(selectedTheme == .Escuro ? "Arrow-Left-GreenLight" : "Arrow-Left-Green")
                     .frame(width: 24, height: 24)
                 Text("Ajustes")
                     .font(Font.custom("Satoshi-Regular", size: 16))
