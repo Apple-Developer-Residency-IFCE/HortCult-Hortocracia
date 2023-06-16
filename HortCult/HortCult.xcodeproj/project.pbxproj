@@ -20,7 +20,10 @@
 		47639D202A3BC49800336A2A /* PickerFrequencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47639D1F2A3BC49800336A2A /* PickerFrequencia.swift */; };
 		4E12005D2A2FED6400DF78D6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12005C2A2FED6400DF78D6 /* Home.swift */; };
 		4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */; };
+		4E5263EB2A3BBC0A006F4249 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5263EA2A3BBC0A006F4249 /* ImagePicker.swift */; };
+		4E5263EF2A3BBDC4006F4249 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5263EE2A3BBDC4006F4249 /* ImagePickerView.swift */; };
 		4E9343462A393CBF0000DA28 /* NameDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9343452A393CBF0000DA28 /* NameDescription.swift */; };
+		4E95636E2A3BB5E900DB7852 /* AddEditPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E95636D2A3BB5E900DB7852 /* AddEditPhotos.swift */; };
 		4EBD45B32A3A722900BD26BE /* EditVegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD45B22A3A722900BD26BE /* EditVegetable.swift */; };
 		4EBD45B52A3A727A00BD26BE /* AddEditTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD45B42A3A727A00BD26BE /* AddEditTitle.swift */; };
 		640AFB792A20113900A31EAF /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFB782A20113900A31EAF /* Splash.swift */; };
@@ -86,7 +89,10 @@
 		47639D1F2A3BC49800336A2A /* PickerFrequencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFrequencia.swift; sourceTree = "<group>"; };
 		4E12005C2A2FED6400DF78D6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVegetable.swift; sourceTree = "<group>"; };
+		4E5263EA2A3BBC0A006F4249 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4E5263EE2A3BBDC4006F4249 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		4E9343452A393CBF0000DA28 /* NameDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDescription.swift; sourceTree = "<group>"; };
+		4E95636D2A3BB5E900DB7852 /* AddEditPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditPhotos.swift; sourceTree = "<group>"; };
 		4EBD45B22A3A722900BD26BE /* EditVegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVegetable.swift; sourceTree = "<group>"; };
 		4EBD45B42A3A727A00BD26BE /* AddEditTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTitle.swift; sourceTree = "<group>"; };
 		640AFB782A20113900A31EAF /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
@@ -215,12 +221,23 @@
 		4E12005E2A2FEF8E00DF78D6 /* AddVegetable */ = {
 			isa = PBXGroup;
 			children = (
+				4E5263E92A3BBBF0006F4249 /* ImagePicker */,
 				4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */,
 				4EBD45B42A3A727A00BD26BE /* AddEditTitle.swift */,
 				4E9343452A393CBF0000DA28 /* NameDescription.swift */,
 				4EBD45B22A3A722900BD26BE /* EditVegetable.swift */,
+				4E95636D2A3BB5E900DB7852 /* AddEditPhotos.swift */,
 			);
 			path = AddVegetable;
+			sourceTree = "<group>";
+		};
+		4E5263E92A3BBBF0006F4249 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4E5263EA2A3BBC0A006F4249 /* ImagePicker.swift */,
+				4E5263EE2A3BBDC4006F4249 /* ImagePickerView.swift */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		640AFB642A200E3B00A31EAF /* Views */ = {
@@ -496,6 +513,7 @@
 				640AFB972A20295200A31EAF /* Description.swift in Sources */,
 				6A6D5FCC2A3149BE007FB384 /* InformationView.swift in Sources */,
 				1EA01C9F2A3A721200962D91 /* Plant+CoreDataProperties.swift in Sources */,
+				4E5263EB2A3BBC0A006F4249 /* ImagePicker.swift in Sources */,
 				1EE297102A2E9DA900C7E64E /* ScrowViewTest.swift in Sources */,
 				640AFB792A20113900A31EAF /* Splash.swift in Sources */,
 				641629462A2569D20081493F /* HomeSplash.swift in Sources */,
@@ -523,6 +541,7 @@
 				6438A9222A1D7730006021DA /* ContentView.swift in Sources */,
 				6ABFB6512A2EAF1E009FF0FD /* DescriptionPlant.swift in Sources */,
 				64FC8EC02A26ACAB002AAA33 /* PlantListView.swift in Sources */,
+				4E5263EF2A3BBDC4006F4249 /* ImagePickerView.swift in Sources */,
 				640AFB942A20295200A31EAF /* SecondButton.swift in Sources */,
 				47371CA82A31558D00FF3114 /* TestCustomNavBarInfoView.swift in Sources */,
 				640AFB952A20295200A31EAF /* TittleSelector.swift in Sources */,
@@ -535,6 +554,7 @@
 				4E12005D2A2FED6400DF78D6 /* Home.swift in Sources */,
 				47639D1E2A3BC43900336A2A /* PickerCategoria.swift in Sources */,
 				6417D96E2A26AD5900479BE2 /* TesteNavigationBarView.swift in Sources */,
+				4E95636E2A3BB5E900DB7852 /* AddEditPhotos.swift in Sources */,
 				64FC8EC22A26ADE7002AAA33 /* TestPlantListView.swift in Sources */,
 				6A0D531A2A39160700AA5554 /* ImagesListView.swift in Sources */,
 				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,

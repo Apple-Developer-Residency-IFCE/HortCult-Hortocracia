@@ -21,7 +21,7 @@ struct ListaPlantasView: View {
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
                 NavigationLink {
-                    Onboarding01()
+                    AddVegetable()
                 } label: {
                     HStack {
                         Image(colorScheme == .dark ? "Add" : "AddWhite")

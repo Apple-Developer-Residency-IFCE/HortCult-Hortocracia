@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditVegetable: View {
     var body: some View {
-        Text("Edit Vegetable")
+        ImagePickerView()
     }
 }
 
