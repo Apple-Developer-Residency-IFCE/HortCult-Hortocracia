@@ -15,10 +15,10 @@ struct ScrollViewWithHeader: View{
             self.plantViewModel = plantViewModel
         }
     @State var cards: [ReminderCardView] = [
-        (ReminderCardView(imagem: "Water", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-        (ReminderCardView(imagem: "Water", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-        (ReminderCardView(imagem: "Water", titulo: "Batatão está com sede!", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-        (ReminderCardView(imagem: "Water", titulo: "Batatão está c om sede!", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega"))
+        (ReminderCardView(imagem: "Water", plantName: "", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
+        (ReminderCardView(imagem: "Water", plantName: "", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
+        (ReminderCardView(imagem: "Water", plantName: "", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
+        (ReminderCardView(imagem: "Water", plantName: "", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega"))
     ]
     
     
