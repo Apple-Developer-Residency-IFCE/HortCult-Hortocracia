@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Satoshi-Italic.otf</string>
+		<string>Satoshi-Black.otf</string>
+		<string>Satoshi-BlackItalic
+Showing Recent Issues
+Cycle inside HortCult; building could produce unreliable results.
+Cycle details:
+→ Target 'HortCult': CodeSign /Users/vitor/Library/Developer/Xcode/DerivedData/HortCult-erpvnrnltvlqetclczuaxebjbcng/Build/Intermediates.noindex/Previews/HortCult/Products/Debug-iphonesimulator/HortCult.app
+
+
+Raw dependency cycle trace:
+
+target:  -&gt;
+
+node: &lt;all&gt; -&gt;
+
+command: &lt;all&gt; -&gt;
+
+CYCLE POINT -&gt;
+
+node: /Users/vitor/Library/Developer/Xcode/DerivedData/HortCult-erpvnrnltvlqetclczuaxebjbcng/Build/Intermediates.noindex/Previews/HortCult/Products/Debug-iphonesimulator/HortCult.app/_CodeSignature -&gt;
+
+command: P0:target-HortCult-f4eaf1e205fc9eda60327b17b5bc78360ff372e4e145a8d392160e40d3bcdbd1-:Debug:CodeSign /Users/vitor/Library/Developer/Xcode/DerivedData/HortCult-erpvnrnltvlqetclczuaxebjbcng/Build/Intermediates.noindex/Previews/HortCult/Products/Debug-iphonesimulator/HortCult.app -&gt;
+
+node: /Users/vitor/Library/Developer/Xcode/DerivedData/HortCult-erpvnrnltvlqetclczuaxebjbcng/Build/Intermediates.noindex/Previews/HortCult/Products/Debug-iphonesimulator/HortCult.app/ -&gt;
+
+directoryTreeSignature: � -&gt;
+
+node: /Users/vitor/Library/Developer/Xcode/DerivedData/HortCult-erpvnrnltvlqetclczuaxebjbcng/Build/Intermediates.noindex/Previews/HortCult/Products/Debug-iphonesimulator/HortCult.app/_CodeSignature
+
+Satoshi-BlackItalic.otf</string>
+		<string>Satoshi-Bold.otf</string>
+		<string>Satoshi-BoldItalic.otf</string>
+		<string>Satoshi-Light.otf</string>
+		<string>Satoshi-LightItalic.otf</string>
+		<string>Satoshi-Medium.otf</string>
+		<string>Satoshi-MediumItalic.otf</string>
+		<string>Satoshi-Regular.otf</string>
+	</array>
+</dict>
+</plist>
