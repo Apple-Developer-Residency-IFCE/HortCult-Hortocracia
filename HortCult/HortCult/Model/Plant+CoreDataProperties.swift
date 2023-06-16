@@ -2,7 +2,7 @@
 //  Plant+CoreDataProperties.swift
 //  HortCult
 //
-//  Created by Pedro Henrique Santos Rodrigues on 14/06/23.
+//  Created by Pedro Henrique Santos Rodrigues on 15/06/23.
 //
 //
 
@@ -16,12 +16,13 @@ extension Plant {
         return NSFetchRequest<Plant>(entityName: "Plant")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var information: String?
     @NSManaged public var category: String?
     @NSManaged public var frequency: String?
-    @NSManaged public var image: Data?
     @NSManaged public var id: UUID?
+    @NSManaged public var image: Data?
+    @NSManaged public var information: String?
+    @NSManaged public var name: String?
+    @NSManaged public var nextDate: Date?
 
 }
 
