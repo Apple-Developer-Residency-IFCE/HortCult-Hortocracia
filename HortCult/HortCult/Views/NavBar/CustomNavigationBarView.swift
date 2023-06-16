@@ -29,11 +29,11 @@ struct CustomNavigationBarView: View {
     var body: some View {
         NavigationView {
             VStack{
-                
+              NavBar
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: NavBar)
+        //.navigationBarItems(leading: NavBar)
         
     }
 }
