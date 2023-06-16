@@ -35,7 +35,7 @@ struct ScrollViewWithHeader: View{
                 .font(.title)
                 .fontWeight(.bold)
                 .padding()
-                .foregroundColor(Color("H1Color"))
+                .foregroundColor(Color("VerdeEscuro"))
                 .padding(.leading, 5)
             
             ScrollView(.vertical) {
