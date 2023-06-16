@@ -58,7 +58,7 @@ struct ImagePickerView: View {
                 ScrollView(.horizontal) {
                     LazyHStack(spacing: 12) {
                         Button(action: {
-                            emptyPicker = false
+                            emptyPicker = true
                         }) {
                             ZStack {
                                 Color("BrancoMinhaHorta")
@@ -70,10 +70,7 @@ struct ImagePickerView: View {
                             .frame(width: 120, height: 120)
                             .cornerRadius(10)
                         }
-                        .sheet(isPresented: Binding<Bool>(
-                            get: { selectedImages.isEmpty },
-                            set: { _ in })
-                        ) {
+                        .sheet(isPresented: $emptyPicker) {
                             ImagePicker(selectedImages: self.$selectedImages)
                         }
                         
