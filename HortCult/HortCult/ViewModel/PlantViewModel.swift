@@ -78,4 +78,46 @@ class PlantViewModel: ObservableObject {
             print("Nào foi possivel atualiar \(error) \(error.userInfo)")
         }
     }
+    
+    func filterPlant() -> [Plant] {
+        
+         var plantsArray = [Plant]()
+        
+        var today = Date()
+        
+        func formatDate(_ date: Date) -> String {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy/MM/dd"
+                return formatter.string(from: date)
+            }
+        
+        
+        func getPlantDate(){
+            
+            for plants in plant{
+                
+                var plantDate = plants.nextDate
+                var plantDateFormated = formatDate(plantDate!)
+                var formatedToday = formatDate(today)
+                
+                if(plantDateFormated == formatedToday){
+                    plantsArray.append(plants)
+                }else{
+                    let characterPairs = zip(plantDateFormated, formatedToday)
+                    
+                    for pair in characterPairs {
+                        if (pair.0 < pair.1) {
+                            plantsArray.append(plants)
+                        }else if(pair.0 > pair.1){
+                            break
+                        }
+                    }
+                }
+            }
+            
+        }
+        return plantsArray
+    }
+//
+
 }

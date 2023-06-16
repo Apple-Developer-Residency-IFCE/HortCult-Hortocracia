@@ -15,7 +15,7 @@ struct Home: View {
             ScrollView(.vertical){
                 ListaPlantasView(images: $images)
                     .padding(.top, 20)
-                ScrollViewWithHeader()
+                ScrollViewWithHeader(plantViewModel: PlantViewModel())
             }.toolbar(){
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image("Topbar")
