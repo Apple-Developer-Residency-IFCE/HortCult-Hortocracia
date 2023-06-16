@@ -15,6 +15,7 @@ struct AddVegetable: View {
             ScrollView(.vertical){                
                 AddEditTitle(addEdit: true)
                 NameDescription()
+                AddEditPhotos()
             }
             .toolbar(){
                 ToolbarItem(placement: .navigationBarLeading) {

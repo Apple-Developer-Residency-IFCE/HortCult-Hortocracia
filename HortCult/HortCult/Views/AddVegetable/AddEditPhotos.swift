@@ -9,7 +9,13 @@ import SwiftUI
 
 struct AddEditPhotos: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading){
+            Text("Fotos")
+                .foregroundColor(Color("Cinza"))
+                .fontWeight(.light)
+                .font(.system(size: 12))
+            ImagePickerView()
+        }.padding(.leading, 20)
     }
 }
 

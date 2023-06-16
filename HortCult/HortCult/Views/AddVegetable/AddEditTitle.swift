@@ -19,7 +19,7 @@ struct AddEditTitle: View {
                     .font(.system(size: 28))
                     .fontWeight(.bold)
                     .foregroundColor(Color("H1Color"))
-                    //.padding(.top, 20)
+                    .padding(.top, 20)
                 Spacer()
             }.padding()
         } else {
