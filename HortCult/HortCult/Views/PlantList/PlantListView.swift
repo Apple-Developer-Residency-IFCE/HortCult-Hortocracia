@@ -10,23 +10,21 @@ import SwiftUI
 struct ListaPlantasView: View {
     
     @Binding var images: [String]
-    
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         
         VStack(spacing: 20){
             HStack(spacing: 170.0){
                 Text("Minha Horta")
-                //.font(Font.custom("Satoshi-Black", size: 28))
-                //.foregroundColor(Color("VerdeEscuro"))
                     .font(.title)
                     .fontWeight(.bold)
-                    .foregroundColor(Color("H1Color"))
+                    .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
                 NavigationLink {
                     AddVegetable()
                 } label: {
                     HStack {
-                        Image("Add")
+                        Image(colorScheme == .dark ? "Add" : "AddWhite")
                             .frame(width: 32, height: 32)
                             .background(Color("VerdeEscuro"))
                             .cornerRadius(50)
@@ -43,9 +41,8 @@ struct ListaPlantasView: View {
                                 Image(imageName)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(maxHeight: 110)
+                                    .frame(maxHeight: 115)
                                     .clipped()
-                                //Spacer()
                                 Text(imageName)
                                     .font(Font.custom("Satoshi-Regular", size: 16))
                                     .foregroundColor(Color("CinzaEscuro"))

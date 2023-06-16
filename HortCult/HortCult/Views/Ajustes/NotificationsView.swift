@@ -49,7 +49,7 @@ struct NotificationsView: View {
                                 set: { selectedHour = stringFromDate($0) }
                                ),
                                displayedComponents: .hourAndMinute
-                    )
+                    ).frame(height: 175)
                     .datePickerStyle(.wheel)
                     .labelsHidden()
                     .padding(.leading, 16)
