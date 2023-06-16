@@ -17,7 +17,7 @@ struct NameDescription: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Nome")
-                .foregroundColor(Color("Cinza"))
+                .foregroundColor(Color("CinzaEscuro"))
                 .fontWeight(.light)
                 .font(.system(size: 12))
             TextField("Insira um nome", text: $nameVegetable)
@@ -29,7 +29,7 @@ struct NameDescription: View {
                 )
             Spacer().frame(height: 28)
             Text("Descrição")
-                .foregroundColor(Color("Cinza"))
+                .foregroundColor(Color("CinzaEscuro"))
                 .fontWeight(.light)
                 .font(.system(size: 12))
             ZStack(alignment: .topLeading) {

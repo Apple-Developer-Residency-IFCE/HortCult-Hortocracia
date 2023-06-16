@@ -42,10 +42,10 @@ struct PickerCategoria: View {
                         Image("Arrow-Bottom")
                             .padding(.trailing, 22)
                         
-                    }.frame(width: 314, height: 38)
+                    }.frame(width: 350, height: 40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color("Cinza"), lineWidth: 1)
+                                .stroke(Color("CinzaClaro"), lineWidth: 1)
                             
                         )
                         .padding(.leading, 20)
@@ -70,7 +70,7 @@ struct PickerCategoria: View {
                                             Text(selectedOption)
                                                 .font(Font.custom("Satoshi-Regular", size: 16))
                                                 .padding(.leading, 16)
-                                                .foregroundColor(Color("Cinza"))
+                                                .foregroundColor(Color("CinzaClaro"))
                                             Spacer()
                                             Image("Arrow-Top")
                                                 .padding(.trailing, 22)
@@ -89,7 +89,7 @@ struct PickerCategoria: View {
                                 Spacer()
                             }
                         }
-                    } .frame(width: 314)
+                    } .frame(width: 350)
                         .padding(.top, 9)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)

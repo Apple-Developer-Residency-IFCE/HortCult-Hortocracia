@@ -40,10 +40,10 @@ struct PickerFrequencia: View {
                         Image("Arrow-Bottom")
                             .padding(.trailing, 22)
                         
-                    }.frame(width: 314, height: 38)
+                    }.frame(width: 350, height: 40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color("Cinza"), lineWidth: 1)
+                                .stroke(Color("CinzaClaro"), lineWidth: 1)
                             
                         )
                         .padding(.leading, 20)
@@ -78,7 +78,7 @@ struct PickerFrequencia: View {
                                     if(option.rawValue != selectedOption){
                                         Text(option.rawValue)
                                             .font(Font.custom("Satoshi-Regular", size: 16))
-                                            .foregroundColor(Color("Cinza"))
+                                            .foregroundColor(Color("Cinzaclaro"))
                                             .padding(.bottom, 18)
                                             .padding(.leading, 20)
                                     }
@@ -87,7 +87,7 @@ struct PickerFrequencia: View {
                                 Spacer()
                             }
                         }
-                    } .frame(width: 314)
+                    } .frame(width: 350)
                         .padding(.top, 9)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
