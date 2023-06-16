@@ -44,6 +44,7 @@ class PlantViewModel: ObservableObject {
         newPlant.category = category
         newPlant.frequency = frequency
         newPlant.image = image
+        newPlant.nextDate = Date()
         
         do {
             try viewcontext.save()

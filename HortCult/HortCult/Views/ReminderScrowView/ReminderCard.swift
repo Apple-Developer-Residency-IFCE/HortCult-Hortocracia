@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct ReminderCardView: View {
+    
+    @ObservedObject var plantViewModel: PlantViewModel
+    
     var id = UUID()
     var imagem: String
-    var titulo : String
+    var plantName : String
     var descricao: String
     var cardColor : String
     var circleColor : String
 
     var body: some View {
         HStack(spacing: 16){
-
             Image(imagem)
                 .frame(width: 62, height:62)
                 .background(Color(circleColor))
@@ -26,7 +28,7 @@ struct ReminderCardView: View {
                 .foregroundColor(.yellow)
             VStack(alignment: .leading){
 
-                Text(titulo)
+                Text("\(plantName) está com sede!")
                     .font(.headline)
                     .font(.system(size: 18))
                     .foregroundColor(Color("Preto"))
@@ -38,7 +40,7 @@ struct ReminderCardView: View {
                     .foregroundColor(Color("CinzaEscuro"))
 
                 Button{
-                    // Action do botao
+                    
                 } label: {
                     Text("Feito")
                         .font(Font.custom("Satoshi-Regular", size: 12))
@@ -59,6 +61,6 @@ struct ReminderCardView: View {
 
 struct ReminderCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderCardView(id: UUID(), imagem: "", titulo: "", descricao: "", cardColor: "", circleColor: "")
+        ReminderCardView(id: UUID(), imagem: "", plantName: "", descricao: "", cardColor: "", circleColor: "")
     }
 }
