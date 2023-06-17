@@ -64,13 +64,14 @@ class PlantViewModel: ObservableObject {
         }
     }
     
-    func updatePlant(plant: Plant, name: String, information: String, category: String, frequency: String, image: Data){
+    func updatePlant(plant: Plant, name: String, information: String, category: String, frequency: String, nextDate: Date, image: Data){
         
         plant.id = plant.id
         plant.name = name
         plant.information = information
         plant.category = category
         plant.frequency = frequency
+        plant.nextDate = nextDate
         plant.image = image
         do{
             try viewcontext.save()
