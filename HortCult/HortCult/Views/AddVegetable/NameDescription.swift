@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NameDescription: View {
     
-    @State private var nameVegetable: String = ""
-    @State private var descriptionVegetable: String = ""
+    @Binding var nameVegetable: String 
+    @Binding var descriptionVegetable: String
     @State private var isEditing: Bool = false
     
     
@@ -59,6 +59,17 @@ struct NameDescription: View {
 
 struct NameDescription_Previews: PreviewProvider {
     static var previews: some View {
-        NameDescription()
+        Teste()
     }
 }
+
+struct Teste: View {
+    @State var name: String = "Teste"
+    @State var description: String = "Exemplo"
+    
+    var body: some View {
+        NameDescription(nameVegetable: $name, descriptionVegetable: $description)
+        
+    }
+}
+

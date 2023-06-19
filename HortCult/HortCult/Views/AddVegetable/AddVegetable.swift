@@ -10,6 +10,10 @@ import SwiftUI
 struct AddVegetable: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var colorButton: String = "CinzaClaro"
+    @State private var name : String = " "
+    @State private var description : String = " "
+    @State private var categoria : String = "Selecionar..."
+    @State private var frequencia : String = "Selecionar..."
     var NavBar : some View {
         ZStack {
             Image("Topbar")
@@ -35,9 +39,9 @@ struct AddVegetable: View {
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: true)
-                            NameDescription()
-                            PickerCategoria()
-                            PickerFrequencia()
+                            NameDescription(nameVegetable: $name, descriptionVegetable: $description)
+                           PickerCategoria(selectedOption: $categoria)
+                            PickerFrequencia(selectedOption: $frequencia)
                             AddEditPhotos()
                         }
                     }

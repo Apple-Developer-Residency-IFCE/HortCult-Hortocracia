@@ -16,10 +16,9 @@ enum select: String, CaseIterable {
 }
 
 struct PickerCategoria: View {
-    @State private var selectedOption: String = "Selecionar..."
     @State private var isPickerExpanded: Bool = false
     @State private var ButtonHidden: Bool = false
-    
+    @Binding var selectedOption: String
     
     var body: some View {
         HStack{
@@ -111,6 +110,16 @@ struct PickerCategoria: View {
 
 struct PickersPickerCategoria_Previews: PreviewProvider {
     static var previews: some View {
-        PickerCategoria()
+        Teste2()
     }
 }
+struct Teste2: View {
+    @State var categoria: String = "Hortaliça"
+  
+    
+    var body: some View {
+        PickerCategoria(selectedOption: $categoria)
+        
+    }
+}
+
