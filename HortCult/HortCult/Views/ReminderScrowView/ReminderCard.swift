@@ -59,8 +59,8 @@ struct ReminderCardView: View {
     }
 }
 
-struct ReminderCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReminderCardView(id: UUID(), imagem: "", plantName: "", descricao: "", cardColor: "", circleColor: "")
-    }
-}
+//struct ReminderCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ReminderCardView(id: UUID(), imagem: "", plantName: "", descricao: "", cardColor: "", circleColor: "")
+//    }
+//}
