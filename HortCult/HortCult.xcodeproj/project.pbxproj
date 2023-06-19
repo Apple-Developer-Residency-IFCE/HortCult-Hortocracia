@@ -97,7 +97,6 @@
 		4E95636D2A3BB5E900DB7852 /* AddEditPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditPhotos.swift; sourceTree = "<group>"; };
 		4EBD45B22A3A722900BD26BE /* EditVegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVegetable.swift; sourceTree = "<group>"; };
 		4EBD45B42A3A727A00BD26BE /* AddEditTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTitle.swift; sourceTree = "<group>"; };
-		4EDC65A42A3D224A00AFEA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		640AFB782A20113900A31EAF /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		640AFB8A2A20293100A31EAF /* ButtonSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSelector.swift; sourceTree = "<group>"; };
 		640AFB8C2A20295200A31EAF /* TestesTelasHortcult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestesTelasHortcult.swift; sourceTree = "<group>"; };
@@ -334,7 +333,6 @@
 		6438A91E2A1D7730006021DA /* HortCult */ = {
 			isa = PBXGroup;
 			children = (
-				4EDC65A42A3D224A00AFEA24 /* Info.plist */,
 				1EA01C992A3A680100962D91 /* ViewModel */,
 				1EA01C982A3A67E400962D91 /* Model */,
 				1EE067D92A314EEE002D7A81 /* Control */,
@@ -701,8 +699,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HortCult/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HortCult/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -735,8 +731,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HortCult/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HortCult/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
