@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ScrollViewWithHeader: View{
     
-    @ObservedObject var plantViewModel: PlantViewModel
+    @EnvironmentObject var plantViewModel: PlantViewModel
     
-    init(plantViewModel: PlantViewModel) {
-            self.plantViewModel = plantViewModel
-        }
+//    init(plantViewModel: PlantViewModel) {
+//            self.plantViewModel = plantViewModel
+//        }
  
 //    @State var cards: [ReminderCardView] = [
 //        (ReminderCardView(plantViewModel: plantViewModel, imagem: "Water", plantName: "", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
@@ -27,7 +27,6 @@ struct ScrollViewWithHeader: View{
     var body: some View {
         
         var filtedPlants = plantViewModel.filterPlant()
-        
         
         VStack(alignment: .leading) {
             Text("Lembretes")

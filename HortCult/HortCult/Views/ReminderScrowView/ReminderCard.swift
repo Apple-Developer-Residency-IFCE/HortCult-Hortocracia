@@ -21,7 +21,7 @@ struct ReminderCardView: View {
         var auxFrequency: Int = 0
         
         HStack(spacing: 16){
-            Image("Watter")
+            Image("Water")
                 .frame(width: 62, height:62)
                 .background(Color("LembreteCircleRega"))
                 .cornerRadius(60)
