@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct EditVegetable: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var colorButton: String = "CinzaClaro"
+
+    @State  var name : String
+    @State var description : String
+    @State var categoria : String
+    @State var frequencia : String
     var NavBar : some View {
         ZStack {
             Image("Topbar")
@@ -35,10 +41,10 @@ struct EditVegetable: View {
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: false)
-                            NameDescription()
-                            PickerCategoria()
-                            PickerFrequencia()
-                            AddEditPhotos()
+                           NameDescription(nameVegetable: $name, descriptionVegetable: $description)
+                            PickerCategoria(selectedOption: $categoria)
+                             PickerFrequencia(selectedOption: $frequencia)
+                             AddEditPhotos()
                         }
                     }
                 }
@@ -79,6 +85,16 @@ struct EditVegetable: View {
 
 struct EditVegetable_Previews: PreviewProvider {
     static var previews: some View {
-        EditVegetable()
+        TesteEditar()
+    }
+}
+
+struct TesteEditar: View {
+    
+  
+    
+    var body: some View {
+        EditVegetable(name: "Tomatinho", description: "Tomate vermelho", categoria: select.temperos.rawValue, frequencia: options.dois.rawValue)
+        
     }
 }

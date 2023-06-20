@@ -14,15 +14,15 @@ enum options: String, CaseIterable {
 }
 
 struct PickerFrequencia: View {
-    @State private var selectedOption: String = "Selecionar..."
+
     @State private var isPickerExpanded: Bool = false
     @State private var ButtonHidden: Bool = false
-    private var auxiliar: Int = 1
+    @Binding var selectedOption: String
     
     var body: some View {
         HStack{
             VStack(alignment: .leading){
-                Text("Categoria")
+                Text("Frequência de Rega")
                     .font(Font.custom("Satoshi-Regular", size: 12))
                     .padding(.leading, 20)
                 
@@ -32,11 +32,20 @@ struct PickerFrequencia: View {
                         isPickerExpanded.toggle()
                         
                     } label: {
-                        Text(selectedOption)
-                            .font(Font.custom("Satoshi-Regular", size: 16))
-                            .padding(.leading, 16)
-                            .foregroundColor(Color("Cinza"))
-                        Spacer()
+                        if (selectedOption.isEmpty){
+                            Text(selectedOption)
+                                .font(Font.custom("Satoshi-Regular", size: 16))
+                                .padding(.leading, 16)
+                                .foregroundColor(Color("Cinza"))
+                            Spacer()
+                        }
+                        else {
+                            Text(selectedOption)
+                                .font(Font.custom("Satoshi-Regular", size: 16))
+                                .padding(.leading, 16)
+                                .foregroundColor(Color("Cinza"))
+                            Spacer()
+                        }
                         Image("Arrow-Bottom")
                             .padding(.trailing, 22)
                         
@@ -62,6 +71,7 @@ struct PickerFrequencia: View {
                                 
                             }){
                                 
+                                
                                 VStack(alignment: .leading){
                                     if (option == options.diario){
                                         HStack{
@@ -78,7 +88,7 @@ struct PickerFrequencia: View {
                                     if(option.rawValue != selectedOption){
                                         Text(option.rawValue)
                                             .font(Font.custom("Satoshi-Regular", size: 16))
-                                            .foregroundColor(Color("Cinzaclaro"))
+                                            .foregroundColor(Color("CinzaEscuro"))
                                             .padding(.bottom, 18)
                                             .padding(.leading, 20)
                                     }
@@ -109,6 +119,16 @@ struct PickerFrequencia: View {
 
 struct PickerFrequencia_Previews: PreviewProvider {
     static var previews: some View {
-        PickerFrequencia()
+        Teste3()
+    }
+}
+
+struct Teste3: View {
+    @State var categoria: String = options.diario.rawValue
+  
+    
+    var body: some View {
+        PickerFrequencia(selectedOption: $categoria)
+        
     }
 }
