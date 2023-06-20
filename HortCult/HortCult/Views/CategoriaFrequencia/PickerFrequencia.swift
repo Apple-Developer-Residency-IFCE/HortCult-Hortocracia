@@ -71,6 +71,7 @@ struct PickerFrequencia: View {
                                 
                             }){
                                 
+                                
                                 VStack(alignment: .leading){
                                     if (option == options.diario){
                                         HStack{
