@@ -27,6 +27,19 @@
 //    
 //    var body: some View {
 //
+
+import SwiftUI
+
+//struct TestScrowView: View {
+//    var body: some View {
+//        @State var cards : [AnyView] = [
+//            AnyView(ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor:"LembreteRega", circleColor: "LembreteCircleRega")),
+//            AnyView(ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor:"LembreteRega", circleColor: "LembreteCircleRega")),
+//            
+//        ]
+//    }
+//}
+
 ////        Button{
 ////            plantViewModel.createPlant(name: "", information: "", category: "", frequency: "2", image: UIImage())
 ////            
