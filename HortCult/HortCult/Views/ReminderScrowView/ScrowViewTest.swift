@@ -11,9 +11,9 @@ struct ScrollViewWithHeader: View{
     
     @EnvironmentObject var plantViewModel: PlantViewModel
     
-    init(plantViewModel: PlantViewModel) {
-            self.plantViewModel = plantViewModel
-        }
+//    init(plantViewModel: PlantViewModel) {
+//            self.plantViewModel = plantViewModel
+//        }
 //    @State var cards: [ReminderCardView] = [
 //        (ReminderCardView(imagem: "Water", plantName: "", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
 //        (ReminderCardView(imagem: "Water", plantName: "", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
