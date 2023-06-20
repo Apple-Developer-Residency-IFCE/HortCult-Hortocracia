@@ -9,9 +9,10 @@ import SwiftUI
 
 struct NameDescription: View {
     
-    @State private var nameVegetable: String = ""
-    @State private var descriptionVegetable: String = ""
-    @State private var isEditing: Bool = false
+    @Binding var nameVegetable: String 
+    @Binding var descriptionVegetable: String
+    @State private var isEditingName: Bool = false
+    @State private var isEditingDescription: Bool = false
     
     
     var body: some View {
@@ -20,13 +21,34 @@ struct NameDescription: View {
                 .foregroundColor(Color("CinzaEscuro"))
                 .fontWeight(.light)
                 .font(.system(size: 12))
-            TextField("Insira um nome", text: $nameVegetable)
-                .padding(.leading, 20)
-                .frame(height: 38)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 50)
-                        .stroke(Color("CinzaClaro"), lineWidth: 1)
-                )
+            ZStack(alignment: .topLeading) {
+                TextEditor(text: $nameVegetable)
+                    .padding(.leading, 15)
+                    .frame(height: 40)
+                    .font(.system(size: 16))
+                    .textCase(.lowercase)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 50)
+                            .stroke(Color("CinzaClaro"), lineWidth: 1)
+                    )
+                    .onTapGesture {
+                        isEditingName = true
+                    }
+                if nameVegetable.isEmpty && !isEditingName {
+                    Text("Insira um nome")
+                        .foregroundColor(Color("CinzaClaro"))
+                        .padding(.leading, 15)
+                        .padding(.top, 8)
+                }
+            }
+//            TextField("Insira um nome", text: $nameVegetable)
+//                .padding(.leading, 20)
+//                .frame(height: 38)
+//                .overlay(
+//                    RoundedRectangle(cornerRadius: 50)
+//                        .stroke(Color("CinzaClaro"), lineWidth: 1)
+//                )
+//                .foregroundColor(Color("Cinza"))
             Spacer().frame(height: 28)
             Text("Descrição")
                 .foregroundColor(Color("CinzaEscuro"))
@@ -43,9 +65,9 @@ struct NameDescription: View {
                             .stroke(Color("CinzaClaro"), lineWidth: 1)
                     )
                     .onTapGesture {
-                        isEditing = true
+                        isEditingDescription = true
                     }
-                if descriptionVegetable.isEmpty && !isEditing {
+                if descriptionVegetable.isEmpty && !isEditingDescription {
                     Text("Insira uma descrição")
                         .foregroundColor(Color("CinzaClaro"))
                         .padding(.leading, 15)
@@ -59,6 +81,17 @@ struct NameDescription: View {
 
 struct NameDescription_Previews: PreviewProvider {
     static var previews: some View {
-        NameDescription()
+        Teste()
     }
 }
+
+struct Teste: View {
+    @State var name: String = "Teste"
+    @State var description: String = "Exemplo"
+    
+    var body: some View {
+        NameDescription(nameVegetable: $name, descriptionVegetable: $description)
+        
+    }
+}
+

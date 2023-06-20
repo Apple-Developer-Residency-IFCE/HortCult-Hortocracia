@@ -14,17 +14,14 @@ class PlantViewModel: ObservableObject {
     let viewcontext = PersistenceController.shared.container.viewContext
     @Published var plant = [Plant]()
     
-    func imageDataConvert(name: String) -> Data? {
-        if let image = UIImage(named: name) {
-            if let imageData = image.jpegData(compressionQuality: 1.0) {
-                return imageData
-            } else if let imageData = image.pngData() {
-                return imageData
-            }
+    func imageDataConvert(image: UIImage) -> Data? {
+        if let imageData = image.jpegData(compressionQuality: 1.0) {
+            return imageData
+        } else if let imageData = image.pngData() {
+            return imageData
         }
         return nil
     }
-    
     
     func fetch() {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
@@ -35,7 +32,7 @@ class PlantViewModel: ObservableObject {
         plant = fetchPlants
     }
     
-    func createPlant(name: String, information: String, category: String, frequency: String, image: Data){
+    func createPlant(name: String, information: String, category: String, frequency: String, image: UIImage){
         
         let newPlant = Plant(context: viewcontext)
         newPlant.id = UUID()
@@ -43,12 +40,13 @@ class PlantViewModel: ObservableObject {
         newPlant.information = information
         newPlant.category = category
         newPlant.frequency = frequency
-        newPlant.image = image
+        newPlant.image = imageDataConvert(image: image)
         newPlant.nextDate = Date()
         
         do {
             try viewcontext.save()
             fetch()
+            print("criou a planta \(name)")
         }catch let error as NSError{
             print("Náo foi possivel salvar \(error) \(error.userInfo)")
         }
@@ -64,13 +62,14 @@ class PlantViewModel: ObservableObject {
         }
     }
     
-    func updatePlant(plant: Plant, name: String, information: String, category: String, frequency: String, image: Data){
+    func updatePlant(plant: Plant, name: String, information: String, category: String, frequency: String, nextDate: Date, image: Data){
         
         plant.id = plant.id
         plant.name = name
         plant.information = information
         plant.category = category
         plant.frequency = frequency
+        plant.nextDate = nextDate
         plant.image = image
         do{
             try viewcontext.save()
