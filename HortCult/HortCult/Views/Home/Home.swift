@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct Home: View {
-    @State var images: [String] = ["Tomatinho","Abobrinha","Tomatinho2","Abobrinha2"]
+//    @State var images: [String] = ["Tomatinho","Abobrinha","Tomatinho2","Abobrinha2"]
     @Environment(\.colorScheme) var colorScheme
+    
+    @EnvironmentObject var plantViewModel: PlantViewModel
     
     var body: some View {
         NavigationView {
             ScrollView(.vertical){
-                ListaPlantasView(images: $images)
+                ListaPlantasView()
                     .padding(.top, 20)
-                ScrollViewWithHeader(plantViewModel: PlantViewModel())
+                ScrollViewWithHeader()
             }.toolbar(){
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image(colorScheme == .dark ? "Topbardark" : "Topbar")
@@ -26,8 +28,3 @@ struct Home: View {
     }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
