@@ -112,13 +112,13 @@ struct InformationView: View {
                                 primaryButtonTitle: "Voltar para Tela Inicial",
                                 primaryButtonAction: {
                                     backHomeAlert = true
-                                    NavigationLink(destination: Home(), isActive: $backHomeAlert){
-                                        EmptyView()
-                                    }
                                 }
                             ).padding(.top, 180)
 
                         }.frame(width: 300, height: 100)
+                        NavigationLink(destination: Home(), isActive: $backHomeAlert){
+                            EmptyView()
+                        }
 
                     }
 
@@ -129,35 +129,16 @@ struct InformationView: View {
             Alert(
                 title: Text("Deseja excluir essa planta? "),
                 message: Text("Essa ação não poderá ser desfeita."),
-                primaryButton: .cancel(Text(" Cancelar")){
-                    confirmDeleteVegetableAlert = true
-                },
+                primaryButton: .cancel(Text(" Cancelar")){},
                 secondaryButton:
-                        .default(Text("outro alert")) {
+                        .default(Text("Excluir")) {
                     deleteVegetableAlert = false
                     confirmDeleteVegetableAlert = true
-                    print("oi")
                 }
             )
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: NavBarInfo)
-//        .alert(isPresented: $confirmDeleteVegetableAlert) {
-//            Alert(
-//                title: Text("Deseja excluir essa planta? "),
-//                message: Text("Essa ação não poderá ser desfeita."),
-//                primaryButton: .cancel(Text(" Cancelar")){
-//                    confirmDeleteVegetableAlert = true
-//                },
-//                secondaryButton: .default(Text("Excluir")) {
-//                    deleteVegetableAlert = false
-//                    confirmDeleteVegetableAlert = true
-//                    print("oi")
-//                }
-//            )
-//        }
-
-        
     }
     
 }
