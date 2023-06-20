@@ -12,6 +12,9 @@ struct AddVegetable: View {
     var plantViewModel: PlantViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var colorButton: String = "CinzaClaro"
+    @State private var addVegetableAlert = false
+    @State private var discartVegetableAlert = false
+    
     @State private var name : String = ""
     @State private var description : String = ""
     @State private var categoria : String = "Selecionar..."
@@ -66,6 +69,10 @@ struct AddVegetable: View {
                 .padding(.bottom, 100)
                 
                 Button(action: {
+                    // Só um teste
+                    colorButton = "VerdeEscuro"
+                    addVegetableAlert = true
+                    discartVegetableAlert = true
                     if isFieldsFilled{
                         self.presentationMode.wrappedValue.dismiss()
                         switch frequencia{
@@ -102,7 +109,31 @@ struct AddVegetable: View {
                 }
                 .disabled(!isFieldsFilled)
                 .frame(alignment: .bottom)
-                    .padding(.top, 602)
+                .padding(.top, 602)
+                .alert(isPresented: $addVegetableAlert) {
+                    Alert(
+                        title: Text("Planta cadastrada!"),
+                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
+                        primaryButton: .default(Text("Tela Inicial")),
+                        secondaryButton: .default(
+                            Text("Ver Planta")
+                                .foregroundColor(Color("Cinza"))
+                        )
+                    )
+
+                }
+                //descartar a criacao da planta
+                .alert(isPresented: $discartVegetableAlert) {
+                    Alert(
+                        title: Text("Deseja descartar a criação da sua planta?"),
+                        message: Text("Essa ação não poderá ser desfeita."),
+                        primaryButton: .cancel(Text("Cancelar")),
+                        secondaryButton: .default(
+                            Text("Descartar")
+                        )
+                    )
+
+                }
             }
             
             

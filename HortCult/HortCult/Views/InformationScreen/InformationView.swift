@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct InformationView: View {
-    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var deleteVegetableAlert = false
+    @State private var confirmDeleteVegetableAlert = false
+    @State private var backHomeAlert = false
+
+       // @ViewBuilder var content: () -> Content
+        
+            
+//    @State var images: [UIImage]
+//    @State var description: String
+//    @State var img: String
+//    @State var data: String
+    
     var planta: Plant
        // @ViewBuilder var content: () -> Content
         
@@ -33,10 +44,7 @@ struct InformationView: View {
         NavigationView{
             ScrollView(.vertical){
                 ZStack{
-                  
                     VStack{
-    
-                            
                             ImagesListView()
                         .padding(.bottom, 16)
                         
@@ -85,7 +93,7 @@ struct InformationView: View {
                         .padding(.bottom, 16)
                         
                         Button(action: {
-                            
+                            deleteVegetableAlert = true
                         }) {
                             HStack {
                                 Image("Remover")
@@ -94,7 +102,7 @@ struct InformationView: View {
                                     .bold()
                             }
                             .foregroundColor(.white)
-                            
+
                             .frame(width: 275, height: 42)
                             .background(Color("Vermelho"))
                             .cornerRadius(40)
@@ -103,16 +111,43 @@ struct InformationView: View {
                                     .stroke(Color("Vermelho"), lineWidth: 2)
                             )
                         }.padding(.bottom, 50)
-                        
+
                     }
-                }
-                
+                    if confirmDeleteVegetableAlert {
+                        VStack {
+                            CustomAlert(
+                                title: "Planta Excluida!",
+                                message: "",
+                                primaryButtonTitle: "Voltar para Tela Inicial",
+                                primaryButtonAction: {
+                                    backHomeAlert = true
+                                }
+                            ).padding(.top, 180)
+
+                        }.frame(width: 300, height: 100)
+                        NavigationLink(destination: Home(), isActive: $backHomeAlert){
+                            EmptyView()
+                        }
+
+                    }
+
+                }                
             }.ignoresSafeArea(.all)
             
+        }.alert(isPresented: $deleteVegetableAlert) {
+            Alert(
+                title: Text("Deseja excluir essa planta? "),
+                message: Text("Essa ação não poderá ser desfeita."),
+                primaryButton: .cancel(Text(" Cancelar")){},
+                secondaryButton:
+                        .default(Text("Excluir")) {
+                    deleteVegetableAlert = false
+                    confirmDeleteVegetableAlert = true
+                }
+            )
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: NavBarInfo)
-        
     }
     
 }
