@@ -33,29 +33,29 @@ struct ListaPlantasView: View {
                 
             }
             
-            ScrollView(.horizontal) {
-                LazyHStack(spacing: 12) {
-                    ForEach(images, id: \.self) { imageName in
-                        NavigationLink(destination: InformationView()){
-                            VStack{
-                                Image(imageName)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(maxHeight: 115)
-                                    .clipped()
-                                Text(imageName)
-                                    .font(Font.custom("Satoshi-Regular", size: 16))
-                                    .foregroundColor(Color("CinzaEscuro"))
-                                    .padding(.bottom, 9)
-                            }.frame(width: 140, height: 150)
-                                .background(Color("BrancoMinhaHorta"))
-                                .cornerRadius(12)
-                        } 
-                    }
-                }
-            }
-            .padding(.leading, 20.0)
-            .frame(maxHeight: 150)
+//            ScrollView(.horizontal) {
+//                LazyHStack(spacing: 12) {
+//                    ForEach(images, id: \.self) { imageName in
+//                        NavigationLink(destination: InformationView()){
+//                            VStack{
+//                                Image(imageName)
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fill)
+//                                    .frame(maxHeight: 115)
+//                                    .clipped()
+//                                Text(imageName)
+//                                    .font(Font.custom("Satoshi-Regular", size: 16))
+//                                    .foregroundColor(Color("CinzaEscuro"))
+//                                    .padding(.bottom, 9)
+//                            }.frame(width: 140, height: 150)
+//                                .background(Color("BrancoMinhaHorta"))
+//                                .cornerRadius(12)
+//                        } 
+//                    }
+//                }
+//            }
+//            .padding(.leading, 20.0)
+//            .frame(maxHeight: 150)
         }
     }
     

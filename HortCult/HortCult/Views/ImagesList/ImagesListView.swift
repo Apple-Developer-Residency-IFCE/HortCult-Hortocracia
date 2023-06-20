@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct ImagesListView: View {
+    
+    @Binding  var userImages: [UIImage]
+//    = [
+//                       UIImage(named: "Tomatinho")!,
+//                       UIImage(named: "Tomatinho")!,
+//                       UIImage(named: "Tomatinho")!
+//                   ]
+
+    
     var body: some View {
         NavigationView {
             
@@ -15,10 +24,10 @@ struct ImagesListView: View {
                         
                         HStack(spacing: 0) { // <2>
                             
-                            ForEach(0..<3) { index in
+                            ForEach(userImages, id: \.self) { image in
                                 ZStack{
                                    
-                                    Image("Tomatinho")
+                                    Image(uiImage: image)
                                         .frame(maxWidth: .infinity)
                                     LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center)
                                         .edgesIgnoringSafeArea(.all).allowsHitTesting(false)
@@ -35,6 +44,22 @@ struct ImagesListView: View {
 
 struct ImagesListView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagesListView()
+        Teste5()
     }
 }
+
+struct Teste5: View {
+    @State var teste5: [UIImage] = [
+                       UIImage(named: "Tomatinho")!,
+                       UIImage(named: "Tomatinho")!,
+                       UIImage(named: "Tomatinho")!
+                       ]
+    
+    var body: some View {
+        
+                       
+        ImagesListView(userImages: $teste5)
+        
+    }
+}
+
