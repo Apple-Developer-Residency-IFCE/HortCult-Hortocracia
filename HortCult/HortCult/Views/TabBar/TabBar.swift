@@ -5,6 +5,13 @@ struct TabBar: View {
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @Environment(\.colorScheme) var colorScheme
     
+    @ObservedObject var plantViewModel: PlantViewModel
+    
+    init(plantViewModel: PlantViewModel) {
+            self.plantViewModel = plantViewModel
+            plantViewModel.fetch()
+    }
+    
     struct TabBarButton: View {
         let tabIcon: String
         let isSelected: Bool
@@ -52,12 +59,13 @@ struct TabBar: View {
         }.ignoresSafeArea(edges: .bottom)
         .navigationBarBackButtonHidden(true)
         .preferredColorScheme(selectedTheme == .Claro ? .light : (selectedTheme == .Escuro ? .dark : .none))
+        .environmentObject(plantViewModel)
 
     }
 }
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
+        TabBar(plantViewModel: PlantViewModel())
     }
 }

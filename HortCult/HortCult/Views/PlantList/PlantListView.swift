@@ -9,7 +9,16 @@ import SwiftUI
 
 struct ListaPlantasView: View {
     
-    @Binding var images: [String]
+    @EnvironmentObject var plantViewModel: PlantViewModel
+    
+    func dataToImage(data: Data) -> Image{
+        
+        guard let uiImage = UIImage(data: data) else {
+            return Image("Tomatinho")
+        }
+        return Image(uiImage: uiImage)
+    }
+    
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         
@@ -21,7 +30,7 @@ struct ListaPlantasView: View {
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
                 NavigationLink {
-                    AddVegetable()
+                    AddVegetable(plantViewModel: plantViewModel)
                 } label: {
                     HStack {
                         Image(colorScheme == .dark ? "Add" : "AddWhite")
@@ -33,35 +42,36 @@ struct ListaPlantasView: View {
                 
             }
             
-//            ScrollView(.horizontal) {
-//                LazyHStack(spacing: 12) {
-//                    ForEach(images, id: \.self) { imageName in
-//                        NavigationLink(destination: InformationView()){
-//                            VStack{
-//                                Image(imageName)
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 12) {
+                    ForEach(plantViewModel.plant, id: \.self) { planta in
+                        NavigationLink(destination: InformationView()){
+                            VStack{
+//                                dataToImage(data: planta.image)
 //                                    .resizable()
 //                                    .aspectRatio(contentMode: .fill)
 //                                    .frame(maxHeight: 115)
 //                                    .clipped()
-//                                Text(imageName)
-//                                    .font(Font.custom("Satoshi-Regular", size: 16))
-//                                    .foregroundColor(Color("CinzaEscuro"))
-//                                    .padding(.bottom, 9)
-//                            }.frame(width: 140, height: 150)
-//                                .background(Color("BrancoMinhaHorta"))
-//                                .cornerRadius(12)
-//                        } 
-//                    }
-//                }
-//            }
-//            .padding(.leading, 20.0)
-//            .frame(maxHeight: 150)
+                                Text(planta.name!)
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
+                                    .foregroundColor(Color("CinzaEscuro"))
+                                    .padding(.bottom, 9)
+                            }.frame(width: 140, height: 150)
+                                .background(Color("BrancoMinhaHorta"))
+                                .cornerRadius(12)
+                        } 
+                    }
+                }
+            }
+            .padding(.leading, 20.0)
+            .frame(maxHeight: 150)
         }
     }
     
-    struct ListaPlantasView_Previews: PreviewProvider {
-        static var previews: some View {
-            ListaPlantasView(images: .constant([]))
-        }
+}
+
+struct ListaPlantasView_Previews: PreviewProvider {
+    static var previews: some View {
+        ListaPlantasView()
     }
 }

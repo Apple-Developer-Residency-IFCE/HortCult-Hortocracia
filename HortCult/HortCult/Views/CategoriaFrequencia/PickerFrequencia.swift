@@ -36,7 +36,7 @@ struct PickerFrequencia: View {
                             Text(selectedOption)
                                 .font(Font.custom("Satoshi-Regular", size: 16))
                                 .padding(.leading, 16)
-                                .foregroundColor(Color("Cinza"))
+                                .foregroundColor(Color("CinzaClaro"))
                             Spacer()
                         }
                         else {
@@ -70,6 +70,7 @@ struct PickerFrequencia: View {
                                 ButtonHidden.toggle()
                                 
                             }){
+                                
                                 
                                 VStack(alignment: .leading){
                                     if (option == options.diario){
