@@ -10,8 +10,11 @@ import SwiftUI
 struct InformationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
             
-       // @ViewBuilder var content: () -> Content
-        
+    @State var images: [UIImage]
+    @State var description: String
+    @State var img: String
+    @State var data: String
+    
         var NavBarInfo : some View {
             ZStack{
                 HStack{
@@ -36,13 +39,13 @@ struct InformationView: View {
                     VStack{
     
                             
-                            ImagesListView()
+                            ImagesListView(userImages: $images)
                         .padding(.bottom, 16)
                         
-                        DescriptionPlant()
+                        DescriptionPlant(description: $description)
                             .padding(.bottom, 24)
                         
-                        CardProxRegaView(imagem: "Tomatinho", dataProxRega: "05/07")
+                        CardProxRegaView(imagem: $img, dataProxRega: $data)
                             .padding(.bottom, 24)
                         
                         HStack {
@@ -118,6 +121,23 @@ struct InformationView: View {
 
 struct InformationView_Previews: PreviewProvider {
     static var previews: some View {
-        InformationView()
+        TesteInfor()
     }
 }
+
+struct TesteInfor: View {
+    @State var img: [UIImage] = [
+                       UIImage(named: "Tomatinho")!,
+                       UIImage(named: "Tomatinho")!,
+                       UIImage(named: "Tomatinho")!
+                       ]
+    @State var desc: String = "O tomate é um fruto rico em vitamina C, vitamina A, vitamina K e licopeno, que é um potente antioxidante, ajudando a manter a saúde da pele, fortalecer o sistema imunológico e evitar doenças cardiovasculares, como infarto e aterosclerose."
+    @State var img2: String = "Water"
+    @State var rega: String = "20/06"
+                       
+    var body: some View {
+        
+        InformationView(images: img, description: desc, img: img2, data: rega)
+    }
+}
+
