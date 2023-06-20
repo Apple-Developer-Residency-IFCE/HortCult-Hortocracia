@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddVegetable: View {
+    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     var plantViewModel: PlantViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var colorButton: String = "CinzaClaro"
@@ -18,12 +19,12 @@ struct AddVegetable: View {
     @State private var isFull: Bool = false
     var NavBar : some View {
         ZStack {
-            Image("Topbar")
+            Image(selectedTheme == .Escuro ? "Topbardark" : "Topbar")
             HStack {
                 Button(action:{
                     self.presentationMode.wrappedValue.dismiss()
                 } ) {
-                    Image("Arrow-Left")
+                    Image(selectedTheme == .Escuro ? "Arrow-Left-Light" : "Arrow-Left-Green")
                 }
                 .padding(.leading, 18)
                 Spacer()
@@ -67,16 +68,16 @@ struct AddVegetable: View {
                     if isFieldsFilled{
                         self.presentationMode.wrappedValue.dismiss()
                         switch frequencia{
-                        case options.diario.rawValue:
-                            frequencia = "1"
-                        case options.dois.rawValue:
-                            frequencia = "2"
-                        case options.quatro.rawValue:
-                            frequencia = "4"
-                        case options.semana.rawValue:
-                            frequencia = "7"
-                        default:
-                            frequencia = " " // nao existe
+                            case options.diario.rawValue:
+                                frequencia = "1"
+                            case options.dois.rawValue:
+                                frequencia = "2"
+                            case options.quatro.rawValue:
+                                frequencia = "4"
+                            case options.semana.rawValue:
+                                frequencia = "7"
+                            default:
+                                frequencia = " " // nao existe
                         }
                         plantViewModel.createPlant(name: name, information: description, category: categoria, frequency: frequencia, image: UIImage())
                     }
@@ -84,10 +85,11 @@ struct AddVegetable: View {
                 }) {
                     HStack {
                         Text("Adicionar Novo Vegetal")
+                            .foregroundColor(Color("Branco"))
                             .font(.system(size: 16))
                             .bold()
                     }
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("CinzaClaro"))
                     
                     .frame(width: 350, height: 42)
                     .background(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"))
