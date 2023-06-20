@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct InformationView: View {
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-            
+    var planta: Plant
        // @ViewBuilder var content: () -> Content
         
         var NavBarInfo : some View {
@@ -61,9 +62,9 @@ struct InformationView: View {
                             }
                             Spacer()
                         }
-                        Button(action: {
-                            
-                        }) {
+                        NavigationLink {
+                            EditVegetable(plant: planta, name: planta.name ?? "", description: planta.information ?? "", categoria: planta.category ?? "", frequencia: planta.frequency ?? "")
+                        } label: {
                             HStack {
                                 Image("Editar")
                                 Text("Editar Informações")
@@ -114,10 +115,4 @@ struct InformationView: View {
         
     }
     
-}
-
-struct InformationView_Previews: PreviewProvider {
-    static var previews: some View {
-        InformationView()
-    }
 }
