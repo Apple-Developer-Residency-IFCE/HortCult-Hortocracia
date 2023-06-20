@@ -67,4 +67,3 @@ struct ReminderCardView: View {
     }
 }
 
-

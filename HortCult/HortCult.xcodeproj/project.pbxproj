@@ -243,9 +243,17 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		4EA1036A2A40F948001E0B0B /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		640AFB642A200E3B00A31EAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4EA1036A2A40F948001E0B0B /* Alerts */,
 				47657DD52A3937990001F521 /* CategoriaFrequencia */,
 				6A0D53172A39160700AA5554 /* ImagesList */,
 				6AF2ECDC2A37C84E0035FF28 /* Theme */,
@@ -515,7 +523,6 @@
 			files = (
 				640AFB972A20295200A31EAF /* Description.swift in Sources */,
 				6A6D5FCC2A3149BE007FB384 /* InformationView.swift in Sources */,
-				1EA01C9F2A3A721200962D91 /* Plant+CoreDataProperties.swift in Sources */,
 				4E5263EB2A3BBC0A006F4249 /* ImagePicker.swift in Sources */,
 				1EE297102A2E9DA900C7E64E /* ScrowViewTest.swift in Sources */,
 				640AFB792A20113900A31EAF /* Splash.swift in Sources */,

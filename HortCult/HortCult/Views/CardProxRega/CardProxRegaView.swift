@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardProxRegaView: View {
-    var imagem: String
+    var imagem: String = "Water"
     var dataProxRega: String
     
     var body: some View {
@@ -53,6 +53,6 @@ struct CardProxRegaView: View {
 
 struct CardProxRegaView_Previews: PreviewProvider {
     static var previews: some View {
-        CardProxRegaView(imagem: "", dataProxRega: "")
+        CardProxRegaView(dataProxRega: "")
     }
 }

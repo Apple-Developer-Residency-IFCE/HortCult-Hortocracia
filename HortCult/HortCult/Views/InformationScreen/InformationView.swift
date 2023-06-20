@@ -43,7 +43,7 @@ struct InformationView: View {
                         DescriptionPlant()
                             .padding(.bottom, 24)
                         
-                        CardProxRegaView(imagem: "Tomatinho", dataProxRega: "05/07")
+                        CardProxRegaView(dataProxRega: " ")
                             .padding(.bottom, 24)
                         
                         HStack {
