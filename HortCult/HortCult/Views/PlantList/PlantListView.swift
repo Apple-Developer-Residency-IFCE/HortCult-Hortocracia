@@ -45,7 +45,8 @@ struct ListaPlantasView: View {
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {
                     ForEach(plantViewModel.plant, id: \.self) { planta in
-                        NavigationLink(destination: InformationView()){
+                        
+                        NavigationLink(destination: InformationView(planta: planta)){
                             VStack{
 //                                dataToImage(data: planta.image)
 //                                    .resizable()
@@ -59,7 +60,7 @@ struct ListaPlantasView: View {
                             }.frame(width: 140, height: 150)
                                 .background(Color("BrancoMinhaHorta"))
                                 .cornerRadius(12)
-                        } 
+                        }
                     }
                 }
             }
