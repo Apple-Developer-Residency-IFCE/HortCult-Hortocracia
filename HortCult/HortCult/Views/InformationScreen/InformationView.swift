@@ -16,12 +16,11 @@ struct InformationView: View {
        // @ViewBuilder var content: () -> Content
         
             
-    @State var images: [UIImage]
-    @State var description: String
-    @State var img: String
-    @State var data: String
+//    @State var images: [UIImage]
+//    @State var description: String
+//    @State var img: String
+//    @State var data: String
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var planta: Plant
        // @ViewBuilder var content: () -> Content
         
