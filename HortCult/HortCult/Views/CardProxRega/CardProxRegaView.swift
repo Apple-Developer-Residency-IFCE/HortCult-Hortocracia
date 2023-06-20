@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CardProxRegaView: View {
-    @Binding var imagem: String
-    @Binding var dataProxRega: String
+    var imagem: String = "Water"
+    var dataProxRega: String
     
     var body: some View {
         HStack(spacing: 16){
@@ -53,15 +53,6 @@ struct CardProxRegaView: View {
 
 struct CardProxRegaView_Previews: PreviewProvider {
     static var previews: some View {
-         Teste7()
-    }
-}
-
-struct Teste7: View {
-    @State var img: String = "Water"
-    @State var data: String = "20/06"
-    
-    var body: some View{
-        CardProxRegaView(imagem: $img, dataProxRega: $data)
+        CardProxRegaView(dataProxRega: "")
     }
 }

@@ -52,6 +52,7 @@ struct AddVegetable: View {
     }
     
     var body: some View {
+        
         NavigationView {
             ZStack{
                 ScrollView(.vertical){

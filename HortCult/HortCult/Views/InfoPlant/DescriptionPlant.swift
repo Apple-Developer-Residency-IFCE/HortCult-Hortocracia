@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct DescriptionPlant: View {
-    
-    @Binding  var description: String
-    
     var body: some View {
         VStack{
             HStack(alignment: .center){
@@ -33,7 +30,7 @@ struct DescriptionPlant: View {
                             .stroke(Color("H1Color"), lineWidth: 2)
                     )
             }.padding(.bottom, 24)
-            Text(description)
+            Text("O tomate é um fruto rico em vitamina C, vitamina A, vitamina K e licopeno, que é um potente antioxidante, ajudando a manter a saúde da pele, fortalecer o sistema imunológico e evitar doenças cardiovasculares, como infarto e aterosclerose.")
                 .font(.custom("Satoshi", size: 16))
         }
         .padding(.horizontal, 20)
@@ -43,13 +40,6 @@ struct DescriptionPlant: View {
 
 struct DescriptionPlant_Previews: PreviewProvider {
     static var previews: some View {
-        Teste6()
-    }
-}
-
-struct Teste6: View {
-    @State var teste6: String = "O tomate é um fruto rico em vitamina C, vitamina A, vitamina K e licopeno, que é um potente antioxidante, ajudando a manter a saúde da pele, fortalecer o sistema imunológico e evitar doenças cardiovasculares, como infarto e aterosclerose."
-    var body: some View {
-        DescriptionPlant(description: $teste6)
+        DescriptionPlant()
     }
 }
