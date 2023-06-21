@@ -12,7 +12,7 @@ struct InformationView: View {
     @State private var deleteVegetableAlert = false
     @State private var confirmDeleteVegetableAlert = false
     @State private var backHomeAlert = false
-
+    @EnvironmentObject var plantViewModel: PlantViewModel
        // @ViewBuilder var content: () -> Content
         
             
@@ -143,6 +143,7 @@ struct InformationView: View {
                         .default(Text("Excluir")) {
                     deleteVegetableAlert = false
                     confirmDeleteVegetableAlert = true
+                            plantViewModel.deletePlant(plant: planta)
                 }
             )
         }
