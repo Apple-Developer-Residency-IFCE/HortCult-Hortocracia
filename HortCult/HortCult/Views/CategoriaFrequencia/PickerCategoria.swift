@@ -36,7 +36,7 @@ struct PickerCategoria: View {
                         Text(selectedOption)
                             .font(Font.custom("Satoshi-Regular", size: 16))
                             .padding(.leading, 16)
-                            .foregroundColor(Color("CinzaClaro"))
+                            .foregroundColor(Color("Cinza"))
                         Spacer()
                         Image("Arrow-Bottom")
                             .padding(.trailing, 22)

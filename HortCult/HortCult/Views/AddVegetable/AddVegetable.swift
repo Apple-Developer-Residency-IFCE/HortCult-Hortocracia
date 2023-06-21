@@ -14,6 +14,7 @@ struct AddVegetable: View {
     @State private var colorButton: String = "CinzaClaro"
     @State private var addVegetableAlert = false
     @State private var discartVegetableAlert = false
+    @State private var goToInformationViewAlert = false
     
     @State private var name : String = ""
     @State private var description : String = ""
@@ -110,30 +111,30 @@ struct AddVegetable: View {
                 .disabled(!isFieldsFilled)
                 .frame(alignment: .bottom)
                 .padding(.top, 602)
-                .alert(isPresented: $addVegetableAlert) {
-                    Alert(
-                        title: Text("Planta cadastrada!"),
-                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
-                        primaryButton: .default(Text("Tela Inicial")),
-                        secondaryButton: .default(
-                            Text("Ver Planta")
-                                .foregroundColor(Color("Cinza"))
-                        )
-                    )
-
-                }
+//                .alert(isPresented: $addVegetableAlert) {
+//                    Alert(
+//                        title: Text("Planta cadastrada!"),
+//                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
+//                        primaryButton: .default(Text("Tela Inicial")),
+//                        secondaryButton: .default(
+//                            Text("Ver Planta")
+//                                .foregroundColor(Color("Cinza"))
+//                        )
+//                    )
+//
+//                }
                 //descartar a criacao da planta
-                .alert(isPresented: $discartVegetableAlert) {
-                    Alert(
-                        title: Text("Deseja descartar a criação da sua planta?"),
-                        message: Text("Essa ação não poderá ser desfeita."),
-                        primaryButton: .cancel(Text("Cancelar")),
-                        secondaryButton: .default(
-                            Text("Descartar")
-                        )
-                    )
-
-                }
+//                .alert(isPresented: $discartVegetableAlert) {
+//                    Alert(
+//                        title: Text("Deseja descartar a criação da sua planta?"),
+//                        message: Text("Essa ação não poderá ser desfeita."),
+//                        primaryButton: .cancel(Text("Cancelar")),
+//                        secondaryButton: .default(
+//                            Text("Descartar")
+//                        )
+//                    )
+//
+//                }
             }
             
             
