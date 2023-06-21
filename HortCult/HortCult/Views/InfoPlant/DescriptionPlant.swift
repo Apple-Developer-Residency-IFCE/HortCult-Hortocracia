@@ -8,38 +8,41 @@
 import SwiftUI
 
 struct DescriptionPlant: View {
+    
+    var planta: Plant
+    
     var body: some View {
         VStack{
             HStack(alignment: .center){
-                Text("Tomatinho")
+                Text(planta.name ?? "")
                     .bold()
-                    .foregroundColor(Color("H1Color"))
+                    .foregroundColor(Color("VerdeEscuro"))
                     //.multilineTextAlignment(.center)
                     .font(.custom("Satoshi", size: 28))
                     //.padding(.top, 29)
                     //.lineLimit(268)
                     //.fixedSize(horizontal: false, vertical: true)
                 Spacer()
-                Text("Hortaliças")
+                Text(planta.category ?? "")
                     .padding(.horizontal, 13)
                     .padding(.vertical, 8)
-                    .foregroundColor(Color("H4Color"))
-                    .font(.custom("Sotoshi", size: 14))
+                    .foregroundColor(Color("Cinza"))
+                    .font(.custom("Satoshi", size: 14))
                     .overlay(
                         RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color("H1Color"), lineWidth: 2)
+                            .stroke(Color("VerdeEscuro"), lineWidth: 2)
                     )
             }.padding(.bottom, 24)
-            Text("O tomate é um fruto rico em vitamina C, vitamina A, vitamina K e licopeno, que é um potente antioxidante, ajudando a manter a saúde da pele, fortalecer o sistema imunológico e evitar doenças cardiovasculares, como infarto e aterosclerose.")
+            Text(planta.information ?? "")
                 .font(.custom("Satoshi", size: 16))
         }
         .padding(.horizontal, 20)
         
     }
 }
-
-struct DescriptionPlant_Previews: PreviewProvider {
-    static var previews: some View {
-        DescriptionPlant()
-    }
-}
+//
+//struct DescriptionPlant_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DescriptionPlant(planta: Plant())
+//    }
+//}
