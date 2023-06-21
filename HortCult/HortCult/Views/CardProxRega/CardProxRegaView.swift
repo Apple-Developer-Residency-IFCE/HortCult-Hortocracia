@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CardProxRegaView: View {
     var imagem: String = "Water"
-    var dataProxRega: String
-    
+    @State var dataProxRega: String
+    @EnvironmentObject var plantViewModel: PlantViewModel
+    @State var plant: Plant
     var body: some View {
         HStack(spacing: 16){
             
@@ -31,7 +32,16 @@ struct CardProxRegaView: View {
                     .foregroundColor(Color("Preto"))
                 
                 Button{
-                    // Action do botao
+                    var auxFrequency: Int = 0
+                    if let numero = Int(plant.frequency ?? "") {
+                        auxFrequency = numero
+                    } else {
+                        print("Erro ao converter a string para Int")
+                    }
+                    var nextDate: Date = Date()
+                    nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
+                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plant.image ?? Data())
+                    
                 } label: {
                     Text("Marcar como regado")
                         .font(Font.custom("Satoshi-Regular", size: 12))
@@ -53,6 +63,6 @@ struct CardProxRegaView: View {
 
 struct CardProxRegaView_Previews: PreviewProvider {
     static var previews: some View {
-        CardProxRegaView(dataProxRega: "")
+        CardProxRegaView(dataProxRega: "", plant: Plant())
     }
 }

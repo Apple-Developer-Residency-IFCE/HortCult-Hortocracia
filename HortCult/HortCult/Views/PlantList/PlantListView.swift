@@ -74,5 +74,6 @@ struct ListaPlantasView: View {
 struct ListaPlantasView_Previews: PreviewProvider {
     static var previews: some View {
         ListaPlantasView()
+            .environmentObject(PlantViewModel())
     }
 }

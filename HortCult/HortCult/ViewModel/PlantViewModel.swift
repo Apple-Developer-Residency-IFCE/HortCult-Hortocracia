@@ -89,7 +89,7 @@ class PlantViewModel: ObservableObject {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy/MM/dd"
                 return formatter.string(from: date)
-            }
+        }
         
         
         func getPlantDate(){
