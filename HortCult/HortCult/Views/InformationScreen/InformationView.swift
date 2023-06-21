@@ -40,6 +40,13 @@ struct InformationView: View {
             }
         }
     
+    
+    func formatDate(date: Date) -> String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            return formatter.string(from: date)
+    }
+    
     var body: some View {
         NavigationView{
             ScrollView(.vertical){
@@ -48,10 +55,10 @@ struct InformationView: View {
                             ImagesListView()
                         .padding(.bottom, 16)
                         
-                        DescriptionPlant()
+                        DescriptionPlant(planta: planta)
                             .padding(.bottom, 24)
                         
-                        CardProxRegaView(dataProxRega: " ")
+                        CardProxRegaView(dataProxRega: formatDate(date: planta.nextDate ?? Date()), plant: planta)
                             .padding(.bottom, 24)
                         
                         HStack {
@@ -79,14 +86,14 @@ struct InformationView: View {
                                     .font(.system(size: 16))
                                     .bold()
                             }
-                            .foregroundColor(Color("H1Color"))
+                            .foregroundColor(Color("VerdeEscuro"))
                             .padding()
                             .frame(width: 275, height: 42)
                             .background(.white)
                             .cornerRadius(40)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 40)
-                                    .stroke(Color("H1Color"), lineWidth: 2)
+                                    .stroke(Color("VerdeEscuro"), lineWidth: 2)
                             )
                         }
                         .padding(.top, 20)

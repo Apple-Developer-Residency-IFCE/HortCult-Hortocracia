@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReminderCardView: View {
     
-    var plantViewModel: PlantViewModel
+    @EnvironmentObject var plantViewModel: PlantViewModel
     
     var id = UUID()
     
@@ -48,7 +48,7 @@ struct ReminderCardView: View {
                     }
                     var nextDate: Date = Date()
                     nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
-                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: plant.nextDate ?? Date(), image: plant.image ?? Data())
+                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plant.image ?? Data())
                 } label: {
                     Text("Feito")
                         .font(Font.custom("Satoshi-Regular", size: 12))
