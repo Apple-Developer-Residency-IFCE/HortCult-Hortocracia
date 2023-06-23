@@ -81,43 +81,25 @@ class PlantViewModel: ObservableObject {
     
     func filterPlant() -> [Plant] {
         
-         var plantsArray = [Plant]()
+        var plantsArray = [Plant]()
+        var formatedToday: Date? = Date()
+        let formatter = DateFormatter()
+        let auxString = String(formatedToday!.formatted().prefix(9))
+        formatter.dateFormat = "MM/dd/yyyy"
+        formatedToday = formatter.date(from: auxString)
         
-        var today = Date()
-        
-        func formatDate(_ date: Date) -> String {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy/MM/dd"
-                return formatter.string(from: date)
-        }
-        
-        
-        func getPlantDate(){
-            
-            for plants in plant{
-                
-                var plantDate = plants.nextDate
-                var plantDateFormated = formatDate(plantDate!)
-                var formatedToday = formatDate(today)
-                
-                if(plantDateFormated == formatedToday){
-                    plantsArray.append(plants)
-                }else{
-                    let characterPairs = zip(plantDateFormated, formatedToday)
-                    
-                    for pair in characterPairs {
-                        if (pair.0 < pair.1) {
-                            plantsArray.append(plants)
-                        }else if(pair.0 > pair.1){
-                            break
-                        }
-                    }
-                }
+        for planta in plant{
+            var plantaDate: Date? = planta.nextDate
+            var plantaDateString = String(plantaDate!.formatted().prefix(9))
+            plantaDate = formatter.date(from: plantaDateString)
+            if(plantaDate ?? Date() <= formatedToday ?? Date()){
+                plantsArray.append(planta)
             }
-            
         }
+    
         return plantsArray
     }
+    
 //
 
 }

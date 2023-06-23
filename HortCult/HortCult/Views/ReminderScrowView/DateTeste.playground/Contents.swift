@@ -1,8 +1,19 @@
 import UIKit
-
+var formatedToday = Date()
 let formatter = DateFormatter()
-formatter.dateFormat = "dd/MM/yyyy"
-let firstDate = formatter.date(from: "10/08/2017")
-let secondDate = formatter.date(from: "10/08/2017")
+formatter.dateFormat = "MM/dd/yyyy"
+formatedToday = formatter.date(from: String(formatedToday.formatted().prefix(9)))!
+//
+//datas = Calendar.current.date(byAdding: .day, value: 1, to: formatDate ?? Date())!
+//print(type(of: formatDate))
+//print(datas)
+//
 
-print(firstDate == secondDate)
+
+//let formatter = DateFormatter()
+//formatter.dateFormat = "MM/dd/yyyy"
+var nextDate: Date = Date()
+nextDate = formatter.date(from: String(nextDate.formatted().prefix(9)))!
+print(nextDate == formatedToday)
+nextDate = Calendar.current.date(byAdding: .day, value: 1, to: nextDate)!
+print(nextDate == Date())
