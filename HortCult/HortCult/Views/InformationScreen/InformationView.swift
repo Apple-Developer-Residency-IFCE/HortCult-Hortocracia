@@ -21,7 +21,7 @@ struct InformationView: View {
 //    @State var img: String
 //    @State var data: String
     
-    var planta: Plant
+    @State var planta: Plant
        // @ViewBuilder var content: () -> Content
         
         var NavBarInfo : some View {
@@ -89,7 +89,7 @@ struct InformationView: View {
                             .foregroundColor(Color("VerdeEscuro"))
                             .padding()
                             .frame(width: 275, height: 42)
-                            .background(.white)
+                            .background(Color("Branco"))
                             .cornerRadius(40)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 40)

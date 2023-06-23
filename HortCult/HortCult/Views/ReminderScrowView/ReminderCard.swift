@@ -35,13 +35,13 @@ struct ReminderCardView: View {
                     .foregroundColor(Color("Preto"))
                     .bold()
                 
-                Text(String((plant.nextDate?.formatted().prefix(5))!))
+                Text("Dê água para a sua plantinha") // Futuramente pode receber uma mensagem diferente dependendo do que a planta precisa.
                     .font(.subheadline)
                     .font(.system(size: 16))
                     .foregroundColor(Color("CinzaEscuro"))
 
                 Button{
-                    if let numero = Int(plant.frequency ?? "") {
+                    if let numero = Int(plant.frequency!) {
                         auxFrequency = numero
                     } else {
                         print("Erro ao converter a string para Int")
@@ -53,7 +53,7 @@ struct ReminderCardView: View {
                     nextDate = formatter.date(from: String(nextDate.formatted().prefix(9))) ?? Date()
                     nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
                     plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plant.image ?? Data())
-                    plant.nextDate = nextDate
+                    plant = plantViewModel.getPlantId(id: plant.id!)!
                 } label: {
                     Text("Feito")
                         .font(Font.custom("Satoshi-Regular", size: 12))
