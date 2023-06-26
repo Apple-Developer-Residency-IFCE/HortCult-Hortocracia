@@ -13,11 +13,11 @@ struct ReminderCardView: View {
     
     var id = UUID()
     
-    
     @State var plant: Plant
     
+    
+    
     var body: some View {
-        
         var auxFrequency: Int = 0
         
         HStack(spacing: 16){
@@ -34,21 +34,26 @@ struct ReminderCardView: View {
                     .font(.system(size: 18))
                     .foregroundColor(Color("Preto"))
                     .bold()
-
-                Text("Testando")
+                
+                Text("Dê água para a sua plantinha") // Futuramente pode receber uma mensagem diferente dependendo do que a planta precisa.
                     .font(.subheadline)
                     .font(.system(size: 16))
                     .foregroundColor(Color("CinzaEscuro"))
 
                 Button{
-                    if let numero = Int(plant.frequency ?? "") {
+                    if let numero = Int(plant.frequency!) {
                         auxFrequency = numero
                     } else {
                         print("Erro ao converter a string para Int")
                     }
+                    
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "MM/dd/yyyy"
                     var nextDate: Date = Date()
+                    nextDate = formatter.date(from: String(nextDate.formatted().prefix(9))) ?? Date()
                     nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
                     plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plant.image ?? Data())
+                    plant = plantViewModel.getPlantId(id: plant.id!)!
                 } label: {
                     Text("Feito")
                         .font(Font.custom("Satoshi-Regular", size: 12))

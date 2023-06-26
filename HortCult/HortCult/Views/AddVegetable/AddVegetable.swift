@@ -76,18 +76,6 @@ struct AddVegetable: View {
                     discartVegetableAlert = true
                     if isFieldsFilled{
                         self.presentationMode.wrappedValue.dismiss()
-                        switch frequencia{
-                            case options.diario.rawValue:
-                                frequencia = "1"
-                            case options.dois.rawValue:
-                                frequencia = "2"
-                            case options.quatro.rawValue:
-                                frequencia = "4"
-                            case options.semana.rawValue:
-                                frequencia = "7"
-                            default:
-                                frequencia = " " // nao existe
-                        }
                         plantViewModel.createPlant(name: name, information: description, category: categoria, frequency: frequencia, image: UIImage())
                     }
                     

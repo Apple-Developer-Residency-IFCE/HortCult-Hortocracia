@@ -11,21 +11,10 @@ struct ScrollViewWithHeader: View{
     
     @EnvironmentObject var plantViewModel: PlantViewModel
     
-//    init(plantViewModel: PlantViewModel) {
-//            self.plantViewModel = plantViewModel
-//        }
-//    @State var cards: [ReminderCardView] = [
-//        (ReminderCardView(imagem: "Water", plantName: "", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-//        (ReminderCardView(imagem: "Water", plantName: "", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-//        (ReminderCardView(imagem: "Water", plantName: "", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-//        (ReminderCardView(imagem: "Water", plantName: "", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega"))
-//    ]
-    
-    
     
     var body: some View {
         
-        var filtedPlants = plantViewModel.plant
+        @State var filtedPlants = plantViewModel.filterPlant()
         
         VStack(alignment: .leading) {
             Text("Lembretes")
@@ -39,16 +28,16 @@ struct ScrollViewWithHeader: View{
                 LazyVStack(spacing: 12) {
                     
                     ForEach(filtedPlants, id: \.id){ plantas in
-                        ReminderCardView(plantViewModel: _plantViewModel,plant: plantas)
+                        ReminderCardView(plant: plantas)
                     }
-//                    ForEach(cards, id: \.id) { cards in
-//                        cards
-                        //                        ForEach(cards, id: \.self) { card in
-                        //                            card.listRowInsets(EdgeInsets())
-                        
-                    }
+                    //                    ForEach(cards, id: \.id) { cards in
+                    //                        cards
+                    //                        ForEach(cards, id: \.self) { card in
+                    //                            card.listRowInsets(EdgeInsets())
+                    
                 }
             }
         }
     }
-    
+        
+}

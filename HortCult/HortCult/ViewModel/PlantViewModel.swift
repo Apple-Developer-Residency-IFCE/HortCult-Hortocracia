@@ -23,6 +23,15 @@ class PlantViewModel: ObservableObject {
         return nil
     }
     
+    func getPlantId(id: UUID) -> Plant?{
+        for planta in self.plant{
+            if(planta.id == id){
+                return planta;
+            }
+        }
+        return nil
+    }
+    
     func fetch() {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         guard let fetchPlants = try? viewcontext.fetch(fetchRequest) else {
@@ -34,14 +43,30 @@ class PlantViewModel: ObservableObject {
     
     func createPlant(name: String, information: String, category: String, frequency: String, image: UIImage){
         
+        var formattedToday: Date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let formattedTodayString = formatter.string(from: formattedToday)
+        formattedToday = formatter.date(from: formattedTodayString) ?? Date()
+        let newFrequency: String
+        if(frequency == "Todos os dias"){
+            newFrequency = "1"
+        }else if("A cada 2 dias" == frequency){
+            newFrequency = "2"
+        }else if(frequency == "A cada 4 dias"){
+            newFrequency = "4"
+        }else{
+            newFrequency = "7"
+        }
+        
         let newPlant = Plant(context: viewcontext)
         newPlant.id = UUID()
         newPlant.name = name
         newPlant.information = information
         newPlant.category = category
-        newPlant.frequency = frequency
+        newPlant.frequency = newFrequency
         newPlant.image = imageDataConvert(image: image)
-        newPlant.nextDate = Date()
+        newPlant.nextDate = formattedToday
         
         do {
             try viewcontext.save()
@@ -64,60 +89,44 @@ class PlantViewModel: ObservableObject {
     
     func updatePlant(plant: Plant, name: String, information: String, category: String, frequency: String, nextDate: Date, image: Data){
         
+        var formattedNextDate: Date = nextDate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let formattedString = formatter.string(from: formattedNextDate)
+        formattedNextDate = formatter.date(from: formattedString) ?? Date()
+        
         plant.id = plant.id
         plant.name = name
         plant.information = information
         plant.category = category
         plant.frequency = frequency
-        plant.nextDate = nextDate
+        plant.nextDate = formattedNextDate
         plant.image = image
         do{
             try viewcontext.save()
             fetch()
         }catch let error as NSError{
-            print("Nào foi possivel atualiar \(error) \(error.userInfo)")
+            print("Nào foi possivel atualizar \(error) \(error.userInfo)")
         }
     }
     
     func filterPlant() -> [Plant] {
         
-         var plantsArray = [Plant]()
+        var plantsArray = [Plant]()
+        var formatedToday = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        formatedToday = formatter.date(from: String(formatedToday.formatted().prefix(10))) ?? Date()
         
-        var today = Date()
-        
-        func formatDate(_ date: Date) -> String {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy/MM/dd"
-                return formatter.string(from: date)
-        }
-        
-        
-        func getPlantDate(){
-            
-            for plants in plant{
-                
-                var plantDate = plants.nextDate
-                var plantDateFormated = formatDate(plantDate!)
-                var formatedToday = formatDate(today)
-                
-                if(plantDateFormated == formatedToday){
-                    plantsArray.append(plants)
-                }else{
-                    let characterPairs = zip(plantDateFormated, formatedToday)
-                    
-                    for pair in characterPairs {
-                        if (pair.0 < pair.1) {
-                            plantsArray.append(plants)
-                        }else if(pair.0 > pair.1){
-                            break
-                        }
-                    }
-                }
+        for planta in self.plant{
+            if(planta.nextDate! <= formatedToday){
+                plantsArray.append(planta)
             }
-            
         }
+    
         return plantsArray
     }
+    
 //
 
 }
