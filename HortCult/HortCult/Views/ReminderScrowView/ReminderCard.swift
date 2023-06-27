@@ -8,37 +8,52 @@
 import SwiftUI
 
 struct ReminderCardView: View {
+    
+    @EnvironmentObject var plantViewModel: PlantViewModel
+    
     var id = UUID()
-    var imagem: String
-    var titulo : String
-    var descricao: String
-    var cardColor : String
-    var circleColor : String
-
+    
+    @State var plant: Plant
+    
+    
+    
     var body: some View {
+        var auxFrequency: Int = 0
+        
         HStack(spacing: 16){
-
-            Image(imagem)
+            Image("Water")
                 .frame(width: 62, height:62)
-                .background(Color(circleColor))
+                .background(Color("LembreteCircleRega"))
                 .cornerRadius(60)
                 .padding(.leading, 20)
                 .foregroundColor(.yellow)
             VStack(alignment: .leading){
 
-                Text(titulo)
+                Text("\(plant.name ?? "") está com sede!")
                     .font(.headline)
                     .font(.system(size: 18))
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("Preto"))
                     .bold()
-
-                Text(descricao)
+                
+                Text("Dê água para a sua plantinha") // Futuramente pode receber uma mensagem diferente dependendo do que a planta precisa.
                     .font(.subheadline)
                     .font(.system(size: 16))
                     .foregroundColor(Color("CinzaEscuro"))
 
                 Button{
-                    // Action do botao
+                    if let numero = Int(plant.frequency!) {
+                        auxFrequency = numero
+                    } else {
+                        print("Erro ao converter a string para Int")
+                    }
+                    
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "MM/dd/yyyy"
+                    var nextDate: Date = Date()
+                    nextDate = formatter.date(from: String(nextDate.formatted().prefix(9))) ?? Date()
+                    nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
+                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plant.image ?? Data())
+                    plant = plantViewModel.getPlantId(id: plant.id!)!
                 } label: {
                     Text("Feito")
                         .font(Font.custom("Satoshi-Regular", size: 12))
@@ -52,13 +67,8 @@ struct ReminderCardView: View {
             }
             Spacer()
         }.frame(width: 350, height: 118)
-            .background(Color(cardColor))
+            .background(Color("LembreteRega"))
             .cornerRadius(12)
     }
 }
 
-struct ReminderCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReminderCardView(id: UUID(), imagem: "", titulo: "", descricao: "", cardColor: "", circleColor: "")
-    }
-}

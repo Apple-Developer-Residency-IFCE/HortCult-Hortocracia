@@ -9,40 +9,35 @@ import SwiftUI
 
 struct ScrollViewWithHeader: View{
     
-    @State var cards: [ReminderCardView] = [
-        (ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-        (ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "De agua para sua plantinha", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-        (ReminderCardView(imagem: "Rega", titulo: "Batatão está com sede!", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega")),
-        (ReminderCardView(imagem: "Rega", titulo: "Batatão está c om sede!", descricao: "Dê agua para sua plantinha.", cardColor: "LembreteRega", circleColor: "LembreteCircleRega"))
-    ]
+    @EnvironmentObject var plantViewModel: PlantViewModel
+    
     
     var body: some View {
+        
+        @State var filtedPlants = plantViewModel.filterPlant()
+        
         VStack(alignment: .leading) {
             Text("Lembretes")
                 .font(.title)
                 .fontWeight(.bold)
                 .padding()
-                .foregroundColor(Color("H1Color"))
+                .foregroundColor(Color("VerdeEscuro"))
                 .padding(.leading, 5)
             
             ScrollView(.vertical) {
                 LazyVStack(spacing: 12) {
-                    ForEach(cards, id: \.id) { cards in
-                        cards
-                        //                        ForEach(cards, id: \.self) { card in
-                        //                            card.listRowInsets(EdgeInsets())
-                        
+                    
+                    ForEach(filtedPlants, id: \.id){ plantas in
+                        ReminderCardView(plant: plantas)
                     }
+                    //                    ForEach(cards, id: \.id) { cards in
+                    //                        cards
+                    //                        ForEach(cards, id: \.self) { card in
+                    //                            card.listRowInsets(EdgeInsets())
+                    
                 }
             }
         }
     }
-    
-    
-    
-    struct ScrollViewWithHeader_Previews: PreviewProvider {
-        static var previews: some View {
-            ScrollViewWithHeader()
-        }
-    }
+        
 }

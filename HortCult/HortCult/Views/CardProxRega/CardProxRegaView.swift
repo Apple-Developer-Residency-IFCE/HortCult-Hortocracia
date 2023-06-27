@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct CardProxRegaView: View {
-    var imagem: String
-    var dataProxRega: String
-    
+    var imagem: String = "WaterBlue"
+    @State var dataProxRega: String
+    @EnvironmentObject var plantViewModel: PlantViewModel
+    @State var plant: Plant
     var body: some View {
+        var auxFrequency: Int = 0
         HStack(spacing: 16){
-            
             Image(imagem)
                 .frame(width: 52, height: 52)
                 .background(Color("Azul").opacity(0.1))
@@ -31,7 +32,20 @@ struct CardProxRegaView: View {
                     .foregroundColor(Color("Preto"))
                 
                 Button{
-                    // Action do botao
+                    if let numero = Int(plant.frequency!) {
+                        auxFrequency = numero
+                    } else {
+                        print("Erro ao converter a string para Int")
+                    }
+                    
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "MM/dd/yyyy"
+                    var nextDate: Date = Date()
+                    nextDate = formatter.date(from: String(nextDate.formatted().prefix(9))) ?? Date()
+                    nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
+                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plant.image ?? Data())
+                    plant = plantViewModel.getPlantId(id: plant.id!)!
+                    dataProxRega = String(plant.nextDate!.formatted().prefix(10))
                 } label: {
                     Text("Marcar como regado")
                         .font(Font.custom("Satoshi-Regular", size: 12))
@@ -51,8 +65,8 @@ struct CardProxRegaView: View {
     }
 }
 
-struct CardProxRegaView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardProxRegaView(imagem: "", dataProxRega: "")
-    }
-}
+//struct CardProxRegaView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardProxRegaView(dataProxRega: "", plant: )
+//    }
+//}
