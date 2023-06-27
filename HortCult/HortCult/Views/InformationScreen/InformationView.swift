@@ -13,7 +13,7 @@ struct InformationView: View {
     @State private var confirmDeleteVegetableAlert = false
     @State private var backHomeAlert = false
     @EnvironmentObject var plantViewModel: PlantViewModel
-       // @ViewBuilder var content: () -> Content
+    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
         
             
 //    @State var images: [UIImage]
@@ -81,7 +81,7 @@ struct InformationView: View {
                             EditVegetable(plant: planta, name: planta.name ?? "", description: planta.information ?? "", categoria: planta.category ?? "", frequencia: planta.frequency ?? "")
                         } label: {
                             HStack {
-                                Image("Editar")
+                                Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
                                 Text("Editar Informações")
                                     .font(.system(size: 16))
                                     .bold()

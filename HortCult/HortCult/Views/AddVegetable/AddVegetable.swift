@@ -76,6 +76,15 @@ struct AddVegetable: View {
                     discartVegetableAlert = true
                     if isFieldsFilled{
                         self.presentationMode.wrappedValue.dismiss()
+                        if(frequencia == "Todos os dias"){
+                            frequencia = "1"
+                        }else if(frequencia == "A cada 2 dias"){
+                            frequencia = "2"
+                        }else if(frequencia == "A cada 4 dias"){
+                            frequencia = "4"
+                        }else{
+                            frequencia = "7"
+                        }
                         plantViewModel.createPlant(name: name, information: description, category: categoria, frequency: frequencia, image: UIImage())
                     }
                     
