@@ -19,7 +19,8 @@ struct ListaPlantasView: View {
         return Image(uiImage: uiImage)
     }
     
-    @Environment(\.colorScheme) var colorScheme
+    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
+    
     var body: some View {
         
         VStack(spacing: 20){
@@ -33,7 +34,7 @@ struct ListaPlantasView: View {
                     AddVegetable(plantViewModel: plantViewModel)
                 } label: {
                     HStack {
-                        Image(colorScheme == .dark ? "Add" : "AddWhite")
+                        Image(selectedTheme == .Escuro ? "Add" : "AddWhite")
                             .frame(width: 32, height: 32)
                             .background(Color("VerdeEscuro"))
                             .cornerRadius(50)

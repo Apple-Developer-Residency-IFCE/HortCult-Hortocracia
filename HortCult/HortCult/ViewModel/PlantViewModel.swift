@@ -48,23 +48,13 @@ class PlantViewModel: ObservableObject {
         formatter.dateFormat = "MM/dd/yyyy"
         let formattedTodayString = formatter.string(from: formattedToday)
         formattedToday = formatter.date(from: formattedTodayString) ?? Date()
-        let newFrequency: String
-        if(frequency == "Todos os dias"){
-            newFrequency = "1"
-        }else if("A cada 2 dias" == frequency){
-            newFrequency = "2"
-        }else if(frequency == "A cada 4 dias"){
-            newFrequency = "4"
-        }else{
-            newFrequency = "7"
-        }
         
         let newPlant = Plant(context: viewcontext)
         newPlant.id = UUID()
         newPlant.name = name
         newPlant.information = information
         newPlant.category = category
-        newPlant.frequency = newFrequency
+        newPlant.frequency = frequency
         newPlant.image = imageDataConvert(image: image)
         newPlant.nextDate = formattedToday
         

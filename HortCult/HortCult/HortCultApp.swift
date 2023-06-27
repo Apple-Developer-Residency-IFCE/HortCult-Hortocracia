@@ -9,11 +9,8 @@ import SwiftUI
 
 @main
 struct HortCultApp: App {
-    //let persistenceController = PersistenceController.shared
     
     @AppStorage ("isFirstLogin") static var isFirstLogin = true
-    
-    
     
     var body: some Scene {
         WindowGroup {

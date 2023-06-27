@@ -9,8 +9,7 @@ import SwiftUI
 
 struct Home: View {
 //    @State var images: [String] = ["Tomatinho","Abobrinha","Tomatinho2","Abobrinha2"]
-    @Environment(\.colorScheme) var colorScheme
-    
+    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @EnvironmentObject var plantViewModel: PlantViewModel
     
     var body: some View {
@@ -21,7 +20,7 @@ struct Home: View {
                 ScrollViewWithHeader()
             }.toolbar(){
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Image(colorScheme == .dark ? "Topbardark" : "Topbar")
+                    Image(selectedTheme == .Escuro ? "Topbardark" : "Topbar")
                 }
             }
         }.navigationBarBackButtonHidden(true)

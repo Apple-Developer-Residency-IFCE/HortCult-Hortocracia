@@ -25,5 +25,5 @@ if let date = formatter.date(from: formattedToday) {
 //formatter.dateFormat = "MM/dd/yyyy"
 
 var nextDate: Date = Date()
-nextDate = formatter.date(from: String(nextDate.formatted().prefix(10))) ?? Date()
+nextDate = formatter.date(from: String(nextDate.formatted().prefix(9))) ?? Date()
 nextDate = Calendar.current.date(byAdding: .day, value: 4, to: nextDate)!

@@ -14,7 +14,7 @@ enum Choice: String {
 
 struct ThemeView: View {
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
-    
+    @Environment (\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var NavBar : some View {
@@ -111,7 +111,7 @@ struct ThemeView: View {
     private func circleColor(for choice: Choice) -> Color {
         if selectedTheme == choice {
             return Color("VerdeEscuro")
-        } else {
+        }else{
             return Color("")
         }
     }

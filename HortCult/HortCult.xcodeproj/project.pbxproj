@@ -259,7 +259,6 @@
 				4EA1036A2A40F948001E0B0B /* Alerts */,
 				47657DD52A3937990001F521 /* CategoriaFrequencia */,
 				6A0D53172A39160700AA5554 /* ImagesList */,
-				6AF2ECDC2A37C84E0035FF28 /* Theme */,
 				47371CA52A31558D00FF3114 /* CustomNavBarInfo */,
 				6A6D5FCA2A3149BE007FB384 /* InformationScreen */,
 				4E12005E2A2FEF8E00DF78D6 /* AddVegetable */,
@@ -398,6 +397,7 @@
 			children = (
 				646F16102A2965420091EE21 /* AjustesView.swift */,
 				646F16122A29654D0091EE21 /* NotificationsView.swift */,
+				6AF2ECDD2A37C8840035FF28 /* ThemeView.swift */,
 			);
 			path = Ajustes;
 			sourceTree = "<group>";
@@ -434,14 +434,6 @@
 				6ABFB6502A2EAF1E009FF0FD /* DescriptionPlant.swift */,
 			);
 			path = InfoPlant;
-			sourceTree = "<group>";
-		};
-		6AF2ECDC2A37C84E0035FF28 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				6AF2ECDD2A37C8840035FF28 /* ThemeView.swift */,
-			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

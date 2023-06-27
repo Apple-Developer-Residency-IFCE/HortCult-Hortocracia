@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CardProxRegaView: View {
     var imagem: String = "Water"
-    @State var dataProxRega: String
     @EnvironmentObject var plantViewModel: PlantViewModel
+    @State var dataProxRega: String
     @State var plant: Plant
     var body: some View {
         var auxFrequency: Int = 0
@@ -45,6 +45,7 @@ struct CardProxRegaView: View {
                     nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
                     plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plant.image ?? Data())
                     plant = plantViewModel.getPlantId(id: plant.id!)!
+                    dataProxRega = String(nextDate.formatted().prefix(10))
                 } label: {
                     Text("Marcar como regado")
                         .font(Font.custom("Satoshi-Regular", size: 12))

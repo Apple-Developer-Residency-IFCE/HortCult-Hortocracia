@@ -12,7 +12,6 @@ struct AjustesView: View {
     @AppStorage ("isToggleOn") private var isToggleOn = false
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @AppStorage ("selectedHour") private var selectedHour: String = "00:00"
-    
     var body: some View {
         
         NavigationView {
@@ -59,6 +58,7 @@ struct AjustesView: View {
                                     .foregroundColor(Color("Preto"))
                                     .padding(.trailing, 6)
                             }
+                            }
                             
                             Image(selectedTheme == .Escuro ? "DropdownLight" : "Dropdown")
                                 .rotationEffect(Angle(degrees: -90))
@@ -98,9 +98,7 @@ struct AjustesView: View {
                     Spacer()
                 
                 
-            }
-        }
-        .navigationBarBackButtonHidden(true)
+            }.navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
         
         

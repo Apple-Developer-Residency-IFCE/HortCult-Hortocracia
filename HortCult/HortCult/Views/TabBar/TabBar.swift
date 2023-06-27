@@ -3,8 +3,6 @@ import SwiftUI
 struct TabBar: View {
     @State private var selectedTab: Int = 0
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
-    @Environment(\.colorScheme) var colorScheme
-    
     @ObservedObject var plantViewModel: PlantViewModel
     
     init(plantViewModel: PlantViewModel) {
@@ -46,11 +44,11 @@ struct TabBar: View {
                 
                 HStack(spacing: 0) {
                     Spacer()
-                    TabBarButton(tabIcon: selectedTab == 0 ? (colorScheme == .dark ? "HomeGreenLight" : "HomeGreen") : (colorScheme == .dark ? "HomeGrey" : "Home"), isSelected: selectedTab == 0) {
+                    TabBarButton(tabIcon: selectedTab == 0 ? (selectedTheme == .Escuro ? "HomeGreenLight" : "HomeGreen") : (selectedTheme == .Escuro ? "HomeGrey" : "Home"), isSelected: selectedTab == 0) {
                         selectedTab = 0
                     }
                     Spacer()
-                    TabBarButton(tabIcon: selectedTab == 1 ? (colorScheme == .dark ? "SettingsGreenLight" : "SettingsGreen") : (colorScheme == .dark ? "SettingsGrey" : "Settings"), isSelected: selectedTab == 1) {
+                    TabBarButton(tabIcon: selectedTab == 1 ? (selectedTheme == .Escuro ? "SettingsGreenLight" : "SettingsGreen") : (selectedTheme == .Escuro ? "SettingsGrey" : "Settings"), isSelected: selectedTab == 1) {
                         selectedTab = 1
                     }
                     Spacer()

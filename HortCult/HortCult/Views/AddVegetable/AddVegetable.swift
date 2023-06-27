@@ -61,7 +61,7 @@ struct AddVegetable: View {
                         VStack{
                             AddEditTitle(addEdit: true)
                             NameDescription(nameVegetable: $name, descriptionVegetable: $description)
-                           PickerCategoria(selectedOption: $categoria)
+                            PickerCategoria(selectedOption: $categoria)
                             PickerFrequencia(selectedOption: $frequencia)
                             AddEditPhotos()
                         }
@@ -76,6 +76,16 @@ struct AddVegetable: View {
                     discartVegetableAlert = true
                     if isFieldsFilled{
                         self.presentationMode.wrappedValue.dismiss()
+                        if(frequencia == "Todos os dias"){
+                            frequencia = "1"
+                        }else if("A cada 2 dias" == frequencia){
+                            frequencia = "2"
+                        }else if(frequencia == "A cada 4 dias"){
+                            frequencia = "4"
+                        }else{
+                            frequencia = "7"
+                        }
+
                         plantViewModel.createPlant(name: name, information: description, category: categoria, frequency: frequencia, image: UIImage())
                     }
                     
