@@ -132,7 +132,6 @@
 		6438A9262A1D7731006021DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6438A9282A1D7731006021DA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6438A92B2A1D7731006021DA /* HortCult.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HortCult.xcdatamodel; sourceTree = "<group>"; };
-		646726612A2A9E01003A981F /* ImagesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesListView.swift; sourceTree = "<group>"; };
 		646726722A2A9E43003A981F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		646F160B2A2958F50091EE21 /* TestCardProxRegaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCardProxRegaView.swift; sourceTree = "<group>"; };
 		646F160C2A2958F50091EE21 /* CardProxRegaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardProxRegaView.swift; sourceTree = "<group>"; };
@@ -360,7 +359,6 @@
 		6467265D2A2A9D42003A981F /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				646726612A2A9E01003A981F /* ImagesListView.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";

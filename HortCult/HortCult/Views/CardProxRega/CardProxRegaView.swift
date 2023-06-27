@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardProxRegaView: View {
-    var imagem: String = "Water"
+    var imagem: String = "WaterBlue"
     @State var dataProxRega: String
     @EnvironmentObject var plantViewModel: PlantViewModel
     @State var plant: Plant
