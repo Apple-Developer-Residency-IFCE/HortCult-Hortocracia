@@ -27,8 +27,9 @@ struct Onboarding01: View {
                     }) {
                         HStack {
                             Text("Iniciar")
+                                .bold()
+                                .foregroundColor(Color("TextOn14"))
                         }
-                        .foregroundColor(.white)
                         .padding()
                         .frame(width: 277, height: 42)
                         .background(Color("H1Color"))

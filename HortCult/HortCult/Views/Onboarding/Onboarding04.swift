@@ -27,17 +27,13 @@ struct Onboarding04: View {
                         HStack {
                             Text("Ir para a Tela Inicial")
                             Image("Arrow-Right")
-                                .foregroundColor(.white)
+                                .renderingMode(.template)
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("TextOn14"))
                         .padding()
                         .frame(width: 277, height: 42)
-                        .background(Color("H1Color"))
+                        .background(Color("TextOn23"))
                         .cornerRadius(40)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color("H1Color"), lineWidth: 2)
-                        )
                     }
                 }
                 SecondButton(appearButton: false)

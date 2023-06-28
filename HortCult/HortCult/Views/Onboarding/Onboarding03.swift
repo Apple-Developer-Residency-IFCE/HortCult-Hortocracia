@@ -26,17 +26,17 @@ struct Onboarding03: View {
                     }) {
                         HStack {
                             Text("Continuar")
+                                .bold()
                             Image("Arrow-Right")
-                                .foregroundColor(.white)
+                                .renderingMode(.template)
                         }
-                        .foregroundColor(Color("H1Color"))
+                        .foregroundColor(Color("TextOn23"))
                         .padding()
                         .frame(width: 277, height: 42)
-                        .background(.white)
                         .cornerRadius(40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color("H1Color"), lineWidth: 2)
+                                .stroke(Color("TextOn23"), lineWidth: 2)
                         )
                     }
                     VStack {
@@ -47,9 +47,8 @@ struct Onboarding03: View {
                             moveToHome = true
                         }) {
                             Text("Pular para a Tela inicial")
-                                .foregroundColor(Color("H4Color"))
+                                .foregroundColor(Color("TextSkip"))
                         }
-                        .background(.white)
                         .padding(.top, 28)
                     }
                     .padding(.bottom, 20)
