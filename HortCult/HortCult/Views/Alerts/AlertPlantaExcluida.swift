@@ -11,10 +11,10 @@ struct CustomAlert: View {
     var body: some View {
         VStack {
             Text(title)
-                .font(.headline)
+                .font(Font.custom("Satoshi-Regular", size: 16))
             
             Text(message)
-                .font(.body)
+                .font(Font.custom("Satoshi-Regular", size: 16))
             
             Spacer()
             
@@ -25,7 +25,7 @@ struct CustomAlert: View {
                 if let secondaryButtonTitle = secondaryButtonTitle {
                     Button(action: secondaryButtonAction ?? {}) {
                         Text(secondaryButtonTitle)
-                            .font(.body)
+                            .font(Font.custom("Satoshi-Regular", size: 16))
                             .foregroundColor(.secondary)
                     }
                     .frame(maxWidth: .infinity)
@@ -34,7 +34,7 @@ struct CustomAlert: View {
                 
                 Button(action: primaryButtonAction) {
                     Text(primaryButtonTitle)
-                        .font(.body)
+                        .font(Font.custom("Satoshi-Regular", size: 16))
                         .bold()
                 }
                 .frame(maxWidth: .infinity)

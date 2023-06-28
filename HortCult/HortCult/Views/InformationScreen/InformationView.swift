@@ -31,7 +31,9 @@ struct InformationView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     } ) {
                         Image("Arrow-Left-Light")
-                        Text("Voltar").foregroundColor(.white)
+                        Text("Voltar")
+                            .font(Font.custom("Satoshi-Regular", size: 16))
+                            .foregroundColor(.white)
                     }
                     .padding(.leading, 18)
                     Spacer()
@@ -64,11 +66,11 @@ struct InformationView: View {
                         HStack {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
-                                    .font(.system(size: 16))
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                     .foregroundColor(.black)
                                     .padding(.leading, 20)
                                 Text("Todos os Dias")
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Satoshi-Bold", size: 18))
                                     .foregroundColor(.black)
                                     .bold()
                                     .padding(.leading, 20)
@@ -83,7 +85,7 @@ struct InformationView: View {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
                                 Text("Editar Informações")
-                                    .font(.system(size: 16))
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                     .bold()
                             }
                             .foregroundColor(Color("VerdeEscuro"))
@@ -105,7 +107,7 @@ struct InformationView: View {
                             HStack {
                                 Image("Remover")
                                 Text("Excluir da minha horta")
-                                    .font(.system(size: 16))
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                     .bold()
                             }
                             .foregroundColor(.white)

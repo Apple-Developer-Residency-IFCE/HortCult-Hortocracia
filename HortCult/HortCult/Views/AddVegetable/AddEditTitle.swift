@@ -16,9 +16,9 @@ struct AddEditTitle: View {
             HStack{
                 Text("Adicionar Vegetal")
                     .font(.title)
-                    .font(.system(size: 28))
+                    .font(Font.custom("Satoshi-Bold", size: 28))
                     .fontWeight(.bold)
-                    .foregroundColor(Color("H1Color"))
+                    .foregroundColor(Color("VerdeEscuro"))
                     .padding(.top, 20)
                 Spacer()
             }.padding()
@@ -26,9 +26,9 @@ struct AddEditTitle: View {
             HStack{
                 Text("Editar Vegetal")
                     .font(.title)
-                    .font(.system(size: 28))
+                    .font(Font.custom("Satoshi-Bold", size: 28))
                     .fontWeight(.bold)
-                    .foregroundColor(Color("H1Color"))
+                    .foregroundColor(Color("VerdeEscuro"))
                     .padding(.top, 20)
                 Spacer()
             }.padding()

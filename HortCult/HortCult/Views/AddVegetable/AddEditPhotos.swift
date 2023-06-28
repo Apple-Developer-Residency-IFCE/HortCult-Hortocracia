@@ -13,7 +13,7 @@ struct AddEditPhotos: View {
             Text("Fotos")
                 .foregroundColor(Color("Cinza"))
                 .fontWeight(.light)
-                .font(.system(size: 12))
+                .font(Font.custom("Satoshi-Regular", size: 16))
             ImagePickerView()
         }.padding(.leading, 20)
     }
