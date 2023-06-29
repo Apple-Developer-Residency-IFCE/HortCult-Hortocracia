@@ -10,13 +10,17 @@ import SwiftUI
 struct Splash: View {
     
     
-    
+    @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @State var isActive: Bool = false
     @State var size = 0.8
     @State var opacity = 0.5
     var body: some View {
         if isActive {
-            Onboarding01()
+            if(HortCultApp.isFirstLogin){
+                Onboarding01()
+            }else{
+                TabBar(plantViewModel: PlantViewModel())
+            }
         }else {
             VStack {
                 VStack {

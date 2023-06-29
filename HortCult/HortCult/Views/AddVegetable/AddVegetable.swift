@@ -38,16 +38,6 @@ struct AddVegetable: View {
         
     }
     
-//    func confereView() {
-//        if(name.count > 0 && description.count > 0 && (categoria == "Selecionar...") && frequencia !=  "Selecionar..." ){
-//            isFull = true
-//            colorButton = "VerdeEscuro"
-//        }else{
-//            colorButton = "CinzaClaro"
-//            isFull = false
-//        }
-//    }
-    
     var isFieldsFilled: Bool{
         return !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && categoria != "Selecionar..." && frequencia != "Selecionar..."
     }
@@ -70,7 +60,6 @@ struct AddVegetable: View {
                 .padding(.bottom, 100)
                 
                 Button(action: {
-                    // Só um teste
                     colorButton = "VerdeEscuro"
                     addVegetableAlert = true
                     discartVegetableAlert = true
@@ -92,7 +81,7 @@ struct AddVegetable: View {
                     HStack {
                         Text("Adicionar Novo Vegetal")
                             .foregroundColor(Color("Branco"))
-                            .font(.system(size: 16))
+                            .font(Font.custom("Satoshi-Regular", size: 16))
                             .bold()
                     }
                     .foregroundColor(Color("CinzaClaro"))
@@ -108,30 +97,6 @@ struct AddVegetable: View {
                 .disabled(!isFieldsFilled)
                 .frame(alignment: .bottom)
                 .padding(.top, 602)
-//                .alert(isPresented: $addVegetableAlert) {
-//                    Alert(
-//                        title: Text("Planta cadastrada!"),
-//                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
-//                        primaryButton: .default(Text("Tela Inicial")),
-//                        secondaryButton: .default(
-//                            Text("Ver Planta")
-//                                .foregroundColor(Color("Cinza"))
-//                        )
-//                    )
-//
-//                }
-                //descartar a criacao da planta
-//                .alert(isPresented: $discartVegetableAlert) {
-//                    Alert(
-//                        title: Text("Deseja descartar a criação da sua planta?"),
-//                        message: Text("Essa ação não poderá ser desfeita."),
-//                        primaryButton: .cancel(Text("Cancelar")),
-//                        secondaryButton: .default(
-//                            Text("Descartar")
-//                        )
-//                    )
-//
-//                }
             }
             
             

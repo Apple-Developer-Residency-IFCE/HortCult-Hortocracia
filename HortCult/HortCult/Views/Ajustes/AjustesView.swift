@@ -21,7 +21,7 @@ struct AjustesView: View {
                 
                 HStack{
                     Text("Ajustes")
-                        .font(Font.custom("Satoshi-Regular", size: 28))
+                        .font(Font.custom("Satoshi-Bold", size: 28))
                         .foregroundColor(Color("VerdeEscuro"))
                         .bold()
                         .padding(.top, 20)

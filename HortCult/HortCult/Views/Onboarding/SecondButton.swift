@@ -15,6 +15,7 @@ struct SecondButton: View {
                 //print(buttonText)
             }) {
                 Text("Pular para a Tela inicial")
+                    .font(Font.custom("Satoshi-Regular", size: 16))
                     .foregroundColor(Color("H4Color"))
             }
             .background(.white)

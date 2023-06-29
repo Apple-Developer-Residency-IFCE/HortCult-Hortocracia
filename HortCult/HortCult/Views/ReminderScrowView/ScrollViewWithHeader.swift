@@ -18,7 +18,7 @@ struct ScrollViewWithHeader: View{
         
         VStack(alignment: .leading) {
             Text("Lembretes")
-                .font(.title)
+                .font(Font.custom("Satoshi-Bold", size: 28))
                 .fontWeight(.bold)
                 .padding()
                 .foregroundColor(Color("VerdeEscuro"))

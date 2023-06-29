@@ -31,13 +31,13 @@ struct ReminderCardView: View {
 
                 Text("\(plant.name ?? "") está com sede!")
                     .font(.headline)
-                    .font(.system(size: 18))
+                    .font(Font.custom("Satoshi-Bold", size: 18))
                     .foregroundColor(Color("Preto"))
                     .bold()
                 
                 Text("Dê água para a sua plantinha") // Futuramente pode receber uma mensagem diferente dependendo do que a planta precisa.
                     .font(.subheadline)
-                    .font(.system(size: 16))
+                    .font(Font.custom("Satoshi-Regular", size: 16))
                     .foregroundColor(Color("CinzaEscuro"))
 
                 Button{

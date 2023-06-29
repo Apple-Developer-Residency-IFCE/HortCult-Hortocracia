@@ -18,7 +18,7 @@ struct DescriptionPlant: View {
                     .bold()
                     .foregroundColor(Color("VerdeEscuro"))
                     //.multilineTextAlignment(.center)
-                    .font(.custom("Satoshi", size: 28))
+                    .font(.custom("Satoshi-Bold", size: 28))
                     //.padding(.top, 29)
                     //.lineLimit(268)
                     //.fixedSize(horizontal: false, vertical: true)
@@ -27,14 +27,14 @@ struct DescriptionPlant: View {
                     .padding(.horizontal, 13)
                     .padding(.vertical, 8)
                     .foregroundColor(Color("Cinza"))
-                    .font(.custom("Satoshi", size: 14))
+                    .font(.custom("Satoshi-Regular", size: 12))
                     .overlay(
                         RoundedRectangle(cornerRadius: 40)
                             .stroke(Color("VerdeEscuro"), lineWidth: 2)
                     )
             }.padding(.bottom, 24)
             Text(planta.information ?? "")
-                .font(.custom("Satoshi", size: 16))
+                .font(.custom("Satoshi-Regular", size: 16))
         }
         .padding(.horizontal, 20)
         
@@ -43,6 +43,6 @@ struct DescriptionPlant: View {
 //
 //struct DescriptionPlant_Previews: PreviewProvider {
 //    static var previews: some View {
-//        DescriptionPlant(planta: Plant())
+//        DescriptionPlant(planta: )
 //    }
 //}
