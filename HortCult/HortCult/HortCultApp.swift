@@ -11,17 +11,13 @@ import SwiftUI
 struct HortCultApp: App {
     //let persistenceController = PersistenceController.shared
     
-    @AppStorage ("isFirstLogin") static var isFirstLogin = true
+    @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     
     
     
     var body: some Scene {
         WindowGroup {
-            if HortCultApp.isFirstLogin == true {
-                Splash()
-            } else {
-                TabBar(plantViewModel: PlantViewModel())
-            }
+            Splash()
         }
     }
 }

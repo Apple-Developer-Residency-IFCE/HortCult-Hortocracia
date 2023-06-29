@@ -54,8 +54,8 @@ struct InformationView: View {
             ScrollView(.vertical){
                 ZStack{
                     VStack{
-                            ImagesListView()
-                        .padding(.bottom, 16)
+                        ImagesListView()
+                            .padding(.bottom, 16)
                         
                         DescriptionPlant(planta: planta)
                             .padding(.bottom, 24)

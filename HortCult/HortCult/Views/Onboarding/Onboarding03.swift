@@ -10,6 +10,8 @@ import SwiftUI
 struct Onboarding03: View {
     @State private var showOnboarding = false
     @State private var moveToHome = false
+    @Environment(\.colorScheme) var colorScheme
+    @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     var body: some View {
         NavigationView {
             VStack{
@@ -26,17 +28,18 @@ struct Onboarding03: View {
                     }) {
                         HStack {
                             Text("Continuar")
-                            Image("Arrow-Right")
-                                .foregroundColor(.white)
+                                .font(Font.custom("Satoshi-Regular", size: 16))
+                            Image(colorScheme == .dark ? "Arrow-Right-GreenLight" : "Arrow-Right-Green")
+                                .foregroundColor(Color("Branco"))
                         }
-                        .foregroundColor(Color("H1Color"))
+                        .foregroundColor(Color("VerdeEscuro"))
                         .padding()
                         .frame(width: 277, height: 42)
-                        .background(.white)
+                        .background(Color("Branco"))
                         .cornerRadius(40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color("H1Color"), lineWidth: 2)
+                                .stroke(Color("VerdeEscuro"), lineWidth: 2)
                         )
                     }
                     VStack {
@@ -44,12 +47,13 @@ struct Onboarding03: View {
                             EmptyView()
                         }
                         Button(action: {
+                            HortCultApp.isFirstLogin = false
                             moveToHome = true
                         }) {
                             Text("Pular para a Tela inicial")
-                                .foregroundColor(Color("H4Color"))
+                                .foregroundColor(Color("Cinza"))
                         }
-                        .background(.white)
+                        .background(Color("Branco"))
                         .padding(.top, 28)
                     }
                     .padding(.bottom, 20)

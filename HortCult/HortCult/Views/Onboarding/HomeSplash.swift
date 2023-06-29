@@ -16,7 +16,7 @@ struct HomeSplash: View {
     @State var opacity = 0.5
     var body: some View {
         if isActive {
-            TestePseudoHome()
+//            TestePseudoHome()
         }else {
             VStack {
                 VStack {

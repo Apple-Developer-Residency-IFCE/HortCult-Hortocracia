@@ -9,32 +9,36 @@ import SwiftUI
 
 struct Onboarding01: View {
     @State private var showOnboarding = false
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationView{
 
-        VStack{
-            HortCultLogo()
-            ImageSelectorView(ImageTrue: false, MainImage: "ImagensHort")
-            TittleSelector(sizeSelector: true, textSelector: "Boas vindas!")
-            Description(descriptionText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil.")
-            Spacer()
-                VStack{
-                    NavigationLink(destination: Onboarding02(), isActive: $showOnboarding) {
-                        EmptyView()
-                    }
-                    Button(action: {
-                        showOnboarding = true
-                    }) {
-                        HStack {
-                            Text("Iniciar")
+            VStack{
+                HortCultLogo()
+                ImageSelectorView(ImageTrue: false, MainImage: "ImagensHort")
+                TittleSelector(sizeSelector: true, textSelector: "Boas vindas!")
+                Description(descriptionText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil.")
+                Spacer()
+                    VStack{
+                        NavigationLink(destination: Onboarding02(), isActive: $showOnboarding) {
+                            EmptyView()
                         }
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 277, height: 42)
-                        .background(Color("H1Color"))
-                        .cornerRadius(40)
-                    }
-                }.padding(.bottom, 45)
+                        Button(action: {
+                            showOnboarding = true
+                        }) {
+                            HStack {
+                                Text("Iniciar")
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
+                                    .foregroundColor(Color("Branco"))
+                            }
+                            .foregroundColor(Color("Branco"))
+                            .padding()
+                            .frame(width: 277, height: 42)
+                            .background(Color("VerdeEscuro"))
+                            .cornerRadius(40)
+                        }
+                    }.padding(.bottom, 45)
             }
         }.navigationBarBackButtonHidden(true)
         

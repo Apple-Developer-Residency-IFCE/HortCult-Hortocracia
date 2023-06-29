@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Onboarding04: View {
     @State private var showOnboarding = false
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             VStack{
@@ -26,17 +27,18 @@ struct Onboarding04: View {
                     }) {
                         HStack {
                             Text("Ir para a Tela Inicial")
-                            Image("Arrow-Right")
-                                .foregroundColor(.white)
+                                .font(Font.custom("Satoshi-Regular", size: 16))
+                            Image(colorScheme == .dark ? "Arrow-Right" : "Arrow-Right-White")
+                                .foregroundColor(Color("Branco"))
                         }
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("Branco"))
                         .padding()
                         .frame(width: 277, height: 42)
-                        .background(Color("H1Color"))
+                        .background(Color("VerdeEscuro"))
                         .cornerRadius(40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color("H1Color"), lineWidth: 2)
+                                .stroke(Color("VerdeEscuro"), lineWidth: 2)
                         )
                     }
                 }

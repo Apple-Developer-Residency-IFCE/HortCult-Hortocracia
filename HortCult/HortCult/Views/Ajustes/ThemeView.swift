@@ -40,7 +40,7 @@ struct ThemeView: View {
             VStack(alignment: .leading){
                 
                 Text("Tema")
-                    .font(Font.custom("Satoshi-Regular", size: 28))
+                    .font(Font.custom("Satoshi-Bold", size: 28))
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.bottom, 40)
                     .padding(.top, 37)

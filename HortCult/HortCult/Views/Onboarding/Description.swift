@@ -11,8 +11,8 @@ struct Description: View {
     var descriptionText: String
     var body: some View {
         Text(descriptionText)
-            .font(.system(size: 16))
-            .foregroundColor(Color("H4Color"))
+            .font(Font.custom("Satoshi-Regular", size: 16))
+            .foregroundColor(Color("Cinza"))
             .multilineTextAlignment(.center)
             .frame(width: 277, height: 66)
         Spacer()
