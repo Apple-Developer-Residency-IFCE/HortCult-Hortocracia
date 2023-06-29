@@ -14,37 +14,38 @@ struct InformationView: View {
     @State private var backHomeAlert = false
     @EnvironmentObject var plantViewModel: PlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
-        
-            
-//    @State var images: [UIImage]
-//    @State var description: String
-//    @State var img: String
-//    @State var data: String
+    @State private var shouldNavigateButton = false
+    
+    
+    //    @State var images: [UIImage]
+    //    @State var description: String
+    //    @State var img: String
+    //    @State var data: String
     
     @State var planta: Plant
-       // @ViewBuilder var content: () -> Content
-        
-        var NavBarInfo : some View {
-            ZStack{
-                HStack{
-                    Button(action:{
-                        self.presentationMode.wrappedValue.dismiss()
-                    } ) {
-                        Image("Arrow-Left-Light")
-                        Text("Voltar").foregroundColor(.white)
-                    }
-                    .padding(.leading, 18)
-                    Spacer()
-                    
-                }.allowsHitTesting(true)
-            }
+    // @ViewBuilder var content: () -> Content
+    
+    var NavBarInfo : some View {
+        ZStack{
+            HStack{
+                Button(action:{
+                    self.presentationMode.wrappedValue.dismiss()
+                } ) {
+                    Image("Arrow-Left-Light")
+                    Text("Voltar").foregroundColor(.white)
+                }
+                .padding(.leading, 18)
+                Spacer()
+                
+            }.allowsHitTesting(true)
         }
+    }
     
     
     func formatDate(date: Date) -> String {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yyyy"
-            return formatter.string(from: date)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter.string(from: date)
     }
     
     var body: some View {
@@ -52,8 +53,8 @@ struct InformationView: View {
             ScrollView(.vertical){
                 ZStack{
                     VStack{
-                            ImagesListView()
-                        .padding(.bottom, 16)
+                        ImagesListView()
+                            .padding(.bottom, 16)
                         
                         DescriptionPlant(planta: planta)
                             .padding(.bottom, 24)
@@ -109,7 +110,7 @@ struct InformationView: View {
                                     .bold()
                             }
                             .foregroundColor(.white)
-
+                            
                             .frame(width: 275, height: 42)
                             .background(Color("Vermelho"))
                             .cornerRadius(40)
@@ -118,7 +119,7 @@ struct InformationView: View {
                                     .stroke(Color("Vermelho"), lineWidth: 2)
                             )
                         }.padding(.bottom, 50)
-
+                        
                     }
                     if confirmDeleteVegetableAlert {
                         VStack {
@@ -127,31 +128,36 @@ struct InformationView: View {
                                 message: "",
                                 primaryButtonTitle: "Voltar para Tela Inicial",
                                 primaryButtonAction: {
-                                    backHomeAlert = true
+                                    shouldNavigateButton = true
+                                    plantViewModel.deletePlant(plant: planta)
                                 }
+                                
                             ).padding(.top, 180)
-
+                            
                         }.frame(width: 300, height: 100)
-                        NavigationLink(destination: Home(), isActive: $backHomeAlert){
-                            EmptyView()
-                        }
-
+                        
+                        
                     }
-
-                }                
+                    
+                }
             }.ignoresSafeArea(.all)
+            NavigationLink(destination: Home(), isActive: $shouldNavigateButton){
+                EmptyView()
+            }
             
         }.alert(isPresented: $deleteVegetableAlert) {
             Alert(
-                title: Text("Deseja excluir essa planta? "),
-                message: Text("Essa ação não poderá ser desfeita."),
-                primaryButton: .cancel(Text(" Cancelar")){},
+                title: Text("Deseja excluir essa planta?")
+                    .foregroundColor(.red), // Alterando a cor do título para vermelho
+                message: Text("Essa ação não poderá ser desfeita.")
+                    .foregroundColor(.red), // Alterando a cor da mensagem para vermelho
+                primaryButton: .cancel(Text("Cancelar")){},
                 secondaryButton:
                         .default(Text("Excluir")) {
-                    deleteVegetableAlert = false
-                    confirmDeleteVegetableAlert = true
-                            plantViewModel.deletePlant(plant: planta)
-                }
+                            deleteVegetableAlert = false
+                            confirmDeleteVegetableAlert = true
+                            
+                        }
             )
         }
         .navigationBarBackButtonHidden(true)

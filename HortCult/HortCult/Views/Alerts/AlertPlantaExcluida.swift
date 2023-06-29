@@ -12,9 +12,11 @@ struct CustomAlert: View {
         VStack {
             Text(title)
                 .font(.headline)
+                .foregroundColor(Color("VerdeEscuro"))
             
             Text(message)
                 .font(.body)
+                .foregroundColor(Color("CinzaEscuro"))
             
             Spacer()
             

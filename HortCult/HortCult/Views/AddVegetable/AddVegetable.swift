@@ -110,7 +110,7 @@ struct AddVegetable: View {
                 .padding(.top, 602)
 //                .alert(isPresented: $addVegetableAlert) {
 //                    Alert(
-//                        title: Text("Planta cadastrada!"),
+//                        title: Text("Planta cadastrada!").foregroundColor(Color.blue),
 //                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
 //                        primaryButton: .default(Text("Tela Inicial")),
 //                        secondaryButton: .default(
