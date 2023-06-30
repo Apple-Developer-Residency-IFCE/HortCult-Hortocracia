@@ -35,7 +35,7 @@ struct Onboarding02: View {
                         .foregroundColor(Color("VerdeEscuro"))
                         .padding()
                         .frame(width: 277, height: 42)
-                        .background(Color("Branco"))
+                        .background(.clear)
                         .cornerRadius(40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
