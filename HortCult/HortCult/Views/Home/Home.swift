@@ -16,14 +16,13 @@ struct Home: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical){
+                HeaderLogo()
+                    .ignoresSafeArea()
                 ListaPlantasView()
-                    .padding(.top, 20)
+                    .padding(.top,20)
                 ScrollViewWithHeader()
-            }.toolbar(){
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image(colorScheme == .dark ? "Topbardark" : "Topbar")
-                }
             }
+            .offset(y:-47)
         }.navigationBarBackButtonHidden(true)
     }
 }
