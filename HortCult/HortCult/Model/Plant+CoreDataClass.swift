@@ -2,7 +2,7 @@
 //  Plant+CoreDataClass.swift
 //  HortCult
 //
-//  Created by Pedro Henrique Santos Rodrigues on 15/06/23.
+//  Created by Victor Viana on 30/06/23.
 //
 //
 

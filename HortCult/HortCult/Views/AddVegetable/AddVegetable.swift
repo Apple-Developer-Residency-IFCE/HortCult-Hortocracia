@@ -7,20 +7,16 @@
 
 import SwiftUI
 
+
 struct AddVegetable: View {
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     var plantViewModel: PlantViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State private var colorButton: String = "CinzaClaro"
-    @State private var addVegetableAlert = false
-    @State private var discartVegetableAlert = false
-    @State private var goToInformationViewAlert = false
+    @StateObject var viewmodel: AddVegetableViewModel = AddVegetableViewModel()
+    @StateObject private var imagesSelected = ImageSelected()
+
     
-    @State private var name : String = ""
-    @State private var description : String = ""
-    @State private var categoria : String = "Selecionar..."
-    @State private var frequencia : String = "Selecionar..."
-    @State private var isFull: Bool = false
+    
     var NavBar : some View {
         ZStack {
             Image(selectedTheme == .Escuro ? "Topbardark" : "Topbar")
@@ -39,7 +35,7 @@ struct AddVegetable: View {
     }
     
     var isFieldsFilled: Bool{
-        return !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && categoria != "Selecionar..." && frequencia != "Selecionar..."
+        return !viewmodel.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !viewmodel.description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewmodel.categoria != "Selecionar..." && viewmodel.frequencia != "Selecionar..."
     }
     
     var body: some View {
@@ -50,31 +46,32 @@ struct AddVegetable: View {
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: true)
-                            NameDescription(nameVegetable: $name, descriptionVegetable: $description)
-                           PickerCategoria(selectedOption: $categoria)
-                            PickerFrequencia(selectedOption: $frequencia)
+                            NameDescription(nameVegetable: $viewmodel.name, descriptionVegetable: $viewmodel.description)
+                            PickerCategoria(selectedOption: $viewmodel.categoria)
+                            PickerFrequencia(selectedOption: $viewmodel.frequencia)
                             AddEditPhotos()
+                                .environmentObject(imagesSelected)
                         }
                     }
                 }
                 .padding(.bottom, 100)
                 
                 Button(action: {
-                    colorButton = "VerdeEscuro"
-                    addVegetableAlert = true
-                    discartVegetableAlert = true
+                    viewmodel.colorButton = "VerdeEscuro"
+                    viewmodel.addVegetableAlert = true
+                    viewmodel.discartVegetableAlert = true
                     if isFieldsFilled{
                         self.presentationMode.wrappedValue.dismiss()
-                        if(frequencia == "Todos os dias"){
-                            frequencia = "1"
-                        }else if(frequencia == "A cada 2 dias"){
-                            frequencia = "2"
-                        }else if(frequencia == "A cada 4 dias"){
-                            frequencia = "4"
+                        if(viewmodel.frequencia == "Todos os dias"){
+                            viewmodel.frequencia = "1"
+                        }else if(viewmodel.frequencia == "A cada 2 dias"){
+                            viewmodel.frequencia = "2"
+                        }else if(viewmodel.frequencia == "A cada 4 dias"){
+                            viewmodel.frequencia = "4"
                         }else{
-                            frequencia = "7"
+                            viewmodel.frequencia = "7"
                         }
-                        plantViewModel.createPlant(name: name, information: description, category: categoria, frequency: frequencia, image: UIImage())
+                        plantViewModel.createPlant(name: viewmodel.name, information: viewmodel.description, category: viewmodel.categoria, frequency: viewmodel.frequencia, image: imagesSelected.imagesSelected)
                     }
                     
                 }) {
@@ -115,6 +112,3 @@ struct AddVegetable_Previews: PreviewProvider {
         AddVegetable(plantViewModel: PlantViewModel())
     }
 }
-
-
-

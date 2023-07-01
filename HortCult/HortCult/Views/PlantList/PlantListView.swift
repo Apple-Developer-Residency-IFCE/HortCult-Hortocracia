@@ -11,13 +11,6 @@ struct ListaPlantasView: View {
     
     @EnvironmentObject var plantViewModel: PlantViewModel
     
-    func dataToImage(data: Data) -> Image{
-        
-        guard let uiImage = UIImage(data: data) else {
-            return Image("Tomatinho")
-        }
-        return Image(uiImage: uiImage)
-    }
     
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
@@ -48,11 +41,13 @@ struct ListaPlantasView: View {
                         
                         NavigationLink(destination: InformationView(planta: planta)){
                             VStack{
-                                //                                dataToImage(data: planta.image)
-                                //                                    .resizable()
-                                //                                    .aspectRatio(contentMode: .fill)
-                                //                                    .frame(maxHeight: 115)
-                                //                                    .clipped()
+                                
+//                                Image(uiImage: UIImage(data: plantViewModel.dataImageConvert(datas: planta.image ?? []).first)!)
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fill)
+//                                    .frame(maxHeight: 115)
+//                                    .clipped()
+                                
                                 Text(planta.name!)
                                     .font(Font.custom("Satoshi-Regular", size: 16))
                                     .foregroundColor(Color("CinzaEscuro"))

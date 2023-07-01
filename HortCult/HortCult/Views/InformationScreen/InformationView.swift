@@ -80,7 +80,7 @@ struct InformationView: View {
                             Spacer()
                         }
                         NavigationLink {
-                            EditVegetable(plant: planta, name: planta.name ?? "", description: planta.information ?? "", categoria: planta.category ?? "", frequencia: planta.frequency ?? "")
+                            EditVegetable(plant: planta)
                         } label: {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")

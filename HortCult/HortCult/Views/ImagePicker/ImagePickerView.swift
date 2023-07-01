@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct ImagePickerView: View {
-    @State private var selectedImages: [UIImage] = []
+    @EnvironmentObject var imagesSelected: ImageSelected
     @State private var emptyPicker = false
 
     var body: some View {
         HStack {
-            if selectedImages.isEmpty {
+            if imagesSelected.imagesSelected.isEmpty {
                 ScrollView(.horizontal) {
                     LazyHStack(spacing: 12) {
                         Button(action: {
@@ -23,7 +23,7 @@ struct ImagePickerView: View {
                             .cornerRadius(10)
                         }
                         .sheet(isPresented: $emptyPicker) {
-                            ImagePicker(selectedImages: $selectedImages)
+                            ImagePicker()
                         }
                         ZStack {
                             Color("Branco")
@@ -46,7 +46,7 @@ struct ImagePickerView: View {
                         
                         .frame(width: 120, height: 120)
                         .cornerRadius(10)
-                        ForEach(selectedImages, id: \.self) { image in
+                        ForEach(imagesSelected.imagesSelected, id: \.self) { image in
                             Image(uiImage: image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -71,10 +71,10 @@ struct ImagePickerView: View {
                             .cornerRadius(10)
                         }
                         .sheet(isPresented: $emptyPicker) {
-                            ImagePicker(selectedImages: self.$selectedImages)
+                            ImagePicker()
                         }
                         
-                        ForEach(selectedImages, id: \.self) { image in
+                        ForEach(imagesSelected.imagesSelected, id: \.self) { image in
                         VStack{
                             Image(uiImage: image)
                                 .resizable()
@@ -96,6 +96,7 @@ struct ImagePickerView: View {
 struct ImagePickerView_Previews: PreviewProvider {
     static var previews: some View {
         ImagePickerView()
+            .environmentObject(ImageSelected())
     }
 }
 

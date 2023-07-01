@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddEditPhotos: View {
+    @EnvironmentObject var imagesSelected: ImageSelected
     var body: some View {
         VStack(alignment: .leading){
             Text("Fotos")
@@ -19,8 +20,8 @@ struct AddEditPhotos: View {
     }
 }
 
-struct AddEditPhotos_Previews: PreviewProvider {
-    static var previews: some View {
-        AddEditPhotos()
-    }
-}
+//struct AddEditPhotos_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddEditPhotos()
+//    }
+//}
