@@ -8,34 +8,23 @@
 import SwiftUI
 
 struct ImagesListView: View {
+    let images = ["Tomatinho", "Tomatinho", "Tomatinho"]
     
-    @EnvironmentObject var plantViewModel: PlantViewModel
-    @State var planta: Plant
-    
+    @State private var selectedTab = 0
     var body: some View {
-        NavigationView {
-            
-                    ScrollView(.horizontal) { // <1>
-                        
-                        HStack(spacing: 0) { // <2>
-                            
-                            ForEach(plantViewModel.dataImageConvert(datas: planta.image!), id: \.self) { images in
-                                
-                                ZStack{
-                                    
-                                    Image(uiImage: images)
-                                        .frame(maxWidth: .infinity)
-                                    LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center)
-                                        .edgesIgnoringSafeArea(.all).allowsHitTesting(false)
-                                }
-                            }
-                            
-                        }
+        TabView(selection: $selectedTab) {
+            ForEach(0..<3) { i in
+                Image("\(images[i])")
+                    .resizable()
+                    .tag(i)
+                    .tabItem {
+                        Text("Tab \(i + 1)")
                     }
-                    .edgesIgnoringSafeArea(.all)
-                    
+            }
         }
-       
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        .ignoresSafeArea()
     }
 }
 
