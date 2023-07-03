@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct InformationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var deleteVegetableAlert = false
@@ -14,6 +16,48 @@ struct InformationView: View {
     @State private var backHomeAlert = false
     @EnvironmentObject var plantViewModel: PlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
+        
+    @ViewBuilder var Name: some View {
+        if let name = planta.name{
+            Text(name)
+                .bold()
+                .foregroundColor(Color("VerdeEscuro"))
+                .font(.custom("Satoshi-Bold", size: 28))
+        } else {
+            Text("Sem nome!")
+        }
+            
+    }
+    @ViewBuilder var Categoria: some View {
+        if let category = planta.category{
+            Text(category)
+                .padding(.horizontal, 13)
+                .padding(.vertical, 8)
+                .foregroundColor(Color("Cinza"))
+                .font(.custom("Satoshi-Regular", size: 12))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color(.gray), lineWidth: 1)
+                )
+        } else {
+            Text("Sem categoria!")
+        }
+    }
+    @ViewBuilder var Information: some View {
+        if let information = planta.information{
+            Text(information)
+                .font(.custom("Satoshi-Regular", size: 16))
+                .lineLimit(5)
+        } else {
+            Text("Sem informações!")
+        }
+    }
+    
+//    @State var images: [UIImage]
+//    @State var description: String
+//    @State var img: String
+//    @State var data: String
+    
     @State var planta: Plant
         
         var NavBarInfo : some View {
@@ -45,12 +89,23 @@ struct InformationView: View {
         NavigationView{
             ScrollView(.vertical){
                 ZStack{
-                    VStack{
-                        ImagesListView(planta: planta)
+                    VStack(){
+                        ImagesListView()
+                            .frame(minWidth: 390, minHeight: 390)
+                            .ignoresSafeArea()
+                            .edgesIgnoringSafeArea(.all)
                             .padding(.bottom, 16)
-                        
-                        DescriptionPlant(planta: planta)
-                            .padding(.bottom, 24)
+                        VStack(alignment: .leading){
+                            HStack{
+                                Name
+                                Spacer()
+                                Categoria
+                            }
+                            .padding(.bottom,12)
+                            Information
+                                .padding(.bottom,18)
+                        }
+                        .padding(.horizontal,20)
                         
                         CardProxRegaView(dataProxRega: formatDate(date: planta.nextDate ?? Date()), plant: planta)
                             .padding(.bottom, 24)
@@ -59,18 +114,15 @@ struct InformationView: View {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
                                     .font(Font.custom("Satoshi-Regular", size: 16))
-                                    .foregroundColor(.black)
-                                    .padding(.leading, 20)
                                 Text("Todos os Dias")
                                     .font(Font.custom("Satoshi-Bold", size: 18))
-                                    .foregroundColor(.black)
                                     .bold()
-                                    .padding(.leading, 20)
-                                    .padding(.top, 4)
                                 
                             }
+                            .foregroundColor(Color("TextOnInfo"))
                             Spacer()
                         }
+                        .padding(.horizontal,20)
                         NavigationLink {
                             EditVegetable(plant: planta)
                         } label: {
@@ -150,6 +202,6 @@ struct InformationView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: NavBarInfo)
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
-    
 }
