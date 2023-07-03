@@ -17,8 +17,8 @@ struct AjustesView: View {
         
         NavigationView {
             VStack(alignment: .leading){
-                Image(selectedTheme == .Escuro ? "Topbardark" : "Topbar")
-                
+                HeaderLogo()
+                    .ignoresSafeArea()
                 HStack{
                     Text("Ajustes")
                         .font(Font.custom("Satoshi-Bold", size: 28))

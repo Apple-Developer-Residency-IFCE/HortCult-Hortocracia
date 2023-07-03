@@ -19,7 +19,9 @@ struct AddVegetable: View {
     
     var NavBar : some View {
         ZStack {
-            Image(selectedTheme == .Escuro ? "Topbardark" : "Topbar")
+            HeaderLogo()
+                .frame(minWidth: 400, minHeight: 200)
+                .padding(.top,-40)
             HStack {
                 Button(action:{
                     self.presentationMode.wrappedValue.dismiss()
@@ -27,11 +29,9 @@ struct AddVegetable: View {
                     Image(selectedTheme == .Escuro ? "Arrow-Left-Light" : "Arrow-Left-Green")
                 }
                 .padding(.leading, 18)
-                Spacer()
-                    
             }
+            .padding(.leading,-190)
         }
-        
     }
     
     var isFieldsFilled: Bool{
@@ -43,6 +43,7 @@ struct AddVegetable: View {
         NavigationView {
             ZStack{
                 ScrollView(.vertical){
+                    
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: true)
