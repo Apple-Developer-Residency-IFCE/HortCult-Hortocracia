@@ -7,15 +7,52 @@
 
 import SwiftUI
 
+
+
 struct InformationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var deleteVegetableAlert = false
     @State private var confirmDeleteVegetableAlert = false
     @State private var backHomeAlert = false
     @EnvironmentObject var plantViewModel: PlantViewModel
-       // @ViewBuilder var content: () -> Content
+    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
         
+    @ViewBuilder var Name: some View {
+        if let name = planta.name{
+            Text(name)
+                .bold()
+                .foregroundColor(Color("VerdeEscuro"))
+                .font(.custom("Satoshi-Bold", size: 28))
+        } else {
+            Text("Sem nome!")
+        }
             
+    }
+    @ViewBuilder var Categoria: some View {
+        if let category = planta.category{
+            Text(category)
+                .padding(.horizontal, 13)
+                .padding(.vertical, 8)
+                .foregroundColor(Color("Cinza"))
+                .font(.custom("Satoshi-Regular", size: 12))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color(.gray), lineWidth: 1)
+                )
+        } else {
+            Text("Sem categoria!")
+        }
+    }
+    @ViewBuilder var Information: some View {
+        if let information = planta.information{
+            Text(information)
+                .font(.custom("Satoshi-Regular", size: 16))
+                .lineLimit(5)
+        } else {
+            Text("Sem informações!")
+        }
+    }
+    
 //    @State var images: [UIImage]
 //    @State var description: String
 //    @State var img: String
@@ -31,7 +68,9 @@ struct InformationView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     } ) {
                         Image("Arrow-Left-Light")
-                        Text("Voltar").foregroundColor(.white)
+                        Text("Voltar")
+                            .font(Font.custom("Satoshi-Regular", size: 16))
+                            .foregroundColor(.white)
                     }
                     .padding(.leading, 18)
                     Spacer()
@@ -51,12 +90,23 @@ struct InformationView: View {
         NavigationView{
             ScrollView(.vertical){
                 ZStack{
-                    VStack{
-                            ImagesListView()
-                        .padding(.bottom, 16)
-                        
-                        DescriptionPlant(planta: planta)
-                            .padding(.bottom, 24)
+                    VStack(){
+                        ImagesListView()
+                            .frame(minWidth: 390, minHeight: 390)
+                            .ignoresSafeArea()
+                            .edgesIgnoringSafeArea(.all)
+                            .padding(.bottom, 16)
+                        VStack(alignment: .leading){
+                            HStack{
+                                Name
+                                Spacer()
+                                Categoria
+                            }
+                            .padding(.bottom,12)
+                            Information
+                                .padding(.bottom,18)
+                        }
+                        .padding(.horizontal,20)
                         
                         CardProxRegaView(dataProxRega: formatDate(date: planta.nextDate ?? Date()), plant: planta)
                             .padding(.bottom, 24)
@@ -64,26 +114,23 @@ struct InformationView: View {
                         HStack {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
-                                    .font(.system(size: 16))
-                                    .foregroundColor(.black)
-                                    .padding(.leading, 20)
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                 Text("Todos os Dias")
-                                    .font(.system(size: 18))
-                                    .foregroundColor(.black)
+                                    .font(Font.custom("Satoshi-Bold", size: 18))
                                     .bold()
-                                    .padding(.leading, 20)
-                                    .padding(.top, 4)
                                 
                             }
+                            .foregroundColor(Color("TextOnInfo"))
                             Spacer()
                         }
+                        .padding(.horizontal,20)
                         NavigationLink {
                             EditVegetable(plant: planta, name: planta.name ?? "", description: planta.information ?? "", categoria: planta.category ?? "", frequencia: planta.frequency ?? "")
                         } label: {
                             HStack {
-                                Image("Editar")
+                                Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
                                 Text("Editar Informações")
-                                    .font(.system(size: 16))
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                     .bold()
                             }
                             .foregroundColor(Color("VerdeEscuro"))
@@ -105,7 +152,7 @@ struct InformationView: View {
                             HStack {
                                 Image("Remover")
                                 Text("Excluir da minha horta")
-                                    .font(.system(size: 16))
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                     .bold()
                             }
                             .foregroundColor(.white)
@@ -157,6 +204,6 @@ struct InformationView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: NavBarInfo)
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
-    
 }

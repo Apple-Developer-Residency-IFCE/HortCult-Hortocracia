@@ -20,12 +20,12 @@ struct NameDescription: View {
             Text("Nome")
                 .foregroundColor(Color("CinzaEscuro"))
                 .fontWeight(.light)
-                .font(.system(size: 12))
+                .font(Font.custom("Satoshi-Regular", size: 12))
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $nameVegetable)
                     .padding(.leading, 15)
                     .frame(height: 40)
-                    .font(.system(size: 16))
+                    .font(Font.custom("Satoshi-Regular", size: 16))
                     .textCase(.lowercase)
                     .overlay(
                         RoundedRectangle(cornerRadius: 50)
@@ -36,29 +36,22 @@ struct NameDescription: View {
                     }
                 if nameVegetable.isEmpty && !isEditingName {
                     Text("Insira um nome")
+                        .font(Font.custom("Satoshi-Regular", size: 16))
                         .foregroundColor(Color("CinzaClaro"))
                         .padding(.leading, 15)
                         .padding(.top, 8)
                 }
             }
-//            TextField("Insira um nome", text: $nameVegetable)
-//                .padding(.leading, 20)
-//                .frame(height: 38)
-//                .overlay(
-//                    RoundedRectangle(cornerRadius: 50)
-//                        .stroke(Color("CinzaClaro"), lineWidth: 1)
-//                )
-//                .foregroundColor(Color("Cinza"))
             Spacer().frame(height: 28)
             Text("Descrição")
                 .foregroundColor(Color("CinzaEscuro"))
                 .fontWeight(.light)
-                .font(.system(size: 12))
+                .font(Font.custom("Satoshi-Regular", size: 12))
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $descriptionVegetable)
                     .padding(.leading, 15)
                     .frame(height: 200)
-                    .font(.system(size: 16))
+                    .font(Font.custom("Satoshi-Regular", size: 16))
                     .textCase(.lowercase)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
@@ -69,6 +62,7 @@ struct NameDescription: View {
                     }
                 if descriptionVegetable.isEmpty && !isEditingDescription {
                     Text("Insira uma descrição")
+                        .font(Font.custom("Satoshi-Regular", size: 16))
                         .foregroundColor(Color("CinzaClaro"))
                         .padding(.leading, 15)
                         .padding(.top, 8)

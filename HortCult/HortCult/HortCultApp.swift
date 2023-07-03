@@ -11,7 +11,7 @@ import SwiftUI
 struct HortCultApp: App {
     //let persistenceController = PersistenceController.shared
     
-    @AppStorage ("isFirstLogin") static var isFirstLogin = true
+    @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     
     
     

@@ -65,7 +65,7 @@ struct EditVegetable: View {
                     HStack {
                         Text("Salvar Alterações")
                             .foregroundColor(Color("Branco"))
-                            .font(.system(size: 16))
+                            .font(Font.custom("Satoshi-Regular", size: 16))
                             .bold()
                     }
                     .foregroundColor(Color("CinzaClaro"))

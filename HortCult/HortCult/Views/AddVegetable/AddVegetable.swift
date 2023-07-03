@@ -23,7 +23,9 @@ struct AddVegetable: View {
     @State private var isFull: Bool = false
     var NavBar : some View {
         ZStack {
-            Image(selectedTheme == .Escuro ? "Topbardark" : "Topbar")
+            HeaderLogo()
+                .frame(minWidth: 400, minHeight: 200)
+                .padding(.top,-40)
             HStack {
                 Button(action:{
                     self.presentationMode.wrappedValue.dismiss()
@@ -31,22 +33,10 @@ struct AddVegetable: View {
                     Image(selectedTheme == .Escuro ? "Arrow-Left-Light" : "Arrow-Left-Green")
                 }
                 .padding(.leading, 18)
-                Spacer()
-                    
             }
+            .padding(.leading,-190)
         }
-        
     }
-    
-//    func confereView() {
-//        if(name.count > 0 && description.count > 0 && (categoria == "Selecionar...") && frequencia !=  "Selecionar..." ){
-//            isFull = true
-//            colorButton = "VerdeEscuro"
-//        }else{
-//            colorButton = "CinzaClaro"
-//            isFull = false
-//        }
-//    }
     
     var isFieldsFilled: Bool{
         return !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && categoria != "Selecionar..." && frequencia != "Selecionar..."
@@ -57,6 +47,7 @@ struct AddVegetable: View {
         NavigationView {
             ZStack{
                 ScrollView(.vertical){
+                    
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: true)

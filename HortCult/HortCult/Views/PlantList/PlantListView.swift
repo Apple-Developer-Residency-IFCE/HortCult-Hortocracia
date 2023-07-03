@@ -25,7 +25,7 @@ struct ListaPlantasView: View {
         VStack(spacing: 20){
             HStack(spacing: 200.0){
                 Text("Minha Horta")
-                    .font(.title)
+                    .font(Font.custom("Satoshi-Bold", size: 28))
                     .fontWeight(.bold)
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
