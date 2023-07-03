@@ -4,7 +4,6 @@ struct TabBar: View {
     @State private var selectedTab: Int = 0
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @Environment(\.colorScheme) var colorScheme
-    
     @ObservedObject var plantViewModel: PlantViewModel
     
     init(plantViewModel: PlantViewModel) {

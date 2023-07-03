@@ -32,6 +32,15 @@ class PlantViewModel: ObservableObject {
         return nil
     }
     
+    func getPlant(by name: String) -> Plant? {
+        for planta in self.plant{
+            if(planta.name == name){
+                return planta;
+            }
+        }
+        return nil
+    }
+    
     func fetch() {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         guard let fetchPlants = try? viewcontext.fetch(fetchRequest) else {

@@ -13,10 +13,16 @@ struct CustomAlert: View {
             Text(title)
                 .font(.headline)
                 .foregroundColor(Color("VerdeEscuro"))
+                .padding(.bottom, 5)
             
             Text(message)
-                .font(.body)
+                .font(.system(size: 16))
                 .foregroundColor(Color("CinzaEscuro"))
+                .lineLimit(nil) // Remove o limite de linhas
+                .fixedSize(horizontal: false, vertical: true) // Permite que o texto seja quebrado em várias linhas
+                .frame(width: 270)
+                .multilineTextAlignment(.center)
+            
             
             Spacer()
             
@@ -28,20 +34,46 @@ struct CustomAlert: View {
                     Button(action: secondaryButtonAction ?? {}) {
                         Text(secondaryButtonTitle)
                             .font(.body)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(Color("CinzaEscuro"))
+                        
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 8)
                 }
-                
-                Button(action: primaryButtonAction) {
-                    Text(primaryButtonTitle)
-                        .font(.body)
-                        .bold()
+                if primaryButtonTitle == "Ver planta"{
+                    Button(action: primaryButtonAction) {
+                        Text(primaryButtonTitle)
+                            .font(.body)
+                            .bold()
+                            .foregroundColor(Color("VerdeClaro"))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+                    .foregroundColor(.blue)
+                }else{
+                    if primaryButtonTitle == "Voltar para a Tela Inicial"{
+                        Button(action: primaryButtonAction) {
+                            Text(primaryButtonTitle)
+                                .font(.body)
+                                .bold()
+                                .foregroundColor(Color("CinzaEscuro"))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .foregroundColor(.blue)
+                    }else {
+                        Button(action: primaryButtonAction) {
+                            Text(primaryButtonTitle)
+                                .font(.body)
+                                .bold()
+                                .foregroundColor(Color("Vermelho"))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .foregroundColor(.blue)
+                    }
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 8)
-                .foregroundColor(.blue)
+                
             }
         }
         .padding()
@@ -72,7 +104,7 @@ struct CustomAlert_Previews: PreviewProvider {
             //secondaryButtonTitle: "Cancel",
             //secondaryButtonAction: {}
         )
-       //.padding()
-    //.previewLayout(.sizeThatFits)
+        //.padding()
+        //.previewLayout(.sizeThatFits)
     }
 }

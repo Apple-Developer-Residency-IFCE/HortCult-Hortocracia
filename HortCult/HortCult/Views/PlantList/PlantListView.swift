@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListaPlantasView: View {
+    @State var goAdd = false
     
     @EnvironmentObject var plantViewModel: PlantViewModel
     
@@ -17,6 +18,19 @@ struct ListaPlantasView: View {
             return Image("Tomatinho")
         }
         return Image(uiImage: uiImage)
+    }
+    
+    var navigationBody: some View {
+        NavigationLink {
+            AddVegetable(plantViewModel: plantViewModel)
+        } label: {
+            HStack {
+                Image(colorScheme == .dark ? "Add" : "AddWhite")
+                    .frame(width: 32, height: 32)
+                    .background(Color("VerdeEscuro"))
+                    .cornerRadius(50)
+            }
+        }
     }
     
     @Environment(\.colorScheme) var colorScheme
@@ -29,17 +43,13 @@ struct ListaPlantasView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
-                NavigationLink {
-                    AddVegetable(plantViewModel: plantViewModel)
-                } label: {
-                    HStack {
-                        Image(colorScheme == .dark ? "Add" : "AddWhite")
-                            .frame(width: 32, height: 32)
-                            .background(Color("VerdeEscuro"))
-                            .cornerRadius(50)
-                    }
-                }
                 
+                navigationBody
+                
+            }
+            .border(.red)
+            .onTapGesture {
+                print("OKAYYY")
             }
             
             ScrollView(.horizontal) {
@@ -66,6 +76,10 @@ struct ListaPlantasView: View {
             }
             .padding(.leading, 20.0)
             .frame(maxHeight: 150)
+//            NavigationLink(destination: AddVegetable(plantViewModel: plantViewModel), isActive: $goAdd) {
+//                EmptyView()
+//            }
+            
         }
     }
     

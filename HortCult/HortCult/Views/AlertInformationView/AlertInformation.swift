@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InformationView: View {
+struct AlertInformationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var deleteVegetableAlert = false
     @State private var confirmDeleteVegetableAlert = false
@@ -27,21 +27,21 @@ struct InformationView: View {
     @State var planta: Plant
     // @ViewBuilder var content: () -> Content
     
-    var NavBarInfo : some View {
-        ZStack{
-            HStack{
-                Button(action:{
-                    self.presentationMode.wrappedValue.dismiss()
-                } ) {
-                    Image("Arrow-Left-Light")
-                    Text("Voltar").foregroundColor(.white)
-                }
-                .padding(.leading, 18)
-                Spacer()
-                
-            }.allowsHitTesting(true)
-        }
-    }
+//    var NavBarInfo : some View {
+//        ZStack{
+//            HStack{
+//                Button(action:{
+//                    self.presentationMode.wrappedValue.dismiss()
+//                } ) {
+//                    Image("Arrow-Left-Light")
+//                    Text("Voltar").foregroundColor(.white)
+//                }
+//                .padding(.leading, 18)
+//                Spacer()
+//
+//            }.allowsHitTesting(true)
+//        }
+//    }
     
     
     func formatDate(date: Date) -> String {
@@ -177,7 +177,7 @@ struct InformationView: View {
                     
                 }
                 
-                .navigationBarItems(leading: NavBarInfo)
+//                .navigationBarItems(leading: NavBarInfo)
             }
             .edgesIgnoringSafeArea(.all)
             
