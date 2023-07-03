@@ -18,6 +18,7 @@ struct EditVegetable: View {
     init(plant: Plant) {
         self.plant = plant
         _editViewmodel = StateObject(wrappedValue: EditVegetableViewModel(plant: plant))
+//        imagesSelected.imagesSelected = $imagesSelected.dataImageConvert(datas: plant.image!)
     }
 
     var NavBar : some View {

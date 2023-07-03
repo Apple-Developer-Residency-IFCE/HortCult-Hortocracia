@@ -14,15 +14,7 @@ struct InformationView: View {
     @State private var backHomeAlert = false
     @EnvironmentObject var plantViewModel: PlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
-        
-            
-//    @State var images: [UIImage]
-//    @State var description: String
-//    @State var img: String
-//    @State var data: String
-    
     @State var planta: Plant
-       // @ViewBuilder var content: () -> Content
         
         var NavBarInfo : some View {
             ZStack{
@@ -54,7 +46,7 @@ struct InformationView: View {
             ScrollView(.vertical){
                 ZStack{
                     VStack{
-                        ImagesListView()
+                        ImagesListView(planta: planta)
                             .padding(.bottom, 16)
                         
                         DescriptionPlant(planta: planta)

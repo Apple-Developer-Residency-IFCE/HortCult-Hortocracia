@@ -42,11 +42,11 @@ struct ListaPlantasView: View {
                         NavigationLink(destination: InformationView(planta: planta)){
                             VStack{
                                 
-//                                Image(uiImage: UIImage(data: plantViewModel.dataImageConvert(datas: planta.image ?? []).first)!)
-//                                    .resizable()
-//                                    .aspectRatio(contentMode: .fill)
-//                                    .frame(maxHeight: 115)
-//                                    .clipped()
+                                Image(uiImage: plantViewModel.dataImageConvert(datas: planta.image!).first!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(maxHeight: 115)
+                                    .clipped()
                                 
                                 Text(planta.name!)
                                     .font(Font.custom("Satoshi-Regular", size: 16))

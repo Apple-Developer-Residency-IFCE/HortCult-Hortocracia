@@ -9,7 +9,19 @@ import SwiftUI
 
 
 class ImageSelected: ObservableObject{
+    
     @Published var imagesSelected: [UIImage] = []
+    
+    func dataImageConverte(datas: [Data]) -> [UIImage]{
+        var imagesList: [UIImage] = []
+        for i in 0..<datas.count{
+            if let uiImage = UIImage(data: datas[i]) {
+                imagesList.append(uiImage)
+            }
+        }
+        return imagesList
+    }
+    
 }
 
 
