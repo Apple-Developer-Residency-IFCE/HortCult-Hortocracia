@@ -42,7 +42,7 @@ struct ListaPlantasView: View {
                         NavigationLink(destination: InformationView(planta: planta)){
                             VStack{
                                 
-                                Image(uiImage: plantViewModel.dataImageConvert(datas: planta.image!).first!)
+                                Image(uiImage: plantViewModel.dataImageConvert(datas: planta.image ?? []).first ?? UIImage())
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(maxHeight: 115)

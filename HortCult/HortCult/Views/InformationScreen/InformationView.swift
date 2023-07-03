@@ -90,7 +90,7 @@ struct InformationView: View {
             ScrollView(.vertical){
                 ZStack{
                     VStack(){
-                        ImagesListView()
+                        ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
                             .frame(minWidth: 390, minHeight: 390)
                             .ignoresSafeArea()
                             .edgesIgnoringSafeArea(.all)
