@@ -30,6 +30,6 @@ struct ImagesListView: View {
 
 struct ImagesListView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagesListView(planta: Plant())
+        ImagesListView()
     }
 }
