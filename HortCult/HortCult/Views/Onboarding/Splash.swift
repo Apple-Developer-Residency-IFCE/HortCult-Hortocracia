@@ -16,7 +16,8 @@ struct Splash: View {
     @State var opacity = 0.5
     var body: some View {
         if isActive {
-            Onboarding01()
+            
+            TabBarView(plantViewModel: PlantViewModel())
         }else {
             VStack {
                 VStack {
@@ -30,7 +31,6 @@ struct Splash: View {
                     withAnimation(.easeIn(duration: 1.2)) {
                         self.size = 0.9
                         self.opacity = 1.00
-                        
                         
                     }
                 }

@@ -60,45 +60,60 @@ struct AddVegetable: View {
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: true)
-                            NameDescription(nameVegetable: $name, descriptionVegetable: $description)
+                            NameDescription(nameVegetable: $name,
+                                            descriptionVegetable: $description)
                            PickerCategoria(selectedOption: $categoria)
                             PickerFrequencia(selectedOption: $frequencia)
                             AddEditPhotos()
                         }
                     }
                 }
-                .padding(.bottom, 100)
                 
-                Button(action: {
-                    // Só um teste
-                    colorButton = "VerdeEscuro"
-                    addVegetableAlert = true
-                    discartVegetableAlert = true
-                    if isFieldsFilled{
-                        self.presentationMode.wrappedValue.dismiss()
-                        plantViewModel.createPlant(name: name, information: description, category: categoria, frequency: frequencia, image: UIImage())
-                    }
+//                Spacer()
+                
+                
+                
+                VStack{
+                    Spacer()
                     
-                }) {
-                    HStack {
-                        Text("Adicionar Novo Vegetal")
-                            .foregroundColor(Color("Branco"))
-                            .font(.system(size: 16))
-                            .bold()
+                    Button(action: {
+                        // Só um teste
+                        colorButton = "VerdeEscuro"
+                        addVegetableAlert = true
+                        discartVegetableAlert = true
+                        if isFieldsFilled{
+                            self.presentationMode.wrappedValue.dismiss()
+                            plantViewModel.createPlant(name: name,
+                                                       information: description,
+                                                       category: categoria,
+                                                       frequency: frequencia,
+                                                       image: UIImage())
+                        }
+                        
+                    }) {
+                        HStack {
+                            Text("Adicionar Novo Vegetal")
+                                .foregroundColor(Color("Branco"))
+                                .font(.system(size: 16))
+                                .bold()
+                        }
+                        .foregroundColor(Color("CinzaClaro"))
+                        
+                        .frame(width: 350, height: 42)
+                        .background(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"))
+                        .cornerRadius(40)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
+                        )
                     }
-                    .foregroundColor(Color("CinzaClaro"))
-                    
-                    .frame(width: 350, height: 42)
-                    .background(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"))
-                    .cornerRadius(40)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
-                    )
+                    .disabled(!isFieldsFilled)
+                    .frame(alignment: .bottom)
+                    .padding(.bottom, 60)
                 }
-                .disabled(!isFieldsFilled)
-                .frame(alignment: .bottom)
-                .padding(.top, 602)
+                
+//
+                
 //                .alert(isPresented: $addVegetableAlert) {
 //                    Alert(
 //                        title: Text("Planta cadastrada!"),
@@ -128,9 +143,9 @@ struct AddVegetable: View {
             
             
         }
-        .edgesIgnoringSafeArea(.all)
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: NavBar)
+//        .edgesIgnoringSafeArea(.all)
+//        .navigationBarBackButtonHidden(true)
+//        .navigationBarItems(leading: NavBar)
         
     }
     

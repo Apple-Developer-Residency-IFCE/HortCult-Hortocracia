@@ -27,6 +27,7 @@ struct ButtonAdd: View {
                     .stroke(Color("VerdeEscuro"), lineWidth: 2)
             )
         } //.padding(.bottom, 50)
+        .background(Color.clear)
     }
 }
 

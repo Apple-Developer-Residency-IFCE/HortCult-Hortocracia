@@ -102,7 +102,7 @@ struct AjustesView: View {
         }
         .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
-        
+
         
         
     }
