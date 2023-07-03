@@ -222,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				6A7D2A772A4F90F5004843EC /* ViewModel */,
-				6A7D2A762A4F90EF004843EC /* View */,
 				4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */,
 				4EBD45B42A3A727A00BD26BE /* AddEditTitle.swift */,
 				4E9343452A393CBF0000DA28 /* NameDescription.swift */,
@@ -414,13 +413,6 @@
 				6A6D5FCB2A3149BE007FB384 /* InformationView.swift */,
 			);
 			path = InformationScreen;
-			sourceTree = "<group>";
-		};
-		6A7D2A762A4F90EF004843EC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		6A7D2A772A4F90F5004843EC /* ViewModel */ = {
