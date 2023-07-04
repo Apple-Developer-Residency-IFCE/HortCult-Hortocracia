@@ -14,7 +14,10 @@ struct AddVegetable: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var viewmodel: AddVegetableViewModel = AddVegetableViewModel()
     @StateObject private var imagesSelected = ImageSelected()
-
+    @State var discartVegetableAlert = false
+    @State var showOverlay = false
+    @State var addVegetableAlert = false
+    @State var isFullScreenCovering: Bool = false
     
     
     var NavBar : some View {
@@ -23,19 +26,31 @@ struct AddVegetable: View {
                 .frame(minWidth: 400, minHeight: 200)
                 .padding(.top,-40)
             HStack {
-                Button(action:{
-                    self.presentationMode.wrappedValue.dismiss()
+                Button(action: {
+                    if isFieldsAllFilled {
+                        discartVegetableAlert = true
+                    } else {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 } ) {
                     Image(selectedTheme == .Escuro ? "Arrow-Left-Light" : "Arrow-Left-Green")
                 }
                 .padding(.leading, 18)
             }
             .padding(.leading,-190)
+            if showOverlay {
+                Color.black.opacity(0.1)
+                    .edgesIgnoringSafeArea(.all)
+                    .zIndex(0)
+            }
         }
     }
     
     var isFieldsFilled: Bool{
         return !viewmodel.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !viewmodel.description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewmodel.categoria != "Selecionar..." && viewmodel.frequencia != "Selecionar..."
+    }
+    var isFieldsAllFilled: Bool {
+        return !viewmodel.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || !viewmodel.description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || viewmodel.categoria != "Selecionar..." || viewmodel.frequencia != "Selecionar..."
     }
     
     var body: some View {
@@ -55,21 +70,19 @@ struct AddVegetable: View {
                         }
                     }
                 }
-                
-//                Spacer()
-                
-                
-                
                 VStack{
                     Spacer()
-                    
+                    if showOverlay {
+                        Color.black.opacity(0.1)
+                            .edgesIgnoringSafeArea(.all)
+                            .zIndex(0)
+                    }
                     Button(action: {
                         // Só um teste
                         viewmodel.colorButton = "VerdeEscuro"
-                        viewmodel.addVegetableAlert = true
-                        viewmodel.discartVegetableAlert = true
+                        addVegetableAlert = true
                         if isFieldsFilled{
-                            self.presentationMode.wrappedValue.dismiss()
+                           
                             plantViewModel.createPlant(name: viewmodel.name,
                                                        information: viewmodel.description,
                                                        category: viewmodel.categoria,
@@ -97,49 +110,71 @@ struct AddVegetable: View {
                     .disabled(!isFieldsFilled)
                     .frame(alignment: .bottom)
                     .padding(.bottom, 60)
+                    
                 }
-                
-//
-                
-//                .alert(isPresented: $addVegetableAlert) {
-//                    Alert(
-//                        title: Text("Planta cadastrada!"),
-//                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
-//                        primaryButton: .default(Text("Tela Inicial")),
-//                        secondaryButton: .default(
-//                            Text("Ver Planta")
-//                                .foregroundColor(Color("Cinza"))
-//                        )
-//                    )
-//
-//                }
-                //descartar a criacao da planta
-//                .alert(isPresented: $discartVegetableAlert) {
-//                    Alert(
-//                        title: Text("Deseja descartar a criação da sua planta?"),
-//                        message: Text("Essa ação não poderá ser desfeita."),
-//                        primaryButton: .cancel(Text("Cancelar")),
-//                        secondaryButton: .default(
-//                            Text("Descartar")
-//                        )
-//                    )
-//
-//                }
-            }
-            
-            
+                if addVegetableAlert {
+                    VStack {
+                        CustomAlert(
+                            title: "Planta cadastrada!",
+                            message: "Vocë pode ver sua planta diferetamente na tela inicial, em \"Minha Horta\"",
+                            primaryButtonTitle: "Ver planta",
+                            primaryButtonAction: {
+                                self.isFullScreenCovering = true
+                                self.presentationMode.wrappedValue.dismiss()
+                            },
+                            secondaryButtonTitle: "Tela inicial",
+                            secondaryButtonAction: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }
+                        )
+                        .padding(.top, 50)
+                    }
+                    .frame(width: 300, height: 100)
+                    .zIndex(1)
+                    .onAppear {
+                        showOverlay = true
+                    }
+                }
+                if discartVegetableAlert {
+                    VStack {
+                        CustomAlert(
+                            title: "Deseja descartar a criação da sua planta ?",
+                            message: "Essa ação não poderá ser desfeita",
+                            primaryButtonTitle: "Descartar",
+                            primaryButtonAction: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            },
+                            secondaryButtonTitle: "Cancelar",
+                            secondaryButtonAction: {
+                                discartVegetableAlert = false
+                                showOverlay = false
+                            }
+                        )
+                        .padding(.top, 50)
+                    }
+                    .frame(width: 300, height: 100)
+                    .zIndex(1)
+                    .onAppear {
+                        showOverlay = true
+                    }
+                }
+            }.edgesIgnoringSafeArea(.all)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: NavBar)
+                .fullScreenCover(isPresented: self.$isFullScreenCovering) {
+                    InformationView(planta: plantViewModel.getPlant(by: viewmodel.name)!)
+                    
+                    
+                    
+                }
             
         }
-//        .edgesIgnoringSafeArea(.all)
-//        .navigationBarBackButtonHidden(true)
-//        .navigationBarItems(leading: NavBar)
         
     }
     
-}
-
-struct AddVegetable_Previews: PreviewProvider {
-    static var previews: some View {
-        AddVegetable(plantViewModel: PlantViewModel())
+    struct AddVegetable_Previews: PreviewProvider {
+        static var previews: some View {
+            AddVegetable(plantViewModel: PlantViewModel())
+        }
     }
 }
