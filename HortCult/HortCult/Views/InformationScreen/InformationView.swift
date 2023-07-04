@@ -211,12 +211,12 @@ struct InformationView: View {
                     }
                     
                 }.padding(.bottom, 80)
-                    .ignoresSafeArea(.all)
+                .ignoresSafeArea(.all)
                 
-            }
+            }.navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: NavBarInfo)
+                .toolbarBackground(.hidden, for: .navigationBar)
             
-        }.navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: NavBarInfo)
-            .toolbarBackground(.hidden, for: .navigationBar)
+        }
     }
 }
