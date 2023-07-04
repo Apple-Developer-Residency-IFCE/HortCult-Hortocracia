@@ -39,7 +39,7 @@ struct ListaPlantasView: View {
         VStack(spacing: 20){
             HStack(spacing: 170.0){
                 Text("Minha Horta")
-                    .font(.title)
+                    .font(Font.custom("Satoshi-Bold", size: 28))
                     .fontWeight(.bold)
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
@@ -47,10 +47,7 @@ struct ListaPlantasView: View {
                 navigationBody
                 
             }
-            .border(.red)
-            .onTapGesture {
-                print("OKAYYY")
-            }
+            
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {

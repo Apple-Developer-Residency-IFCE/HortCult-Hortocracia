@@ -23,7 +23,7 @@ struct ThemeView: View {
             Button(action:{
                 presentationMode.wrappedValue.dismiss()
             } ) {
-                Image(selectedTheme == .Escuro ? "Arrow-Left-GreenLight" : "Arrow-Left-Green")
+                Image("Arrow-Left-Green")
                     .frame(width: 24, height: 24)
                 Text("Ajustes")
                     .font(Font.custom("Satoshi-Regular", size: 16))
@@ -40,7 +40,7 @@ struct ThemeView: View {
             VStack(alignment: .leading){
                 
                 Text("Tema")
-                    .font(Font.custom("Satoshi-Regular", size: 28))
+                    .font(Font.custom("Satoshi-Bold", size: 28))
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.bottom, 40)
                     .padding(.top, 37)

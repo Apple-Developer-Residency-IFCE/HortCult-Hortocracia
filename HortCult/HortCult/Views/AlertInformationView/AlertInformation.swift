@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct AlertInformationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var deleteVegetableAlert = false
@@ -16,33 +18,43 @@ struct AlertInformationView: View {
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @State private var shouldNavigateButton = false
     @State private var showOverlay = false
-    
-    
-    
-    //    @State var images: [UIImage]
-    //    @State var description: String
-    //    @State var img: String
-    //    @State var data: String
-    
     @State var planta: Plant
-    // @ViewBuilder var content: () -> Content
-    
-//    var NavBarInfo : some View {
-//        ZStack{
-//            HStack{
-//                Button(action:{
-//                    self.presentationMode.wrappedValue.dismiss()
-//                } ) {
-//                    Image("Arrow-Left-Light")
-//                    Text("Voltar").foregroundColor(.white)
-//                }
-//                .padding(.leading, 18)
-//                Spacer()
-//
-//            }.allowsHitTesting(true)
-//        }
-//    }
-    
+        
+    @ViewBuilder var Name: some View {
+        if let name = planta.name{
+            Text(name)
+                .bold()
+                .foregroundColor(Color("VerdeEscuro"))
+                .font(.custom("Satoshi-Bold", size: 28))
+        } else {
+            Text("Sem nome!")
+        }
+            
+    }
+    @ViewBuilder var Categoria: some View {
+        if let category = planta.category{
+            Text(category)
+                .padding(.horizontal, 13)
+                .padding(.vertical, 8)
+                .foregroundColor(Color("Cinza"))
+                .font(.custom("Satoshi-Regular", size: 12))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color(.gray), lineWidth: 1)
+                )
+        } else {
+            Text("Sem categoria!")
+        }
+    }
+    @ViewBuilder var Information: some View {
+        if let information = planta.information{
+            Text(information)
+                .font(.custom("Satoshi-Regular", size: 16))
+                .lineLimit(5)
+        } else {
+            Text("Sem informações!")
+        }
+    }
     
     func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
@@ -60,12 +72,24 @@ struct AlertInformationView: View {
                             .edgesIgnoringSafeArea(.all)
                             .zIndex(0)
                     }
-                    VStack{
+
+                    VStack(){
                         ImagesListView()
+                            .frame(minWidth: 390, minHeight: 390)
+                            .ignoresSafeArea()
+                            .edgesIgnoringSafeArea(.all)
                             .padding(.bottom, 16)
-                        
-                        DescriptionPlant(planta: planta)
-                            .padding(.bottom, 24)
+                        VStack(alignment: .leading){
+                            HStack{
+                                Name
+                                Spacer()
+                                Categoria
+                            }
+                            .padding(.bottom,12)
+                            Information
+                                .padding(.bottom,18)
+                        }
+                        .padding(.horizontal,20)
                         
                         CardProxRegaView(dataProxRega: formatDate(date: planta.nextDate ?? Date()), plant: planta)
                             .padding(.bottom, 24)
@@ -73,26 +97,23 @@ struct AlertInformationView: View {
                         HStack {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
-                                    .font(.system(size: 16))
-                                    .foregroundColor(.black)
-                                    .padding(.leading, 20)
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                 Text("Todos os Dias")
-                                    .font(.system(size: 18))
-                                    .foregroundColor(.black)
+                                    .font(Font.custom("Satoshi-Bold", size: 18))
                                     .bold()
-                                    .padding(.leading, 20)
-                                    .padding(.top, 4)
                                 
                             }
+                            .foregroundColor(Color("TextOnInfo"))
                             Spacer()
                         }
+                        .padding(.horizontal,20)
                         NavigationLink {
                             EditVegetable(plant: planta, name: planta.name ?? "", description: planta.information ?? "", categoria: planta.category ?? "", frequencia: planta.frequency ?? "")
                         } label: {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
                                 Text("Editar Informações")
-                                    .font(.system(size: 16))
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                     .bold()
                             }
                             .foregroundColor(Color("VerdeEscuro"))
@@ -115,7 +136,7 @@ struct AlertInformationView: View {
                             HStack {
                                 Image("Remover")
                                 Text("Excluir da minha horta")
-                                    .font(.system(size: 16))
+                                    .font(Font.custom("Satoshi-Regular", size: 16))
                                     .bold()
                             }
                             .foregroundColor(.white)
@@ -177,11 +198,12 @@ struct AlertInformationView: View {
                     
                 }
                 
-//                .navigationBarItems(leading: NavBarInfo)
+                
             }
             .edgesIgnoringSafeArea(.all)
             
         }
         .navigationBarBackButtonHidden(true)
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
 }

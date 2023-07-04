@@ -14,7 +14,7 @@ struct ButtonAdd: View {
         }) {
             HStack {
                 Text("Adicionar Novo Vegetal")
-                    .font(.system(size: 16))
+                    .font(Font.custom("Satoshi-Regular", size: 16))
                     .bold()
             }
             .foregroundColor(.white)
