@@ -45,7 +45,7 @@ struct CustomNavBarInfoView<Content: View>: View {
 //                        Text("Voltar").foregroundColor(.white)
 //                    }
                 }
-
+//
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: NavBarInfo)

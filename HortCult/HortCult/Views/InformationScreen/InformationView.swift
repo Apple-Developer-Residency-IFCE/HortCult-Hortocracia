@@ -188,7 +188,8 @@ struct InformationView: View {
                 }                
             }.ignoresSafeArea(.all)
             
-        }.alert(isPresented: $deleteVegetableAlert) {
+        }
+        .alert(isPresented: $deleteVegetableAlert) {
             Alert(
                 title: Text("Deseja excluir essa planta? "),
                 message: Text("Essa ação não poderá ser desfeita."),

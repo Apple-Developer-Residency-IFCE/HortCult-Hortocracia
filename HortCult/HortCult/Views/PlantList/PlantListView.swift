@@ -23,7 +23,7 @@ struct ListaPlantasView: View {
     var body: some View {
         
         VStack(spacing: 20){
-            HStack(spacing: 170.0){
+            HStack(spacing: 200.0){
                 Text("Minha Horta")
                     .font(Font.custom("Satoshi-Bold", size: 28))
                     .fontWeight(.bold)
@@ -64,7 +64,7 @@ struct ListaPlantasView: View {
                     }
                 }
             }
-            .padding(.leading, 20.0)
+//            .padding(.leading0)
             .frame(maxHeight: 150)
         }
     }

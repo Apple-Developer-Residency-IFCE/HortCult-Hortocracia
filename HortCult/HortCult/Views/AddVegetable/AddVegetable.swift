@@ -51,61 +51,92 @@ struct AddVegetable: View {
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: true)
-                            NameDescription(nameVegetable: $name, descriptionVegetable: $description)
+                            NameDescription(nameVegetable: $name,
+                                            descriptionVegetable: $description)
                            PickerCategoria(selectedOption: $categoria)
                             PickerFrequencia(selectedOption: $frequencia)
                             AddEditPhotos()
                         }
                     }
                 }
-                .padding(.bottom, 100)
                 
-                Button(action: {
-                    colorButton = "VerdeEscuro"
-                    addVegetableAlert = true
-                    discartVegetableAlert = true
-                    if isFieldsFilled{
-                        self.presentationMode.wrappedValue.dismiss()
-                        if(frequencia == "Todos os dias"){
-                            frequencia = "1"
-                        }else if(frequencia == "A cada 2 dias"){
-                            frequencia = "2"
-                        }else if(frequencia == "A cada 4 dias"){
-                            frequencia = "4"
-                        }else{
-                            frequencia = "7"
+//                Spacer()
+                
+                
+                
+                VStack{
+                    Spacer()
+                    
+                    Button(action: {
+                        // Só um teste
+                        colorButton = "VerdeEscuro"
+                        addVegetableAlert = true
+                        discartVegetableAlert = true
+                        if isFieldsFilled{
+                            self.presentationMode.wrappedValue.dismiss()
+                            plantViewModel.createPlant(name: name,
+                                                       information: description,
+                                                       category: categoria,
+                                                       frequency: frequencia,
+                                                       image: UIImage())
                         }
-                        plantViewModel.createPlant(name: name, information: description, category: categoria, frequency: frequencia, image: UIImage())
+                        
+                    }) {
+                        HStack {
+                            Text("Adicionar Novo Vegetal")
+                                .foregroundColor(Color("Branco"))
+                                .font(.system(size: 16))
+                                .bold()
+                        }
+                        .foregroundColor(Color("CinzaClaro"))
+                        
+                        .frame(width: 350, height: 42)
+                        .background(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"))
+                        .cornerRadius(40)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
+                        )
                     }
-                    
-                }) {
-                    HStack {
-                        Text("Adicionar Novo Vegetal")
-                            .foregroundColor(Color("Branco"))
-                            .font(Font.custom("Satoshi-Regular", size: 16))
-                            .bold()
-                    }
-                    .foregroundColor(Color("CinzaClaro"))
-                    
-                    .frame(width: 350, height: 42)
-                    .background(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"))
-                    .cornerRadius(40)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
-                    )
+                    .disabled(!isFieldsFilled)
+                    .frame(alignment: .bottom)
+                    .padding(.bottom, 60)
                 }
-                .disabled(!isFieldsFilled)
-                .frame(alignment: .bottom)
-                .padding(.top, 602)
+                
+//
+                
+//                .alert(isPresented: $addVegetableAlert) {
+//                    Alert(
+//                        title: Text("Planta cadastrada!"),
+//                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
+//                        primaryButton: .default(Text("Tela Inicial")),
+//                        secondaryButton: .default(
+//                            Text("Ver Planta")
+//                                .foregroundColor(Color("Cinza"))
+//                        )
+//                    )
+//
+//                }
+                //descartar a criacao da planta
+//                .alert(isPresented: $discartVegetableAlert) {
+//                    Alert(
+//                        title: Text("Deseja descartar a criação da sua planta?"),
+//                        message: Text("Essa ação não poderá ser desfeita."),
+//                        primaryButton: .cancel(Text("Cancelar")),
+//                        secondaryButton: .default(
+//                            Text("Descartar")
+//                        )
+//                    )
+//
+//                }
             }
             
             
             
         }
-        .edgesIgnoringSafeArea(.all)
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: NavBar)
+//        .edgesIgnoringSafeArea(.all)
+//        .navigationBarBackButtonHidden(true)
+//        .navigationBarItems(leading: NavBar)
         
     }
     
