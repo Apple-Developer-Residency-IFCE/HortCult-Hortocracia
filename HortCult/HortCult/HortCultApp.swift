@@ -17,7 +17,12 @@ struct HortCultApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Splash()
+                
+                if HortCultApp.isFirstLogin == true {
+                    Splash()
+                } else {
+                    TabBarView(plantViewModel: PlantViewModel())
+                }
         }
     }
 }

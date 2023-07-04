@@ -7,20 +7,16 @@
 
 import SwiftUI
 
+
 struct AddVegetable: View {
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     var plantViewModel: PlantViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State private var colorButton: String = "CinzaClaro"
-    @State private var addVegetableAlert = false
-    @State private var discartVegetableAlert = false
-    @State private var goToInformationViewAlert = false
-    @State var selectedPhotosData: [Data] = []
-    @State private var name : String = ""
-    @State private var description : String = ""
-    @State private var categoria : String = "Selecionar..."
-    @State private var frequencia : String = "Selecionar..."
-    @State private var isFull: Bool = false
+    @StateObject var viewmodel: AddVegetableViewModel = AddVegetableViewModel()
+    @StateObject private var imagesSelected = ImageSelected()
+
+    
+    
     var NavBar : some View {
         ZStack {
             HeaderLogo()
@@ -39,7 +35,7 @@ struct AddVegetable: View {
     }
     
     var isFieldsFilled: Bool{
-        return !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && categoria != "Selecionar..." && frequencia != "Selecionar..."
+        return !viewmodel.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !viewmodel.description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewmodel.categoria != "Selecionar..." && viewmodel.frequencia != "Selecionar..."
     }
     
     var body: some View {
@@ -51,61 +47,92 @@ struct AddVegetable: View {
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: true)
-                            NameDescription(nameVegetable: $name, descriptionVegetable: $description)
-                           PickerCategoria(selectedOption: $categoria)
-                            PickerFrequencia(selectedOption: $frequencia)
-                            ImagePickerComponentView(selectedPhotosData: $selectedPhotosData)
+                            NameDescription(nameVegetable: $viewmodel.name, descriptionVegetable: $viewmodel.description)
+                            PickerCategoria(selectedOption: $viewmodel.categoria)
+                            PickerFrequencia(selectedOption: $viewmodel.frequencia)
+                            AddEditPhotos()
+                                .environmentObject(imagesSelected)
                         }
                     }
                 }
-                .padding(.bottom, 100)
                 
-                Button(action: {
-                    colorButton = "VerdeEscuro"
-                    addVegetableAlert = true
-                    discartVegetableAlert = true
-                    if isFieldsFilled{
-                        self.presentationMode.wrappedValue.dismiss()
-                        if(frequencia == "Todos os dias"){
-                            frequencia = "1"
-                        }else if(frequencia == "A cada 2 dias"){
-                            frequencia = "2"
-                        }else if(frequencia == "A cada 4 dias"){
-                            frequencia = "4"
-                        }else{
-                            frequencia = "7"
+//                Spacer()
+                
+                
+                
+                VStack{
+                    Spacer()
+                    
+                    Button(action: {
+                        // Só um teste
+                        viewmodel.colorButton = "VerdeEscuro"
+                        viewmodel.addVegetableAlert = true
+                        viewmodel.discartVegetableAlert = true
+                        if isFieldsFilled{
+                            self.presentationMode.wrappedValue.dismiss()
+                            plantViewModel.createPlant(name: viewmodel.name,
+                                                       information: viewmodel.description,
+                                                       category: viewmodel.categoria,
+                                                       frequency: viewmodel.frequencia,
+                                                       image: imagesSelected.imagesSelected)
                         }
-                        plantViewModel.createPlant(name: name, information: description, category: categoria, frequency: frequencia, image: UIImage())
+                        
+                    }) {
+                        HStack {
+                            Text("Adicionar Novo Vegetal")
+                                .foregroundColor(Color("Branco"))
+                                .font(.system(size: 16))
+                                .bold()
+                        }
+                        .foregroundColor(Color("CinzaClaro"))
+                        
+                        .frame(width: 350, height: 42)
+                        .background(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"))
+                        .cornerRadius(40)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
+                        )
                     }
-                    
-                }) {
-                    HStack {
-                        Text("Adicionar Novo Vegetal")
-                            .foregroundColor(Color("Branco"))
-                            .font(Font.custom("Satoshi-Regular", size: 16))
-                            .bold()
-                    }
-                    .foregroundColor(Color("CinzaClaro"))
-                    
-                    .frame(width: 350, height: 42)
-                    .background(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"))
-                    .cornerRadius(40)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
-                    )
+                    .disabled(!isFieldsFilled)
+                    .frame(alignment: .bottom)
+                    .padding(.bottom, 60)
                 }
-                .disabled(!isFieldsFilled)
-                .frame(alignment: .bottom)
-                .padding(.top, 602)
+                
+//
+                
+//                .alert(isPresented: $addVegetableAlert) {
+//                    Alert(
+//                        title: Text("Planta cadastrada!"),
+//                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
+//                        primaryButton: .default(Text("Tela Inicial")),
+//                        secondaryButton: .default(
+//                            Text("Ver Planta")
+//                                .foregroundColor(Color("Cinza"))
+//                        )
+//                    )
+//
+//                }
+                //descartar a criacao da planta
+//                .alert(isPresented: $discartVegetableAlert) {
+//                    Alert(
+//                        title: Text("Deseja descartar a criação da sua planta?"),
+//                        message: Text("Essa ação não poderá ser desfeita."),
+//                        primaryButton: .cancel(Text("Cancelar")),
+//                        secondaryButton: .default(
+//                            Text("Descartar")
+//                        )
+//                    )
+//
+//                }
             }
             
             
             
         }
-        .edgesIgnoringSafeArea(.all)
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: NavBar)
+//        .edgesIgnoringSafeArea(.all)
+//        .navigationBarBackButtonHidden(true)
+//        .navigationBarItems(leading: NavBar)
         
     }
     
@@ -116,6 +143,3 @@ struct AddVegetable_Previews: PreviewProvider {
         AddVegetable(plantViewModel: PlantViewModel())
     }
 }
-
-
-

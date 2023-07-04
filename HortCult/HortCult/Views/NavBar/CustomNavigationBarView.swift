@@ -33,7 +33,7 @@ struct CustomNavigationBarView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        //.navigationBarItems(leading: NavBar)
+        .navigationBarItems(leading: NavBar)
         
     }
 }

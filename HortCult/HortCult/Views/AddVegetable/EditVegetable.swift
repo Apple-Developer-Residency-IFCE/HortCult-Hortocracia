@@ -10,14 +10,17 @@ import SwiftUI
 struct EditVegetable: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var plantViewModel: PlantViewModel
-    @State private var colorButton: String = "CinzaClaro"
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
+    var plant: Plant
+    @StateObject var editViewmodel: EditVegetableViewModel
+    @StateObject private var imagesSelected = ImageSelected()
     
-    @State var plant: Plant
-    @State  var name : String
-    @State var description : String
-    @State var categoria : String
-    @State var frequencia : String
+    init(plant: Plant) {
+        self.plant = plant
+        _editViewmodel = StateObject(wrappedValue: EditVegetableViewModel(plant: plant))
+//        imagesSelected.imagesSelected = $imagesSelected.dataImageConvert(datas: plant.image!)
+    }
+
     var NavBar : some View {
         ZStack {
             Image(selectedTheme == .Escuro ? "Topbardark" : "Topbar")
@@ -29,14 +32,13 @@ struct EditVegetable: View {
                 }
                 .padding(.leading, 18)
                 Spacer()
-                    
             }
         }
         
     }
     
     var isFieldsFilled: Bool{
-        return !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && categoria != "Selecionar..." && frequencia != "Selecionar..."
+        return !editViewmodel.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !editViewmodel.description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && editViewmodel.categoria != "Selecionar..." && editViewmodel.frequencia != "Selecionar..."
     }
     
     var body: some View {
@@ -47,10 +49,11 @@ struct EditVegetable: View {
                     ZStack{
                         VStack{
                             AddEditTitle(addEdit: false)
-                            NameDescription(nameVegetable: $name, descriptionVegetable: $description)
-                           PickerCategoria(selectedOption: $categoria)
-                            PickerFrequencia(selectedOption: $frequencia)
+                            NameDescription(nameVegetable: $editViewmodel.name, descriptionVegetable: $editViewmodel.description)
+                            PickerCategoria(selectedOption: $editViewmodel.categoria)
+                            PickerFrequencia(selectedOption: $editViewmodel.frequencia)
                             AddEditPhotos()
+                                .environmentObject(imagesSelected)
                         }
                     }
                 }
@@ -59,7 +62,7 @@ struct EditVegetable: View {
                 Button(action: {
                     if isFieldsFilled{
                         self.presentationMode.wrappedValue.dismiss()
-                        plantViewModel.updatePlant(plant: plant, name: name, information: description, category: categoria, frequency: frequencia, nextDate: plant.nextDate ?? Date() , image: plant.image ?? Data())
+                        plantViewModel.updatePlant(plant: plant, name: editViewmodel.name, information: editViewmodel.description, category: editViewmodel.categoria, frequency: editViewmodel.frequencia, nextDate: plant.nextDate ?? Date() , image: imagesSelected.imagesSelected)
                     }
                     
                 }) {
@@ -85,7 +88,7 @@ struct EditVegetable: View {
             }
             
             
-            
+//
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)
@@ -102,10 +105,8 @@ struct EditVegetable_Previews: PreviewProvider {
 
 struct TesteEditar: View {
     
-  
-    
     var body: some View {
-        EditVegetable(plant: Plant(), name: "Tomatinho", description: "Tomate vermelho", categoria: select.temperos.rawValue, frequencia: options.dois.rawValue)
+        EditVegetable(plant: Plant())
             .environmentObject(PlantViewModel())
     }
 }

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ImagesListView: View {
-    let images = ["Tomatinho", "Tomatinho", "Tomatinho"]
+    var images: [UIImage]
     
     @State private var selectedTab = 0
+    
     var body: some View {
         TabView(selection: $selectedTab) {
-            ForEach(0..<3) { i in
-                Image("\(images[i])")
+            ForEach(0..<images.count) { i in
+                Image(uiImage: images[i])
                     .resizable()
                     .tag(i)
                     .tabItem {
@@ -30,6 +31,6 @@ struct ImagesListView: View {
 
 struct ImagesListView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagesListView()
+        ImagesListView(images: [])
     }
 }

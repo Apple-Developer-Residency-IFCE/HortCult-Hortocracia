@@ -43,7 +43,7 @@ struct CardProxRegaView: View {
                     var nextDate: Date = Date()
                     nextDate = formatter.date(from: String(nextDate.formatted().prefix(9))) ?? Date()
                     nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
-                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plant.image ?? Data())
+                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plantViewModel.dataImageConvert(datas: plant.image ?? []))
                     plant = plantViewModel.getPlantId(id: plant.id!)!
                     dataProxRega = String(plant.nextDate!.formatted().prefix(10))
                 } label: {

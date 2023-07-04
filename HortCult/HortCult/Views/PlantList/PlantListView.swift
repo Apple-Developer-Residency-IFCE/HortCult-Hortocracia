@@ -11,24 +11,18 @@ struct ListaPlantasView: View {
     
     @EnvironmentObject var plantViewModel: PlantViewModel
     
-    func dataToImage(data: Data) -> Image{
-        
-        guard let uiImage = UIImage(data: data) else {
-            return Image("Tomatinho")
-        }
-        return Image(uiImage: uiImage)
-    }
     
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         
         VStack(spacing: 20){
-            HStack(spacing: 170.0){
+            HStack{
                 Text("Minha Horta")
                     .font(Font.custom("Satoshi-Bold", size: 28))
                     .fontWeight(.bold)
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
+                Spacer()
                 NavigationLink {
                     AddVegetable(plantViewModel: plantViewModel)
                 } label: {
@@ -40,7 +34,7 @@ struct ListaPlantasView: View {
                     }
                 }
                 
-            }
+            }.padding(.horizontal, 20)
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {
@@ -48,11 +42,13 @@ struct ListaPlantasView: View {
                         
                         NavigationLink(destination: InformationView(planta: planta)){
                             VStack{
-                                //                                dataToImage(data: planta.image)
-                                //                                    .resizable()
-                                //                                    .aspectRatio(contentMode: .fill)
-                                //                                    .frame(maxHeight: 115)
-                                //                                    .clipped()
+                                
+                                Image(uiImage: plantViewModel.dataImageConvert(datas: planta.image ?? []).first ?? UIImage())
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(maxHeight: 115)
+                                    .clipped()
+                                
                                 Text(planta.name!)
                                     .font(Font.custom("Satoshi-Regular", size: 16))
                                     .foregroundColor(Color("CinzaEscuro"))
@@ -64,7 +60,7 @@ struct ListaPlantasView: View {
                     }
                 }
             }
-            .padding(.leading, 20.0)
+            .padding(.leading, 20)
             .frame(maxHeight: 150)
         }
     }
