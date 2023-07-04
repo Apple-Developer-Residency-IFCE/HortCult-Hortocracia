@@ -59,7 +59,6 @@ struct InformationView: View {
 //    @State var data: String
     
     @State var planta: Plant
-       // @ViewBuilder var content: () -> Content
         
         var NavBarInfo : some View {
             ZStack{
@@ -91,7 +90,7 @@ struct InformationView: View {
             ScrollView(.vertical){
                 ZStack{
                     VStack(){
-                        ImagesListView()
+                        ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
                             .frame(minWidth: 390, minHeight: 390)
                             .ignoresSafeArea()
                             .edgesIgnoringSafeArea(.all)
@@ -125,7 +124,7 @@ struct InformationView: View {
                         }
                         .padding(.horizontal,20)
                         NavigationLink {
-                            EditVegetable(plant: planta, name: planta.name ?? "", description: planta.information ?? "", categoria: planta.category ?? "", frequencia: planta.frequency ?? "")
+                            EditVegetable(plant: planta)
                         } label: {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
@@ -186,7 +185,8 @@ struct InformationView: View {
                     }
 
                 }                
-            }.ignoresSafeArea(.all)
+            }.padding(.bottom, 80)
+            .ignoresSafeArea(.all)
             
         }
         .alert(isPresented: $deleteVegetableAlert) {

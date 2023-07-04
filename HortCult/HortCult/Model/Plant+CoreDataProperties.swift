@@ -2,7 +2,7 @@
 //  Plant+CoreDataProperties.swift
 //  HortCult
 //
-//  Created by Pedro Henrique Santos Rodrigues on 15/06/23.
+//  Created by Victor Viana on 30/06/23.
 //
 //
 
@@ -19,7 +19,7 @@ extension Plant {
     @NSManaged public var category: String?
     @NSManaged public var frequency: String?
     @NSManaged public var id: UUID?
-    @NSManaged public var image: Data?
+    @NSManaged public var image: [Data]?
     @NSManaged public var information: String?
     @NSManaged public var name: String?
     @NSManaged public var nextDate: Date?

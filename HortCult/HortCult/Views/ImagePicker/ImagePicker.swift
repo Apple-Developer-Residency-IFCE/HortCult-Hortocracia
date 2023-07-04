@@ -50,7 +50,7 @@ import SwiftUI
 import PhotosUI
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var selectedImages: [UIImage]
+    @EnvironmentObject var imagesSelected: ImageSelected
 
     class Coordinator: NSObject, PHPickerViewControllerDelegate {
         let parent: ImagePicker
@@ -64,7 +64,7 @@ struct ImagePicker: UIViewControllerRepresentable {
                 result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
                     if let image = image as? UIImage {
                         DispatchQueue.main.async {
-                            self?.parent.selectedImages.append(image)
+                            self?.parent.imagesSelected.imagesSelected.append(image)
                         }
                     }
                 }

@@ -14,13 +14,16 @@ class PlantViewModel: ObservableObject {
     let viewcontext = PersistenceController.shared.container.viewContext
     @Published var plant = [Plant]()
     
-    func imageDataConvert(image: UIImage) -> Data? {
-        if let imageData = image.jpegData(compressionQuality: 1.0) {
-            return imageData
-        } else if let imageData = image.pngData() {
-            return imageData
+    func imageDataConvert(image: [UIImage]) -> [Data]{
+        var datasList: [Data] = []
+        for i in 0..<image.count{
+            if let imageData = image[i].jpegData(compressionQuality: 1.0) {
+                datasList.append(imageData)
+            } else if let imageData = image[i].pngData() {
+                datasList.append(imageData)
+            }
         }
-        return nil
+        return datasList
     }
     
     func getPlantId(id: UUID) -> Plant?{
@@ -32,6 +35,16 @@ class PlantViewModel: ObservableObject {
         return nil
     }
     
+    func dataImageConvert(datas: [Data]) -> [UIImage]{
+        var imagesList: [UIImage] = []
+        for i in 0..<datas.count{
+            if let uiImage = UIImage(data: datas[i]) {
+                imagesList.append(uiImage)
+            }
+        }
+        return imagesList
+    }
+    
     func fetch() {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         guard let fetchPlants = try? viewcontext.fetch(fetchRequest) else {
@@ -41,7 +54,7 @@ class PlantViewModel: ObservableObject {
         plant = fetchPlants
     }
     
-    func createPlant(name: String, information: String, category: String, frequency: String, image: UIImage){
+    func createPlant(name: String, information: String, category: String, frequency: String, image: [UIImage]){
         
         var formattedToday: Date = Date()
         let formatter = DateFormatter()
@@ -77,7 +90,7 @@ class PlantViewModel: ObservableObject {
         }
     }
     
-    func updatePlant(plant: Plant, name: String, information: String, category: String, frequency: String, nextDate: Date, image: Data){
+    func updatePlant(plant: Plant, name: String, information: String, category: String, frequency: String, nextDate: Date, image: [UIImage]){
         
         var formattedNextDate: Date = nextDate
         let formatter = DateFormatter()
@@ -91,7 +104,7 @@ class PlantViewModel: ObservableObject {
         plant.category = category
         plant.frequency = frequency
         plant.nextDate = formattedNextDate
-        plant.image = image
+        plant.image = imageDataConvert(image: image)
         do{
             try viewcontext.save()
             fetch()

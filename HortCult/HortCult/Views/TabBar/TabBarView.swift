@@ -19,7 +19,7 @@ struct TabBarView: View {
     }
     var body: some View {
         
-        VStack {
+        ZStack(alignment: .bottom) {
             
             if showOnboarding {
                 Onboarding(showOnboarding: $showOnboarding)
