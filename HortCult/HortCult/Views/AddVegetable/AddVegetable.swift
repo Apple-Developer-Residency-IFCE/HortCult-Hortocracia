@@ -15,7 +15,7 @@ struct AddVegetable: View {
     @State private var addVegetableAlert = false
     @State private var discartVegetableAlert = false
     @State private var goToInformationViewAlert = false
-    
+    @State var selectedPhotosData: [Data] = []
     @State private var name : String = ""
     @State private var description : String = ""
     @State private var categoria : String = "Selecionar..."
@@ -54,7 +54,7 @@ struct AddVegetable: View {
                             NameDescription(nameVegetable: $name, descriptionVegetable: $description)
                            PickerCategoria(selectedOption: $categoria)
                             PickerFrequencia(selectedOption: $frequencia)
-                            AddEditPhotos()
+                            ImagePickerComponentView(selectedPhotosData: $selectedPhotosData)
                         }
                     }
                 }
