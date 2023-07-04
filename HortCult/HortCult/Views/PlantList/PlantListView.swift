@@ -16,12 +16,13 @@ struct ListaPlantasView: View {
     var body: some View {
         
         VStack(spacing: 20){
-            HStack(spacing: 170.0){
+            HStack{
                 Text("Minha Horta")
                     .font(Font.custom("Satoshi-Bold", size: 28))
                     .fontWeight(.bold)
                     .foregroundColor(Color("VerdeEscuro"))
                     .padding(.leading, 5)
+                Spacer()
                 NavigationLink {
                     AddVegetable(plantViewModel: plantViewModel)
                 } label: {
@@ -33,7 +34,7 @@ struct ListaPlantasView: View {
                     }
                 }
                 
-            }
+            }.padding(.horizontal, 20)
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {
@@ -59,7 +60,7 @@ struct ListaPlantasView: View {
                     }
                 }
             }
-            .padding(.leading, 20.0)
+            .padding(.leading, 20)
             .frame(maxHeight: 150)
         }
     }

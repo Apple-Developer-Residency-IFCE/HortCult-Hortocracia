@@ -32,7 +32,6 @@ struct EditVegetable: View {
                 }
                 .padding(.leading, 18)
                 Spacer()
-                    
             }
         }
         
@@ -89,7 +88,7 @@ struct EditVegetable: View {
             }
             
             
-            
+//
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)
