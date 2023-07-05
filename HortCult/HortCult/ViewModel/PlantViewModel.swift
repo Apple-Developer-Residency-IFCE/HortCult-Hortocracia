@@ -118,7 +118,7 @@ class PlantViewModel: ObservableObject {
         var plantsArray = [Plant]()
         var formatedToday = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
         formatedToday = formatter.date(from: String(formatedToday.formatted().prefix(10))) ?? Date()
         
         for planta in self.plant{
