@@ -16,6 +16,9 @@ struct InformationView: View {
     @State private var backHomeAlert = false
     @EnvironmentObject var plantViewModel: PlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
+    @State private var shouldNavigateButton = false
+    @State var planta: Plant
+    @State var isOverlayShown = false
         
     @ViewBuilder var Name: some View {
         if let name = planta.name{
@@ -53,48 +56,44 @@ struct InformationView: View {
         }
     }
     
-//    @State var images: [UIImage]
-//    @State var description: String
-//    @State var img: String
-//    @State var data: String
-    
-    @State var planta: Plant
-        
-        var NavBarInfo : some View {
-            ZStack{
-                HStack{
-                    Button(action:{
-                        self.presentationMode.wrappedValue.dismiss()
-                    } ) {
-                        Image("Arrow-Left-Light")
-                        Text("Voltar")
-                            .font(Font.custom("Satoshi-Regular", size: 16))
-                            .foregroundColor(.white)
-                    }
-                    .padding(.leading, 18)
-                    Spacer()
-                    
-                }.allowsHitTesting(true)
-            }
+    var NavBarInfo : some View {
+        ZStack{
+            HStack{
+                Button(action:{
+                    self.presentationMode.wrappedValue.dismiss()
+                } ) {
+                    Image("Arrow-Left-Light")
+                    Text("Voltar")
+                        .font(Font.custom("Satoshi-Regular", size: 16))
+                        .foregroundColor(.white)
+                }
+                .padding(.leading, 18)
+                Spacer()
+
+            }.allowsHitTesting(true)
         }
+    }
+    
     
     
     func formatDate(date: Date) -> String {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yyyy"
-            return formatter.string(from: date)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter.string(from: date)
     }
     
     var body: some View {
         NavigationView{
+            
             ScrollView(.vertical){
                 ZStack{
                     VStack(){
                         ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
-                            .frame(minWidth: 390, minHeight: 390)
-                            .ignoresSafeArea()
-                            .edgesIgnoringSafeArea(.all)
-                            .padding(.bottom, 16)
+                                                    .frame(minWidth: 390, minHeight: 390)
+                                                    .ignoresSafeArea()
+                                                    .edgesIgnoringSafeArea(.all)
+                                                    .padding(.bottom, 16)
+
                         VStack(alignment: .leading){
                             HStack{
                                 Name
@@ -125,6 +124,7 @@ struct InformationView: View {
                         .padding(.horizontal,20)
                         NavigationLink {
                             EditVegetable(plant: planta)
+                            
                         } label: {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
@@ -145,6 +145,7 @@ struct InformationView: View {
                         .padding(.top, 20)
                         .padding(.bottom, 16)
                         
+                        
                         Button(action: {
                             deleteVegetableAlert = true
                         }) {
@@ -155,7 +156,7 @@ struct InformationView: View {
                                     .bold()
                             }
                             .foregroundColor(.white)
-
+                            
                             .frame(width: 275, height: 42)
                             .background(Color("Vermelho"))
                             .cornerRadius(40)
@@ -164,46 +165,71 @@ struct InformationView: View {
                                     .stroke(Color("Vermelho"), lineWidth: 2)
                             )
                         }.padding(.bottom, 50)
-
+                        
                     }
+                    if deleteVegetableAlert {
+                        VStack {
+                            CustomAlert(
+                                title: "Deseja excluir essa planta?",
+                                message: "Essa ação não poderá ser desfeita.",
+                                primaryButtonTitle: "Excluir",
+                                primaryButtonAction: {
+                                    confirmDeleteVegetableAlert = true
+                                    deleteVegetableAlert = false
+                                    
+                                },
+                                secondaryButtonTitle: "Cancelar",
+                                secondaryButtonAction: {
+                                    deleteVegetableAlert = false
+                                    
+                                }
+                                
+                                
+                            ).padding(.top, 180)
+                            
+                        }.frame(width: 300, height: 100)
+                        .zIndex(1)
+                        .onAppear {
+                            isOverlayShown = true
+                        }
+                    }
+                    
                     if confirmDeleteVegetableAlert {
                         VStack {
                             CustomAlert(
                                 title: "Planta Excluida!",
                                 message: "",
-                                primaryButtonTitle: "Voltar para Tela Inicial",
+                                primaryButtonTitle: "Voltar para a Tela Inicial",
                                 primaryButtonAction: {
-                                    backHomeAlert = true
+                                    shouldNavigateButton = true
+                                    plantViewModel.deletePlant(plant: planta)
                                 }
+                                
+                                
                             ).padding(.top, 180)
-
+                            
                         }.frame(width: 300, height: 100)
-                        NavigationLink(destination: Home(), isActive: $backHomeAlert){
-                            EmptyView()
+                        .zIndex(1)
+                        .onAppear {
+                            isOverlayShown = true
                         }
-
+                        
+                        
                     }
-
-                }                
-            }.padding(.bottom, 80)
-            .ignoresSafeArea(.all)
+                    if isOverlayShown{
+                        Color.black.opacity(0.1)
+                            .edgesIgnoringSafeArea(.all)
+                    }
+                    
+                }
+                .navigationBarItems(leading: NavBarInfo)
+                
+            }
+            .edgesIgnoringSafeArea(.all)
             
         }
-        .alert(isPresented: $deleteVegetableAlert) {
-            Alert(
-                title: Text("Deseja excluir essa planta? "),
-                message: Text("Essa ação não poderá ser desfeita."),
-                primaryButton: .cancel(Text(" Cancelar")){},
-                secondaryButton:
-                        .default(Text("Excluir")) {
-                    deleteVegetableAlert = false
-                    confirmDeleteVegetableAlert = true
-                            plantViewModel.deletePlant(plant: planta)
-                }
-            )
-        }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: NavBarInfo)
+        //.navigationBarItems(leading: NavBarInfo)
         .toolbarBackground(.hidden, for: .navigationBar)
     }
 }

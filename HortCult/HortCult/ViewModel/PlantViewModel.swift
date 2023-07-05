@@ -34,6 +34,14 @@ class PlantViewModel: ObservableObject {
         }
         return nil
     }
+    func getPlant(by name: String) -> Plant? {
+        for planta in self.plant{
+            if(planta.name == name){
+                return planta;
+            }
+        }
+        return nil
+    }
     
     func dataImageConvert(datas: [Data]) -> [UIImage]{
         var imagesList: [UIImage] = []
