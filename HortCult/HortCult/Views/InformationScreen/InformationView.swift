@@ -69,10 +69,9 @@ struct InformationView: View {
                 }
                 .padding(.leading, 18)
                 Spacer()
-                
+
             }.allowsHitTesting(true)
         }
-        .border(.red)
     }
     
     
@@ -220,12 +219,14 @@ struct InformationView: View {
                     
                     
                 }
+                .navigationBarItems(leading: NavBarInfo)
+                
             }
             .edgesIgnoringSafeArea(.all)
             
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: NavBarInfo)
+        //.navigationBarItems(leading: NavBarInfo)
         .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
