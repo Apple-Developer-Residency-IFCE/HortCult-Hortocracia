@@ -64,12 +64,7 @@ struct NotificationsView: View {
                 }
             }
             
-        }.padding(.leading, 20)
-//            .onChange(of: selectedHour) { newValue in
-//                NotificationManager.shared.scheduleNotificationConverter(timeString: newValue)
-//            }
-
-        
+        }
     }
     
     private var dateFormatter: DateFormatter {
