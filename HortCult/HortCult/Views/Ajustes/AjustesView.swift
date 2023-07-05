@@ -50,7 +50,7 @@ struct AjustesView: View {
                                         .font(Font.custom("Satoshi-Regular", size: 16))
                                         .foregroundColor(Color("Preto"))
                                 case .none:
-                                    Text("Claro")
+                                    Text("Padrão")
                                         .font(Font.custom("Satoshi-Regular", size: 16))
                                         .foregroundColor(Color("Preto"))
                                 }

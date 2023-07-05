@@ -56,10 +56,6 @@ struct AddVegetable: View {
                     }
                 }
                 
-//                Spacer()
-                
-                
-                
                 VStack{
                     Spacer()
                     
