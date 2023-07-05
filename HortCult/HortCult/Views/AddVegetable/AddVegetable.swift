@@ -82,7 +82,7 @@ struct AddVegetable: View {
                         viewmodel.colorButton = "VerdeEscuro"
                         addVegetableAlert = true
                         if isFieldsFilled{
-                           
+                            
                             plantViewModel.createPlant(name: viewmodel.name,
                                                        information: viewmodel.description,
                                                        category: viewmodel.categoria,
@@ -158,23 +158,22 @@ struct AddVegetable: View {
                         showOverlay = true
                     }
                 }
-            }.edgesIgnoringSafeArea(.all)
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: NavBar)
-                .fullScreenCover(isPresented: self.$isFullScreenCovering) {
-                    InformationView(planta: plantViewModel.getPlant(by: viewmodel.name)!)
-                    
-                    
-                    
-                }
+            }
+            
+            
             
         }
-        
+        .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: NavBar)
+            .fullScreenCover(isPresented: self.$isFullScreenCovering) {
+                InformationView(planta: plantViewModel.getPlant(by: viewmodel.name)!)
+                
+            }
     }
-    
-    struct AddVegetable_Previews: PreviewProvider {
-        static var previews: some View {
-            AddVegetable(plantViewModel: PlantViewModel())
+        
+        struct AddVegetable_Previews: PreviewProvider {
+            static var previews: some View {
+                AddVegetable(plantViewModel: PlantViewModel())
+            }
         }
     }
-}

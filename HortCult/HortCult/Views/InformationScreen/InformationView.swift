@@ -14,11 +14,12 @@ struct InformationView: View {
     @State private var deleteVegetableAlert = false
     @State private var confirmDeleteVegetableAlert = false
     @State private var backHomeAlert = false
-    @State private var shouldNavigateButton = false
-    @State private var showOverlay = false
     @EnvironmentObject var plantViewModel: PlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
-    
+    @State private var shouldNavigateButton = false
+    @State private var showOverlay = false
+    @State var planta: Plant
+        
     @ViewBuilder var Name: some View {
         if let name = planta.name{
             Text(name)
@@ -28,7 +29,7 @@ struct InformationView: View {
         } else {
             Text("Sem nome!")
         }
-        
+            
     }
     @ViewBuilder var Categoria: some View {
         if let category = planta.category{
@@ -55,13 +56,6 @@ struct InformationView: View {
         }
     }
     
-    //    @State var images: [UIImage]
-    //    @State var description: String
-    //    @State var img: String
-    //    @State var data: String
-    
-    @State var planta: Plant
-    
     var NavBarInfo : some View {
         ZStack{
             HStack{
@@ -78,7 +72,9 @@ struct InformationView: View {
                 
             }.allowsHitTesting(true)
         }
+        .border(.red)
     }
+    
     
     
     func formatDate(date: Date) -> String {
@@ -89,14 +85,22 @@ struct InformationView: View {
     
     var body: some View {
         NavigationView{
+            
             ScrollView(.vertical){
                 ZStack{
+                    if showOverlay {
+                        Color.black.opacity(0.1)
+                            .edgesIgnoringSafeArea(.all)
+                            .zIndex(0)
+                    }
+
                     VStack(){
                         ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
-                            .frame(minWidth: 390, minHeight: 390)
-                            .ignoresSafeArea()
-                            .edgesIgnoringSafeArea(.all)
-                            .padding(.bottom, 16)
+                                                    .frame(minWidth: 390, minHeight: 390)
+                                                    .ignoresSafeArea()
+                                                    .edgesIgnoringSafeArea(.all)
+                                                    .padding(.bottom, 16)
+
                         VStack(alignment: .leading){
                             HStack{
                                 Name
@@ -127,6 +131,7 @@ struct InformationView: View {
                         .padding(.horizontal,20)
                         NavigationLink {
                             EditVegetable(plant: planta)
+                            
                         } label: {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
@@ -146,6 +151,7 @@ struct InformationView: View {
                         }
                         .padding(.top, 20)
                         .padding(.bottom, 16)
+                        
                         
                         Button(action: {
                             deleteVegetableAlert = true
@@ -208,15 +214,18 @@ struct InformationView: View {
                             
                         }.frame(width: 300, height: 100)
                         
+                        
+                        
                     }
                     
-                }.padding(.bottom, 80)
-                .ignoresSafeArea(.all)
-                
-            }.navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: NavBarInfo)
-                .toolbarBackground(.hidden, for: .navigationBar)
+                    
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
             
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: NavBarInfo)
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
