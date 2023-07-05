@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImagesListView: View {
-    var images: [UIImage]
+    @State var images: [UIImage]
     
     @State private var selectedTab = 0
     

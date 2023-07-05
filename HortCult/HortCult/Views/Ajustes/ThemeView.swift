@@ -14,7 +14,7 @@ enum Choice: String {
 
 struct ThemeView: View {
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
-    
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var NavBar : some View {
@@ -102,7 +102,8 @@ struct ThemeView: View {
                 }
                 Spacer()
             }
-        }.navigationBarBackButtonHidden(true)
+        }.preferredColorScheme(selectedTheme == .Claro ? .light : (selectedTheme == .Escuro ? .dark : .none))
+        .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: NavBar)
         .edgesIgnoringSafeArea(.all)
 

@@ -10,9 +10,8 @@ import SwiftUI
 struct ListaPlantasView: View {
     
     @EnvironmentObject var plantViewModel: PlantViewModel
-    
-    
     @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         
         VStack(spacing: 20){
