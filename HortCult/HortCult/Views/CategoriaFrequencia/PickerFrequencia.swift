@@ -49,13 +49,13 @@ struct PickerFrequencia: View {
                         Image("Arrow-Bottom")
                             .padding(.trailing, 22)
                         
-                    }.frame(width: 350, height: 40)
+                    }.frame(width: .infinity, height: 40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
                                 .stroke(Color("CinzaClaro"), lineWidth: 1)
                             
                         )
-                        .padding(.leading, 20)
+                        .padding(.horizontal, 20)
                 }
                 
                 
@@ -97,7 +97,7 @@ struct PickerFrequencia: View {
                                 Spacer()
                             }
                         }
-                    } .frame(width: 350)
+                    } .frame(width: .infinity)
                         .padding(.top, 9)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
@@ -106,7 +106,7 @@ struct PickerFrequencia: View {
                             
                             
                         )
-                        .padding(.leading, 20)
+                        .padding(.horizontal, 20)
                 }
                 
             }

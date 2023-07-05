@@ -19,7 +19,7 @@ struct TabBarView: View {
     }
     var body: some View {
         
-        VStack {
+        ZStack(alignment: .bottom) {
             
             if showOnboarding {
                 Onboarding(showOnboarding: $showOnboarding)
@@ -28,12 +28,16 @@ struct TabBarView: View {
                 TabView(selection: $selectedTab) {
                     Home()
                         .tag(0)
-                    AjustesView()
+                    Text("Futura tela de consulta")
                         .tag(1)
+                    Text("Futura tela de controle climático")
+                        .tag(2)
+                    AjustesView()
+                        .tag(3)
                 }
                 ZStack{
                     Rectangle()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color("BrancoTabBar"))
                         .background(Color.clear)
                         .shadow(color: .black.opacity(0.1), radius: 5)
                     HStack{
@@ -46,9 +50,8 @@ struct TabBarView: View {
                         }
                     }
                 }
-                .frame(height: 90)
+                    .frame(height: 90)
             }
-            
         }.environmentObject(plantViewModel)
             .edgesIgnoringSafeArea(.bottom)
     }

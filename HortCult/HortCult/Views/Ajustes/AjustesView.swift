@@ -18,15 +18,17 @@ struct AjustesView: View {
         NavigationView {
             VStack(alignment: .leading){
                 HeaderLogo()
+                
                     .ignoresSafeArea()
                 HStack{
                     Text("Ajustes")
                         .font(Font.custom("Satoshi-Bold", size: 28))
                         .foregroundColor(Color("VerdeEscuro"))
                         .bold()
-                        .padding(.top, 20)
+                    
+//                        .padding(.top, 20)
                 }.padding(.leading, 24)
-                    .padding(.bottom, 20)
+//                    .padding(.bottom, 20)
                 HStack{
                     Text("Tema")
                         .font(Font.custom("Satoshi-Regular", size: 18))
@@ -97,17 +99,17 @@ struct AjustesView: View {
                 }
                     Spacer()
                 
-                
-            }
+            }.edgesIgnoringSafeArea(.top)
         }
         .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
 
-        
-        
     }
-    
 }
+
+
+
+
 
 struct AjustesView_Previews: PreviewProvider {
     static var previews: some View {

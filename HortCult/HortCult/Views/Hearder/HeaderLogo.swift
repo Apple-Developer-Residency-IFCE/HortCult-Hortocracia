@@ -24,7 +24,8 @@ struct HeaderLogo: View {
             }
             .padding(-10)
             Divider()
-        }
+            
+        }.ignoresSafeArea()
     }
 }
 

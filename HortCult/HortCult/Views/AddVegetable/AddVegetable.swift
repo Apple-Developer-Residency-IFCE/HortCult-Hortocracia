@@ -21,22 +21,21 @@ struct AddVegetable: View {
     @State private var categoria : String = "Selecionar..."
     @State private var frequencia : String = "Selecionar..."
     @State private var isFull: Bool = false
-    var NavBar : some View {
-        ZStack {
-            HeaderLogo()
-                .frame(minWidth: 400, minHeight: 200)
-                .padding(.top,-40)
-            HStack {
-                Button(action:{
-                    self.presentationMode.wrappedValue.dismiss()
-                } ) {
-                    Image(selectedTheme == .Escuro ? "Arrow-Left-Light" : "Arrow-Left-Green")
-                }
-                .padding(.leading, 18)
-            }
-            .padding(.leading,-190)
-        }
-    }
+//    var NavBar : some View {
+//        VStack {
+//            HeaderLogo()
+//
+//            HStack {
+//                Button(action:{
+//                    self.presentationMode.wrappedValue.dismiss()
+//                } ) {
+//                    Image(selectedTheme == .Escuro ? "Arrow-Left-Light" : "Arrow-Left-Green")
+//                }
+//                .padding(.leading, 18)
+//            }
+//            .padding(.leading,-190)
+//        }
+//    }
     
     var isFieldsFilled: Bool{
         return !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && categoria != "Selecionar..." && frequencia != "Selecionar..."
@@ -59,10 +58,6 @@ struct AddVegetable: View {
                         }
                     }
                 }
-                
-//                Spacer()
-                
-                
                 
                 VStack{
                     Spacer()
@@ -102,6 +97,12 @@ struct AddVegetable: View {
                     .frame(alignment: .bottom)
                     .padding(.bottom, 60)
                 }
+                
+                VStack{
+                    HeaderLogo()
+                        Spacer()
+                }
+                
                 
 //
                 

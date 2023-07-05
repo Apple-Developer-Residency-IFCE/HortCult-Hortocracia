@@ -33,7 +33,7 @@ struct NotificationsView: View {
                     Image("Relogio")
                         .padding(.trailing, 11)
                     
-                }.frame(width: 350, height: 38)
+                }.frame(width: .infinity, height: 38)
                     .overlay(
                         RoundedRectangle(cornerRadius: 40)
                             .stroke(Color("Cinza"), lineWidth: 1)
@@ -52,7 +52,7 @@ struct NotificationsView: View {
                     ).frame(height: 175)
                     .datePickerStyle(.wheel)
                     .labelsHidden()
-                    .padding(.leading, 16)
+                    .padding(.horizontal)
                     .environment(\.locale, Locale(identifier: "pt_BR"))
                     Button{
                         isHourSelectVisible.toggle()
@@ -64,7 +64,7 @@ struct NotificationsView: View {
                 }
             }
             
-        }.padding(.leading, 20)
+        }.padding(.horizontal, 20)
 //            .onChange(of: selectedHour) { newValue in
 //                NotificationManager.shared.scheduleNotificationConverter(timeString: newValue)
 //            }

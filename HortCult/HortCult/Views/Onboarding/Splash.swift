@@ -9,8 +9,6 @@ import SwiftUI
 
 struct Splash: View {
     
-    
-    @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @State var isActive: Bool = false
     @State var size = 0.8
     @State var opacity = 0.5
@@ -21,7 +19,7 @@ struct Splash: View {
         }else {
             VStack {
                 VStack {
-                    Image("Logo_Clara")
+                    Image("Logo")
                         .resizable()
                         .frame(width: 257, height: 47.26)
                 }

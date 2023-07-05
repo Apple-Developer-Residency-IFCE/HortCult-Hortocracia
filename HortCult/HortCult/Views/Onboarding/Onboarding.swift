@@ -27,7 +27,7 @@ struct Onboarding: View {
             .tag(0)
             
             OnboardingScreen(header: "Logo_Clara",
-                             centerImage: "ImagensHort",
+                             centerImage: "ImageOnboardingOne",
                              primaryText: "Acompanhe a sua horta",
                              secondaryText: "Tenha uma visão geral do desenvolvimento das duas plantações",
                              actionMainButton: {goToNext()},
@@ -37,7 +37,7 @@ struct Onboarding: View {
             .tag(1)
             
             OnboardingScreen(header: "Logo_Clara",
-                             centerImage: "onboarding03",
+                             centerImage: "ImageOnboardingTwo",
                              primaryText: "Amplie sua horta com diferentes vegetais",
                              secondaryText: "Adicione fotos e informações como luminosidade, umidade e muito mais.",
                              actionMainButton: {goToNext()}, mainButtonType: .two,
@@ -46,12 +46,12 @@ struct Onboarding: View {
             .tag(2)
             
             OnboardingScreen(header: "Logo_Clara",
-                             centerImage: "onboarding04",
+                             centerImage: "ImageOnboardingThree",
                              primaryText: "Hora de Cuidar",
                              secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
                              actionMainButton: {
-                                goToNext()
-                            },
+                                    goToNext()
+                                },
                              mainButtonType: .three,
                              hidenSecondaryButton: true)
             .tag(3)
