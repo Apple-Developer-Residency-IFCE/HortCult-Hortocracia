@@ -17,8 +17,8 @@ struct InformationView: View {
     @EnvironmentObject var plantViewModel: PlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @State private var shouldNavigateButton = false
-    @State private var showOverlay = false
     @State var planta: Plant
+    @State var isOverlayShown = false
         
     @ViewBuilder var Name: some View {
         if let name = planta.name{
@@ -87,12 +87,6 @@ struct InformationView: View {
             
             ScrollView(.vertical){
                 ZStack{
-                    if showOverlay {
-                        Color.black.opacity(0.1)
-                            .edgesIgnoringSafeArea(.all)
-                            .zIndex(0)
-                    }
-
                     VStack(){
                         ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
                                                     .frame(minWidth: 390, minHeight: 390)
@@ -187,14 +181,17 @@ struct InformationView: View {
                                 secondaryButtonTitle: "Cancelar",
                                 secondaryButtonAction: {
                                     deleteVegetableAlert = false
-                                    showOverlay = false
+                                    
                                 }
                                 
                                 
                             ).padding(.top, 180)
                             
                         }.frame(width: 300, height: 100)
-                        
+                        .zIndex(1)
+                        .onAppear {
+                            isOverlayShown = true
+                        }
                     }
                     
                     if confirmDeleteVegetableAlert {
@@ -212,11 +209,17 @@ struct InformationView: View {
                             ).padding(.top, 180)
                             
                         }.frame(width: 300, height: 100)
-                        
+                        .zIndex(1)
+                        .onAppear {
+                            isOverlayShown = true
+                        }
                         
                         
                     }
-                    
+                    if isOverlayShown{
+                        Color.black.opacity(0.1)
+                            .edgesIgnoringSafeArea(.all)
+                    }
                     
                 }
                 .navigationBarItems(leading: NavBarInfo)

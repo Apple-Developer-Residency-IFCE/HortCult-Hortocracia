@@ -15,10 +15,10 @@ struct AddVegetable: View {
     @StateObject var viewmodel: AddVegetableViewModel = AddVegetableViewModel()
     @StateObject private var imagesSelected = ImageSelected()
     @State var discartVegetableAlert = false
-    @State var showOverlay = false
+    //@  var showOverlay = false
     @State var addVegetableAlert = false
     @State var isFullScreenCovering: Bool = false
-    
+    @State var isOverlayShown = false
     
     var NavBar : some View {
         ZStack {
@@ -38,11 +38,6 @@ struct AddVegetable: View {
                 .padding(.leading, 18)
             }
             .padding(.leading,-190)
-            if showOverlay {
-                Color.black.opacity(0.1)
-                    .edgesIgnoringSafeArea(.all)
-                    .zIndex(0)
-            }
         }
     }
     
@@ -57,9 +52,11 @@ struct AddVegetable: View {
         
         NavigationView {
             ZStack{
+                
                 ScrollView(.vertical){
                     
                     ZStack{
+                        
                         VStack{
                             AddEditTitle(addEdit: true)
                             NameDescription(nameVegetable: $viewmodel.name, descriptionVegetable: $viewmodel.description)
@@ -72,11 +69,6 @@ struct AddVegetable: View {
                 }
                 VStack{
                     Spacer()
-                    if showOverlay {
-                        Color.black.opacity(0.1)
-                            .edgesIgnoringSafeArea(.all)
-                            .zIndex(0)
-                    }
                     Button(action: {
                         // Só um teste
                         viewmodel.colorButton = "VerdeEscuro"
@@ -132,7 +124,7 @@ struct AddVegetable: View {
                     .frame(width: 300, height: 100)
                     .zIndex(1)
                     .onAppear {
-                        showOverlay = true
+                        isOverlayShown = true
                     }
                 }
                 if discartVegetableAlert {
@@ -147,7 +139,7 @@ struct AddVegetable: View {
                             secondaryButtonTitle: "Cancelar",
                             secondaryButtonAction: {
                                 discartVegetableAlert = false
-                                showOverlay = false
+                                isOverlayShown = false
                             }
                         )
                         .padding(.top, 50)
@@ -155,8 +147,14 @@ struct AddVegetable: View {
                     .frame(width: 300, height: 100)
                     .zIndex(1)
                     .onAppear {
-                        showOverlay = true
+                        isOverlayShown = true
                     }
+
+                }
+                if isOverlayShown {
+                    Color.black.opacity(0.1)
+                        .edgesIgnoringSafeArea(.all)
+                    
                 }
             }
             
