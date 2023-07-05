@@ -41,16 +41,19 @@ struct ReminderCardView: View {
                     .foregroundColor(Color("CinzaEscuro"))
 
                 Button{
-                    if let numero = Int(plant.frequency!) {
-                        auxFrequency = numero
-                    } else {
-                        print("Erro ao converter a string para Int")
+                    if (plant.frequency == "Todos os dias"){
+                        auxFrequency = 1
+                    }else if(plant.frequency == "A cada 2 dias"){
+                        auxFrequency = 2
+                    }else if(plant.frequency == "A cada 4 dias"){
+                        auxFrequency = 4
+                    }else{
+                        auxFrequency = 7
                     }
-                    
                     let formatter = DateFormatter()
-                    formatter.dateFormat = "MM/dd/yyyy"
+                    formatter.dateFormat = "dd/MM/yyyy"
                     var nextDate: Date = Date()
-                    nextDate = formatter.date(from: String(nextDate.formatted().prefix(9))) ?? Date()
+                    nextDate = formatter.date(from: String(nextDate.formatted().prefix(10))) ?? Date()
                     nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
                     plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plantViewModel.dataImageConvert(datas: plant.image ?? []))
                     plant = plantViewModel.getPlantId(id: plant.id!)!

@@ -67,6 +67,7 @@ struct AddVegetable: View {
                         }
                     }
                 }
+                
                 VStack{
                     Spacer()
                     Button(action: {
