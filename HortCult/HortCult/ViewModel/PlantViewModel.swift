@@ -10,6 +10,7 @@ import CoreData
 import SwiftUI
 import Combine
 import UIKit
+
 class PlantViewModel: ObservableObject {
     let viewcontext = PersistenceController.shared.container.viewContext
     @Published var plant = [Plant]()
@@ -129,7 +130,4 @@ class PlantViewModel: ObservableObject {
     
         return plantsArray
     }
-    
-//
-
 }
