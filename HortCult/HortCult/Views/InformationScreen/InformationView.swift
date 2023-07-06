@@ -14,6 +14,7 @@ struct InformationView: View {
     @State private var deleteVegetableAlert = false
     @State private var confirmDeleteVegetableAlert = false
     @State private var backHomeAlert = false
+    
     @EnvironmentObject var plantViewModel: PlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
         
@@ -90,7 +91,8 @@ struct InformationView: View {
             ScrollView(.vertical){
                 ZStack{
                     VStack(){
-                        ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
+//                        ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
+                        Image(uiImage: UIImage())
                             .frame(minWidth: 390, minHeight: 390)
                             .ignoresSafeArea()
                             .edgesIgnoringSafeArea(.all)
@@ -114,7 +116,7 @@ struct InformationView: View {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
                                     .font(Font.custom("Satoshi-Regular", size: 16))
-                                Text("Todos os Dias")
+                                Text(planta.frequency!)
                                     .font(Font.custom("Satoshi-Bold", size: 18))
                                     .bold()
                                 
@@ -178,7 +180,9 @@ struct InformationView: View {
                             ).padding(.top, 180)
 
                         }.frame(width: 300, height: 100)
-                        NavigationLink(destination: Home(), isActive: $backHomeAlert){
+                        NavigationLink(destination: Home()
+                            .environmentObject(plantViewModel)
+                                       , isActive: $backHomeAlert){
                             EmptyView()
                         }
 
