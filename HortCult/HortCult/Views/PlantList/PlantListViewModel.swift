@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+class PlantListViewModel: ObservableObject {
+    let service: CoredataServices
+    @Published var plants: [Plant] = []
+    
+    init(service: CoredataServices){
+        self.service = service
+        loadPlants()
+    }
+    
+    func loadPlants(){
+        self.plants = service.fetchPlant()
+    }
+}

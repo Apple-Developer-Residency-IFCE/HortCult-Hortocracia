@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ListaPlantasView: View {
-    
-    @EnvironmentObject var plantViewModel: PlantViewModel
-    
+    @EnvironmentObject var plantListViewModel: PlantListViewModel
+    let addViewModel = AddPlantViewModel(service: CoredataServices())
     
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
@@ -24,7 +23,8 @@ struct ListaPlantasView: View {
                     .padding(.leading, 5)
                 Spacer()
                 NavigationLink {
-                    AddVegetable(plantViewModel: plantViewModel)
+                    AddPlantView() {}
+                        .environmentObject(addViewModel)
                 } label: {
                     HStack {
                         Image(colorScheme == .dark ? "Add" : "AddWhite")
@@ -38,12 +38,11 @@ struct ListaPlantasView: View {
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {
-                    ForEach(plantViewModel.plant, id: \.self) { planta in
-                        
+                    ForEach(plantListViewModel.plants, id: \.self) { planta in
+        
                         NavigationLink(destination: InformationView(planta: planta)){
                             VStack{
-                                
-                                Image(uiImage: plantViewModel.dataImageConvert(datas: planta.image ?? []).first ?? UIImage())
+                                Image(uiImage: UIImage())
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(maxHeight: 115)
