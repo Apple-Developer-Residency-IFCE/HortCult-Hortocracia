@@ -7,14 +7,28 @@
 
 import SwiftUI
 
-struct NPlantListView: View {
+struct PlantListView: View {
+    @EnvironmentObject var viewModel: PlantListViewModel
+    let addViewModel = AddPlantViewModel(service: CoredataServices())
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            AddPlantView() {viewModel.loadPlants()}
+                .environmentObject(addViewModel)
+            Text("Plantas")
+            LazyVGrid(columns: [.init(.flexible()),.init(.flexible())])  {
+                ForEach(viewModel.plants, id: \.id) { plant in
+                    VStack{
+                        Text(plant.name ?? "")
+                    }
+                }
+            }
+        }
     }
 }
 
-struct NPlantListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NPlantListView()
-    }
-}
+//struct PlantListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlantListView()
+//    }
+//}
