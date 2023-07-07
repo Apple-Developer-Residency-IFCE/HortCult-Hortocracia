@@ -66,13 +66,14 @@ class CoredataServices {
                 information: String,
                 category: String,
                 frequency: String,
-                image: [UIImage],
+                image: [Data],
                 nextDate: Date) {
         plant.name = name
         plant.information = information
         plant.frequency = frequency
         plant.category = category
         plant.nextDate = nextDate
+        plant.image = image
         CoreDataStack.shared.saveContext()
     }
     
