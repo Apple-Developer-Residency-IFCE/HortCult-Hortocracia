@@ -15,7 +15,9 @@ struct InformationView: View {
     @State private var confirmDeleteVegetableAlert = false
     @State private var backHomeAlert = false
     
-    @EnvironmentObject var plantViewModel: PlantViewModel
+    let editPlant:EditPlantViewModel
+    
+    var informationViewModel: InformationViewModel = InformationViewModel(service: CoredataServices())
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
         
     @ViewBuilder var Name: some View {
@@ -54,11 +56,6 @@ struct InformationView: View {
         }
     }
     
-//    @State var images: [UIImage]
-//    @State var description: String
-//    @State var img: String
-//    @State var data: String
-    
     @State var planta: Plant
         
         var NavBarInfo : some View {
@@ -91,8 +88,7 @@ struct InformationView: View {
             ScrollView(.vertical){
                 ZStack{
                     VStack(){
-//                        ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
-                        Image(uiImage: UIImage())
+                        ImagesListView(images: informationViewModel.allImagesToUI(planta: planta))
                             .frame(minWidth: 390, minHeight: 390)
                             .ignoresSafeArea()
                             .edgesIgnoringSafeArea(.all)
@@ -126,7 +122,8 @@ struct InformationView: View {
                         }
                         .padding(.horizontal,20)
                         NavigationLink {
-                            EditVegetable(plant: planta)
+                            EditPlantView(){}
+                                .environmentObject(editPlant)
                         } label: {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
@@ -181,7 +178,6 @@ struct InformationView: View {
 
                         }.frame(width: 300, height: 100)
                         NavigationLink(destination: Home()
-                            .environmentObject(plantViewModel)
                                        , isActive: $backHomeAlert){
                             EmptyView()
                         }
@@ -202,7 +198,7 @@ struct InformationView: View {
                         .default(Text("Excluir")) {
                     deleteVegetableAlert = false
                     confirmDeleteVegetableAlert = true
-                            plantViewModel.deletePlant(plant: planta)
+                            informationViewModel.deletePlant(planta: planta)
                 }
             )
         }
