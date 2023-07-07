@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import SwiftUI
 
 class PlantListViewModel: ObservableObject {
     let service: CoredataServices
@@ -18,5 +20,13 @@ class PlantListViewModel: ObservableObject {
     
     func loadPlants(){
         self.plants = service.fetchPlant()
+    }
+    
+    func dataToUIImage(planta: Plant) -> UIImage{
+        if let dataImage = planta.image?.first {
+            return UIImage(data: dataImage) ?? UIImage()
+        } else {
+            return UIImage()
+        }
     }
 }

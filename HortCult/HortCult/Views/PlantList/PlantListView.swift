@@ -40,9 +40,9 @@ struct ListaPlantasView: View {
                 LazyHStack(spacing: 12) {
                     ForEach(plantListViewModel.plants, id: \.self) { planta in
         
-                        NavigationLink(destination: InformationView(planta: planta)){
+                        NavigationLink(destination: InformationView(editPlant: EditPlantViewModel(service: CoredataServices(), planta: planta), planta: planta)){
                             VStack{
-                                Image(uiImage: UIImage())
+                                Image(uiImage: plantListViewModel.dataToUIImage(planta: planta))
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(maxHeight: 115)
@@ -64,11 +64,4 @@ struct ListaPlantasView: View {
         }
     }
     
-}
-
-struct ListaPlantasView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListaPlantasView()
-            .environmentObject(PlantViewModel())
-    }
 }
