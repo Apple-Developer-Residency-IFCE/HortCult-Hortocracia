@@ -23,7 +23,6 @@
 		4E95636E2A3BB5E900DB7852 /* AddEditPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E95636D2A3BB5E900DB7852 /* AddEditPhotos.swift */; };
 		4EA103702A4121BB001E0B0B /* AlertPlantaExcluida.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA1036F2A4121BB001E0B0B /* AlertPlantaExcluida.swift */; };
 		4EBD45B32A3A722900BD26BE /* EditVegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD45B22A3A722900BD26BE /* EditVegetable.swift */; };
-		4EBD45B52A3A727A00BD26BE /* AddEditTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD45B42A3A727A00BD26BE /* AddEditTitle.swift */; };
 		6417D96E2A26AD5900479BE2 /* TesteNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6417D96D2A26AD5900479BE2 /* TesteNavigationBarView.swift */; };
 		6417D9712A26AD6A00479BE2 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6417D9702A26AD6A00479BE2 /* CustomNavigationBarView.swift */; };
 		642EEC2F2A1D8648009206D2 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 642EEC252A1D8647009206D2 /* Satoshi-Black.otf */; };
@@ -62,15 +61,16 @@
 		9B519A4C2A4F82DC004E4F40 /* OnboardingBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B519A4B2A4F82DC004E4F40 /* OnboardingBase.swift */; };
 		9B519A4E2A4F831E004E4F40 /* ReusableOnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B519A4D2A4F831E004E4F40 /* ReusableOnboardingButton.swift */; };
 		9B519A502A4F8370004E4F40 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B519A4F2A4F8370004E4F40 /* Onboarding.swift */; };
+		EF3A02442A576F7300DA20F0 /* NameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A02432A576F7300DA20F0 /* NameInput.swift */; };
+		EF3A02462A576F8000DA20F0 /* DescriptionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A02452A576F8000DA20F0 /* DescriptionInput.swift */; };
+		EF3A024A2A576FE000DA20F0 /* CategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A02492A576FE000DA20F0 /* CategoryPicker.swift */; };
+		EF3A024C2A576FEE00DA20F0 /* FrequencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A024B2A576FEE00DA20F0 /* FrequencyPicker.swift */; };
+		EF3A024E2A577FA700DA20F0 /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A024D2A577FA700DA20F0 /* InformationViewModel.swift */; };
 		EF4CE5992A538DB700891027 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CE5982A538DB700891027 /* Splash.swift */; };
 		EF69537E2A562C9700C35C68 /* PlantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69537D2A562C9700C35C68 /* PlantListViewModel.swift */; };
 		EF6953812A56448C00C35C68 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6953802A56448C00C35C68 /* ImagePicker.swift */; };
 		EF6953872A5645B600C35C68 /* EditPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6953862A5645B600C35C68 /* EditPlantView.swift */; };
 		EF6953892A5645C700C35C68 /* EditPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6953882A5645C700C35C68 /* EditPlantViewModel.swift */; };
-		EF69538C2A5645FC00C35C68 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69538B2A5645FC00C35C68 /* AddButton.swift */; };
-		EF69538E2A56460400C35C68 /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69538D2A56460400C35C68 /* EditButton.swift */; };
-		EF6953902A56461300C35C68 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69538F2A56461300C35C68 /* DeleteButton.swift */; };
-		EF6953922A56462300C35C68 /* ButtonPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6953912A56462300C35C68 /* ButtonPattern.swift */; };
 		EF8203202A5614D400089A70 /* CoredataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82031F2A5614D400089A70 /* CoredataServices.swift */; };
 		EF8203252A56182200089A70 /* AddPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8203242A56182200089A70 /* AddPlantViewModel.swift */; };
 		EF8203272A56183F00089A70 /* AddPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8203262A56183F00089A70 /* AddPlantView.swift */; };
@@ -94,7 +94,6 @@
 		4E95636D2A3BB5E900DB7852 /* AddEditPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditPhotos.swift; sourceTree = "<group>"; };
 		4EA1036F2A4121BB001E0B0B /* AlertPlantaExcluida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlantaExcluida.swift; sourceTree = "<group>"; };
 		4EBD45B22A3A722900BD26BE /* EditVegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVegetable.swift; sourceTree = "<group>"; };
-		4EBD45B42A3A727A00BD26BE /* AddEditTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTitle.swift; sourceTree = "<group>"; };
 		6417D96D2A26AD5900479BE2 /* TesteNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TesteNavigationBarView.swift; sourceTree = "<group>"; };
 		6417D9702A26AD6A00479BE2 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		642EEC252A1D8647009206D2 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
@@ -134,15 +133,16 @@
 		9B519A4B2A4F82DC004E4F40 /* OnboardingBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBase.swift; sourceTree = "<group>"; };
 		9B519A4D2A4F831E004E4F40 /* ReusableOnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableOnboardingButton.swift; sourceTree = "<group>"; };
 		9B519A4F2A4F8370004E4F40 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		EF3A02432A576F7300DA20F0 /* NameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInput.swift; sourceTree = "<group>"; };
+		EF3A02452A576F8000DA20F0 /* DescriptionInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInput.swift; sourceTree = "<group>"; };
+		EF3A02492A576FE000DA20F0 /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
+		EF3A024B2A576FEE00DA20F0 /* FrequencyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPicker.swift; sourceTree = "<group>"; };
+		EF3A024D2A577FA700DA20F0 /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		EF4CE5982A538DB700891027 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		EF69537D2A562C9700C35C68 /* PlantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListViewModel.swift; sourceTree = "<group>"; };
 		EF6953802A56448C00C35C68 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		EF6953862A5645B600C35C68 /* EditPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantView.swift; sourceTree = "<group>"; };
 		EF6953882A5645C700C35C68 /* EditPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantViewModel.swift; sourceTree = "<group>"; };
-		EF69538B2A5645FC00C35C68 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
-		EF69538D2A56460400C35C68 /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
-		EF69538F2A56461300C35C68 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
-		EF6953912A56462300C35C68 /* ButtonPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPattern.swift; sourceTree = "<group>"; };
 		EF82031F2A5614D400089A70 /* CoredataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataServices.swift; sourceTree = "<group>"; };
 		EF8203242A56182200089A70 /* AddPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewModel.swift; sourceTree = "<group>"; };
 		EF8203262A56183F00089A70 /* AddPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantView.swift; sourceTree = "<group>"; };
@@ -225,7 +225,6 @@
 			children = (
 				6A7D2A772A4F90F5004843EC /* ViewModel */,
 				4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */,
-				4EBD45B42A3A727A00BD26BE /* AddEditTitle.swift */,
 				4E9343452A393CBF0000DA28 /* NameDescription.swift */,
 				4EBD45B22A3A722900BD26BE /* EditVegetable.swift */,
 				4E95636D2A3BB5E900DB7852 /* AddEditPhotos.swift */,
@@ -403,18 +402,11 @@
 			path = ImagesList;
 			sourceTree = "<group>";
 		};
-		6A4052D52A4B96AA00FBA67F /* ImagePicker */ = {
-			isa = PBXGroup;
-			children = (
-				EF6953802A56448C00C35C68 /* ImagePicker.swift */,
-			);
-			path = ImagePicker;
-			sourceTree = "<group>";
-		};
 		6A6D5FCA2A3149BE007FB384 /* InformationScreen */ = {
 			isa = PBXGroup;
 			children = (
 				6A6D5FCB2A3149BE007FB384 /* InformationView.swift */,
+				EF3A024D2A577FA700DA20F0 /* InformationViewModel.swift */,
 			);
 			path = InformationScreen;
 			sourceTree = "<group>";
@@ -431,10 +423,8 @@
 		EF69537F2A5643C000C35C68 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				EF69538A2A5645DE00C35C68 /* Buttons */,
-				EF6953852A56458600C35C68 /* DatePicker */,
+				EF6953852A56458600C35C68 /* Pickers */,
 				EF6953842A56457000C35C68 /* TextFields */,
-				6A4052D52A4B96AA00FBA67F /* ImagePicker */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -461,26 +451,20 @@
 		EF6953842A56457000C35C68 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
+				EF3A02432A576F7300DA20F0 /* NameInput.swift */,
+				EF3A02452A576F8000DA20F0 /* DescriptionInput.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		EF6953852A56458600C35C68 /* DatePicker */ = {
+		EF6953852A56458600C35C68 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				EF6953802A56448C00C35C68 /* ImagePicker.swift */,
+				EF3A02492A576FE000DA20F0 /* CategoryPicker.swift */,
+				EF3A024B2A576FEE00DA20F0 /* FrequencyPicker.swift */,
 			);
-			path = DatePicker;
-			sourceTree = "<group>";
-		};
-		EF69538A2A5645DE00C35C68 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				EF69538B2A5645FC00C35C68 /* AddButton.swift */,
-				EF69538D2A56460400C35C68 /* EditButton.swift */,
-				EF69538F2A56461300C35C68 /* DeleteButton.swift */,
-				EF6953912A56462300C35C68 /* ButtonPattern.swift */,
-			);
-			path = Buttons;
+			path = Pickers;
 			sourceTree = "<group>";
 		};
 		EF8203212A56152400089A70 /* Services */ = {
@@ -592,12 +576,13 @@
 				1EE297102A2E9DA900C7E64E /* ScrollViewWithHeader.swift in Sources */,
 				9B519A442A4E3738004E4F40 /* CustomTabItem.swift in Sources */,
 				EF6953812A56448C00C35C68 /* ImagePicker.swift in Sources */,
-				EF6953902A56461300C35C68 /* DeleteButton.swift in Sources */,
 				9B519A4C2A4F82DC004E4F40 /* OnboardingBase.swift in Sources */,
 				9B519A422A4E360D004E4F40 /* TabBarView.swift in Sources */,
 				1EE297102A2E9DA900C7E64E /* ScrollViewWithHeader.swift in Sources */,
 				4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */,
 				EF8203272A56183F00089A70 /* AddPlantView.swift in Sources */,
+				EF3A02462A576F8000DA20F0 /* DescriptionInput.swift in Sources */,
+				EF3A024C2A576FEE00DA20F0 /* FrequencyPicker.swift in Sources */,
 				6AF2ECDE2A37C8840035FF28 /* ThemeView.swift in Sources */,
 				EF8203202A5614D400089A70 /* CoredataServices.swift in Sources */,
 				646F160D2A2958F50091EE21 /* TestCardProxRegaView.swift in Sources */,
@@ -605,17 +590,16 @@
 				646F160E2A2958F50091EE21 /* CardProxRegaView.swift in Sources */,
 				1EA01C9B2A3A6A3A00962D91 /* PlantViewModel.swift in Sources */,
 				646F16132A29654D0091EE21 /* NotificationsView.swift in Sources */,
-				EF6953922A56462300C35C68 /* ButtonPattern.swift in Sources */,
 				9B519A4E2A4F831E004E4F40 /* ReusableOnboardingButton.swift in Sources */,
 				EF6953892A5645C700C35C68 /* EditPlantViewModel.swift in Sources */,
+				EF3A024A2A576FE000DA20F0 /* CategoryPicker.swift in Sources */,
 				6A6D5FC92A31491F007FB384 /* (null) in Sources */,
 				6417D9712A26AD6A00479BE2 /* CustomNavigationBarView.swift in Sources */,
 				646F16112A2965420091EE21 /* AjustesView.swift in Sources */,
-				EF69538C2A5645FC00C35C68 /* AddButton.swift in Sources */,
 				EF4CE5992A538DB700891027 /* Splash.swift in Sources */,
+				EF3A024E2A577FA700DA20F0 /* InformationViewModel.swift in Sources */,
 				642EEC3A2A1D8FBB009206D2 /* MinhaHortaView.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
-				EF69538E2A56460400C35C68 /* EditButton.swift in Sources */,
 				9B519A502A4F8370004E4F40 /* Onboarding.swift in Sources */,
 				6A0D531B2A39160700AA5554 /* CustomNavBarInfo.swift in Sources */,
 				4EA103702A4121BB001E0B0B /* AlertPlantaExcluida.swift in Sources */,
@@ -638,7 +622,7 @@
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 				1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */,
 				EFD6BA362A4E4DFC00860CDC /* HeaderLogo.swift in Sources */,
-				4EBD45B52A3A727A00BD26BE /* AddEditTitle.swift in Sources */,
+				EF3A02442A576F7300DA20F0 /* NameInput.swift in Sources */,
 				EF69537E2A562C9700C35C68 /* PlantListViewModel.swift in Sources */,
 				4E9343462A393CBF0000DA28 /* NameDescription.swift in Sources */,
 				6A7D2A792A4F925D004843EC /* AddVegetableViewModel.swift in Sources */,
