@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3CE7EB2A54B3820080EE95 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0F3CE7EA2A54B3820080EE95 /* .swiftlint.yml */; };
 		1EA01C9B2A3A6A3A00962D91 /* PlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA01C9A2A3A6A3A00962D91 /* PlantViewModel.swift */; };
 		1EE067DB2A314F07002D7A81 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE067DA2A314F07002D7A81 /* NotificationController.swift */; };
 		1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2970D2A2E9CBA00C7E64E /* ReminderCard.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3CE7EA2A54B3820080EE95 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		1EA01C9A2A3A6A3A00962D91 /* PlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantViewModel.swift; sourceTree = "<group>"; };
 		1EE067DA2A314F07002D7A81 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		1EE2970D2A2E9CBA00C7E64E /* ReminderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCard.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		6438A9132A1D7730006021DA = {
 			isa = PBXGroup;
 			children = (
+				0F3CE7EA2A54B3820080EE95 /* .swiftlint.yml */,
 				6438A91E2A1D7730006021DA /* HortCult */,
 				6438A91D2A1D7730006021DA /* Products */,
 				6467265D2A2A9D42003A981F /* Recovered References */,
@@ -418,20 +421,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		EFD6BA322A4E4A5D00860CDC /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				640AFB902A20295200A31EAF /* Description.swift */,
-				640AFB912A20295200A31EAF /* HortCultLogo.swift */,
-				640AFB8F2A20295200A31EAF /* ImageSelector.swift */,
-				640AFB8D2A20295200A31EAF /* SecondButton.swift */,
-				640AFB8E2A20295200A31EAF /* TittleSelector.swift */,
-				640AFB782A20113900A31EAF /* Splash.swift */,
-				641629452A2569D20081493F /* HomeSplash.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		EFD6BA332A4E4DDF00860CDC /* Hearder */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +439,7 @@
 				6438A9182A1D7730006021DA /* Sources */,
 				6438A9192A1D7730006021DA /* Frameworks */,
 				6438A91A2A1D7730006021DA /* Resources */,
+				0F3CE7E92A54B3620080EE95 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -498,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3CE7EB2A54B3820080EE95 /* .swiftlint.yml in Resources */,
 				642EEC342A1D8648009206D2 /* Satoshi-Bold.otf in Resources */,
 				6438A9272A1D7731006021DA /* Preview Assets.xcassets in Resources */,
 				642EEC2F2A1D8648009206D2 /* Satoshi-Black.otf in Resources */,
@@ -515,6 +506,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F3CE7E92A54B3620080EE95 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6438A9182A1D7730006021DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -527,8 +538,6 @@
 				9B519A422A4E360D004E4F40 /* TabBarView.swift in Sources */,
 				1EE297102A2E9DA900C7E64E /* ScrollViewWithHeader.swift in Sources */,
 				6A4052D92A4B96AA00FBA67F /* ImagePickerView.swift in Sources */,
-				641629462A2569D20081493F /* HomeSplash.swift in Sources */,
-				1E852A602A3BCFF6009F8CDC /* Plant+CoreDataProperties.swift in Sources */,
 				4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */,
 				6A4052D82A4B96AA00FBA67F /* ImagePicker.swift in Sources */,
 				6AF2ECDE2A37C8840035FF28 /* ThemeView.swift in Sources */,
@@ -555,7 +564,6 @@
 				1EE067DB2A314F07002D7A81 /* NotificationController.swift in Sources */,
 				6438A92C2A1D7731006021DA /* HortCult.xcdatamodeld in Sources */,
 				6A7D2A742A4F7EFF004843EC /* Plant+CoreDataClass.swift in Sources */,
-				640AFB9D2A2032F100A31EAF /* Onboarding02.swift in Sources */,
 				4EBD45B32A3A722900BD26BE /* EditVegetable.swift in Sources */,
 				1EE297122A2EB32200C7E64E /* TestScrowView.swift in Sources */,
 				47371CA92A31558D00FF3114 /* CustomNavBarInfoView.swift in Sources */,
@@ -565,7 +573,6 @@
 				4E95636E2A3BB5E900DB7852 /* AddEditPhotos.swift in Sources */,
 				64FC8EC22A26ADE7002AAA33 /* TestPlantListView.swift in Sources */,
 				6A0D531A2A39160700AA5554 /* ImagesListView.swift in Sources */,
-				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,
 				6A7D2A7B2A4F9F81004843EC /* EditVegetableViewModel.swift in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 				1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */,
@@ -573,7 +580,6 @@
 				4EBD45B52A3A727A00BD26BE /* AddEditTitle.swift in Sources */,
 				4E9343462A393CBF0000DA28 /* NameDescription.swift in Sources */,
 				6A7D2A792A4F925D004843EC /* AddVegetableViewModel.swift in Sources */,
-				640B03FC2A215ADE00C66A2A /* Onboarding04.swift in Sources */,
 				646726732A2A9E43003A981F /* TabBar.swift in Sources */,
 				9B519A402A4E34E7004E4F40 /* TabBarItems.swift in Sources */,
 			);
