@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct DescriptionInput: View {
+    @Binding var descriptionVegetable: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        VStack(alignment: .leading){
+            Text("Descrição")
+                .foregroundColor(Color("CinzaEscuro"))
+                .fontWeight(.light)
+                .font(Font.custom("Satoshi-Regular", size: 12))
 
-struct DescriptionInput_Previews: PreviewProvider {
-    static var previews: some View {
-        DescriptionInput()
+            TextEditor(text: $descriptionVegetable)
+                .font(Font.custom("Satoshi-Regular", size: 16))
+                .textCase(.lowercase)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("CinzaClaro"), lineWidth: 1)
+                    )
+                .frame(width: 380,height: 160)
+        }
     }
 }
