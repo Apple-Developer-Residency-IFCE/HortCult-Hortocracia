@@ -1,12 +1,5 @@
-////
-////  AddVegetable.swift
-////  HortCult
-////
-////  Created by João Vitor Alves Holanda on 06/06/23.
-////
+//import SwiftUI
 //
-import SwiftUI
-
 //
 //struct AddVegetable: View {
 //    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
@@ -56,7 +49,7 @@ import SwiftUI
 //                    }
 //                }
 //
-////                Spacer()
+//                Spacer()
 //
 //
 //
@@ -99,56 +92,56 @@ import SwiftUI
 //                    .padding(.bottom, 60)
 //                }
 //
-////
 //
-////                .alert(isPresented: $addVegetableAlert) {
-////                    Alert(
-////                        title: Text("Planta cadastrada!"),
-////                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
-////                        primaryButton: .default(Text("Tela Inicial")),
-////                        secondaryButton: .default(
-////                            Text("Ver Planta")
-////                                .foregroundColor(Color("Cinza"))
-////                        )
-////                    )
-////
-////                }
-//                //descartar a criacao da planta
-////                .alert(isPresented: $discartVegetableAlert) {
-////                    Alert(
-////                        title: Text("Deseja descartar a criação da sua planta?"),
-////                        message: Text("Essa ação não poderá ser desfeita."),
-////                        primaryButton: .cancel(Text("Cancelar")),
-////                        secondaryButton: .default(
-////                            Text("Descartar")
-////                        )
-////                    )
-////
-////                }
+//
+//                .alert(isPresented: $addVegetableAlert) {
+//                    Alert(
+//                        title: Text("Planta cadastrada!"),
+//                        message: Text("Você pode ver sua planta diretamente na tela inicial, em \"Minha Horta\""),
+//                        primaryButton: .default(Text("Tela Inicial")),
+//                        secondaryButton: .default(
+//                            Text("Ver Planta")
+//                                .foregroundColor(Color("Cinza"))
+//                        )
+//                    )
+//
+//                }
+//               // descartar a criacao da planta
+//                .alert(isPresented: $discartVegetableAlert) {
+//                    Alert(
+//                        title: Text("Deseja descartar a criação da sua planta?"),
+//                        message: Text("Essa ação não poderá ser desfeita."),
+//                        primaryButton: .cancel(Text("Cancelar")),
+//                        secondaryButton: .default(
+//                            Text("Descartar")
+//                        )
+//                    )
+//
+//                }
 //            }
 //
 //
 //
 //        }
-////        .edgesIgnoringSafeArea(.all)
-////        .navigationBarBackButtonHidden(true)
-////        .navigationBarItems(leading: NavBar)
+//        .edgesIgnoringSafeArea(.all)
+//        .navigationBarBackButtonHidden(true)
+//        .navigationBarItems(leading: NavBar)
 //
 //    }
 //
 //}
 //
-struct AddVegetable: View {
-    let viewModel = AddPlantViewModel(service: CoredataServices())
-
-    var body: some View {
-        AddPlantView() {}
-            .environmentObject(viewModel)
-    }
-}
-////
-////struct AddVegetable_Previews: PreviewProvider {
-////    static var previews: some View {
-////        AddVegetable()
-////    }
-////}
+//struct AddVegetable: View {
+//    let viewModel = AddPlantViewModel(service: CoredataServices())
+//
+//    var body: some View {
+//        AddPlantView() {}
+//            .environmentObject(viewModel)
+//    }
+//}
+//////
+//////struct AddVegetable_Previews: PreviewProvider {
+//////    static var previews: some View {
+//////        AddVegetable()
+//////    }
+//////}
