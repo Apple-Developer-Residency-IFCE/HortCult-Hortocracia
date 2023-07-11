@@ -2,7 +2,6 @@ import SwiftUI
 
 struct Home: View {
     @Environment(\.colorScheme) var colorScheme
-//    let plantViewModel = PlantViewModel()
     let platListViewModel = PlantListViewModel(service: CoredataServices())
     
     var body: some View {
