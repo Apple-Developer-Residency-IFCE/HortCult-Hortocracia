@@ -11,9 +11,6 @@ struct AddPlantView: View {
     @EnvironmentObject var addViewModel: AddPlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     
-    var isFieldsFilled: Bool{
-        return addViewModel.plantName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && addViewModel.plantInformation.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && addViewModel.plantCategory != "Selecionar..." && addViewModel.plantFrequency != "Selecionar..."
-        }
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
