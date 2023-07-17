@@ -15,7 +15,7 @@ class EditPlantViewModel: ObservableObject {
     @Published var plantFrequency: String
     @Published var plantNextDate: Date
     @Published var plantImage:[Data]
-    @Published var editButtonIsDisabled: Bool = false
+    @Published var isEditButtonAble: Bool = true
     @Published var selectedPhotosData:[Data] = []
     
     let service: CoredataServices
@@ -30,6 +30,12 @@ class EditPlantViewModel: ObservableObject {
         plantNextDate = planta.nextDate ?? Date()
         plantImage = planta.image ?? []
     }
+    
+    
+    func validatesFields() {
+        isEditButtonAble = !plantName.isEmpty && !plantCategory.isEmpty && !plantFrequency.isEmpty && !plantInformation.isEmpty
+    }
+    
     
     func updatePlant(){
         let _ = service.update(plant: planta,
