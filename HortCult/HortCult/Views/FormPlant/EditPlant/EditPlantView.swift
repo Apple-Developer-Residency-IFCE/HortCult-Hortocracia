@@ -11,10 +11,6 @@ struct EditPlantView: View {
     @EnvironmentObject var editViewModel: EditPlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     
-    var isFieldsFilled: Bool{
-        return editViewModel.plantName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && editViewModel.plantInformation.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && editViewModel.plantCategory != "Selecionar..." && editViewModel.plantFrequency != "Selecionar..."
-        }
-    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
@@ -80,7 +76,7 @@ struct EditPlantView: View {
                         load()
                     }) {
                         HStack {
-                            Text("Adicionar Novo Vegetal")
+                            Text("Salvar Alterações")
                                 .foregroundColor(Color("Branco"))
                                 .font(.system(size: 16))
                                 .bold()
@@ -88,14 +84,14 @@ struct EditPlantView: View {
                         .foregroundColor(Color("CinzaClaro"))
 
                         .frame(width: 350, height: 42)
-                        .background(Color(isFieldsFilled ? "VerdeEscuro" : "CinzaClaro"))
+                        .background(Color(editViewModel.isEditButtonAble ? "VerdeEscuro" : "CinzaClaro"))
                         .cornerRadius(40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color(isFieldsFilled  ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
+                                .stroke(Color(editViewModel.isEditButtonAble  ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
                         )
                     }
-                    .disabled(isFieldsFilled )
+                    .disabled(!editViewModel.isEditButtonAble)
                     .frame(alignment: .bottom)
                     .padding(.bottom, 60)
                 }
