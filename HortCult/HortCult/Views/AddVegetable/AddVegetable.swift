@@ -103,12 +103,12 @@ struct AddVegetable: View {
                     ZStack{
                         
                         VStack{
-                            AddEditTitle(addEdit: true)
-                            NameDescription(nameVegetable: $viewmodel.name, descriptionVegetable: $viewmodel.description)
-                            PickerCategoria(selectedOption: $viewmodel.categoria)
-                            PickerFrequencia(selectedOption: $viewmodel.frequencia)
-                            AddEditPhotos()
-                                .environmentObject(imagesSelected)
+//                            AddEditTitle(addEdit: true)
+//                            NameDescription(nameVegetable: $viewmodel.name, descriptionVegetable: $viewmodel.description)
+//                            PickerCategoria(selectedOption: $viewmodel.categoria)
+//                            PickerFrequencia(selectedOption: $viewmodel.frequencia)
+//                            AddEditPhotos()
+//                                .environmentObject(imagesSelected)
                         }
                     }
                 }
@@ -210,7 +210,7 @@ struct AddVegetable: View {
         .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: NavBar)
             .fullScreenCover(isPresented: self.$isFullScreenCovering) {
-                InformationView(planta: plantViewModel.getPlant(by: viewmodel.name)!)
+//                InformationView(planta: plantViewModel.getPlant(by: viewmodel.name)!)
                 
             }
     }
