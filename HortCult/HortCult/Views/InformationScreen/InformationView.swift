@@ -16,51 +16,37 @@ struct InformationView: View {
     @State private var backHomeAlert = false
     
     let editPlant:EditPlantViewModel
-    
+    let cardProxRega:CardProxRegaViewModel
     var informationViewModel: InformationViewModel = InformationViewModel(service: CoredataServices())
+    
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @State private var shouldNavigateButton = false
-    @State var planta: Plant
+    @State var planta: PlantModel
     @State var isOverlayShown = false
         
+    
     @ViewBuilder var Name: some View {
-        if let name = planta.name{
-            Text(name)
+            Text(planta.name)
                 .bold()
                 .foregroundColor(Color("VerdeEscuro"))
                 .font(.custom("Satoshi-Bold", size: 28))
-        } else {
-            Text("Sem nome!")
-        }
-            
     }
     @ViewBuilder var Categoria: some View {
-        if let category = planta.category{
-            Text(category)
-                .padding(.horizontal, 13)
-                .padding(.vertical, 8)
-                .foregroundColor(Color("Cinza"))
-                .font(.custom("Satoshi-Regular", size: 12))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color(.gray), lineWidth: 1)
-                )
-        } else {
-            Text("Sem categoria!")
-        }
+        Text(planta.category)
+            .padding(.horizontal, 13)
+            .padding(.vertical, 8)
+            .foregroundColor(Color("Cinza"))
+            .font(.custom("Satoshi-Regular", size: 12))
+            .overlay(
+                RoundedRectangle(cornerRadius: 40)
+                    .stroke(Color(.gray), lineWidth: 1)
+            )
     }
     @ViewBuilder var Information: some View {
-        if let information = planta.information{
-            Text(information)
-                .font(.custom("Satoshi-Regular", size: 16))
-                .lineLimit(5)
-        } else {
-            Text("Sem informações!")
-        }
+        Text(planta.information)
+            .font(.custom("Satoshi-Regular", size: 16))
+            .lineLimit(5)
     }
-    
-    @State var planta: Plant
-        
         var NavBarInfo : some View {
             ZStack{
                 HStack{
@@ -78,8 +64,6 @@ struct InformationView: View {
                 }.allowsHitTesting(true)
             }
         }
-    }
-    
     
     
     func formatDate(date: Date) -> String {
@@ -88,13 +72,15 @@ struct InformationView: View {
         return formatter.string(from: date)
     }
     
+    
+    
     var body: some View {
         NavigationView{
             
             ScrollView(.vertical){
                 ZStack{
                     VStack(){
-                        ImagesListView(images: informationViewModel.allImagesToUI(planta: planta))
+                        ImagesListView(images: informationViewModel.allImagesToUI(images: planta.image))
                             .frame(minWidth: 390, minHeight: 390)
                             .ignoresSafeArea()
                             .edgesIgnoringSafeArea(.all)
@@ -111,14 +97,15 @@ struct InformationView: View {
                         }
                         .padding(.horizontal,20)
                         
-                        CardProxRegaView(dataProxRega: formatDate(date: planta.nextDate ?? Date()), plant: planta)
+                        CardProxRegaView(dataProxRega: formatDate(date: planta.nextDate), plant: planta)
+                            .environmentObject(cardProxRega)
                             .padding(.bottom, 24)
                         
                         HStack {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
                                     .font(Font.custom("Satoshi-Regular", size: 16))
-                                Text(planta.frequency!)
+                                Text(planta.frequency)
                                     .font(Font.custom("Satoshi-Bold", size: 18))
                                     .bold()
                                 
@@ -128,7 +115,9 @@ struct InformationView: View {
                         }
                         .padding(.horizontal,20)
                         NavigationLink {
-                            EditPlantView(){}
+                            EditPlantView(){
+                                planta = informationViewModel.service.fetchPlantModel(by: planta.id)
+                            }
                                 .environmentObject(editPlant)
                         } label: {
                             HStack {
@@ -207,7 +196,7 @@ struct InformationView: View {
                                 primaryButtonTitle: "Voltar para a Tela Inicial",
                                 primaryButtonAction: {
                                     shouldNavigateButton = true
-                                    plantViewModel.deletePlant(plant: planta)
+                                    informationViewModel.deletePlant(plantModel: planta)
                                 }
                                 
                                 

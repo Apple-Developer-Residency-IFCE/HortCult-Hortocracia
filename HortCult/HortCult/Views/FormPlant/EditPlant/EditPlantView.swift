@@ -12,7 +12,7 @@ struct EditPlantView: View {
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+    @Environment(\.dismiss) private var dismiss
     
     var load: () -> Void
     
@@ -71,9 +71,9 @@ struct EditPlantView: View {
                     Spacer()
 
                     Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
                         editViewModel.updatePlant()
                         load()
+                        dismiss()
                     }) {
                         HStack {
                             Text("Salvar Alterações")

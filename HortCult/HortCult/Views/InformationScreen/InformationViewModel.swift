@@ -15,21 +15,17 @@ class InformationViewModel {
         self.service = service
     }
     
-    func deletePlant(planta: Plant){
-        service.delete(plant: planta)
+    func deletePlant(plantModel: PlantModel){
+        service.deletePlantModel(plantModel: plantModel)
         CoreDataStack.shared.saveContext()
     }
     
-    func allImagesToUI(planta: Plant) -> [UIImage]{
-        if let datasImage = planta.image {
-            var uiImages:[UIImage] = []
-            for i in 0..<datasImage.count {
-                uiImages.append(UIImage(data: datasImage[i]) ?? UIImage())
-            }
-            return uiImages
-        } else {
-            return [UIImage()]
+    func allImagesToUI(images: [Data]) -> [UIImage]{
+        var uiImages:[UIImage] = []
+        for i in 0..<images.count {
+            uiImages.append(UIImage(data: images[i]) ?? UIImage())
         }
+        return uiImages
     }
 
 }

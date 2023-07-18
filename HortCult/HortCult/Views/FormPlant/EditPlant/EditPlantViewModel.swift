@@ -8,7 +8,7 @@
 import Foundation
 
 class EditPlantViewModel: ObservableObject {
-    @Published var planta:Plant
+    @Published var planta:PlantModel
     @Published var plantName: String
     @Published var plantInformation: String
     @Published var plantCategory: String
@@ -20,25 +20,33 @@ class EditPlantViewModel: ObservableObject {
     
     let service: CoredataServices
     
-    init(service: CoredataServices, planta: Plant){
+    init(service: CoredataServices, planta: PlantModel){
         self.planta = planta
         self.service = service
-        plantName = planta.name ?? ""
-        plantInformation = planta.information ?? ""
-        plantCategory = planta.category ?? ""
-        plantFrequency = planta.frequency ?? ""
-        plantNextDate = planta.nextDate ?? Date()
-        plantImage = planta.image ?? []
+        plantName = planta.name
+        plantInformation = planta.information
+        plantCategory = planta.category
+        plantFrequency = planta.frequency
+        plantNextDate = planta.nextDate
+        plantImage = planta.image
     }
     
     
     func validatesFields() {
-        isEditButtonAble = !plantName.isEmpty && !plantCategory.isEmpty && !plantFrequency.isEmpty && !plantInformation.isEmpty
+        isEditButtonAble = plantName.isEmpty && plantCategory.isEmpty && plantFrequency.isEmpty && plantInformation.isEmpty
     }
     
     
     func updatePlant(){
-        let _ = service.update(plant: planta,
+        
+        planta.name = plantName
+        planta.information = plantInformation
+        planta.category = plantCategory
+        planta.frequency = plantFrequency
+        planta.nextDate = plantNextDate
+        planta.image = plantImage
+        
+        let _ = service.updatePlantModel(plantModel: planta,
                                name: plantName,
                                information: plantInformation,
                                category: plantCategory,
