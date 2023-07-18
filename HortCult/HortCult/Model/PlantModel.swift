@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import UIKit
+
+
+struct PlantModel : Identifiable, Hashable {
+    var id: UUID
+    var name: String
+    var category: String
+    var information: String
+    var frequency: String
+    var image: [Data]
+    var nextDate: Date
+}
