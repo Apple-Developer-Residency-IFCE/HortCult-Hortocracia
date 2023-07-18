@@ -77,6 +77,32 @@ class CoredataServices {
         CoreDataStack.shared.saveContext()
     }
     
+    func update(plant:Plant, nextDate:Date){
+        plant.nextDate = nextDate
+        CoreDataStack.shared.saveContext()
+    }
+    
+    func updatePlantModel(plantModel: PlantModel,
+                          name: String,
+                          information: String,
+                          category: String,
+                          frequency: String,
+                          image: [Data],
+                          nextDate: Date) {
+        let plant = fetchPlant(by: plantModel.id)
+        update(plant: plant,
+               name: name,
+               information: information,
+               category: category,
+               frequency: frequency,
+               image: image,
+               nextDate: nextDate)
+    }
+    func updatePlantModel(plantModel:PlantModel,nextDate:Date){
+        let plant = fetchPlant(by: plantModel.id)
+        update(plant: plant, nextDate: nextDate)
+    }
+    
     func fetchPlant() -> [Plant] {
         let context = CoreDataStack.shared.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
@@ -85,6 +111,50 @@ class CoredataServices {
         } catch {
             return []
         }
+    }
+    
+    func fetchPlant(by id: UUID) -> Plant {
+        let plants = fetchPlant()
+        let plant = plants.filter({
+            $0.id == id
+        })
+        return plant.first!
+    }
+    
+    func fetchPlantModel() -> [PlantModel] {
+        let plantsClass = fetchPlant()
+        var plants: [PlantModel] = []
+        plantsClass.forEach {
+            plants.append(convertToPlantModel(plant: $0)!)
+        }
+        return plants
+    }
+    
+    func fetchPlantModel(by id:UUID) -> PlantModel {
+        let plants = fetchPlantModel()
+        let plant = plants.filter({
+            $0.id == id
+        })
+        return plant.first!
+    }
+    
+    func convertToPlantModel(plant: Plant) -> PlantModel? {
+        guard let id = plant.id,
+              let name = plant.name,
+              let category = plant.category,
+              let information = plant.information,
+              let frequency = plant.frequency,
+              let nextDate = plant.nextDate
+        else{
+            return nil
+        }
+        let image = plant.image ?? []
+        return PlantModel(id: id, name: name, category: category, information: information, frequency: frequency, image: image, nextDate: nextDate)
+    }
+    
+    func deletePlantModel(plantModel: PlantModel){
+        let plant = fetchPlant(by: plantModel.id)
+        delete(plant: plant)
     }
     
 }
