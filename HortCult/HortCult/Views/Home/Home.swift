@@ -6,7 +6,7 @@ struct Home: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical){
+            VStack{
                 HeaderLogo()
                     .ignoresSafeArea()
                 ListaPlantasView()

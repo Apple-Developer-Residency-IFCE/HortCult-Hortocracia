@@ -12,6 +12,7 @@ struct ListaPlantasView: View {
     let addViewModel = AddPlantViewModel(service: CoredataServices())
     
     @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         
         VStack(spacing: 20){

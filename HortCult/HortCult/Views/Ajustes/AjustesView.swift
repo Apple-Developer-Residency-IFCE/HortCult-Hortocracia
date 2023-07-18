@@ -19,84 +19,79 @@ struct AjustesView: View {
             VStack(alignment: .leading){
                 HeaderLogo()
                     .ignoresSafeArea()
-                HStack{
-                    Text("Ajustes")
-                        .font(Font.custom("Satoshi-Bold", size: 28))
-                        .foregroundColor(Color("VerdeEscuro"))
-                        .bold()
-                        .padding(.top, 20)
-                }.padding(.leading, 24)
-                    .padding(.bottom, 20)
-                HStack{
-                    Text("Tema")
-                        .font(Font.custom("Satoshi-Regular", size: 18))
-                        .foregroundColor(Color("VerdeEscuro"))
-                        .bold()
-                    Spacer()
-                    NavigationLink {
-                        ThemeView()
-                    } label: {
-                        HStack {
-                            switch selectedTheme {
-                            case .Claro:
-                                Text("Claro")
-                                    .font(Font.custom("Satoshi-Regular", size: 16))
-                                    .foregroundColor(Color("Preto"))
-                                    .padding(.trailing, 6)
-                            case .Escuro:
-                                Text("Escuro")
-                                    .font(Font.custom("Satoshi-Regular", size: 16))
-                                    .foregroundColor(Color("Preto"))
-                                    .padding(.trailing, 6)
-                            case .Padrao:
-                                Text("Padrão")
-                                    .font(Font.custom("Satoshi-Regular", size: 16))
-                                    .foregroundColor(Color("Preto"))
-                                    .padding(.trailing, 6)
-                            case .none:
-                                Text("Claro")
-                                    .font(Font.custom("Satoshi-Regular", size: 16))
-                                    .foregroundColor(Color("Preto"))
-                                    .padding(.trailing, 6)
-                            }
-                            
-                            Image(selectedTheme == .Escuro ? "DropdownLight" : "Dropdown")
-                                .rotationEffect(Angle(degrees: -90))
-                                .padding(.trailing, 20)
-                        }
+                Group{
+                    HStack{
+                        Text("Ajustes")
+                            .font(Font.custom("Satoshi-Bold", size: 28))
+                            .foregroundColor(Color("VerdeEscuro"))
+                            .bold()
                     }
-                }
-                .padding(.leading, 20)
-                .padding(.top, 53)
-                .padding(.bottom, 31)
-                
-                Divider()
-                
-                HStack{
-                    Text("Notificações Push")
-                        .font(Font.custom("Satoshi-Regular", size: 18))
-                        .foregroundColor(Color("VerdeEscuro"))
-                        .bold()
-                    Spacer()
-                    Toggle("", isOn: $isToggleOn)
-                        .padding(.trailing, 20)
-                }.padding(.leading, 20)
-                    .padding(.top, 24)
-                    .padding(.bottom, 31)
-                
-                Divider()
-                    .padding(.bottom, 16)
-                    .onChange(of: isToggleOn) {
-                    newValue in
-                        
-                            NotificationManager.shared.cancelScheduledNotification()
+                    HStack{
+                        Text("Tema")
+                            .font(Font.custom("Satoshi-Regular", size: 18))
+                            .foregroundColor(Color("VerdeEscuro"))
+                            .bold()
+                        Spacer()
+                        NavigationLink {
+                            ThemeView()
+                        } label: {
+                            HStack {
+                                switch selectedTheme {
+                                case .Claro:
+                                    Text("Claro")
+                                        .font(Font.custom("Satoshi-Regular", size: 16))
+                                        .foregroundColor(Color("Preto"))
+                                case .Escuro:
+                                    Text("Escuro")
+                                        .font(Font.custom("Satoshi-Regular", size: 16))
+                                        .foregroundColor(Color("Preto"))
+                                case .Padrao:
+                                    Text("Padrão")
+                                        .font(Font.custom("Satoshi-Regular", size: 16))
+                                        .foregroundColor(Color("Preto"))
+                                case .none:
+                                    Text("Padrão")
+                                        .font(Font.custom("Satoshi-Regular", size: 16))
+                                        .foregroundColor(Color("Preto"))
+                                }
+                                
+                                Image(selectedTheme == .Escuro ? "DropdownLight" : "Dropdown")
+                                    .rotationEffect(Angle(degrees: -90))
+                                
+                            }
+                        }
+                    }.padding(.top, 53)
+                        .padding(.bottom, 31)
                     
-                }
-                if(isToggleOn){
-                    NotificationsView()
-                }
-                    Spacer()
-                
+                    Divider()
+                }.padding(.horizontal, 20)
+                    
+                Group{
+                    HStack{
+                        Text("Notificações Push")
+                            .font(Font.custom("Satoshi-Regular", size: 18))
+                            .foregroundColor(Color("VerdeEscuro"))
+                            .bold()
+                        Spacer()
+                        Toggle("", isOn: $isToggleOn)
+                    }.padding(.top, 24)
+                    .padding(.bottom, 31)
+                    
+                    Divider()
+                        .padding(.bottom, 16)
+                        .onChange(of: isToggleOn) {
+                            newValue in
+                            
+                            NotificationManager.shared.cancelScheduledNotification()
+                            
+                        }
+                    if(isToggleOn){
+                        NotificationsView()
+                    }
+                }.padding(.horizontal, 20)
+                    
+                Spacer()
+                    
                 
             }
         }

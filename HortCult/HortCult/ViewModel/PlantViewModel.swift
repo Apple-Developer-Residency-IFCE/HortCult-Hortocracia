@@ -35,6 +35,14 @@ class PlantViewModel: ObservableObject {
         }
         return nil
     }
+    func getPlant(by name: String) -> Plant? {
+        for planta in self.plant{
+            if(planta.name == name){
+                return planta;
+            }
+        }
+        return nil
+    }
     
     func dataImageConvert(datas: [Data]) -> [UIImage]{
         var imagesList: [UIImage] = []
@@ -119,7 +127,7 @@ class PlantViewModel: ObservableObject {
         var plantsArray = [Plant]()
         var formatedToday = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
         formatedToday = formatter.date(from: String(formatedToday.formatted().prefix(10))) ?? Date()
         
         for planta in self.plant{
