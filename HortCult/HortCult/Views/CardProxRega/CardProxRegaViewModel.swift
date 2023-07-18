@@ -7,14 +7,28 @@
 
 import SwiftUI
 
-struct CardProxRegaViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class CardProxRegaViewModel: ObservableObject {
+    @Published var planta:PlantModel
+    @Published var nextDate:Date
+    
+    let service: CoredataServices
+    init(service: CoredataServices, planta: PlantModel){
+        self.planta = planta
+        self.service = service
+        nextDate = planta.nextDate
     }
-}
-
-struct CardProxRegaViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        CardProxRegaViewModel()
+    
+    func formateDate() -> Date{
+        var formattedNextDate: Date = nextDate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let formattedString = formatter.string(from: formattedNextDate)
+        formattedNextDate = formatter.date(from: formattedString) ?? Date()
+        return formattedNextDate
+    }
+    
+    func updateDatePlant(){
+        planta.nextDate = formateDate()
+        let _ = service.updatePlantModel(plantModel: planta, nextDate: nextDate)
     }
 }

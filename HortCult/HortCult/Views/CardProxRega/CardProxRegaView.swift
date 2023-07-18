@@ -11,7 +11,9 @@ struct CardProxRegaView: View {
     var imagem: String = "WaterBlue"
     @State var dataProxRega: String
     @EnvironmentObject var plantViewModel: PlantViewModel
-    @State var plant: Plant
+    @EnvironmentObject var cardProxRegaViewModel:CardProxRegaViewModel
+    @State var plant: PlantModel
+    
     var body: some View {
         var auxFrequency: Int = 0
         HStack(spacing: 16){
@@ -47,8 +49,8 @@ struct CardProxRegaView: View {
                     var nextDate: Date = Date()
                     nextDate = formatter.date(from: String(nextDate.formatted().prefix(10))) ?? Date()
                     nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
-                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plantViewModel.dataImageConvert(datas: plant.image ?? []))
-                    plant = plantViewModel.getPlantId(id: plant.id!)!
+                    cardProxRegaViewModel.nextDate = nextDate
+                    cardProxRegaViewModel.updateDatePlant()
                     dataProxRega = String(nextDate.formatted().prefix(10))
                 } label: {
                     Text("Marcar como regado")
