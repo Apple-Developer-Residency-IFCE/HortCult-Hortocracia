@@ -24,7 +24,9 @@ struct ListaPlantasView: View {
                     .padding(.leading, 5)
                 Spacer()
                 NavigationLink {
-                    AddPlantView() {}
+                    AddPlantView() {
+                        plantListViewModel.loadPlants()
+                    }
                         .environmentObject(addViewModel)
                 } label: {
                     HStack {
@@ -39,9 +41,17 @@ struct ListaPlantasView: View {
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {
-                    ForEach(plantListViewModel.plants, id: \.self) { planta in
+                    ForEach(plantListViewModel.plantsModel, id: \.self) { planta in
         
-                        NavigationLink(destination: InformationView(editPlant: EditPlantViewModel(service: CoredataServices(), planta: planta), planta: planta)){
+                        NavigationLink(destination: InformationView(
+                            editPlant: EditPlantViewModel(
+                                service: CoredataServices(),
+                                planta: planta),
+                            cardProxRega: CardProxRegaViewModel(
+                                service: CoredataServices(),
+                                planta: planta),
+                            planta: planta)
+                        ){
                             VStack{
                                 Image(uiImage: plantListViewModel.dataToUIImage(planta: planta))
                                     .resizable()
@@ -49,7 +59,7 @@ struct ListaPlantasView: View {
                                     .frame(maxHeight: 115)
                                     .clipped()
                                 
-                                Text(planta.name!)
+                                Text(planta.name)
                                     .font(Font.custom("Satoshi-Regular", size: 16))
                                     .foregroundColor(Color("CinzaEscuro"))
                                     .padding(.bottom, 9)
@@ -59,8 +69,8 @@ struct ListaPlantasView: View {
                         }
                     }
                 }
-                .onAppear(perform: plantListViewModel.loadPlants)
             }
+            .onAppear(perform: plantListViewModel.loadPlants)
             .padding(.leading, 20)
             .frame(maxHeight: 150)
         }

@@ -11,7 +11,7 @@ import SwiftUI
 
 class PlantListViewModel: ObservableObject {
     let service: CoredataServices
-    @Published var plants: [Plant] = []
+    @Published var plantsModel: [PlantModel] = []
     
     init(service: CoredataServices){
         self.service = service
@@ -19,11 +19,11 @@ class PlantListViewModel: ObservableObject {
     }
     
     func loadPlants(){
-        self.plants = service.fetchPlant()
+        self.plantsModel = service.fetchPlantModel()
     }
     
-    func dataToUIImage(planta: Plant) -> UIImage{
-        if let dataImage = planta.image?.first {
+    func dataToUIImage(planta: PlantModel) -> UIImage{
+        if let dataImage = planta.image.first {
             return UIImage(data: dataImage) ?? UIImage()
         } else {
             return UIImage()
