@@ -15,7 +15,6 @@ struct CardProxRegaView: View {
     @State var plant: PlantModel
     
     var body: some View {
-        var auxFrequency: Int = 0
         HStack(spacing: 16){
             Image(imagem)
                 .frame(width: 52, height: 52)
@@ -34,24 +33,10 @@ struct CardProxRegaView: View {
                     .foregroundColor(Color("Preto"))
                 
                 Button{
-                    
-                    if (plant.frequency == "Todos os dias"){
-                        auxFrequency = 1
-                    }else if(plant.frequency == "A cada 2 dias"){
-                        auxFrequency = 2
-                    }else if(plant.frequency == "A cada 4 dias"){
-                        auxFrequency = 4
-                    }else{
-                        auxFrequency = 7
-                    }
+                    cardProxRegaViewModel.updateDatePlant()
                     let formatter = DateFormatter()
                     formatter.dateFormat = "dd/MM/yyyy"
-                    var nextDate: Date = Date()
-                    nextDate = formatter.date(from: String(nextDate.formatted().prefix(10))) ?? Date()
-                    nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
-                    cardProxRegaViewModel.nextDate = nextDate
-                    cardProxRegaViewModel.updateDatePlant()
-                    dataProxRega = String(nextDate.formatted().prefix(10))
+                    dataProxRega = formatter.string(from: cardProxRegaViewModel.nextDate)
                 } label: {
                     Text("Marcar como regado")
                         .font(Font.custom("Satoshi-Regular", size: 12))
