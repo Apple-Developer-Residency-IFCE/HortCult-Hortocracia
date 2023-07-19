@@ -17,22 +17,22 @@ struct InformationView: View {
     
     let editPlant:EditPlantViewModel
     let cardProxRega:CardProxRegaViewModel
-    var informationViewModel: InformationViewModel = InformationViewModel(service: CoredataServices())
+    let imageListViewModel:ImageListViewModel
+    
+    @EnvironmentObject var informationViewModel: InformationViewModel
     
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @State private var shouldNavigateButton = false
-    @State var planta: PlantModel
     @State var isOverlayShown = false
-        
     
     @ViewBuilder var Name: some View {
-            Text(planta.name)
+        Text(informationViewModel.planta.name)
                 .bold()
                 .foregroundColor(Color("VerdeEscuro"))
                 .font(.custom("Satoshi-Bold", size: 28))
     }
     @ViewBuilder var Categoria: some View {
-        Text(planta.category)
+        Text(informationViewModel.planta.category)
             .padding(.horizontal, 13)
             .padding(.vertical, 8)
             .foregroundColor(Color("Cinza"))
@@ -43,50 +43,48 @@ struct InformationView: View {
             )
     }
     @ViewBuilder var Information: some View {
-        Text(planta.information)
+        Text(informationViewModel.planta.information)
             .font(.custom("Satoshi-Regular", size: 16))
             .lineLimit(5)
     }
-        var NavBarInfo : some View {
-            ZStack{
-                HStack{
-                    Button(action:{
-                        self.presentationMode.wrappedValue.dismiss()
-                    } ) {
-                        Image("Arrow-Left-Light")
-                        Text("Voltar")
-                            .font(Font.custom("Satoshi-Regular", size: 16))
-                            .foregroundColor(.white)
-                    }
-                    .padding(.leading, 18)
-                    Spacer()
-                    
-                }.allowsHitTesting(true)
-            }
+    var NavBarInfo : some View {
+        ZStack{
+            HStack{
+                Button(action:{
+                    self.presentationMode.wrappedValue.dismiss()
+                } ) {
+                    Image("Arrow-Left-Light")
+                    Text("Voltar")
+                        .font(Font.custom("Satoshi-Regular", size: 16))
+                        .foregroundColor(.white)
+                }
+                .padding(.leading, 18)
+                Spacer()
+                
+            }.allowsHitTesting(true)
         }
-    
-    
+    }
     func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         return formatter.string(from: date)
     }
     
-    
-    
     var body: some View {
         NavigationView{
             
             ScrollView(.vertical){
                 ZStack{
-                    VStack(){
-                        ImagesListView(images: informationViewModel.allImagesToUI(images: planta.image))
+                    LazyVStack(){
+                        ImagesListView(imagesData: informationViewModel.planta.image)
+                            .environmentObject(imageListViewModel)
                             .frame(minWidth: 390, minHeight: 390)
                             .ignoresSafeArea()
                             .edgesIgnoringSafeArea(.all)
                             .padding(.bottom, 16)
                         VStack(alignment: .leading){
                             HStack{
+                                //Text(String(togled))
                                 Name
                                 Spacer()
                                 Categoria
@@ -97,7 +95,7 @@ struct InformationView: View {
                         }
                         .padding(.horizontal,20)
                         
-                        CardProxRegaView(dataProxRega: formatDate(date: planta.nextDate), plant: planta)
+                        CardProxRegaView(dataProxRega: formatDate(date: informationViewModel.planta.nextDate))
                             .environmentObject(cardProxRega)
                             .padding(.bottom, 24)
                         
@@ -105,7 +103,7 @@ struct InformationView: View {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
                                     .font(Font.custom("Satoshi-Regular", size: 16))
-                                Text(planta.frequency)
+                                Text(informationViewModel.planta.frequency)
                                     .font(Font.custom("Satoshi-Bold", size: 18))
                                     .bold()
                                 
@@ -116,7 +114,8 @@ struct InformationView: View {
                         .padding(.horizontal,20)
                         NavigationLink {
                             EditPlantView(){
-                                planta = informationViewModel.service.fetchPlantModel(by: planta.id)
+                                informationViewModel.planta = informationViewModel.service.fetchPlantModel(by: informationViewModel.planta.id)
+                                
                             }
                                 .environmentObject(editPlant)
                         } label: {
@@ -196,7 +195,7 @@ struct InformationView: View {
                                 primaryButtonTitle: "Voltar para a Tela Inicial",
                                 primaryButtonAction: {
                                     shouldNavigateButton = true
-                                    informationViewModel.deletePlant(plantModel: planta)
+                                    informationViewModel.deletePlant(plantModel: informationViewModel.planta)
                                 }
                                 
                                 
