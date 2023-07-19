@@ -69,6 +69,7 @@
 		EF4CE5992A538DB700891027 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CE5982A538DB700891027 /* Splash.swift */; };
 		EF52DEE82A6602A800288648 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52DEE72A6602A800288648 /* PlantModel.swift */; };
 		EF52DEEA2A67565000288648 /* CardProxRegaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52DEE92A67565000288648 /* CardProxRegaViewModel.swift */; };
+		EF52DEEC2A688E4F00288648 /* ImageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52DEEB2A688E4F00288648 /* ImageListViewModel.swift */; };
 		EF69537E2A562C9700C35C68 /* PlantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69537D2A562C9700C35C68 /* PlantListViewModel.swift */; };
 		EF6953812A56448C00C35C68 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6953802A56448C00C35C68 /* ImagePicker.swift */; };
 		EF6953872A5645B600C35C68 /* EditPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6953862A5645B600C35C68 /* EditPlantView.swift */; };
@@ -143,6 +144,7 @@
 		EF4CE5982A538DB700891027 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		EF52DEE72A6602A800288648 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		EF52DEE92A67565000288648 /* CardProxRegaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProxRegaViewModel.swift; sourceTree = "<group>"; };
+		EF52DEEB2A688E4F00288648 /* ImageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModel.swift; sourceTree = "<group>"; };
 		EF69537D2A562C9700C35C68 /* PlantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListViewModel.swift; sourceTree = "<group>"; };
 		EF6953802A56448C00C35C68 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		EF6953862A5645B600C35C68 /* EditPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantView.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			children = (
 				6A0D53182A39160700AA5554 /* ImagesListView.swift */,
 				6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */,
+				EF52DEEB2A688E4F00288648 /* ImageListViewModel.swift */,
 			);
 			path = ImagesList;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				EF6953812A56448C00C35C68 /* ImagePicker.swift in Sources */,
 				9B519A4C2A4F82DC004E4F40 /* OnboardingBase.swift in Sources */,
 				9B519A422A4E360D004E4F40 /* TabBarView.swift in Sources */,
+				EF52DEEC2A688E4F00288648 /* ImageListViewModel.swift in Sources */,
 				1EE297102A2E9DA900C7E64E /* ScrollViewWithHeader.swift in Sources */,
 				4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */,
 				EF8203272A56183F00089A70 /* AddPlantView.swift in Sources */,
