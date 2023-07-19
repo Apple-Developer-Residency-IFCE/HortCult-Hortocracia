@@ -1,18 +1,9 @@
-//
-//  CardProxRegaView.swift
-//  HortCult
-//
-//  Created by userext on 31/05/23.
-//
-
 import SwiftUI
 
 struct CardProxRegaView: View {
     var imagem: String = "WaterBlue"
     @State var dataProxRega: String
-    @EnvironmentObject var plantViewModel: PlantViewModel
     @EnvironmentObject var cardProxRegaViewModel:CardProxRegaViewModel
-    @State var plant: PlantModel
     
     var body: some View {
         HStack(spacing: 16){
@@ -55,9 +46,3 @@ struct CardProxRegaView: View {
             
     }
 }
-
-//struct CardProxRegaView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardProxRegaView(dataProxRega: "", plant: )
-//    }
-//}
