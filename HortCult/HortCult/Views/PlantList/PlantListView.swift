@@ -10,9 +10,8 @@ import SwiftUI
 struct ListaPlantasView: View {
     @EnvironmentObject var plantListViewModel: PlantListViewModel
     let addViewModel = AddPlantViewModel(service: CoredataServices())
-    
     @Environment(\.colorScheme) var colorScheme
-    
+    let coreDataService:CoredataServices = CoredataServices()
     var body: some View {
         
         VStack(spacing: 20){
@@ -45,12 +44,18 @@ struct ListaPlantasView: View {
         
                         NavigationLink(destination: InformationView(
                             editPlant: EditPlantViewModel(
-                                service: CoredataServices(),
+                                service: coreDataService,
                                 planta: planta),
                             cardProxRega: CardProxRegaViewModel(
-                                service: CoredataServices(),
+                                service: coreDataService,
                                 planta: planta),
-                            planta: planta)
+                            imageListViewModel: ImageListViewModel(
+                                service: coreDataService,
+                                planta: planta))
+                            .environmentObject(InformationViewModel(
+                                service: coreDataService,
+                                planta: planta)
+                            )
                         ){
                             VStack{
                                 Image(uiImage: plantListViewModel.dataToUIImage(planta: planta))
