@@ -52,6 +52,7 @@
 		64FC8EC22A26ADE7002AAA33 /* TestPlantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FC8EC12A26ADE7002AAA33 /* TestPlantListView.swift */; };
 		6A0D531A2A39160700AA5554 /* ImagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D53182A39160700AA5554 /* ImagesListView.swift */; };
 		6A0D531B2A39160700AA5554 /* CustomNavBarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */; };
+		6A16DC222A6618C2003220AD /* DicasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16DC212A6618C2003220AD /* DicasView.swift */; };
 		6A4052D82A4B96AA00FBA67F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4052D62A4B96AA00FBA67F /* ImagePicker.swift */; };
 		6A4052D92A4B96AA00FBA67F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4052D72A4B96AA00FBA67F /* ImagePickerView.swift */; };
 		6A6D5FC92A31491F007FB384 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -118,6 +119,7 @@
 		64FC8EC12A26ADE7002AAA33 /* TestPlantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlantListView.swift; sourceTree = "<group>"; };
 		6A0D53182A39160700AA5554 /* ImagesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesListView.swift; sourceTree = "<group>"; };
 		6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBarInfo.swift; sourceTree = "<group>"; };
+		6A16DC212A6618C2003220AD /* DicasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicasView.swift; sourceTree = "<group>"; };
 		6A4052D62A4B96AA00FBA67F /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6A4052D72A4B96AA00FBA67F /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		6A6D5FCB2A3149BE007FB384 /* InformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		640AFB642A200E3B00A31EAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6A16DC202A6618AF003220AD /* Dicas */,
 				EFD6BA332A4E4DDF00860CDC /* Hearder */,
 				6A4052D52A4B96AA00FBA67F /* ImagePicker */,
 				4EA1036A2A40F948001E0B0B /* Alerts */,
@@ -392,6 +395,14 @@
 			path = ImagesList;
 			sourceTree = "<group>";
 		};
+		6A16DC202A6618AF003220AD /* Dicas */ = {
+			isa = PBXGroup;
+			children = (
+				6A16DC212A6618C2003220AD /* DicasView.swift */,
+			);
+			path = Dicas;
+			sourceTree = "<group>";
+		};
 		6A4052D52A4B96AA00FBA67F /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,20 +427,6 @@
 				6A7D2A7A2A4F9F81004843EC /* EditVegetableViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		EFD6BA322A4E4A5D00860CDC /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				640AFB902A20295200A31EAF /* Description.swift */,
-				640AFB912A20295200A31EAF /* HortCultLogo.swift */,
-				640AFB8F2A20295200A31EAF /* ImageSelector.swift */,
-				640AFB8D2A20295200A31EAF /* SecondButton.swift */,
-				640AFB8E2A20295200A31EAF /* TittleSelector.swift */,
-				640AFB782A20113900A31EAF /* Splash.swift */,
-				641629452A2569D20081493F /* HomeSplash.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		EFD6BA332A4E4DDF00860CDC /* Hearder */ = {
@@ -521,14 +518,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A6D5FCC2A3149BE007FB384 /* InformationView.swift in Sources */,
+				6A16DC222A6618C2003220AD /* DicasView.swift in Sources */,
 				1EE297102A2E9DA900C7E64E /* ScrollViewWithHeader.swift in Sources */,
 				9B519A442A4E3738004E4F40 /* CustomTabItem.swift in Sources */,
 				9B519A4C2A4F82DC004E4F40 /* OnboardingBase.swift in Sources */,
 				9B519A422A4E360D004E4F40 /* TabBarView.swift in Sources */,
 				1EE297102A2E9DA900C7E64E /* ScrollViewWithHeader.swift in Sources */,
 				6A4052D92A4B96AA00FBA67F /* ImagePickerView.swift in Sources */,
-				641629462A2569D20081493F /* HomeSplash.swift in Sources */,
-				1E852A602A3BCFF6009F8CDC /* Plant+CoreDataProperties.swift in Sources */,
 				4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */,
 				6A4052D82A4B96AA00FBA67F /* ImagePicker.swift in Sources */,
 				6AF2ECDE2A37C8840035FF28 /* ThemeView.swift in Sources */,
@@ -555,7 +551,6 @@
 				1EE067DB2A314F07002D7A81 /* NotificationController.swift in Sources */,
 				6438A92C2A1D7731006021DA /* HortCult.xcdatamodeld in Sources */,
 				6A7D2A742A4F7EFF004843EC /* Plant+CoreDataClass.swift in Sources */,
-				640AFB9D2A2032F100A31EAF /* Onboarding02.swift in Sources */,
 				4EBD45B32A3A722900BD26BE /* EditVegetable.swift in Sources */,
 				1EE297122A2EB32200C7E64E /* TestScrowView.swift in Sources */,
 				47371CA92A31558D00FF3114 /* CustomNavBarInfoView.swift in Sources */,
@@ -565,7 +560,6 @@
 				4E95636E2A3BB5E900DB7852 /* AddEditPhotos.swift in Sources */,
 				64FC8EC22A26ADE7002AAA33 /* TestPlantListView.swift in Sources */,
 				6A0D531A2A39160700AA5554 /* ImagesListView.swift in Sources */,
-				640AFB962A20295200A31EAF /* ImageSelector.swift in Sources */,
 				6A7D2A7B2A4F9F81004843EC /* EditVegetableViewModel.swift in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 				1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */,
@@ -573,7 +567,6 @@
 				4EBD45B52A3A727A00BD26BE /* AddEditTitle.swift in Sources */,
 				4E9343462A393CBF0000DA28 /* NameDescription.swift in Sources */,
 				6A7D2A792A4F925D004843EC /* AddVegetableViewModel.swift in Sources */,
-				640B03FC2A215ADE00C66A2A /* Onboarding04.swift in Sources */,
 				646726732A2A9E43003A981F /* TabBar.swift in Sources */,
 				9B519A402A4E34E7004E4F40 /* TabBarItems.swift in Sources */,
 			);
