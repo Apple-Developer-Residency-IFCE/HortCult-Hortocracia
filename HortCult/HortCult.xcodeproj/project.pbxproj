@@ -14,8 +14,6 @@
 		1EE297122A2EB32200C7E64E /* TestScrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE297112A2EB32200C7E64E /* TestScrowView.swift */; };
 		47371CA82A31558D00FF3114 /* TestCustomNavBarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47371CA62A31558D00FF3114 /* TestCustomNavBarInfoView.swift */; };
 		47371CA92A31558D00FF3114 /* CustomNavBarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47371CA72A31558D00FF3114 /* CustomNavBarInfoView.swift */; };
-		47639D1E2A3BC43900336A2A /* PickerCategoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47639D1D2A3BC43900336A2A /* PickerCategoria.swift */; };
-		47639D202A3BC49800336A2A /* PickerFrequencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47639D1F2A3BC49800336A2A /* PickerFrequencia.swift */; };
 		47D9E93C2A3BE4AA00C3FDFF /* ButtonAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D9E93B2A3BE4AA00C3FDFF /* ButtonAdd.swift */; };
 		4E12005D2A2FED6400DF78D6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12005C2A2FED6400DF78D6 /* Home.swift */; };
 		4E1200602A2FEFC100DF78D6 /* AddVegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */; };
@@ -88,8 +86,6 @@
 		1EE297112A2EB32200C7E64E /* TestScrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrowView.swift; sourceTree = "<group>"; };
 		47371CA62A31558D00FF3114 /* TestCustomNavBarInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCustomNavBarInfoView.swift; sourceTree = "<group>"; };
 		47371CA72A31558D00FF3114 /* CustomNavBarInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBarInfoView.swift; sourceTree = "<group>"; };
-		47639D1D2A3BC43900336A2A /* PickerCategoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCategoria.swift; sourceTree = "<group>"; };
-		47639D1F2A3BC49800336A2A /* PickerFrequencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFrequencia.swift; sourceTree = "<group>"; };
 		47D9E93B2A3BE4AA00C3FDFF /* ButtonAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAdd.swift; sourceTree = "<group>"; };
 		4E12005C2A2FED6400DF78D6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		4E12005F2A2FEFC100DF78D6 /* AddVegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVegetable.swift; sourceTree = "<group>"; };
@@ -204,19 +200,11 @@
 		47371CA52A31558D00FF3114 /* CustomNavBarInfo */ = {
 			isa = PBXGroup;
 			children = (
+				6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */,
 				47371CA62A31558D00FF3114 /* TestCustomNavBarInfoView.swift */,
 				47371CA72A31558D00FF3114 /* CustomNavBarInfoView.swift */,
 			);
 			path = CustomNavBarInfo;
-			sourceTree = "<group>";
-		};
-		47657DD52A3937990001F521 /* CategoriaFrequencia */ = {
-			isa = PBXGroup;
-			children = (
-				47639D1D2A3BC43900336A2A /* PickerCategoria.swift */,
-				47639D1F2A3BC49800336A2A /* PickerFrequencia.swift */,
-			);
-			path = CategoriaFrequencia;
 			sourceTree = "<group>";
 		};
 		4E1200592A2FED1000DF78D6 /* Home */ = {
@@ -254,7 +242,6 @@
 				EF6953822A56453900C35C68 /* FormPlant */,
 				EFD6BA332A4E4DDF00860CDC /* Hearder */,
 				4EA1036A2A40F948001E0B0B /* Alerts */,
-				47657DD52A3937990001F521 /* CategoriaFrequencia */,
 				6A0D53172A39160700AA5554 /* ImagesList */,
 				47371CA52A31558D00FF3114 /* CustomNavBarInfo */,
 				6A6D5FCA2A3149BE007FB384 /* InformationScreen */,
@@ -264,7 +251,6 @@
 				646726712A2A9E22003A981F /* TabBar */,
 				640AFB652A200E6500A31EAF /* Onboarding */,
 				646F160F2A2965330091EE21 /* Ajustes */,
-				646F160A2A2958F50091EE21 /* CardProxRega */,
 				6417D96C2A26AD4600479BE2 /* NavBar */,
 				64FC8EBE2A26AC77002AAA33 /* PlantList */,
 			);
@@ -379,7 +365,7 @@
 				EF52DEE92A67565000288648 /* CardProxRegaViewModel.swift */,
 			);
 			name = CardProxRega;
-			path = HortCult/Views/CardProxRega;
+			path = HortCult/Views/InformationScreen/Components/CardProxRega;
 			sourceTree = SOURCE_ROOT;
 		};
 		646F160F2A2965330091EE21 /* Ajustes */ = {
@@ -405,7 +391,6 @@
 			isa = PBXGroup;
 			children = (
 				6A0D53182A39160700AA5554 /* ImagesListView.swift */,
-				6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */,
 				EF52DEEB2A688E4F00288648 /* ImageListViewModel.swift */,
 			);
 			path = ImagesList;
@@ -414,6 +399,7 @@
 		6A6D5FCA2A3149BE007FB384 /* InformationScreen */ = {
 			isa = PBXGroup;
 			children = (
+				EF52DEED2A68AE5500288648 /* Components */,
 				6A6D5FCB2A3149BE007FB384 /* InformationView.swift */,
 				EF3A024D2A577FA700DA20F0 /* InformationViewModel.swift */,
 			);
@@ -427,6 +413,14 @@
 				6A7D2A7A2A4F9F81004843EC /* EditVegetableViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF52DEED2A68AE5500288648 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				646F160A2A2958F50091EE21 /* CardProxRega */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		EF69537F2A5643C000C35C68 /* Components */ = {
@@ -596,7 +590,6 @@
 				6AF2ECDE2A37C8840035FF28 /* ThemeView.swift in Sources */,
 				EF8203202A5614D400089A70 /* CoredataServices.swift in Sources */,
 				646F160D2A2958F50091EE21 /* TestCardProxRegaView.swift in Sources */,
-				47639D202A3BC49800336A2A /* PickerFrequencia.swift in Sources */,
 				646F160E2A2958F50091EE21 /* CardProxRegaView.swift in Sources */,
 				1EA01C9B2A3A6A3A00962D91 /* PlantViewModel.swift in Sources */,
 				646F16132A29654D0091EE21 /* NotificationsView.swift in Sources */,
@@ -624,7 +617,6 @@
 				1EE297122A2EB32200C7E64E /* TestScrowView.swift in Sources */,
 				47371CA92A31558D00FF3114 /* CustomNavBarInfoView.swift in Sources */,
 				4E12005D2A2FED6400DF78D6 /* Home.swift in Sources */,
-				47639D1E2A3BC43900336A2A /* PickerCategoria.swift in Sources */,
 				6417D96E2A26AD5900479BE2 /* TesteNavigationBarView.swift in Sources */,
 				EF6953872A5645B600C35C68 /* EditPlantView.swift in Sources */,
 				4E95636E2A3BB5E900DB7852 /* AddEditPhotos.swift in Sources */,
