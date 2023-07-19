@@ -6,30 +6,87 @@
 //
 
 import XCTest
+@testable import HortCult
 
 final class HortCultTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testImageDataConvert() {
+        var plantViewModel = PlantViewModel()
+        let image1 = UIImage(color: .red, size: CGSize(width: 100, height: 100))!
+        let image2 = UIImage(color: .blue, size: CGSize(width: 150, height: 150))!
+        let images = [image1, image2]
+        
+        let result = plantViewModel.imageDataConvert(image: images)
+        
+        // Especifique as asserções que você espera que sejam verdadeiras
+        XCTAssertEqual(result.count, 2, "A quantidade de dados convertidos deve ser 2")
+        // Adicione mais asserções relevantes aqui, se necessário
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    
+    func testGetPlantId(){
+        var plantViewModel = PlantViewModel()
+        plantViewModel.createPlant(name: "PlantaTeste", information: "DescricaoTeste", category: "CategoriaTeste", frequency: "1", image: [UIImage(color: .red, size: CGSize(width: 100, height: 100))!])
+        var plantinha = plantViewModel.getPlant(by: "PlantaTeste")
+        guard var idPlanta = plantinha?.id else { return }
+        
+        var planta2 = plantViewModel.getPlantId(id: idPlanta)
+        
+        XCTAssertEqual(plantinha, planta2, "As plantas nao sao iguais")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testGetPlant(){
+        var plantViewModel = PlantViewModel()
+        plantViewModel.createPlant(name: "PlantaTesteName", information: "DescricaoTeste", category: "CategoriaTeste", frequency: "1", image: [UIImage(color: .red, size: CGSize(width: 100, height: 100))!])
+        var plantaBuscada = plantViewModel.getPlant(by: "PlantaTesteName")
+        var namePlantaBuscada = plantaBuscada?.name
+        
+        XCTAssertEqual(namePlantaBuscada, "PlantaTesteName", "As plantas nao sao iguais")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    //    func testDataImageConvert(){
+    //        var plantViewModel = PlantViewModel()
+    //        let image1 = UIImage(color: .red, size: CGSiz e(width: 100, height: 100))!
+    //        let image2 = UIImage(color: .red, size: CGSize(width: 100, height: 100))!
+    //
+    //        let imageToData = plantViewModel.imageDataConvert(image: [image1, image2])
+    //
+    //        let imageToData2 = plantViewModel.imageDataConvert(image: [image1, image2])
+    //
+    //        let dataToImage = plantViewModel.dataImageConvert(datas: imageToData)
+    //        let imageToDataAgain = plantViewModel.imageDataConvert(image: dataToImage)
+    //        //let result = plantViewModel.dataImageConvert(datas: imageToData)
+    //        //let firstItem = result.first 3607 6875 // 3653 6921
+    //        XCTAssertEqual(imageToDataAgain, imageToData , "As imagens não correspondem")
+    //    }
+    //}
+    
+    func testDataImageConvert(){
+        var plantViewModel = PlantViewModel()
+        let image1 = UIImage(color: .red, size: CGSize(width: 100, height: 100))!
+        let image2 = UIImage(color: .blue, size: CGSize(width: 150, height: 150))!
+        
+        let images = [image1, image2]
+        
+        let imageToData = plantViewModel.imageDataConvert(image: images)
+        let dataToImage = plantViewModel.dataImageConvert(datas: imageToData)
+        
+        XCTAssertEqual(dataToImage.count, images.count, "Algumas Imagens se perderam durante o processo")
+        
     }
+    
+}
+import UIKit
 
+extension UIImage {
+    convenience init?(color: UIColor, size: CGSize) {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        guard let cgImage = image?.cgImage else { return nil }
+        self.init(cgImage: cgImage)
+    }
 }
