@@ -11,21 +11,20 @@ import XCTest
 final class HortCultTests: XCTestCase {
     
     func testImageDataConvert() {
-        var plantViewModel = PlantViewModel()
+        let plantViewModel = PlantViewModel()
         let image1 = UIImage(color: .red, size: CGSize(width: 100, height: 100))!
         let image2 = UIImage(color: .blue, size: CGSize(width: 150, height: 150))!
         let images = [image1, image2]
         
         let result = plantViewModel.imageDataConvert(image: images)
         
-        // Especifique as asserções que você espera que sejam verdadeiras
         XCTAssertEqual(result.count, 2, "A quantidade de dados convertidos deve ser 2")
-        // Adicione mais asserções relevantes aqui, se necessário
+        
     }
     
     
     func testGetPlantId(){
-        var plantViewModel = PlantViewModel()
+        let plantViewModel = PlantViewModel()
         plantViewModel.createPlant(name: "PlantaTeste", information: "DescricaoTeste", category: "CategoriaTeste", frequency: "1", image: [UIImage(color: .red, size: CGSize(width: 100, height: 100))!])
         var plantinha = plantViewModel.getPlant(by: "PlantaTeste")
         guard var idPlanta = plantinha?.id else { return }
@@ -36,10 +35,10 @@ final class HortCultTests: XCTestCase {
     }
     
     func testGetPlant(){
-        var plantViewModel = PlantViewModel()
+        let plantViewModel = PlantViewModel()
         plantViewModel.createPlant(name: "PlantaTesteName", information: "DescricaoTeste", category: "CategoriaTeste", frequency: "1", image: [UIImage(color: .red, size: CGSize(width: 100, height: 100))!])
-        var plantaBuscada = plantViewModel.getPlant(by: "PlantaTesteName")
-        var namePlantaBuscada = plantaBuscada?.name
+        let plantaBuscada = plantViewModel.getPlant(by: "PlantaTesteName")
+        let namePlantaBuscada = plantaBuscada?.name
         
         XCTAssertEqual(namePlantaBuscada, "PlantaTesteName", "As plantas nao sao iguais")
     }
@@ -62,7 +61,7 @@ final class HortCultTests: XCTestCase {
     //}
     
     func testDataImageConvert(){
-        var plantViewModel = PlantViewModel()
+        let plantViewModel = PlantViewModel()
         let image1 = UIImage(color: .red, size: CGSize(width: 100, height: 100))!
         let image2 = UIImage(color: .blue, size: CGSize(width: 150, height: 150))!
         
