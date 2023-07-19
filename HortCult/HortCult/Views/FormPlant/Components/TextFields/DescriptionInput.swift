@@ -18,6 +18,7 @@ struct DescriptionInput: View {
                 .font(Font.custom("Satoshi-Regular", size: 12))
 
             TextEditor(text: $descriptionVegetable)
+                .padding(.leading, 15)
                 .font(Font.custom("Satoshi-Regular", size: 16))
                 .textCase(.lowercase)
                 .overlay(
