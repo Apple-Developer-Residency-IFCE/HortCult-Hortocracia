@@ -35,6 +35,7 @@ class CardProxRegaViewModel: ObservableObject {
     
     func advanceNextDate(){
         let calendar = Calendar.current
+        getFrequency()
         let days = convertToDate(freq: planta.frequency)
         guard let newNextDate = calendar.date(byAdding: .day, value: days, to: nextDate) else {return }
         nextDate = newNextDate
@@ -55,7 +56,7 @@ class CardProxRegaViewModel: ObservableObject {
         let _ = service.updatePlantModel(plantModel: planta, nextDate: nextDate)
     }
     
-//    func getDate() -> String{
-//        
-//    }
+    func getFrequency(){
+        planta.frequency = service.fetchPlantModel(by: planta.id).frequency
+    }
 }
