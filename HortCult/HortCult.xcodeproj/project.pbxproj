@@ -53,6 +53,10 @@
 		6A0D531A2A39160700AA5554 /* ImagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D53182A39160700AA5554 /* ImagesListView.swift */; };
 		6A0D531B2A39160700AA5554 /* CustomNavBarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */; };
 		6A16DC222A6618C2003220AD /* DicasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16DC212A6618C2003220AD /* DicasView.swift */; };
+		6A16DC262A68AD5A003220AD /* DicaSaudavelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16DC252A68AD5A003220AD /* DicaSaudavelView.swift */; };
+		6A16DC282A68AD67003220AD /* DicaSucessoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16DC272A68AD67003220AD /* DicaSucessoView.swift */; };
+		6A16DC2A2A68AD75003220AD /* DicaSuspensaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16DC292A68AD75003220AD /* DicaSuspensaView.swift */; };
+		6A16DC2C2A68AD80003220AD /* DicaPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16DC2B2A68AD80003220AD /* DicaPetView.swift */; };
 		6A4052D82A4B96AA00FBA67F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4052D62A4B96AA00FBA67F /* ImagePicker.swift */; };
 		6A4052D92A4B96AA00FBA67F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4052D72A4B96AA00FBA67F /* ImagePickerView.swift */; };
 		6A6D5FC92A31491F007FB384 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -120,6 +124,10 @@
 		6A0D53182A39160700AA5554 /* ImagesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesListView.swift; sourceTree = "<group>"; };
 		6A0D53192A39160700AA5554 /* CustomNavBarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBarInfo.swift; sourceTree = "<group>"; };
 		6A16DC212A6618C2003220AD /* DicasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicasView.swift; sourceTree = "<group>"; };
+		6A16DC252A68AD5A003220AD /* DicaSaudavelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicaSaudavelView.swift; sourceTree = "<group>"; };
+		6A16DC272A68AD67003220AD /* DicaSucessoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicaSucessoView.swift; sourceTree = "<group>"; };
+		6A16DC292A68AD75003220AD /* DicaSuspensaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicaSuspensaView.swift; sourceTree = "<group>"; };
+		6A16DC2B2A68AD80003220AD /* DicaPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicaPetView.swift; sourceTree = "<group>"; };
 		6A4052D62A4B96AA00FBA67F /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6A4052D72A4B96AA00FBA67F /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		6A6D5FCB2A3149BE007FB384 /* InformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
@@ -399,6 +407,10 @@
 			isa = PBXGroup;
 			children = (
 				6A16DC212A6618C2003220AD /* DicasView.swift */,
+				6A16DC252A68AD5A003220AD /* DicaSaudavelView.swift */,
+				6A16DC272A68AD67003220AD /* DicaSucessoView.swift */,
+				6A16DC292A68AD75003220AD /* DicaSuspensaView.swift */,
+				6A16DC2B2A68AD80003220AD /* DicaPetView.swift */,
 			);
 			path = Dicas;
 			sourceTree = "<group>";
@@ -532,7 +544,9 @@
 				47639D202A3BC49800336A2A /* PickerFrequencia.swift in Sources */,
 				646F160E2A2958F50091EE21 /* CardProxRegaView.swift in Sources */,
 				1EA01C9B2A3A6A3A00962D91 /* PlantViewModel.swift in Sources */,
+				6A16DC282A68AD67003220AD /* DicaSucessoView.swift in Sources */,
 				646F16132A29654D0091EE21 /* NotificationsView.swift in Sources */,
+				6A16DC262A68AD5A003220AD /* DicaSaudavelView.swift in Sources */,
 				9B519A4E2A4F831E004E4F40 /* ReusableOnboardingButton.swift in Sources */,
 				6A6D5FC92A31491F007FB384 /* (null) in Sources */,
 				6417D9712A26AD6A00479BE2 /* CustomNavigationBarView.swift in Sources */,
@@ -540,6 +554,7 @@
 				EF4CE5992A538DB700891027 /* Splash.swift in Sources */,
 				642EEC3A2A1D8FBB009206D2 /* MinhaHortaView.swift in Sources */,
 				6438A9292A1D7731006021DA /* Persistence.swift in Sources */,
+				6A16DC2C2A68AD80003220AD /* DicaPetView.swift in Sources */,
 				9B519A502A4F8370004E4F40 /* Onboarding.swift in Sources */,
 				6A0D531B2A39160700AA5554 /* CustomNavBarInfo.swift in Sources */,
 				4EA103702A4121BB001E0B0B /* AlertPlantaExcluida.swift in Sources */,
@@ -563,6 +578,7 @@
 				6A7D2A7B2A4F9F81004843EC /* EditVegetableViewModel.swift in Sources */,
 				6438A9202A1D7730006021DA /* HortCultApp.swift in Sources */,
 				1EE2970E2A2E9CBA00C7E64E /* ReminderCard.swift in Sources */,
+				6A16DC2A2A68AD75003220AD /* DicaSuspensaView.swift in Sources */,
 				EFD6BA362A4E4DFC00860CDC /* HeaderLogo.swift in Sources */,
 				4EBD45B52A3A727A00BD26BE /* AddEditTitle.swift in Sources */,
 				4E9343462A393CBF0000DA28 /* NameDescription.swift in Sources */,
