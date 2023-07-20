@@ -10,13 +10,8 @@ import SwiftUI
 struct TabBarView: View {
     
     @State private var selectedTab = 0
-    @ObservedObject var plantViewModel: PlantViewModel
     @AppStorage ("showOnboarding") var showOnboarding: Bool = true
-    
-    init(plantViewModel: PlantViewModel) {
-        self.plantViewModel = plantViewModel
-        plantViewModel.fetch()
-    }
+
     var body: some View {
         
         ZStack(alignment: .bottom) {
@@ -49,14 +44,14 @@ struct TabBarView: View {
                 .frame(height: 90)
             }
             
-        }.environmentObject(plantViewModel)
+        }
             .edgesIgnoringSafeArea(.bottom)
     }
 }
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(plantViewModel: PlantViewModel())
+        TabBarView()
         
     }
 }

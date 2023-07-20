@@ -8,29 +8,36 @@
 import SwiftUI
 
 struct ImagesListView: View {
-    @State var images: [UIImage]
+    @State var imagesData:[Data]
+    @EnvironmentObject var imageListViewModel:ImageListViewModel
+    
+    func dataToUI(data: Data) -> UIImage{
+        return UIImage(data: data) ?? UIImage()
+    }
+
     
     @State private var selectedTab = 0
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            ForEach(0..<images.count) { i in
-                Image(uiImage: images[i])
+            ForEach(imageListViewModel.data.indices, id: \.self) { id in
+                Image(uiImage: dataToUI(data: imageListViewModel.data[id]))
                     .resizable()
-                    .tag(i)
+                    .tag(id)
                     .tabItem {
-                        Text("Tab \(i + 1)")
+                        Text("Tab \(id + 1)")
                     }
             }
         }
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .ignoresSafeArea()
+        .onAppear(perform: { imageListViewModel.getImage() })
     }
 }
-
-struct ImagesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImagesListView(images: [])
-    }
-}
+//
+//struct ImagesListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImagesListView()
+//    }
+//}

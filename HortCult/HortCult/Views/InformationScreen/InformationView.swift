@@ -14,48 +14,39 @@ struct InformationView: View {
     @State private var deleteVegetableAlert = false
     @State private var confirmDeleteVegetableAlert = false
     @State private var backHomeAlert = false
-    @EnvironmentObject var plantViewModel: PlantViewModel
+    
+    let editPlant:EditPlantViewModel
+    let cardProxRega:CardProxRegaViewModel
+    let imageListViewModel:ImageListViewModel
+    
+    @EnvironmentObject var informationViewModel: InformationViewModel
+    
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
     @State private var shouldNavigateButton = false
-    @State var planta: Plant
     @State var isOverlayShown = false
-        
+    
     @ViewBuilder var Name: some View {
-        if let name = planta.name{
-            Text(name)
+        Text(informationViewModel.planta.name)
                 .bold()
                 .foregroundColor(Color("VerdeEscuro"))
                 .font(.custom("Satoshi-Bold", size: 28))
-        } else {
-            Text("Sem nome!")
-        }
-            
     }
     @ViewBuilder var Categoria: some View {
-        if let category = planta.category{
-            Text(category)
-                .padding(.horizontal, 13)
-                .padding(.vertical, 8)
-                .foregroundColor(Color("Cinza"))
-                .font(.custom("Satoshi-Regular", size: 12))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color(.gray), lineWidth: 1)
-                )
-        } else {
-            Text("Sem categoria!")
-        }
+        Text(informationViewModel.planta.category)
+            .padding(.horizontal, 13)
+            .padding(.vertical, 8)
+            .foregroundColor(Color("Cinza"))
+            .font(.custom("Satoshi-Regular", size: 12))
+            .overlay(
+                RoundedRectangle(cornerRadius: 40)
+                    .stroke(Color(.gray), lineWidth: 1)
+            )
     }
     @ViewBuilder var Information: some View {
-        if let information = planta.information{
-            Text(information)
-                .font(.custom("Satoshi-Regular", size: 16))
-                .lineLimit(5)
-        } else {
-            Text("Sem informações!")
-        }
+        Text(informationViewModel.planta.information)
+            .font(.custom("Satoshi-Regular", size: 16))
+            .lineLimit(5)
     }
-    
     var NavBarInfo : some View {
         ZStack{
             HStack{
@@ -69,13 +60,10 @@ struct InformationView: View {
                 }
                 .padding(.leading, 18)
                 Spacer()
-
+                
             }.allowsHitTesting(true)
         }
     }
-    
-    
-    
     func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
@@ -87,15 +75,16 @@ struct InformationView: View {
             
             ScrollView(.vertical){
                 ZStack{
-                    VStack(){
-                        ImagesListView(images: plantViewModel.dataImageConvert(datas: planta.image ?? []))
-                                                    .frame(minWidth: 390, minHeight: 390)
-                                                    .ignoresSafeArea()
-                                                    .edgesIgnoringSafeArea(.all)
-                                                    .padding(.bottom, 16)
-
+                    LazyVStack(){
+                        ImagesListView(imagesData: informationViewModel.planta.image)
+                            .environmentObject(imageListViewModel)
+                            .frame(minWidth: 390, minHeight: 390)
+                            .ignoresSafeArea()
+                            .edgesIgnoringSafeArea(.all)
+                            .padding(.bottom, 16)
                         VStack(alignment: .leading){
                             HStack{
+                                //Text(String(togled))
                                 Name
                                 Spacer()
                                 Categoria
@@ -106,14 +95,15 @@ struct InformationView: View {
                         }
                         .padding(.horizontal,20)
                         
-                        CardProxRegaView(dataProxRega: formatDate(date: planta.nextDate ?? Date()), plant: planta)
+                        CardProxRegaView(dataProxRega: formatDate(date: informationViewModel.planta.nextDate))
+                            .environmentObject(cardProxRega)
                             .padding(.bottom, 24)
                         
                         HStack {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
                                     .font(Font.custom("Satoshi-Regular", size: 16))
-                                Text("Todos os Dias")
+                                Text(informationViewModel.planta.frequency)
                                     .font(Font.custom("Satoshi-Bold", size: 18))
                                     .bold()
                                 
@@ -123,8 +113,11 @@ struct InformationView: View {
                         }
                         .padding(.horizontal,20)
                         NavigationLink {
-                            EditVegetable(plant: planta)
-                            
+                            EditPlantView(){
+                                informationViewModel.planta = informationViewModel.service.fetchPlantModel(by: informationViewModel.planta.id)
+                                
+                            }
+                                .environmentObject(editPlant)
                         } label: {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
@@ -202,7 +195,7 @@ struct InformationView: View {
                                 primaryButtonTitle: "Voltar para a Tela Inicial",
                                 primaryButtonAction: {
                                     shouldNavigateButton = true
-                                    plantViewModel.deletePlant(plant: planta)
+                                    informationViewModel.deletePlant(plantModel: informationViewModel.planta)
                                 }
                                 
                                 

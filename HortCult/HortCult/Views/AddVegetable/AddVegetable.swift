@@ -1,8 +1,53 @@
+//import SwiftUI
 //
-//  AddVegetable.swift
-//  HortCult
 //
-//  Created by João Vitor Alves Holanda on 06/06/23.
+//struct AddVegetable: View {
+//    @AppStorage ("selectedTheme")private var selectedTheme: Choice?
+//    var plantViewModel: PlantViewModel
+//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+//    //    let viewModel = AddPlantViewModel(service: CoredataServices())
+//    @StateObject private var imagesSelected = ImageSelected()
+//
+//
+//
+//    var NavBar : some View {
+//        ZStack {
+//            HeaderLogo()
+//                .frame(minWidth: 400, minHeight: 200)
+//                .padding(.top,-40)
+//            HStack {
+//                Button(action:{
+//                    self.presentationMode.wrappedValue.dismiss()
+//                } ) {
+//                    Image(selectedTheme == .Escuro ? "Arrow-Left-Light" : "Arrow-Left-Green")
+//                }
+//                .padding(.leading, 18)
+//            }
+//            .padding(.leading,-190)
+//        }
+//    }
+//
+//    var isFieldsFilled: Bool{
+//        return !viewmodel.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !viewmodel.description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewmodel.categoria != "Selecionar..." && viewmodel.frequencia != "Selecionar..."
+//    }
+//
+//    var body: some View {
+//
+//        NavigationView {
+//            ZStack{
+//                ScrollView(.vertical){
+//
+//                    ZStack{
+//                        VStack{
+//                            AddEditTitle(addEdit: true)
+//                            NameDescription(nameVegetable: $viewmodel.name, descriptionVegetable: $viewmodel.description)
+//                            PickerCategoria(selectedOption: $viewmodel.categoria)
+//                            PickerFrequencia(selectedOption: $viewmodel.frequencia)
+//                            AddEditPhotos()
+//                                .environmentObject(imagesSelected)
+//                        }
+//                    }
+//                }
 //
 
 import SwiftUI
@@ -58,12 +103,12 @@ struct AddVegetable: View {
                     ZStack{
                         
                         VStack{
-                            AddEditTitle(addEdit: true)
-                            NameDescription(nameVegetable: $viewmodel.name, descriptionVegetable: $viewmodel.description)
-                            PickerCategoria(selectedOption: $viewmodel.categoria)
-                            PickerFrequencia(selectedOption: $viewmodel.frequencia)
-                            AddEditPhotos()
-                                .environmentObject(imagesSelected)
+//                            AddEditTitle(addEdit: true)
+//                            NameDescription(nameVegetable: $viewmodel.name, descriptionVegetable: $viewmodel.description)
+//                            PickerCategoria(selectedOption: $viewmodel.categoria)
+//                            PickerFrequencia(selectedOption: $viewmodel.frequencia)
+//                            AddEditPhotos()
+//                                .environmentObject(imagesSelected)
                         }
                     }
                 }
@@ -165,7 +210,7 @@ struct AddVegetable: View {
         .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: NavBar)
             .fullScreenCover(isPresented: self.$isFullScreenCovering) {
-                InformationView(planta: plantViewModel.getPlant(by: viewmodel.name)!)
+//                InformationView(planta: plantViewModel.getPlant(by: viewmodel.name)!)
                 
             }
     }

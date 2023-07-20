@@ -17,7 +17,7 @@ struct Splash: View {
     var body: some View {
         if isActive {
             
-            TabBarView(plantViewModel: PlantViewModel())
+            TabBarView()
         }else {
             VStack {
                 VStack {

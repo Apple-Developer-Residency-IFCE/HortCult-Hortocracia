@@ -1,19 +1,11 @@
-//
-//  CardProxRegaView.swift
-//  HortCult
-//
-//  Created by userext on 31/05/23.
-//
-
 import SwiftUI
 
 struct CardProxRegaView: View {
     var imagem: String = "WaterBlue"
     @State var dataProxRega: String
-    @EnvironmentObject var plantViewModel: PlantViewModel
-    @State var plant: Plant
+    @EnvironmentObject var cardProxRegaViewModel:CardProxRegaViewModel
+    
     var body: some View {
-        var auxFrequency: Int = 0
         HStack(spacing: 16){
             Image(imagem)
                 .frame(width: 52, height: 52)
@@ -32,24 +24,10 @@ struct CardProxRegaView: View {
                     .foregroundColor(Color("Preto"))
                 
                 Button{
-                    
-                    if (plant.frequency == "Todos os dias"){
-                        auxFrequency = 1
-                    }else if(plant.frequency == "A cada 2 dias"){
-                        auxFrequency = 2
-                    }else if(plant.frequency == "A cada 4 dias"){
-                        auxFrequency = 4
-                    }else{
-                        auxFrequency = 7
-                    }
+                    cardProxRegaViewModel.updateDatePlant()
                     let formatter = DateFormatter()
                     formatter.dateFormat = "dd/MM/yyyy"
-                    var nextDate: Date = Date()
-                    nextDate = formatter.date(from: String(nextDate.formatted().prefix(10))) ?? Date()
-                    nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
-                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plantViewModel.dataImageConvert(datas: plant.image ?? []))
-                    plant = plantViewModel.getPlantId(id: plant.id!)!
-                    dataProxRega = String(nextDate.formatted().prefix(10))
+                    dataProxRega = formatter.string(from: cardProxRegaViewModel.nextDate)
                 } label: {
                     Text("Marcar como regado")
                         .font(Font.custom("Satoshi-Regular", size: 12))
@@ -68,9 +46,3 @@ struct CardProxRegaView: View {
             
     }
 }
-
-//struct CardProxRegaView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardProxRegaView(dataProxRega: "", plant: )
-//    }
-//}

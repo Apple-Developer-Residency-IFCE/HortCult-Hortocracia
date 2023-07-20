@@ -14,7 +14,7 @@ struct ScrollViewWithHeader: View{
     
     var body: some View {
         
-        @State var filtedPlants = plantViewModel.filterPlant()
+        //@State var filtedPlants = plantViewModel.filterPlant()
         
         VStack(alignment: .leading) {
             Text("Lembretes")
@@ -27,9 +27,9 @@ struct ScrollViewWithHeader: View{
             ScrollView(.vertical) {
                 LazyVStack(spacing: 12) {
                     
-                    ForEach(filtedPlants, id: \.id){ plantas in
-                        ReminderCardView(plant: plantas)
-                    }
+//                    ForEach(filtedPlants, id: \.id){ plantas in
+//                        ReminderCardView(plant: plantas)
+//                    }
                     //                    ForEach(cards, id: \.id) { cards in
                     //                        cards
                     //                        ForEach(cards, id: \.self) { card in
