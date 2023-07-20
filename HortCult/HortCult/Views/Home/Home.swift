@@ -21,6 +21,7 @@ struct Home: View {
                 ListaPlantasView()
                     .padding(.top,20)
                 ScrollViewWithHeader()
+                CarrosselDeDicas()
             }
             .offset(y:-47)
         }.navigationBarBackButtonHidden(true)
