@@ -167,6 +167,7 @@ struct InformationView: View {
                                 message: "Essa ação não poderá ser desfeita.",
                                 primaryButtonTitle: "Excluir",
                                 primaryButtonAction: {
+                                    informationViewModel.deletePlant(plantModel: informationViewModel.planta)
                                     confirmDeleteVegetableAlert = true
                                     deleteVegetableAlert = false
                                     
@@ -196,7 +197,7 @@ struct InformationView: View {
                                 primaryButtonAction: {
                                     dismiss()
                                     shouldNavigateButton = true
-                                    informationViewModel.deletePlant(plantModel: informationViewModel.planta)
+                                    
                                 }
                                 
                                 
