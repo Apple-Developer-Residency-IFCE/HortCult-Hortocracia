@@ -14,7 +14,7 @@ struct InformationView: View {
     @State private var deleteVegetableAlert = false
     @State private var confirmDeleteVegetableAlert = false
     @State private var backHomeAlert = false
-    
+    @Environment(\.dismiss) private var dismiss
     let editPlant:EditPlantViewModel
     let cardProxRega:CardProxRegaViewModel
     let imageListViewModel:ImageListViewModel
@@ -194,6 +194,7 @@ struct InformationView: View {
                                 message: "",
                                 primaryButtonTitle: "Voltar para a Tela Inicial",
                                 primaryButtonAction: {
+                                    dismiss()
                                     shouldNavigateButton = true
                                     informationViewModel.deletePlant(plantModel: informationViewModel.planta)
                                 }
