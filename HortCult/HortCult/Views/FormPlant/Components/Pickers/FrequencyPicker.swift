@@ -58,6 +58,7 @@ struct FrequencyPicker: View {
                                         .font(Font.custom("Satoshi-Regular", size: 16))
                                         .foregroundColor(Color("CinzaEscuro"))
                                         .padding(.leading, 20)
+                                    Spacer()
                                 }
                             }
                         }
