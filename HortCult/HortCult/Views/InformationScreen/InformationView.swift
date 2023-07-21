@@ -113,7 +113,7 @@ struct InformationView: View {
                             VStack(alignment: .leading){
                                 Text("Frequência de Rega")
                                     .font(Font.custom("Satoshi-Regular", size: 16))
-                                Text("Todos os Dias")
+                                Text(planta.frequency!)
                                     .font(Font.custom("Satoshi-Bold", size: 18))
                                     .bold()
                                 
