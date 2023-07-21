@@ -25,6 +25,7 @@ struct AddPlantView: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color("VerdeEscuro"))
                 .padding(.top, 20)
+                .padding(.leading, 20)
         }
     }
     
@@ -58,10 +59,10 @@ struct AddPlantView: View {
                             DescriptionInput(descriptionVegetable: $addViewModel.plantInformation)
                             CategoryPicker(selectedOption: $addViewModel.plantCategory)
                             FrequencyPicker(selectedOption: $addViewModel.plantFrequency)
-                            ImagePicker(selectedPhotosData: $addViewModel.plantImage)
+                            ImagePickerView(selectedPhotosData: $addViewModel.plantImage)
                             Spacer(minLength: 80)
                         }
-                        .padding(.horizontal, 40)
+                        
                     }
                     
                 }
@@ -95,7 +96,7 @@ struct AddPlantView: View {
                     }
                     .disabled(!addViewModel.isAddButtonAble)
                     .frame(alignment: .bottom)
-                    .padding(.bottom, 60)
+                    .padding(.bottom, 20)
                 }
             }
         }

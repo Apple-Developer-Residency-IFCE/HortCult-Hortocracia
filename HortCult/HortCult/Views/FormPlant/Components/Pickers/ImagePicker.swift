@@ -42,8 +42,6 @@ struct ImagePicker: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Imagens")
-                .font(Font.custom("Satoshi-Regular", size: 12))
             ScrollView(.horizontal){
                 HStack(spacing: 12){
                     PhotosPicker(
@@ -93,7 +91,7 @@ struct ImagePickerView: View {
         VStack(alignment: .leading) {
             Text("Fotos")
                 .font(.custom("Satoshi-Regular", size: 16))
-                .foregroundColor(Color("buttonCardColor"))
+                .foregroundColor(Color("Cinza"))
                 .padding(.horizontal, 20)
             
             ImagePicker(selectedPhotosData: $selectedPhotosData)
@@ -101,12 +99,12 @@ struct ImagePickerView: View {
         }
     }
 }
-//
-//struct ImagePickerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        //ImagePickerView()
-//            //.environmentObject(ImageSelected())
-//    }
-//}
+
+struct ImagePickerView_Previews: PreviewProvider {
+    static var previews: some View {
+        ImagePickerView(selectedPhotosData: .constant([]))
+            .environmentObject(ImageSelected())
+    }
+}
 
 

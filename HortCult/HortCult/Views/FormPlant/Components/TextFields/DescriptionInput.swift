@@ -18,14 +18,20 @@ struct DescriptionInput: View {
                 .font(Font.custom("Satoshi-Regular", size: 12))
 
             TextEditor(text: $descriptionVegetable)
-                .padding(.leading, 15)
+//                .padding(.leading, 15)
                 .font(Font.custom("Satoshi-Regular", size: 16))
                 .textCase(.lowercase)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color("CinzaClaro"), lineWidth: 1)
                     )
-                .frame(width: 380,height: 160)
-        }
+                .frame(width: 350,height: 138)
+        }.padding(.horizontal, 20)
+    }
+}
+
+struct DescriptionInput_Previews: PreviewProvider {
+    static var previews: some View {
+        DescriptionInput(descriptionVegetable: .constant(""))
     }
 }

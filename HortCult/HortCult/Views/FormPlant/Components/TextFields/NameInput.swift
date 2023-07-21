@@ -19,7 +19,7 @@ struct NameInput: View {
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $namePlant)
                     .padding(.leading, 15)
-                    .frame(width: 380,height: 40)
+                    .frame(width: 350,height: 38)
                     .font(Font.custom("Satoshi-Regular", size: 16))
                     .textCase(.lowercase)
                     .overlay(
@@ -27,13 +27,13 @@ struct NameInput: View {
                             .stroke(Color("CinzaClaro"), lineWidth: 1)
                     )
             }
-        }
+        }.padding(.horizontal, 20)
         
     }
 }
 
-//struct NameInput_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NameInput()
-//    }
-//}
+struct NameInput_Previews: PreviewProvider {
+    static var previews: some View {
+        NameInput(namePlant: .constant(""))
+    }
+}

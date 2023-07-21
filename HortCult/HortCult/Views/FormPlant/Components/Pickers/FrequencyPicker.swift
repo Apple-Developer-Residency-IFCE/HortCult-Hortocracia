@@ -12,7 +12,8 @@
 //
 
 import SwiftUI
-enum options: String, CaseIterable {
+
+enum Options: String, CaseIterable {
     case diario = "Todos os dias"
     case dois = "A cada 2 dias"
     case quatro = "A cada 4 dias"
@@ -29,7 +30,7 @@ struct FrequencyPicker: View {
             VStack(alignment: .leading){
                 Text("Frequência de Rega")
                     .font(Font.custom("Satoshi-Regular", size: 12))
-                    .padding(.leading, 20)
+
                 VStack(alignment: .leading, spacing: 18){
                     Button{
                         isPickerExpanded.toggle()
@@ -46,7 +47,7 @@ struct FrequencyPicker: View {
                         
                     }
                     if isPickerExpanded {
-                        ForEach(options.allCases, id: \.self){ option in
+                        ForEach(Options.allCases, id: \.self){ option in
                             if(option.rawValue != selectedOption){
                                 Button(action:{
                                     selectedOption = option.rawValue
@@ -68,12 +69,10 @@ struct FrequencyPicker: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color("Cinza"), lineWidth: 1)
-                )
-                .padding(.leading, 20)
-                    
+                )                    
             }
             Spacer()
-        }
+        }.padding(.horizontal, 20)
     }
 }
 
