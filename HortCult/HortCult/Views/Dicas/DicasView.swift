@@ -9,18 +9,18 @@ import SwiftUI
 
 
 struct DicasView: View {
-    
-    @Binding var showingSheet: Bool
     var imagemDica: Image
     var tituloDica: String
     var textoDica: Image
     var fonteDica: String
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     
     var body: some View {
         VStack{
             HStack{
                 Button{
-                    showingSheet.toggle()
+                    self.presentationMode.wrappedValue.dismiss()
                 }label: {
                     Text("OK")
                         .font(Font.custom("Satoshi-Regular", size: 16))
@@ -68,6 +68,6 @@ struct DicasView: View {
 
 struct DicasView_Previews: PreviewProvider {
     static var previews: some View {
-        DicasView(showingSheet: .constant(true), imagemDica: Image("DicaSaudavel"), tituloDica: "Sua horta é saudável?", textoDica: Image("TextoSaudavel"), fonteDica: "plastprime.com")
+        DicasView(imagemDica: Image("DicaSaudavel"), tituloDica: "Sua horta é saudável?", textoDica: Image("TextoSaudavel"), fonteDica: "plastprime.com")
     }
 }

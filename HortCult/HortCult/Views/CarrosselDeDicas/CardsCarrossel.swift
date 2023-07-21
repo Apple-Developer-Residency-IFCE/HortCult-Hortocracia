@@ -11,6 +11,7 @@ struct CardsCarrossel: View {
     var dicaSelecionada: Int
     @State private var isSheetPresented = false
     @State private var isSheetPresented2 = false
+    @State var showingSheet = false
     var body: some View {
         switch dicaSelecionada{
             
@@ -21,7 +22,7 @@ struct CardsCarrossel: View {
                         .frame(width: 349, height: 120)
                         .foregroundColor(Color("BrancoMinhaHorta"))
                     HStack{
-                        Image("Tomatinho")
+                        Image("DicaSaudavel")
                             .resizable()
                             .frame(width: 96, height: 96)
                             .cornerRadius(8)
@@ -53,7 +54,7 @@ struct CardsCarrossel: View {
                         }
                     }
                 }
-                .sheet(isPresented: $isSheetPresented, content: {mockParaNavigation()})
+                .sheet(isPresented: $isSheetPresented, content: {DicaSaudavelView()})
         case 2:
                 ZStack{
                     Rectangle()
@@ -61,7 +62,7 @@ struct CardsCarrossel: View {
                         .frame(width: 349, height: 120)
                         .foregroundColor(Color("BrancoMinhaHorta"))
                     HStack{
-                        Image("Tomatinho")
+                        Image("DicaSucesso")
                             .resizable()
                             .frame(width: 96, height: 96)
                             .cornerRadius(8)
@@ -90,7 +91,7 @@ struct CardsCarrossel: View {
                             
                         }
                     }
-                }.sheet(isPresented: $isSheetPresented, content: {mockParaNavigation()})
+                }.sheet(isPresented: $isSheetPresented, content: {DicaSucessoView()})
         case 3:
                 ZStack{
                     Rectangle()
@@ -98,7 +99,7 @@ struct CardsCarrossel: View {
                         .frame(width: 349, height: 120)
                         .foregroundColor(Color("BrancoMinhaHorta"))
                     HStack{
-                        Image("Tomatinho")
+                        Image("DicaSuspensa")
                             .resizable()
                             .frame(width: 96, height: 96)
                             .cornerRadius(8)
@@ -127,7 +128,7 @@ struct CardsCarrossel: View {
                             
                         }
                     }
-                }.sheet(isPresented: $isSheetPresented, content: {mockParaNavigation()})
+                }.sheet(isPresented: $isSheetPresented, content: {DicaSuspensaView()})
         case 4:
                 ZStack{
                     Rectangle()
@@ -135,7 +136,7 @@ struct CardsCarrossel: View {
                         .frame(width: 349, height: 120)
                         .foregroundColor(Color("BrancoMinhaHorta"))
                     HStack{
-                        Image("Tomatinho")
+                        Image("DicaPet")
                             .resizable()
                             .frame(width: 96, height: 96)
                             .cornerRadius(8)
@@ -165,7 +166,7 @@ struct CardsCarrossel: View {
                             
                         }
                     }
-                }.sheet(isPresented: $isSheetPresented, content: {mockParaNavigation()})
+                }.sheet(isPresented: $isSheetPresented, content: {DicaPetView()})
         default:
             EmptyView()
         }
