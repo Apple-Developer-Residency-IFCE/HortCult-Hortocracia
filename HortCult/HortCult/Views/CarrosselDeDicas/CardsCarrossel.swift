@@ -11,7 +11,6 @@ struct CardsCarrossel: View {
     var dicaSelecionada: Int
     @State private var isSheetPresented = false
     @State private var isSheetPresented2 = false
-    @State var showingSheet = false
     var body: some View {
         switch dicaSelecionada{
             
@@ -30,7 +29,7 @@ struct CardsCarrossel: View {
                             Text("Sua horta é saudável?")
                                 .font(Font.custom("Satoshi-Bold", size: 16))
                                 .frame(width: 163, height: 22)
-                                .padding(.bottom, -2)
+                                .padding(.bottom, -2) 
                             Text("Segundo o PlastPrime, um blog de cuidados com hortas, a impor ... ")
                                 .font(Font.custom("Satoshi-Regular", size: 12))
                                 .frame(width: 213, height: 31)
