@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScrollViewWithHeader: View{
     
-    @EnvironmentObject var plantViewModel: PlantViewModel
+//    @EnvironmentObject var plantViewModel: PlantViewModel
     
     
     var body: some View {
