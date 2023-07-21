@@ -69,7 +69,8 @@ struct CategoryPicker: View {
                                                 .padding(.leading, 16)
                                                 .foregroundColor(Color("CinzaClaro"))
                                             Spacer()
-                                            Image("Arrow-Top")
+                                            Image("Arrow-Bottom")
+                                                .rotationEffect(Angle(degrees: 180))
                                                 .padding(.trailing, 22)
                                         }
                                         .padding(.bottom, 18)
@@ -104,8 +105,8 @@ struct CategoryPicker: View {
         }
     }
 }
-//struct CategoryPicker_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CategoryPicker()
-//    }
-//}
+struct CategoryPicker_Previews: PreviewProvider {
+    static var previews: some View {
+        CategoryPicker(selectedOption: .constant(""))
+    }
+}

@@ -63,6 +63,7 @@ struct AddPlantView: View {
                         }
                         .padding(.horizontal, 40)
                     }
+                    
                 }
                 Spacer()
 
@@ -102,5 +103,12 @@ struct AddPlantView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: NavBar)
 
+    }
+}
+
+struct AddPlant_Previews: PreviewProvider {
+    static var previews: some View {
+        AddPlantView(load: {})
+            .environmentObject(AddPlantViewModel(service: CoredataServices()))
     }
 }

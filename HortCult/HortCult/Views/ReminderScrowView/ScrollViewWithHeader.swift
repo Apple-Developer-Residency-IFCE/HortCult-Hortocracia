@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ScrollViewWithHeader: View{
-    
-    @EnvironmentObject var plantViewModel: PlantViewModel
-    
-    
+
+//    @EnvironmentObject var plantViewModel: PlantViewModel
+
+
     var body: some View {
-        
+
         //@State var filtedPlants = plantViewModel.filterPlant()
-        
+
         VStack(alignment: .leading) {
             Text("Lembretes")
                 .font(Font.custom("Satoshi-Bold", size: 28))
@@ -23,10 +23,10 @@ struct ScrollViewWithHeader: View{
                 .padding()
                 .foregroundColor(Color("VerdeEscuro"))
                 .padding(.leading, 5)
-            
+
             ScrollView(.vertical) {
                 LazyVStack(spacing: 12) {
-                    
+
 //                    ForEach(filtedPlants, id: \.id){ plantas in
 //                        ReminderCardView(plant: plantas)
 //                    }
@@ -34,10 +34,10 @@ struct ScrollViewWithHeader: View{
                     //                        cards
                     //                        ForEach(cards, id: \.self) { card in
                     //                            card.listRowInsets(EdgeInsets())
-                    
+
                 }
             }
         }
     }
-        
+
 }
