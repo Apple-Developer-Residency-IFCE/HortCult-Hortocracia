@@ -195,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				1EE2970D2A2E9CBA00C7E64E /* ReminderCardView.swift */,
-				1EE2970F2A2E9DA900C7E64E /* ScrollViewWithHeader.swift */,
 				EFF639752A69DF9F00CDD09A /* ReminderCardViewModel.swift */,
 			);
 			path = ReminderCard;
@@ -502,6 +501,7 @@
 		EFF639792A69E4AE00CDD09A /* ListReminder */ = {
 			isa = PBXGroup;
 			children = (
+				1EE2970F2A2E9DA900C7E64E /* ScrollViewWithHeader.swift */,
 				EFF639772A69E40500CDD09A /* ListReminderCardView.swift */,
 				EFF6397A2A69E57000CDD09A /* ListReminderViewModel.swift */,
 				1EE2970C2A2E9CA000C7E64E /* ReminderCard */,
