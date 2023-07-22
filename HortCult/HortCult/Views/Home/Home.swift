@@ -2,8 +2,15 @@ import SwiftUI
 
 struct Home: View {
     @Environment(\.colorScheme) var colorScheme
-    let platListViewModel = PlantListViewModel(service: CoredataServices())
-    
+
+    let platListViewModel: PlantListViewModel
+    let coredataServices: CoredataServices
+    let listReminderViewModel: ListReminderViewModel
+    init(){
+        self.coredataServices = CoredataServices()
+        self.platListViewModel = PlantListViewModel(service: coredataServices)
+        self.listReminderViewModel = ListReminderViewModel(service: coredataServices)
+    }
     var body: some View {
         NavigationView {
             VStack{
@@ -12,7 +19,9 @@ struct Home: View {
                 ListaPlantasView()
                     .environmentObject(platListViewModel)
                     .padding(.top,20)
-                ScrollViewWithHeader()
+                //ScrollViewWithHeader()
+                ListReminderCardView()
+                    .environmentObject(listReminderViewModel)
             }
             .offset(y:-47)
         }.navigationBarBackButtonHidden(true)
