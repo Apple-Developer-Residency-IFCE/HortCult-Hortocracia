@@ -7,19 +7,19 @@
 
 import SwiftUI
 
+protocol ReminderCardDelegate {
+    func load()
+}
+
 struct ReminderCardView: View {
+
+    @EnvironmentObject var reminderCardViewModel:ReminderCardViewModel
+    @State var dataProxRega: String = ""
+//    var planta: PlantModel
     
-    @EnvironmentObject var plantViewModel: PlantViewModel
-    
-    var id = UUID()
-    
-    @State var plant: Plant
-    
-    
+    let delegate: ReminderCardDelegate
     
     var body: some View {
-        var auxFrequency: Int = 0
-        
         HStack(spacing: 16){
             Image("Water")
                 .frame(width: 62, height:62)
@@ -29,7 +29,7 @@ struct ReminderCardView: View {
                 .foregroundColor(.yellow)
             VStack(alignment: .leading){
 
-                Text("\(plant.name ?? "") está com sede!")
+                Text("\(reminderCardViewModel.planta.name) está com sede!")
                     .font(.headline)
                     .font(Font.custom("Satoshi-Bold", size: 18))
                     .foregroundColor(Color("Preto"))
@@ -41,22 +41,11 @@ struct ReminderCardView: View {
                     .foregroundColor(Color("CinzaEscuro"))
 
                 Button{
-                    if (plant.frequency == "Todos os dias"){
-                        auxFrequency = 1
-                    }else if(plant.frequency == "A cada 2 dias"){
-                        auxFrequency = 2
-                    }else if(plant.frequency == "A cada 4 dias"){
-                        auxFrequency = 4
-                    }else{
-                        auxFrequency = 7
-                    }
+                    reminderCardViewModel.updateDatePlant()
                     let formatter = DateFormatter()
                     formatter.dateFormat = "dd/MM/yyyy"
-                    var nextDate: Date = Date()
-                    nextDate = formatter.date(from: String(nextDate.formatted().prefix(10))) ?? Date()
-                    nextDate = Calendar.current.date(byAdding: .day, value: auxFrequency, to: nextDate)!
-                    plantViewModel.updatePlant(plant: plant, name: plant.name ?? "", information: plant.information ?? "", category: plant.category ?? "", frequency: plant.frequency ?? "", nextDate: nextDate, image: plantViewModel.dataImageConvert(datas: plant.image ?? []))
-                    plant = plantViewModel.getPlantId(id: plant.id!)!
+                    dataProxRega = formatter.string(from: reminderCardViewModel.nextDate)
+                    delegate.load()
                 } label: {
                     Text("Feito")
                         .font(Font.custom("Satoshi-Regular", size: 12))

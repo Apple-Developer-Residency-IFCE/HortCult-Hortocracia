@@ -138,6 +138,14 @@ class CoredataServices {
         return plant.first!
     }
     
+    func fetchPlantModelByDate() -> [PlantModel] {
+        let plants = fetchPlantModel()
+        let filteredPlants = plants.filter({
+            $0.nextDate < Date()
+        })
+        return filteredPlants
+    }
+    
     func convertToPlantModel(plant: Plant) -> PlantModel? {
         guard let id = plant.id,
               let name = plant.name,
