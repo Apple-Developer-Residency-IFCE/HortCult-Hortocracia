@@ -117,7 +117,7 @@ struct InformationView: View {
                                 informationViewModel.planta = informationViewModel.service.fetchPlantModel(by: informationViewModel.planta.id)
                                 
                             }
-                                .environmentObject(editPlant)
+                            .environmentObject(editPlant)
                         } label: {
                             HStack {
                                 Image(selectedTheme == .Escuro ? "EditarGreenDark" : "EditarGreen")
@@ -182,10 +182,10 @@ struct InformationView: View {
                             ).padding(.top, 180)
                             
                         }.frame(width: 300, height: 100)
-                        .zIndex(1)
-                        .onAppear {
-                            isOverlayShown = true
-                        }
+                            .zIndex(1)
+                            .onAppear {
+                                isOverlayShown = true
+                            }
                     }
                     
                     if confirmDeleteVegetableAlert {
@@ -204,10 +204,10 @@ struct InformationView: View {
                             ).padding(.top, 180)
                             
                         }.frame(width: 300, height: 100)
-                        .zIndex(1)
-                        .onAppear {
-                            isOverlayShown = true
-                        }
+                            .zIndex(1)
+                            .onAppear {
+                                isOverlayShown = true
+                            }
                         
                         
                     }
@@ -219,7 +219,7 @@ struct InformationView: View {
                 }
                 .navigationBarItems(leading: NavBarInfo)
                 
-            }
+            }.padding(.bottom, 60)
             .edgesIgnoringSafeArea(.all)
             
         }
@@ -228,3 +228,8 @@ struct InformationView: View {
         .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
+//struct InformationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InformationView()
+//    }
+//}

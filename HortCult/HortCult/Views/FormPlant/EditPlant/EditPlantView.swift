@@ -24,6 +24,7 @@ struct EditPlantView: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color("VerdeEscuro"))
                 .padding(.top, 20)
+                .padding(.leading, 20)
         }
     }
     
@@ -57,10 +58,9 @@ struct EditPlantView: View {
                             DescriptionInput(descriptionVegetable: $editViewModel.plantInformation)
                             CategoryPicker(selectedOption: $editViewModel.plantCategory)
                             FrequencyPicker(selectedOption: $editViewModel.plantFrequency)
-                            ImagePicker(selectedPhotosData: $editViewModel.plantImage)
+                            ImagePickerView(selectedPhotosData: $editViewModel.plantImage)
                             Spacer(minLength: 80)
                         }
-                        .padding(.horizontal, 40)
                     }
                 }
                 Spacer()
@@ -93,7 +93,7 @@ struct EditPlantView: View {
                     }
                     .disabled(!editViewModel.isEditButtonAble)
                     .frame(alignment: .bottom)
-                    .padding(.bottom, 60)
+                    .padding(.bottom, 20)
                 }
             }
         }
@@ -101,5 +101,12 @@ struct EditPlantView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: NavBar)
 
+    }
+}
+
+struct EditPlant_Previews: PreviewProvider {
+    static var previews: some View {
+        EditPlantView(load: {})
+            .environmentObject(EditPlantViewModel(service: CoredataServices(), planta: PlantModel(id: UUID(), name: "", category: "", information: "", frequency: "", image: [], nextDate: Date())))
     }
 }
