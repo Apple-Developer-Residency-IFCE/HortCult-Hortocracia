@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ListaPlantasView: View {
-    
-    @EnvironmentObject var plantViewModel: PlantViewModel
+    @EnvironmentObject var plantListViewModel: PlantListViewModel
+    let addViewModel = AddPlantViewModel(service: CoredataServices())
     @Environment(\.colorScheme) var colorScheme
-    
+    let coreDataService:CoredataServices = CoredataServices()
     var body: some View {
         
         VStack(spacing: 20){
@@ -23,7 +23,10 @@ struct ListaPlantasView: View {
                     .padding(.leading, 5)
                 Spacer()
                 NavigationLink {
-                    AddVegetable(plantViewModel: plantViewModel)
+                    AddPlantView() {
+                        plantListViewModel.loadPlants()
+                    }
+                        .environmentObject(addViewModel)
                 } label: {
                     HStack {
                         Image(colorScheme == .dark ? "Add" : "AddWhite")
@@ -37,18 +40,31 @@ struct ListaPlantasView: View {
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 12) {
-                    ForEach(plantViewModel.plant, id: \.self) { planta in
-                        
-                        NavigationLink(destination: InformationView(planta: planta)){
+                    ForEach(plantListViewModel.plantsModel, id: \.self) { planta in
+        
+                        NavigationLink(destination: InformationView(
+                            editPlant: EditPlantViewModel(
+                                service: coreDataService,
+                                planta: planta),
+                            cardProxRega: CardProxRegaViewModel(
+                                service: coreDataService,
+                                planta: planta),
+                            imageListViewModel: ImageListViewModel(
+                                service: coreDataService,
+                                planta: planta))
+                            .environmentObject(InformationViewModel(
+                                service: coreDataService,
+                                planta: planta)
+                            )
+                        ){
                             VStack{
-                                
-                                Image(uiImage: plantViewModel.dataImageConvert(datas: planta.image ?? []).first ?? UIImage())
+                                Image(uiImage: plantListViewModel.dataToUIImage(planta: planta))
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(maxHeight: 115)
                                     .clipped()
                                 
-                                Text(planta.name!)
+                                Text(planta.name)
                                     .font(Font.custom("Satoshi-Regular", size: 16))
                                     .foregroundColor(Color("CinzaEscuro"))
                                     .padding(.bottom, 9)
@@ -59,16 +75,10 @@ struct ListaPlantasView: View {
                     }
                 }
             }
+            .onAppear(perform: plantListViewModel.loadPlants)
             .padding(.leading, 20)
             .frame(maxHeight: 150)
         }
     }
     
-}
-
-struct ListaPlantasView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListaPlantasView()
-            .environmentObject(PlantViewModel())
-    }
 }

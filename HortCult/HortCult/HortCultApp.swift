@@ -23,7 +23,7 @@ struct HortCultApp: App {
                     Splash()
                         .preferredColorScheme(selectedTheme == .Claro ? .light : (selectedTheme == .Escuro ? .dark : .none))
                 } else {
-                    TabBarView(plantViewModel: PlantViewModel())
+                    TabBarView()
                         .preferredColorScheme(selectedTheme == .Claro ? .light : (selectedTheme == .Escuro ? .dark : .none))
                 }
         }
