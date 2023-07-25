@@ -51,16 +51,11 @@ class AddPlantViewModel: ObservableObject {
     func addPlant(){
         let _ = service.createPlant(name: plantName, information: plantInformation, category: plantCategory, frequency: plantFrequency, image: plantImage, nextDate: plantNextDate)
         CoreDataStack.shared.saveContext()
-        plantName = ""
-        plantInformation = ""
-        plantCategory = ""
-        plantFrequency = ""
-        plantImage = []
-        plantNextDate = Date()
+        resetFields()
         
     }
     
-    private func resetFields() {
+    func resetFields() {
         plantName = ""
         plantInformation = ""
         plantCategory = ""

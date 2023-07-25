@@ -53,11 +53,15 @@ struct DicasView: View {
                     
                     textoDica
                     
-                    Text("Fonte: " + fonteDica)
-                        .font(Font.custom("Satoshi-Regular", size: 16))
-                        .foregroundColor(Color("VerdeClaro"))
-                        .underline(true, color: Color("VerdeClaro"))
-                        .padding(.top, 12)
+                    Link(destination: URL(string: "https://" + fonteDica)!) {
+                        if let fonte = fonteDica.firstIndex(of: "/"){
+                            Text("Fonte: " + fonteDica.prefix(upTo: fonte))
+                                .font(Font.custom("Satoshi-Regular", size: 16))
+                                .foregroundColor(Color("VerdeEscuro"))
+                                .underline(true, color: Color("VerdeEscuro"))
+                                .padding(.top, 12)
+                        }
+                    }
                 }.padding(.leading, 30)
             }
          

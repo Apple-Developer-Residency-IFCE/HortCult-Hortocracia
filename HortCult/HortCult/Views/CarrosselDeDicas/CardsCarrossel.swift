@@ -44,7 +44,7 @@ struct CardsCarrossel: View {
                                 }, label: {
                                     Text("Ler mais")
                                         .font(Font.custom("Satoshi-Regular", size: 12))
-                                        .foregroundColor(.black)
+                                        .foregroundColor(Color("Preto"))
                                 }
                                 )
                             }
@@ -84,7 +84,7 @@ struct CardsCarrossel: View {
                                 }, label: {
                                     Text("Ler mais")
                                         .font(Font.custom("Satoshi-Regular", size: 12))
-                                        .foregroundColor(.black)
+                                        .foregroundColor(Color("Preto"))
                                 })
                             }.padding(.top, 8)
                             
@@ -121,7 +121,7 @@ struct CardsCarrossel: View {
                                 }, label: {
                                     Text("Ler mais")
                                         .font(Font.custom("Satoshi-Regular", size: 12))
-                                        .foregroundColor(.black)
+                                        .foregroundColor(Color("Preto"))
                                 })
                             }.padding(.top, 8)
                             
@@ -158,8 +158,7 @@ struct CardsCarrossel: View {
                                 }, label: {
                                     Text("Ler mais")
                                         .font(Font.custom("Satoshi-Regular", size: 12))
-                                        .foregroundColor(.black)
-                                    
+                                        .foregroundColor(Color("Preto"))
                                 })
                             }.padding(.top, 8)
                             

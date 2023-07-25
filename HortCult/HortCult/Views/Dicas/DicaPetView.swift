@@ -12,7 +12,7 @@ struct DicaPetView: View {
     
     var body: some View {
         
-        DicasView(imagemDica: Image("DicaPet"), tituloDica: "Horta para pets: O que\nplantar para cães, gatos e calopsitas.", textoDica: Image("TextoPet"), fonteDica: "blog.plantei.com")
+        DicasView(imagemDica: Image("DicaPet"), tituloDica: "Horta para pets: O que\nplantar para cães, gatos e calopsitas.", textoDica: Image("TextoPet"), fonteDica: "blog.plantei.com.br/horta-para-pets/")
     }
 }
 

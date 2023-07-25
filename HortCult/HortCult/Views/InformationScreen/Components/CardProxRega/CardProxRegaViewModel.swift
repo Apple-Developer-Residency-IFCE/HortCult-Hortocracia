@@ -51,9 +51,12 @@ class CardProxRegaViewModel: ObservableObject {
     }
     
     func updateDatePlant(){
-        advanceNextDate()
-        planta.nextDate = formateDate()
-        let _ = service.updatePlantModel(plantModel: planta, nextDate: nextDate)
+        let todayDate = service.formateDate(date: Date())
+        if planta.nextDate <= todayDate{
+            advanceNextDate()
+            planta.nextDate = formateDate()
+            let _ = service.updatePlantModel(plantModel: planta, nextDate: nextDate)
+        }
     }
     
     func getFrequency(){

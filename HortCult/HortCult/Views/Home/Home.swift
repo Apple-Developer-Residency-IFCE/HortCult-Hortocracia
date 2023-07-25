@@ -13,15 +13,16 @@ struct Home: View {
     }
     var body: some View {
         NavigationView {
-            VStack{
+            ScrollView(.vertical){
                 HeaderLogo()
                     .ignoresSafeArea()
                 ListaPlantasView()
                     .environmentObject(platListViewModel)
                     .padding(.top,20)
-                CarrosselDeDicas()
                 ListReminderCardView()
                     .environmentObject(listReminderViewModel)
+                CarrosselDeDicas()
+
             }
             .offset(y:-47)
         }.navigationBarBackButtonHidden(true)

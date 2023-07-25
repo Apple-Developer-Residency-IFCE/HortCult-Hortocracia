@@ -12,7 +12,7 @@ struct DicaSaudavelView: View {
     
     var body: some View {
         
-        DicasView(imagemDica: Image("DicaSaudavel"), tituloDica: "Sua horta é saudável?", textoDica: Image("TextoSaudavel"), fonteDica: "plastprime.com")
+        DicasView(imagemDica: Image("DicaSaudavel"), tituloDica: "Sua horta é saudável?", textoDica: Image("TextoSaudavel"), fonteDica: "plastprime.com/10-dicas-horta/")
     }
 }
 

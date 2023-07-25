@@ -28,7 +28,7 @@ struct TabBarView: View {
                 }
                 ZStack{
                     Rectangle()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color("Branco"))
                         .background(Color.clear)
                         .shadow(color: .black.opacity(0.1), radius: 5)
                     HStack{
