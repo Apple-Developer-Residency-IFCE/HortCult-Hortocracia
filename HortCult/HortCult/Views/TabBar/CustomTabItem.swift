@@ -14,7 +14,7 @@ extension TabBarView {
             Image(imageName)
                 .resizable()
                 .renderingMode(.template)
-                .foregroundColor(isActive ? .green : .black)
+                .foregroundColor(isActive ? Color("Verde") : Color("Preto"))
                 .frame(width: 30, height: 30)
             Spacer()
         }

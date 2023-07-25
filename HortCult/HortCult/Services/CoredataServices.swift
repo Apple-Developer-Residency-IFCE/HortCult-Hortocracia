@@ -52,7 +52,7 @@ class CoredataServices {
         plant.frequency = frequency
         plant.category = category
         plant.image = image
-        plant.nextDate = nextDate
+        plant.nextDate = formateDate(date: nextDate)
         CoreDataStack.shared.saveContext()
     }
     
@@ -140,8 +140,10 @@ class CoredataServices {
     
     func fetchPlantModelByDate() -> [PlantModel] {
         let plants = fetchPlantModel()
+        
+        let dateNow = formateDate(date: Date())
         let filteredPlants = plants.filter({
-            $0.nextDate < Date()
+            $0.nextDate <= dateNow
         })
         return filteredPlants
     }
@@ -163,6 +165,14 @@ class CoredataServices {
     func deletePlantModel(plantModel: PlantModel){
         let plant = fetchPlant(by: plantModel.id)
         delete(plant: plant)
+    }
+    
+    func formateDate(date: Date) -> Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let formattedString = formatter.string(from: date)
+        let dateFormatted = formatter.date(from: formattedString) ?? Date()
+        return dateFormatted
     }
     
 }

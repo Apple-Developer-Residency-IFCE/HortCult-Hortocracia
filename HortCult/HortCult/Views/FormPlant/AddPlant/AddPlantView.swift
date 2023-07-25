@@ -36,6 +36,7 @@ struct AddPlantView: View {
                 .padding(.top,-40)
             HStack {
                 Button(action:{
+                    addViewModel.resetFields()
                     self.presentationMode.wrappedValue.dismiss()
                 } ) {
                     Image(selectedTheme == .Escuro ? "Arrow-Left-Light" : "Arrow-Left-Green")

@@ -14,12 +14,15 @@ struct CustomAlert: View {
                 .font(.headline)
                 .foregroundColor(Color("VerdeEscuro"))
                 .padding(.bottom, 5)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+                .multilineTextAlignment(.center)
             
             Text(message)
                 .font(.system(size: 16))
                 .foregroundColor(Color("CinzaEscuro"))
-                .lineLimit(nil) // Remove o limite de linhas
-                .fixedSize(horizontal: false, vertical: true) // Permite que o texto seja quebrado em várias linhas
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
                 .frame(width: 270)
                 .multilineTextAlignment(.center)
             
