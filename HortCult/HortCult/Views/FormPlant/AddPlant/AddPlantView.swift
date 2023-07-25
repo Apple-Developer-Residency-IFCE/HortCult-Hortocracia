@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct AddPlantView: View {
-    @EnvironmentObject var addViewModel: AddPlantViewModel
+    @StateObject var vm: AddPlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
-    
+    var load: () -> Void
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    
-    var load: () -> Void
+    init(load: @escaping () -> Void){
+        _vm = StateObject(wrappedValue: AddPlantViewModel(service: CoredataServices()))
+        self.load = load
+    }
+
     
     var Title: some View {
         HStack{
@@ -55,11 +58,11 @@ struct AddPlantView: View {
                     ZStack{
                         VStack(alignment: .leading, spacing: 10){
                             Title
-                            NameInput(namePlant: $addViewModel.plantName)
-                            DescriptionInput(descriptionVegetable: $addViewModel.plantInformation)
-                            CategoryPicker(selectedOption: $addViewModel.plantCategory)
-                            FrequencyPicker(selectedOption: $addViewModel.plantFrequency)
-                            ImagePickerView(selectedPhotosData: $addViewModel.plantImage)
+                            NameInput(namePlant: $vm.plantName)
+                            DescriptionInput(descriptionVegetable: $vm.plantInformation)
+                            CategoryPicker(selectedOption: $vm.plantCategory)
+                            FrequencyPicker(selectedOption: $vm.plantFrequency)
+                            ImagePicker(selectedPhotosData: $vm.plantImage)
                             Spacer(minLength: 80)
                         }
                         
@@ -74,7 +77,7 @@ struct AddPlantView: View {
                     Spacer()
 
                     Button(action: {
-                        addViewModel.addPlant()
+                        vm.addPlant()
                         load()
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
@@ -87,14 +90,14 @@ struct AddPlantView: View {
                         .foregroundColor(Color("CinzaClaro"))
 
                         .frame(width: 350, height: 42)
-                        .background(Color(addViewModel.isAddButtonAble ? "VerdeEscuro" : "CinzaClaro"))
+                        .background(Color(vm.isAddButtonAble ? "VerdeEscuro" : "CinzaClaro"))
                         .cornerRadius(40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color(addViewModel.isAddButtonAble  ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
+                                .stroke(Color(vm.isAddButtonAble  ? "VerdeEscuro" : "CinzaClaro"), lineWidth: 2)
                         )
                     }
-                    .disabled(!addViewModel.isAddButtonAble)
+                    .disabled(!vm.isAddButtonAble)
                     .frame(alignment: .bottom)
                     .padding(.bottom, 20)
                 }

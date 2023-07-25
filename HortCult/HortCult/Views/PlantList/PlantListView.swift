@@ -23,10 +23,7 @@ struct ListaPlantasView: View {
                     .padding(.leading, 5)
                 Spacer()
                 NavigationLink {
-                    AddPlantView() {
-                        plantListViewModel.loadPlants()
-                    }
-                        .environmentObject(addViewModel)
+                    AddPlantView(load: {plantListViewModel.loadPlants()})
                 } label: {
                     HStack {
                         Image(colorScheme == .dark ? "Add" : "AddWhite")
