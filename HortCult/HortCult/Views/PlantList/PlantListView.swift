@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ListaPlantasView: View {
-    @EnvironmentObject var plantListViewModel: PlantListViewModel
-    let addViewModel = AddPlantViewModel(service: CoredataServices())
+   // @EnvironmentObject var plantListViewModel: PlantListViewModel
+//    let addViewModel = AddPlantViewModel(service: CoredataServices())
+    @Environment(\.plantListViewModel) var plantListViewModel
     @Environment(\.colorScheme) var colorScheme
     let coreDataService:CoredataServices = CoredataServices()
+    @State var teste:[PlantModel] = []
+    
+    init(){
+        self.teste = plantListViewModel.plantsModel
+    }
+    
     var body: some View {
         
         VStack(spacing: 20){
@@ -23,7 +30,9 @@ struct ListaPlantasView: View {
                     .padding(.leading, 5)
                 Spacer()
                 NavigationLink {
-                    AddPlantView(load: {plantListViewModel.loadPlants()})
+//                    AddPlantView(load: {plantListViewModel.loadPlants()})
+//                        .environmentObject(plantListViewModel)
+                    AddPlantView()
                 } label: {
                     HStack {
                         Image(colorScheme == .dark ? "Add" : "AddWhite")

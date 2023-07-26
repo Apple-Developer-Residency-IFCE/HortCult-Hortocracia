@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct AddPlantView: View {
+    @Environment(\.plantListViewModel) var plantListViewModel
+
     @StateObject var vm: AddPlantViewModel
     @AppStorage ("selectedTheme")private var selectedTheme: Choice?
-    var load: () -> Void
+//    var load: () -> Void
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    init(load: @escaping () -> Void){
-        _vm = StateObject(wrappedValue: AddPlantViewModel(service: CoredataServices()))
-        self.load = load
+    init(){
+        _vm = StateObject(wrappedValue: AddPlantViewModel(service: CoredataServices())
+        
+        )
+//        self.load = load
     }
 
     
@@ -78,7 +82,8 @@ struct AddPlantView: View {
 
                     Button(action: {
                         vm.addPlant()
-                        load()
+//                        load()
+                        plantListViewModel.loadPlants()
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
                         HStack {
@@ -110,9 +115,9 @@ struct AddPlantView: View {
     }
 }
 
-struct AddPlant_Previews: PreviewProvider {
-    static var previews: some View {
-        AddPlantView(load: {})
-            .environmentObject(AddPlantViewModel(service: CoredataServices()))
-    }
-}
+//struct AddPlant_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddPlantView(load: {})
+//            .environmentObject(AddPlantViewModel(service: CoredataServices()))
+//    }
+//}

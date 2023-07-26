@@ -11,7 +11,11 @@ import SwiftUI
 
 class PlantListViewModel: ObservableObject {
     let service: CoredataServices
-    @Published var plantsModel: [PlantModel] = []
+    @Published var plantsModel: [PlantModel] = []{
+        didSet {
+            print("Hello")
+        }
+    }
     
     init(service: CoredataServices){
         self.service = service
@@ -28,5 +32,17 @@ class PlantListViewModel: ObservableObject {
         } else {
             return UIImage()
         }
+    }
+}
+
+
+struct PlantListViewModelKey: EnvironmentKey {
+    static var defaultValue: PlantListViewModel = PlantListViewModel(service: .init())
+}
+
+extension EnvironmentValues {
+    var plantListViewModel: PlantListViewModel {
+        get { self[PlantListViewModelKey.self] }
+        set { self[PlantListViewModelKey.self] = newValue }
     }
 }

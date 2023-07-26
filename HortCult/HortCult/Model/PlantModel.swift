@@ -18,3 +18,13 @@ struct PlantModel : Identifiable, Hashable {
     var image: [Data]
     var nextDate: Date
 }
+
+//class PlantViewModel: ObservableObject {
+//    @Published var plantsModel: [PlantModel] = []
+//    @Published var plantName: String
+//    @Published var plantInformation: String
+//    @Published var plantCategory: String
+//    @Published var plantFrequency: String
+//    @Published var plantNextDate: Date
+//    @Published var plantImage:[Data]
+//}

@@ -35,7 +35,6 @@ class AddPlantViewModel: ObservableObject {
     @Published var plantNextDate: Date = Date()
     @Published var plantImage:[Data] = []
     @Published var selectedPhotosData:[Data] = []
-    
     @Published var isAddButtonAble: Bool = false
     
     let service: CoredataServices
@@ -57,7 +56,6 @@ class AddPlantViewModel: ObservableObject {
         plantFrequency = ""
         plantImage = []
         plantNextDate = Date()
-        
     }
     
     private func resetFields() {
