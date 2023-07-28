@@ -9,6 +9,9 @@ import SwiftUI
 
 struct OnboardingScreen: View {
     
+    @State private var showImage = false
+    
+    
     //Tela
     
     var header: String
@@ -25,7 +28,7 @@ struct OnboardingScreen: View {
     
     var hidenSecondaryButton: Bool
     var actionSecondaryButton: (() -> Void)?
-    
+    @State var descriptionAnimated = false
     var body: some View {
         
         VStack {
@@ -55,7 +58,10 @@ struct OnboardingScreen: View {
                     .multilineTextAlignment(.center)
                     .font(.custom("Satoshi-Regular", size: 16))
                     .foregroundColor(Color("Cinza"))
-                    .layoutPriority(1.0)
+
+                    
+
+                    
                 
                 ReusableButton(buttonTipe: mainButtonType , action: {actionMainButton()})
                         .padding(.bottom, 25)
@@ -90,6 +96,14 @@ struct OnboardingScreen: View {
                     .multilineTextAlignment(.center)
                     .font(.custom("Satoshi-Regular", size: 16))
                     .foregroundColor(Color("Cinza"))
+                    .offset(y: descriptionAnimated ? 10 : 0)
+                    .rotationEffect(Angle(degrees: descriptionAnimated ? 360 : 0))
+                    .onAppear{
+                        withAnimation(Animation.default.repeatForever(autoreverses: true)){
+                            descriptionAnimated.toggle()
+                        }
+
+                    }
                 
                 ReusableButton(buttonTipe: mainButtonType , action: {actionMainButton()})
                     .padding(.bottom, 25)
