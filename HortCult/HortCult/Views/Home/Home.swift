@@ -13,20 +13,24 @@ struct Home: View {
     }
     var body: some View {
         NavigationView {
-            ScrollView(.vertical){
+            VStack{
                 HeaderLogo()
+                    .padding(.bottom, -10)
                     .ignoresSafeArea()
-                ListaPlantasView()
-                    .environmentObject(platListViewModel)
-                    .padding(.top,20)
-                CarrosselDeDicas()
-                ListReminderCardView()
-                    .environmentObject(listReminderViewModel)
                 
-
-            }
-            .offset(y:-47)
-        }.navigationBarBackButtonHidden(true)
+                ScrollView(.vertical){
+                    ListaPlantasView()
+                        .environmentObject(platListViewModel)
+                        .padding(.top, 20)
+                    CarrosselDeDicas()
+                    ListReminderCardView()
+                        .environmentObject(listReminderViewModel)
+                        .padding(.bottom, 110)
+                    
+                }//.offset(y:-47)
+                
+            }.ignoresSafeArea()
+            }.navigationBarBackButtonHidden(true)
     }
 }
 
