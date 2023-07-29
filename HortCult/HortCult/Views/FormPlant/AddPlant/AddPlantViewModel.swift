@@ -64,4 +64,9 @@ class AddPlantViewModel: ObservableObject {
         plantNextDate = Date()
     }
     
+    func getLastPlant() -> PlantModel{
+        let plantas = service.fetchPlantModel()
+        return plantas.last!
+    }
+    
 }

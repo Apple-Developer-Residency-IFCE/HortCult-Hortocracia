@@ -19,9 +19,10 @@ struct Home: View {
                 ListaPlantasView()
                     .environmentObject(platListViewModel)
                     .padding(.top,20)
+                CarrosselDeDicas()
                 ListReminderCardView()
                     .environmentObject(listReminderViewModel)
-                CarrosselDeDicas()
+                
 
             }
             .offset(y:-47)

@@ -77,7 +77,7 @@ struct ListaPlantasView: View {
             }
             .onAppear(perform: plantListViewModel.loadPlants)
             .padding(.leading, 20)
-            .frame(maxHeight: 150)
+            .frame(height: 150)
         }
     }
     
