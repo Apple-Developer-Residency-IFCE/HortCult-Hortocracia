@@ -80,7 +80,7 @@ struct CustomAlert: View {
             }
         }
         .padding()
-        .background(Color.white)
+        .background(Color("Branco"))
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
